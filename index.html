@@ -12,7 +12,7 @@
   *{box-sizing:border-box}
   html,body{margin:0;padding:0;background:var(--paper)}
   body{
-    color:var(--ink); font-family:var(--g); font-size:15.5px; line-height:1.9;
+    color:var(--ink); font-family:var(--g); font-size:16px; line-height:1.95;
     font-feature-settings:"palt" 1; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
   }
   .wrap{max-width:1040px;margin:0 auto;padding:0 22px 110px}
@@ -23,10 +23,10 @@
   header.hero{padding:40px 0 8px}
   .kicker{font-size:11.5px;letter-spacing:.16em;color:var(--red);text-transform:uppercase;margin:0 0 16px;font-weight:700}
   .kicker span{color:var(--faint);font-weight:400;letter-spacing:.08em}
-  h1{font-family:var(--m);font-weight:600;letter-spacing:.02em;line-height:1.3;
-    font-size:min(40px,8.4vw);margin:0;max-width:20ch}
-  .lede{font-size:14.5px;color:var(--sub);margin:18px 0 0;max-width:56ch}
-  .thesis{font-family:var(--m);font-size:16px;line-height:1.9;color:var(--ink);margin:22px 0 0;max-width:44ch;
+  h1{font-family:var(--m);font-weight:600;letter-spacing:.02em;line-height:1.28;
+    font-size:clamp(32px,9.6vw,46px);margin:0;max-width:16ch}
+  .lede{font-size:16px;color:var(--sub);margin:20px 0 0;max-width:52ch;line-height:1.95}
+  .thesis{font-family:var(--m);font-size:17px;line-height:1.95;color:var(--ink);margin:22px 0 0;max-width:42ch;
     padding-left:16px;border-left:2px solid var(--red)}
   .rules{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:5px;overflow:hidden;margin-top:8px}
   @media(max-width:640px){.rules{grid-template-columns:1fr}}
@@ -119,10 +119,10 @@
   .srcnote b{color:var(--sub);font-weight:600}
 
   /* ---------- ecosystem ---------- */
-  h2{font-family:var(--m);font-weight:600;font-size:min(26px,5.6vw);letter-spacing:.03em;
-    line-height:1.3;margin:72px 0 6px;position:relative;padding-left:34px}
+  h2{font-family:var(--m);font-weight:600;font-size:clamp(23px,6.4vw,30px);letter-spacing:.03em;
+    line-height:1.3;margin:72px 0 8px;position:relative;padding-left:34px}
   h2::before{content:"";position:absolute;left:0;top:.72em;width:22px;height:2px;background:var(--red);transform:translateY(-5px)}
-  .note{font-size:13px;color:var(--faint);padding-left:34px;margin:0 0 22px;max-width:70ch;line-height:1.85}
+  .note{font-size:14px;color:var(--sub);padding-left:34px;margin:0 0 22px;max-width:66ch;line-height:1.9}
   .note b{color:var(--sub);font-weight:600}
 
   .band{display:flex;flex-wrap:wrap;gap:0;margin:26px 0 8px;border:1px solid var(--line);border-radius:5px;overflow:hidden}
@@ -155,9 +155,9 @@
   .stt.grave .tick{background:transparent;border:1px solid var(--faint);width:6px;height:6px}
   .stt.seed .tick{background:transparent;border:1px dashed var(--sub);width:6px;height:6px}
   .hmain{flex:1;min-width:0}
-  .hname{font-size:15.5px;font-weight:600;letter-spacing:.01em;line-height:1.5}
+  .hname{font-size:16px;font-weight:600;letter-spacing:.01em;line-height:1.55}
   details.hx[data-state="grave"] .hname{color:var(--sub);text-decoration:line-through;text-decoration-color:var(--faint);text-decoration-thickness:1px}
-  .hmet{font-size:12.5px;color:var(--sub);margin-top:3px}
+  .hmet{font-size:13px;color:var(--sub);margin-top:4px;line-height:1.6}
   .hmet .k{color:var(--faint)}
   .chev{flex-shrink:0;color:var(--faint);font-size:12px;padding-top:4px;transition:transform .2s}
   details.hx[open] .chev{transform:rotate(90deg)}
@@ -166,7 +166,7 @@
   .body dl{margin:0;display:grid;grid-template-columns:118px 1fr;gap:2px 18px}
   @media(max-width:560px){.body dl{grid-template-columns:1fr}}
   .body dt{font-size:11.5px;color:var(--red);font-weight:600;letter-spacing:.04em;padding-top:12px}
-  .body dd{margin:0;font-size:13.5px;color:var(--sub);line-height:1.85;padding-top:10px}
+  .body dd{margin:0;font-size:14.5px;color:var(--sub);line-height:1.9;padding-top:10px}
   .body dd b{color:var(--ink);font-weight:600}
   .simline{margin-top:14px;padding:12px 14px;background:var(--alt);border-radius:4px;font-size:12.5px;color:var(--sub)}
   details.hx[data-state="grave"] .simline{background:var(--paper)}
@@ -175,7 +175,7 @@
     display:flex;gap:12px;align-items:flex-start;background:var(--paper)}
   .promote .parrow{flex-shrink:0;font-size:10.5px;font-weight:700;color:#fff;background:var(--red);
     border-radius:3px;padding:4px 8px;letter-spacing:.03em;line-height:1.3;margin-top:1px}
-  .promote .ptext{font-size:13px;color:var(--ink);line-height:1.8}
+  .promote .ptext{font-size:14px;color:var(--ink);line-height:1.85}
   .promote .ptext b{color:var(--red);font-weight:600}
   @media(max-width:560px){.promote{flex-direction:column;gap:8px}}
   .hidden{display:none !important}
@@ -184,6 +184,25 @@
   .sig a{color:var(--red);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:1px}
   .sig a:hover{border-color:var(--red)}
   @media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important}}
+  /* スマホ読みやすさ（公式サイト水準） */
+  @media(max-width:560px){
+    body{font-size:16.5px;line-height:2.0}
+    .wrap{padding:0 18px 90px}
+    .lede{font-size:16.5px}
+    .thesis{font-size:17px}
+    .note{font-size:14.5px;padding-left:0}
+    h2{padding-left:26px}
+    h2::before{width:18px}
+    .note.defnote{padding-left:0}
+    .savedsub,.srcnote,.simcap2,.stnote{font-size:13px}
+    .body dd{font-size:15px}
+    .hname{font-size:16.5px}
+    .hmet{font-size:13.5px}
+    .promote .ptext{font-size:14.5px}
+    .rule .rb{font-size:14px}
+    .filters button{font-size:14px;padding:9px 15px}
+    .stat .k,.simcell .k{font-size:12px}
+  }
 </style>
 
 <div class="wrap">
@@ -601,7 +620,7 @@ const DATA = {
   }catch(e){}
 
   // filters + cards
-  var STATES=[["all","すべて"],["live","本番稼働"],["paper","紙孵化"],["surviving","生存"],["grave","墓標"],["seed","種"]];
+  var STATES=[["live","本番稼働"],["all","すべて"],["paper","紙孵化"],["surviving","生存"],["grave","墓標"],["seed","種"]];
   var fWrap=document.getElementById('filters');
   fWrap.innerHTML=STATES.map(function(s,i){return '<button data-f="'+s[0]+'" aria-pressed="'+(i===0)+'">'+s[1]+'</button>';}).join('');
   var STT={live:["live","本番"],paper:["paper","紙"],surviving:["surv","生存"],grave:["grave","墓標"],seed:["seed","種"]};
@@ -618,9 +637,12 @@ const DATA = {
   }
   var order={live:-1,paper:0,surviving:1,grave:2,seed:3};
   document.getElementById('cards').innerHTML=DATA.hyps.slice().sort(function(a,b){return order[a.state]-order[b.state]}).map(card).join('');
-  fWrap.addEventListener('click',function(e){var btn=e.target.closest('button');if(!btn)return;var f=btn.getAttribute('data-f');
-    [].forEach.call(fWrap.children,function(b){b.setAttribute('aria-pressed',b===btn)});
-    [].forEach.call(document.querySelectorAll('.hx'),function(el){el.classList.toggle('hidden',!(f==='all'||el.getAttribute('data-state')===f));});});
+  function applyFilter(f){
+    [].forEach.call(fWrap.children,function(b){b.setAttribute('aria-pressed',b.getAttribute('data-f')===f);});
+    [].forEach.call(document.querySelectorAll('.hx'),function(el){el.classList.toggle('hidden',!(f==='all'||el.getAttribute('data-state')===f));});
+  }
+  fWrap.addEventListener('click',function(e){var btn=e.target.closest('button');if(!btn)return;applyFilter(btn.getAttribute('data-f'));});
+  applyFilter('live'); // 初期表示は本番稼働のみ（全件だと下が長すぎるため）
 
   // simulator
   var tiers=DATA.tiers;

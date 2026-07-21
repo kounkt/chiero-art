@@ -36,7 +36,7 @@
       {
         "nm": "EDINET本文",
         "desc": "有価証券報告書等（全文・件数）",
-        "rows": 22400
+        "rows": 22622
       },
       {
         "nm": "TDnet開示PDF",
@@ -51,7 +51,7 @@
     ],
     "rows_total": 242168624,
     "cells_total": 2511919965,
-    "docs_total": 159359,
+    "docs_total": 159581,
     "gb": 49.6
   }
 }
