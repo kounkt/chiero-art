@@ -156,6 +156,10 @@
   .stt.seed .tick{background:transparent;border:1px dashed var(--sub);width:6px;height:6px}
   .hmain{flex:1;min-width:0}
   .hname{font-size:16px;font-weight:600;letter-spacing:.01em;line-height:1.55}
+  /* 状況タグ（前日/当日に入った仮説）。赤は一点の掟によりインクの一色で静かに立てる */
+  .ntag{display:inline-block;margin-left:9px;font-family:var(--g);font-size:9px;font-weight:700;letter-spacing:.1em;
+    color:var(--paper);background:var(--ink);border-radius:3px;padding:1.5px 5px;vertical-align:2.5px;line-height:1.5;white-space:nowrap}
+  .ntag.day1{color:var(--ink);background:transparent;border:1px solid var(--line);padding:.5px 4px}
   details.hx[data-state="grave"] .hname{color:var(--sub);text-decoration:line-through;text-decoration-color:var(--faint);text-decoration-thickness:1px}
   .hmet{font-size:13px;color:var(--sub);margin-top:4px;line-height:1.6}
   .hmet .k{color:var(--faint)}
@@ -624,6 +628,20 @@ const DATA = {
   var fWrap=document.getElementById('filters');
   fWrap.innerHTML=STATES.map(function(s,i){return '<button data-f="'+s[0]+'" aria-pressed="'+(i===0)+'">'+s[1]+'</button>';}).join('');
   var STT={live:["live","本番"],paper:["paper","紙"],surviving:["surv","生存"],grave:["grave","墓標"],seed:["seed","種"]};
+  // 状況タグ: h.added（"YYYY-MM-DD"）が当日=0/前日=1日前なら「NEW」を出し、翌々日には自動で消える。
+  // 閲覧者のローカル日付基準なので、新しい仮説を追加してaddedを入れるだけで前日・当日だけ光る。
+  function daysSince(d){
+    if(!d)return null;var m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(d);if(!m)return null;
+    var now=new Date(),today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+    var a=new Date(+m[1],+m[2]-1,+m[3]);if(isNaN(a))return null;
+    return Math.round((today-a)/86400000);
+  }
+  function newTag(h){
+    var g=daysSince(h.added);
+    if(g===0)return '<span class="ntag" title="当日エントリー">NEW</span>';
+    if(g===1)return '<span class="ntag day1" title="前日エントリー">NEW</span>';
+    return '';
+  }
   function card(h){
     var s=STT[h.state],dl='';
     [["立てた理由",h.arose],["検証",h.verif],["生死の理由",h.outcome],["次に生まれた",h.next]].forEach(function(r){
@@ -632,7 +650,7 @@ const DATA = {
     var promo=pm?'<div class="promote"><span class="parrow">次フェーズ条件</span><span class="ptext">'+pm+'</span></div>':'';
     var sim=(h.sim&&h.sim!=="—")?'<div class="simline">シミュレーション: '+h.sim+'</div>':'';
     return '<details class="hx" data-state="'+h.state+'"><summary><span class="stt '+s[0]+'"><span class="tick"></span>'+s[1]+'</span>'
-      +'<span class="hmain"><span class="hname">'+h.name+'</span><span class="hmet"><span class="k">'+h.fam+'</span> · '+h.metric+'</span></span>'
+      +'<span class="hmain"><span class="hname">'+h.name+'</span>'+newTag(h)+'<span class="hmet"><span class="k">'+h.fam+'</span> · '+h.metric+'</span></span>'
       +'<span class="chev">▸</span></summary><div class="body"><dl>'+dl+'</dl>'+promo+sim+'</div></details>';
   }
   var order={live:-1,paper:0,surviving:1,grave:2,seed:3};
