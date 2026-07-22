@@ -140,6 +140,9 @@
   .saveddelta{margin:9px 0 0;font-size:13px;line-height:1.7}
   .saveddelta .nz{color:var(--red);font-weight:700}
   .saveddelta .z{color:var(--faint)}
+  /* 自動更新中インジケータ（生きていることを可視化） */
+  .livedot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--red);margin-right:7px;vertical-align:1px;animation:livepulse 2s ease-in-out infinite}
+  @keyframes livepulse{0%,100%{opacity:1}50%{opacity:.2}}
 
   .filters{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 22px}
   .filters button{font-family:var(--g);font-size:13px;color:var(--sub);background:transparent;
@@ -685,17 +688,28 @@ const DATA = {
     if(st.generated_at_jst){var el=document.getElementById('lastUpd');if(el)el.textContent=st.generated_at_jst;}
   }
   renderData(EMBEDDED_STATS);
+  // 自動更新中インジケータ：ブラウザが2分ごとに再取得している「生きている」ことを可視化。
+  // 最終確認＝この画面が最後にデータを取りに行った時刻（閲覧者の時計）。状態データ＝サーバ側の最終確認(JST)。
+  function pad(n){return (n<10?'0':'')+n;}
+  function updateLiveStamp(){
+    var ps=document.getElementById('progStamp'); if(!ps)return;
+    var t=new Date(),hh=pad(t.getHours())+':'+pad(t.getMinutes())+':'+pad(t.getSeconds());
+    var srv=window.__srvStamp?('状態データ '+window.__srvStamp+' JST時点'):'状態データ 取得中';
+    ps.innerHTML='<span class="livedot"></span>自動更新中 ／ 最終確認 '+hh+' ／ '+srv+' ・ 変化は約15分以内に反映';
+  }
+  updateLiveStamp();
   // 日次生成 data.json があれば最新値へ差し替え（同一オリジンでホストした場合のみ有効。artifactのCSP下では失敗し埋め込み値のまま）
   function refreshData(){
     try{
       fetch('./data.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():null;})
-        .then(function(d){if(d){if(d.data_stats){var s=d.data_stats;s.generated_at_jst=d.generated_at_jst;renderData(s);}if(d.hyp_progress&&window.__mergeHypProgress)window.__mergeHypProgress(d.hyp_progress);if(d.aggregates){window.__AGG=d.aggregates;renderBand();updateSavedDelta();}if(d.progress_checked_at){var ps=document.getElementById('progStamp');if(ps)ps.textContent='状態 最終取得 '+d.progress_checked_at+' JST ／ 前向き解決の増減は約15分以内に反映（データレイク実数は日次）。';}}})
+        .then(function(d){if(d){if(d.data_stats){var s=d.data_stats;s.generated_at_jst=d.generated_at_jst;renderData(s);}if(d.hyp_progress&&window.__mergeHypProgress)window.__mergeHypProgress(d.hyp_progress);if(d.aggregates){window.__AGG=d.aggregates;renderBand();updateSavedDelta();}window.__srvStamp=d.progress_checked_at||window.__srvStamp;}updateLiveStamp();})
         .catch(function(){});
     }catch(e){}
   }
   refreshData();
-  // 開いたタブを自動更新（5分ごとに data.json を再取得）＝リロード不要で状態を追える。変化時だけ再描画。
-  setInterval(refreshData, 300000);
+  // 開いたタブを自動更新：データは2分ごとに再取得（変化時だけ再描画）、最終確認の時刻表示は30秒ごとに更新＝生きていることが一目で分かる。
+  setInterval(refreshData, 120000);
+  setInterval(updateLiveStamp, 30000);
 
   // filters + cards
   var STATES=[["live","本番稼働"],["all","すべて"],["paper","紙孵化"],["surviving","生存"],["grave","墓標"],["seed","種"]];
