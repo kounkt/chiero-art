@@ -156,13 +156,20 @@
   .stt.seed .tick{background:transparent;border:1px dashed var(--sub);width:6px;height:6px}
   .hmain{flex:1;min-width:0}
   .hname{font-size:16px;font-weight:600;letter-spacing:.01em;line-height:1.55}
-  /* 状況タグ（前日/当日に入った仮説）。赤は一点の掟によりインクの一色で静かに立てる */
+  /* 状況タグ（前日/当日に入った仮説）。ユーザー指示により赤で立てる（当日=赤ベタ/前日=赤枠） */
   .ntag{display:inline-block;margin-left:9px;font-family:var(--g);font-size:9px;font-weight:700;letter-spacing:.1em;
-    color:var(--paper);background:var(--ink);border-radius:3px;padding:1.5px 5px;vertical-align:2.5px;line-height:1.5;white-space:nowrap}
-  .ntag.day1{color:var(--ink);background:transparent;border:1px solid var(--line);padding:.5px 4px}
+    color:#fff;background:var(--red);border-radius:3px;padding:1.5px 5px;vertical-align:2.5px;line-height:1.5;white-space:nowrap}
+  .ntag.day1{color:var(--red);background:transparent;border:1px solid var(--red);padding:.5px 4px}
   details.hx[data-state="grave"] .hname{color:var(--sub);text-decoration:line-through;text-decoration-color:var(--faint);text-decoration-thickness:1px}
   .hmet{font-size:13px;color:var(--sub);margin-top:4px;line-height:1.6}
   .hmet .k{color:var(--faint)}
+  /* 紙孵化の現在n・前日比（小さく・変化なしも検知できるように） */
+  .prog{display:block;font-size:11.5px;color:var(--faint);margin-top:4px;line-height:1.55;letter-spacing:.01em}
+  .prog b{color:var(--ink);font-weight:600}
+  .prog .dz{color:var(--faint)}            /* 前日比ゼロ＝変化なし */
+  .prog .dup{color:var(--red);font-weight:700}   /* 前日から増えた */
+  .prog .ddn{color:var(--sub);font-weight:600}   /* 減った */
+  .prog .await{color:var(--faint)}
   .chev{flex-shrink:0;color:var(--faint);font-size:12px;padding-top:4px;transition:transform .2s}
   details.hx[open] .chev{transform:rotate(90deg)}
   .body{padding:2px 18px 20px 96px;border-top:1px solid var(--line)}
@@ -244,7 +251,7 @@
   </div>
 
   <h2>仮説の生態</h2>
-  <p class="note">通った流れと、詰まった跡。各行を開くと理由・検証・生死・次の仮説と、<span class="red">次フェーズへ進む条件</span>が読める。<br>昇格ルート（不変）: <b>種</b> → 探索一回判定 → Fable審査 → ホールドアウト → <b>紙孵化(n=14)</b> → 本人YES → <b>本番稼働</b>。</p>
+  <p class="note">通った流れと、詰まった跡。各行を開くと理由・検証・生死・次の仮説と、<span class="red">次フェーズへ進む条件</span>が読める。<br>昇格ルート（不変）: <b>種</b> → 探索一回判定 → Fable審査 → ホールドアウト → <b>紙孵化(n=30)</b> → 本人YES → <b>本番稼働</b>。</p>
   <div class="band tnum" id="band"></div>
   <p class="note defnote" id="defnote" style="padding-left:0;margin-top:12px"></p>
   <div class="filters" id="filters" role="group" aria-label="状態で絞り込み"></div>
@@ -309,6 +316,7 @@ const DATA = {
   hyps:[
     {id:"pb1",state:"live",name:"PB-1v2 本番稼働（現在は一時停止）",fam:"実弾・夜間持続",cells:0,
      metric:"本番モード稼働中 · 建玉0 · 本日はデータ被覆不足で発注ゼロ停止 · ENTRY_SYMBOLS空",
+     prog:{n:0,target:40,prev:0,label:"前向き実弾"},
      arose:"検定済みハーベスタシグナルを実弾で撃つ本番経路。旧ルールは廃し、検定済みシグナル限定・小資本集中モード(PB-1v2)として再設計。",
      verif:"発注経路は7月上旬に実弾約定実績。毎朝の健全性チェック(token/PUSH/wallet/manifest)をGREENで通過。使用シグナルはホールドアウトt=5.49/5.41のもの。",
      outcome:"本番モード(production・live_enabled)だが現在アーム無し。今週火曜のtoken競合401でPAPER_DAY(RED_SAFETY)判定→安全側で一時停止中。さらに本日(7/22)は、買い候補を選ぶための売買代金ランキングが仕様上50件しか返らず、必要な被覆(300件)に届かないと判定して14:50の発注を自動で見送った(UNEXECUTABLE_RANKING_DEPTH)。門が正しく閉じた例で、建玉0・未約定0・KILLなし。",
@@ -316,6 +324,7 @@ const DATA = {
      sim:"初弾はVa降順で予算内に買える最上位銘柄1つ。10年分布は投下資本あたり+87.6bp/日の現象を使用。"},
     {id:"harvester",state:"paper",name:"統合ハーベスタ（旗艦）",fam:"夜間持続",
      metric:"+87.6bp/日（投下資本） · t=17.7 · 11年全年プラス",
+     prog:{n:0,target:30,prev:0,label:"前向き解決"},
      arose:"身体知の移植（公開記録のある個人投資家）(D0v4-030)と教義「上は持続」から。大出来高で強く上げ高値で引ける株は翌朝まで持続する、という仮説。",
      verif:"3定義の和集合（vr≥5&ret≥5%&Va≥1e9 ∪ 引け位置cH≥0.9 ∪ gap≥7%維持）を14:50に判定し引け買い→翌寄り売り。ホールドアウト一発 t=5.49/5.41 両PASS。地合い除去後の超過も+90.8bp(t=17.7)。",
      outcome:"生存。月次勝率97%・最大DD-24%（投下資本基準）。10年全年プラス。実弾昇格は資金300万以上が条件。",
@@ -323,35 +332,41 @@ const DATA = {
      sim:"月次利率の頂点は約2,000万(+5.73%/月)。1億では参加率上限で+4.48%/月に低下。"},
     {id:"035",state:"paper",name:"D0v4-035 早乗り 15:30",fam:"夜間持続",
      metric:"precision 0.958 · 確認検定PASS",
+     prog:{n:0,target:30,prev:0,label:"前向き解決"},
      arose:"ハーベスタの14:50判定を、引け確定を待たずに乗る早乗り版。執行現実性の検証を兼ねる。",
      verif:"14:50フラグの引け確定一致precision=0.958を一発測定。035_036家族でPASS（036は非対称で墓標）。",
      outcome:"生存・ACTIVE_BLIND紙孵化中。precision維持が主指標。",next:"—",
      sim:"ハーベスタと同分布。単独昇格には別途Fable裁定。"},
     {id:"041g7",state:"paper",name:"D0v4-041-G7 張り付き高値引け",fam:"夜間持続",
      metric:"+128.9bp/夜 · t=9.02 · n=2,318",
+     prog:{n:0,target:30,prev:0,label:"前向き解決"},
      arose:"「上げの持続は引けの位置(cH)が支配」の教義精密化。張り付き(cH≥0.9)は飽和ではなく持続、という条件付き仮説。",
      verif:"79セルから分割スクリーニング→8セル確認検定8/8 PASS。カードhashは詳細契約へ更新（経済的内容不変・厳格化のみ）。",
      outcome:"生存・ACTIVE_BLIND。本日の裁定でカード時計が始動可能に。",
      next:"050で「引け位置条件はイベント族に移植不可」と判明→教義の境界を確定。",sim:"高精度セル。単独では稼働率が低い。"},
     {id:"041g2",state:"paper",name:"D0v4-041-G2 ギャップ維持",fam:"夜間持続",
      metric:"gap≥7%が14:50まで維持 · 確認検定通過",
+     prog:{n:0,target:30,prev:0,label:"前向き解決"},
      arose:"寄りで大きく飛んだ株が日中維持できれば夜も持続する、という窓埋め回避型の仮説。",
      verif:"041家族の確認検定を通過。ギャップ維持=引け≥寄りで定義。",
      outcome:"生存・ACTIVE_BLIND。",next:"—",sim:"ハーベスタ和集合の一角。"},
     {id:"039b",state:"surviving",name:"D0v4-039B 上方修正ドリフト",fam:"イベントドリフト",
      metric:"+132bp/20日 · イベント鉱脈の長兄",
+     prog:{n:0,target:30,prev:0,label:"前向き解決"},
      arose:"業績上方修正の後、機関の緩慢な織り込みでドリフトが続く（PEAD/最頑健イベント）の日本版。",
      verif:"スクリーニング→確認で生存。足型とは無関係＝イベント族は緩慢織り込み＋機械買いが機序。",
      outcome:"生存。20日保有型。033・052と同じイベント鉱脈。",
      next:"033(自社株買い)・052(決算集中)へ機序を横展開。",sim:"20日+132bp。"},
     {id:"033",state:"paper",name:"D0v4-033 自社株買いドリフト",fam:"イベントドリフト",
      metric:"+165.0bp/20日 · t=5.08 · n=2,252",
+     prog:{n:0,target:30,prev:0,label:"前向き解決"},
      arose:"自社株買い表明企業は自ら止まれない買い手＝需給が読める、という仮説。TDnetアドオン購読の事後正当化を兼ねる。",
      verif:"TDnet 5年×分類器。週+60bp(t=2.99)/月+165bp(t=5.08)。歴史消費済みのため前向き紙ルートへ。D=722・σ_day=872.7bp確定(リターン非参照)。",
      outcome:"生存・B監査待ち→紙時計開始。039Bと同輩。",
      next:"050で「引け位置条件の付与は逆効果(+96 vs 無条件+147)」と判明。",sim:"20日+165bp。"},
     {id:"052",state:"paper",name:"D0v4-052 決算集中日ドリフト",fam:"イベントドリフト",
      metric:"+170.8bp/20日 · t=2.96 · 本日生存",
+     prog:{n:0,target:30,prev:0,label:"前向き解決"},
      arose:"決算が集中する日は1件あたりの注意が薄まり織り込みが遅れドリフトが太る（limited attention）。",
      verif:"高集中日(P75超=79件/日)の正サプライズ vs 低密度日の反条件。反条件は日次t=-0.89で符号分離＝『集中は条件である』が成立。",
      outcome:"生存（本日）。前向き専用。高集中日は年約60日で稼働率は低い。",
@@ -532,14 +547,14 @@ const DATA = {
   // 次フェーズへ進む条件（種→紙孵化→本番稼働）
   var PROMOTE={
     pb1:"<b>明朝の二重GREEN門</b>（インフラ全GREEN＋ルール同一性pytest PASS）成立で自動アーム → 14:50判定から発注有効。本人YESは事前表明済み・RED日は撃たない。<b>+50万入金で建玉200万（レバ2x）</b>へ拡張可、300万到達でポートフォリオ本則へ失効。",
-    harvester:"紙で n=14イベント かつ 累計117ポジション を解決 → L1〜L4境界クリア → <b>資金300万到達</b> → <b>本人YES</b>で実弾稼働。",
-    "035":"紙 n=14 かつ 14:50判定precision≥0.90を維持 → 昇格カード提出 → 本人YESの檻へ。",
-    "041fam":"041二カードの時計始動（本日裁定済）→ n=14解決 → 境界クリア → 本人YES。",
-    "041g7":"n=14解決 → 経済非棄却(L2)・整合(L1) → 本人YES。",
-    "041g2":"n=14解決 → 境界クリア → 本人YES。",
-    "033":"<b>B監査PASS</b>（σ_day確定済）→ 紙時計開始 → n=14 → L1〜L4 → 本人YES。",
-    "052":"<b>B監査PASS</b>（実装＝036同一の確認＋境界式検算）→ 紙時計開始 → n=14 → 本人YES。前向き専用。",
-    "039b":"前向き紙カード化 → n=14 → 本人YES。033と資本競合を紙期間に実測。",
+    harvester:"紙で <b>n=30解決</b>（独立10営業日以上）→ L1〜L4境界クリア → <b>資金300万到達</b> → <b>本人YES</b>で実弾稼働。現在は前向き解決0/30（解決待ち）。",
+    "035":"紙 n=30 かつ 14:50判定precision≥0.90を維持 → 昇格カード提出 → 本人YESの檻へ。",
+    "041fam":"041二カードの時計始動（本日裁定済）→ n=30解決 → 境界クリア → 本人YES。",
+    "041g7":"n=30解決 → 経済非棄却(L2)・整合(L1) → 本人YES。",
+    "041g2":"n=30解決 → 境界クリア → 本人YES。",
+    "033":"<b>B監査PASS</b>（σ_day確定済）→ 紙時計開始 → n=30 → L1〜L4 → 本人YES。",
+    "052":"<b>B監査PASS</b>（実装＝036同一の確認＋境界式検算）→ 紙時計開始 → n=30 → 本人YES。前向き専用。",
+    "039b":"前向き紙カード化 → n=30 → 本人YES。033と資本競合を紙期間に実測。",
     "013":"資格検定を通していない対照のため昇格経路になし。デトレンド義務の教材として残置。",
     "015":"観察陽性のみで資格化せず。定義はvr条件として041家族に吸収済み。",
     "012":"B監査PASS → 前向き紙へ。",
@@ -642,7 +657,7 @@ const DATA = {
   // 日次生成 data.json があれば最新値へ差し替え（同一オリジンでホストした場合のみ有効。artifactのCSP下では失敗し埋め込み値のまま）
   try{
     fetch('./data.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():null;})
-      .then(function(d){if(d&&d.data_stats){var s=d.data_stats;s.generated_at_jst=d.generated_at_jst;renderData(s);}})
+      .then(function(d){if(d){if(d.data_stats){var s=d.data_stats;s.generated_at_jst=d.generated_at_jst;renderData(s);}if(d.hyp_progress&&window.__mergeHypProgress)window.__mergeHypProgress(d.hyp_progress);}})
       .catch(function(){});
   }catch(e){}
 
@@ -665,6 +680,19 @@ const DATA = {
     if(g===1)return '<span class="ntag day1" title="前日エントリー">NEW</span>';
     return '';
   }
+  function addedNum(h){return h.added?parseInt(h.added.replace(/-/g,''),10):0;}
+  // 現在n / 前日比（変化なし＝±0も明示して検知できるように）
+  function progLine(h){
+    var p=h.prog; if(!p) return '';
+    var lab=p.label||'前向き解決';
+    var delta=(p.prev==null)?null:(p.n-p.prev);
+    var dtxt;
+    if(delta==null) dtxt='<span class="await">前日比 —（基準日）</span>';
+    else if(delta>0) dtxt='<span class="dup">前日比 +'+delta+'</span>';
+    else if(delta<0) dtxt='<span class="ddn">前日比 '+delta+'</span>';
+    else dtxt='<span class="dz">前日比 ±0（変化なし）</span>';
+    return '<span class="prog">'+lab+' <b>'+p.n+'/'+p.target+'</b> · '+dtxt+'</span>';
+  }
   function card(h){
     var s=STT[h.state],dl='';
     [["立てた理由",h.arose],["検証",h.verif],["生死の理由",h.outcome],["次に生まれた",h.next]].forEach(function(r){
@@ -673,17 +701,32 @@ const DATA = {
     var promo=pm?'<div class="promote"><span class="parrow">次フェーズ条件</span><span class="ptext">'+pm+'</span></div>':'';
     var sim=(h.sim&&h.sim!=="—")?'<div class="simline">シミュレーション: '+h.sim+'</div>':'';
     return '<details class="hx" data-state="'+h.state+'"><summary><span class="stt '+s[0]+'"><span class="tick"></span>'+s[1]+'</span>'
-      +'<span class="hmain"><span class="hname">'+h.name+'</span>'+newTag(h)+'<span class="hmet"><span class="k">'+h.fam+'</span> · '+h.metric+'</span></span>'
+      +'<span class="hmain"><span class="hname">'+h.name+'</span>'+newTag(h)+'<span class="hmet"><span class="k">'+h.fam+'</span> · '+h.metric+'</span>'+progLine(h)+'</span>'
       +'<span class="chev">▸</span></summary><div class="body"><dl>'+dl+'</dl>'+promo+sim+'</div></details>';
   }
   var order={live:-1,paper:0,surviving:1,grave:2,seed:3};
-  document.getElementById('cards').innerHTML=DATA.hyps.slice().sort(function(a,b){return order[a.state]-order[b.state]}).map(card).join('');
+  var currentF='live';
+  // 状態順→同状態内はadded降順（NEW＝新しいものほど上に積む）
+  function renderCards(){
+    document.getElementById('cards').innerHTML=DATA.hyps.slice()
+      .sort(function(a,b){var d=order[a.state]-order[b.state];return d?d:(addedNum(b)-addedNum(a));})
+      .map(card).join('');
+    applyFilter(currentF);
+  }
   function applyFilter(f){
+    currentF=f;
     [].forEach.call(fWrap.children,function(b){b.setAttribute('aria-pressed',b.getAttribute('data-f')===f);});
     [].forEach.call(document.querySelectorAll('.hx'),function(el){el.classList.toggle('hidden',!(f==='all'||el.getAttribute('data-state')===f));});
   }
   fWrap.addEventListener('click',function(e){var btn=e.target.closest('button');if(!btn)return;applyFilter(btn.getAttribute('data-f'));});
-  applyFilter('live'); // 初期表示は本番稼働のみ（全件だと下が長すぎるため）
+  renderCards(); // 初期描画（applyFilter('live')を内包）。data.json到着後にhyp_progressを合流して再描画する
+
+  // data.json の hyp_progress（現在n・前日値）が来たら各仮説の prog を上書きして再描画（前日比を自動更新）
+  window.__mergeHypProgress=function(hp){
+    if(!hp) return;
+    DATA.hyps.forEach(function(h){ if(hp[h.id]){ h.prog=Object.assign({}, h.prog||{}, hp[h.id]); } });
+    renderCards();
+  };
 
   // simulator
   var tiers=DATA.tiers;

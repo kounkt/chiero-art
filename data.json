@@ -36,7 +36,7 @@
       {
         "nm": "EDINET本文",
         "desc": "有価証券報告書等（全文・件数）",
-        "rows": 35854
+        "rows": 36150
       },
       {
         "nm": "TDnet開示PDF",
@@ -51,7 +51,57 @@
     ],
     "rows_total": 242168624,
     "cells_total": 2511919965,
-    "docs_total": 172813,
+    "docs_total": 173109,
     "gb": 50.2
+  },
+  "hyp_progress": {
+    "pb1": {
+      "n": 0,
+      "target": 40,
+      "label": "前向き実弾",
+      "prev": null
+    },
+    "harvester": {
+      "n": 0,
+      "target": 30,
+      "label": "前向き解決",
+      "prev": null
+    },
+    "035": {
+      "n": 0,
+      "target": 30,
+      "label": "前向き解決",
+      "prev": null
+    },
+    "041g7": {
+      "n": 0,
+      "target": 30,
+      "label": "前向き解決",
+      "prev": null
+    },
+    "041g2": {
+      "n": 0,
+      "target": 30,
+      "label": "前向き解決",
+      "prev": null
+    },
+    "039b": {
+      "n": 0,
+      "target": 30,
+      "label": "前向き解決",
+      "prev": null
+    },
+    "033": {
+      "n": 0,
+      "target": 30,
+      "label": "前向き解決",
+      "prev": null
+    },
+    "052": {
+      "n": 0,
+      "target": 30,
+      "label": "前向き解決",
+      "prev": null
+    }
   }
 }
