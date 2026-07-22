@@ -131,7 +131,15 @@
   .band b{display:block;font-family:var(--g);font-size:30px;font-weight:700;line-height:1.1;letter-spacing:-.01em}
   .band i{display:block;font-style:normal;font-size:11.5px;color:var(--faint);margin-top:5px;letter-spacing:.02em}
   .band .cell.accent b{color:var(--red)}
+  /* バンドの前日比（毎日の変化を検知） */
+  .band .bd{display:block;font-family:var(--g);font-size:11.5px;font-weight:700;margin-top:5px;letter-spacing:.02em}
+  .band .bd.z{color:var(--faint);font-weight:400}
+  .band .bd.nz{color:var(--red)}
   @media(max-width:640px){.band .cell{flex:1 1 40%;border-bottom:1px solid var(--line)}}
+  /* 圧縮の当日分 */
+  .saveddelta{margin:9px 0 0;font-size:13px;line-height:1.7}
+  .saveddelta .nz{color:var(--red);font-weight:700}
+  .saveddelta .z{color:var(--faint)}
 
   .filters{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 22px}
   .filters button{font-family:var(--g);font-size:13px;color:var(--sub);background:transparent;
@@ -274,6 +282,7 @@
   <div class="saved">
     <p class="savedlabel">浮いた金額（人手で全検証を実施した場合の推定合計）</p>
     <div class="savednum tnum">¥<span id="savedYen">0</span></div>
+    <p class="saveddelta" id="savedDelta"></p>
 
     <table class="calc tnum" id="calcMoney"></table>
     <div class="savedtime tnum">
@@ -580,10 +589,17 @@ const DATA = {
   var counts={paper:0,surviving:0,grave:0,seed:0,live:0};
   DATA.hyps.forEach(function(h){counts[h.state]=(counts[h.state]||0)+1});
   var totalCards=DATA.hyps.length;
-  document.getElementById('band').innerHTML=[
-    {n:(counts.live||0)+'',l:"本番稼働",a:1},{n:counts.paper+'',l:"紙孵化中",a:1},
-    {n:counts.surviving+'',l:"生存・係属"},{n:counts.grave+'',l:"墓標（系）"},{n:counts.seed+'',l:"種（再生待ち）"}
-  ].map(function(b){return '<div class="cell'+(b.a?' accent':'')+'"><b>'+b.n+'</b><i>'+b.l+'</i></div>';}).join('');
+  // バンド描画（前日比つき）。prev は data.json の aggregates.prev.counts から来る（初日はなし＝基準）。
+  function renderBand(){
+    var prev=(window.__AGG&&window.__AGG.prev)?window.__AGG.prev.counts:null;
+    var cells=[{k:'live',l:'本番稼働',a:1},{k:'paper',l:'紙孵化中',a:1},{k:'surviving',l:'生存・係属'},{k:'grave',l:'墓標（系）'},{k:'seed',l:'種（再生待ち）'}];
+    document.getElementById('band').innerHTML=cells.map(function(c){
+      var n=counts[c.k]||0,dtxt='';
+      if(prev){var d=n-(prev[c.k]||0);dtxt=(d===0)?'<u class="bd z">前日比 ±0</u>':'<u class="bd nz">前日比 '+(d>0?'+':'')+d+'</u>';}
+      return '<div class="cell'+(c.a?' accent':'')+'"><b>'+n+'</b>'+dtxt+'<i>'+c.l+'</i></div>';
+    }).join('');
+  }
+  renderBand();
   var dn=document.getElementById('defnote');
   if(dn) dn.innerHTML='全 <b>'+totalCards+'</b> 系・計 <b>'+totalDefs+'</b> 定義（セル）を凍結検定。墓標は <b>'+counts.grave+'</b> 系・<b>'+deadDefs+'</b> 定義（酒田10法・022の10セルなど1系に複数定義を含む）。';
 
@@ -615,6 +631,20 @@ const DATA = {
   document.getElementById('calcTestDays').textContent=testDays;
   document.getElementById('calcTotalDefs').textContent=totalDefs;
   document.getElementById('savedSub').innerHTML='※ 日当¥50,000・授業料¥30万/定義はいずれも推定の係数。総検証 <b>'+totalDefs+'</b> 定義のうち生き残ったのは <b>'+((counts.live||0)+counts.paper+counts.surviving)+'</b> 系のみで、残りは紙とデータの上でゼロ円で死んだ。';
+  // その日に圧縮された分（前日比）。合計(savedTotal)には既に反映済み。
+  function updateSavedDelta(){
+    var el=document.getElementById('savedDelta'); if(!el)return;
+    var prev=(window.__AGG&&window.__AGG.prev)?window.__AGG.prev:null;
+    if(!prev){el.innerHTML='<span class="z">前日比 基準日（明日から本日圧縮分を表示）</span>';return;}
+    var dMoney=savedTotal-(prev.saved_total||0),dDead=deadDefs-(prev.dead_defs||0),dDefs=totalDefs-(prev.total_defs||0);
+    if(dMoney===0){el.innerHTML='<span class="z">本日の新規圧縮 ±0（前日比）</span>';return;}
+    var parts=[];
+    if(dDead) parts.push('新規墓標 '+(dDead>0?'+':'')+dDead+'定義');
+    if(dDefs) parts.push('検定 '+(dDefs>0?'+':'')+dDefs+'定義');
+    el.innerHTML='<span class="nz">本日の圧縮 '+(dMoney>0?'+':'')+'¥'+Math.abs(dMoney).toLocaleString().replace('-','')+'</span>'
+      +(dMoney<0?'（減）':'')+(parts.length?'（'+parts.join(' ・ ')+'）':'')+' ／ 上の合計に反映済み';
+  }
+  updateSavedDelta();
   var syEl=document.getElementById('savedYen');
   syEl.textContent=savedTotal.toLocaleString(); // 最終値を確実に表示（rAF抑制時の保険）
   (function(){var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;if(reduce)return;
@@ -659,7 +689,7 @@ const DATA = {
   function refreshData(){
     try{
       fetch('./data.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():null;})
-        .then(function(d){if(d){if(d.data_stats){var s=d.data_stats;s.generated_at_jst=d.generated_at_jst;renderData(s);}if(d.hyp_progress&&window.__mergeHypProgress)window.__mergeHypProgress(d.hyp_progress);if(d.progress_checked_at){var ps=document.getElementById('progStamp');if(ps)ps.textContent='状態 最終取得 '+d.progress_checked_at+' JST ／ 前向き解決の増減は約15分以内に反映（データレイク実数は日次）。';}}})
+        .then(function(d){if(d){if(d.data_stats){var s=d.data_stats;s.generated_at_jst=d.generated_at_jst;renderData(s);}if(d.hyp_progress&&window.__mergeHypProgress)window.__mergeHypProgress(d.hyp_progress);if(d.aggregates){window.__AGG=d.aggregates;renderBand();updateSavedDelta();}if(d.progress_checked_at){var ps=document.getElementById('progStamp');if(ps)ps.textContent='状態 最終取得 '+d.progress_checked_at+' JST ／ 前向き解決の増減は約15分以内に反映（データレイク実数は日次）。';}}})
         .catch(function(){});
     }catch(e){}
   }

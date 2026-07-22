@@ -104,5 +104,23 @@
       "prev": null
     }
   },
-  "progress_checked_at": "2026-07-22 18:54"
+  "aggregates": {
+    "current": {
+      "counts": {
+        "live": 1,
+        "paper": 7,
+        "surviving": 5,
+        "grave": 27,
+        "seed": 9
+      },
+      "total_defs": 104,
+      "dead_defs": 77,
+      "cards": 49,
+      "analyst_days": 408,
+      "saved_total": 43580000
+    },
+    "prev": null,
+    "prev_date": null
+  },
+  "progress_checked_at": "2026-07-22 19:21"
 }
