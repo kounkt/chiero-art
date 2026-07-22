@@ -135,12 +135,6 @@
   .band .bd{display:block;font-family:var(--g);font-size:11.5px;font-weight:700;margin-top:5px;letter-spacing:.02em}
   .band .bd.z{color:var(--faint);font-weight:400}
   .band .bd.nz{color:var(--red)}
-  /* クリックで該当カテゴリを開く */
-  .band .cell[data-f]{cursor:pointer;transition:background .12s}
-  .band .cell[data-f]:hover{background:var(--alt)}
-  .band .cell[data-f]:focus-visible{outline:2px solid var(--red);outline-offset:-2px}
-  .band .cell .go{display:block;font-size:10.5px;color:var(--faint);margin-top:3px;letter-spacing:.02em}
-  .band .cell[data-f]:hover .go{color:var(--red)}
   @media(max-width:640px){.band .cell{flex:1 1 40%;border-bottom:1px solid var(--line)}}
   /* 圧縮の当日分 */
   .saveddelta{margin:9px 0 0;font-size:13px;line-height:1.7}
@@ -603,20 +597,12 @@ const DATA = {
     var prev=(window.__AGG&&window.__AGG.prev)?window.__AGG.prev.counts:null;
     var cells=[{k:'live',l:'本番稼働',a:1},{k:'paper',l:'紙孵化中',a:1},{k:'surviving',l:'生存・係属'},{k:'grave',l:'墓標（系）'},{k:'seed',l:'種（再生待ち）'}];
     document.getElementById('band').innerHTML=cells.map(function(c){
-      var n=counts[c.k]||0,dtxt;
-      if(!prev){dtxt='<u class="bd z">前日比 基準日</u>';}
-      else{var d=n-(prev[c.k]||0);dtxt=(d===0)?'<u class="bd z">前日比 ±0</u>':'<u class="bd nz">前日比 '+(d>0?'+':'')+d+'</u>';}
-      return '<div class="cell'+(c.a?' accent':'')+'" data-f="'+c.k+'" role="button" tabindex="0" aria-label="'+c.l+'を開く"><b>'+n+'</b>'+dtxt+'<i>'+c.l+'</i><u class="go">▸ 開く</u></div>';
+      var n=counts[c.k]||0,dtxt='';
+      if(prev){var d=n-(prev[c.k]||0);dtxt=(d===0)?'<u class="bd z">前日比 ±0</u>':'<u class="bd nz">前日比 '+(d>0?'+':'')+d+'</u>';}
+      return '<div class="cell'+(c.a?' accent':'')+'"><b>'+n+'</b>'+dtxt+'<i>'+c.l+'</i></div>';
     }).join('');
   }
   renderBand();
-  // バンドの枠クリック＝そのカテゴリに絞り込み→カードへスクロール（キーボードEnter/Spaceも可）
-  (function(){
-    var bandEl=document.getElementById('band');
-    function openCat(el){var f=el&&el.getAttribute('data-f');if(!f)return;applyFilter(f);var c=document.getElementById('cards');if(c)c.scrollIntoView({behavior:'smooth',block:'start'});}
-    bandEl.addEventListener('click',function(e){openCat(e.target.closest('[data-f]'));});
-    bandEl.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){var cell=e.target.closest('[data-f]');if(cell){e.preventDefault();openCat(cell);}}});
-  })();
   var dn=document.getElementById('defnote');
   if(dn) dn.innerHTML='全 <b>'+totalCards+'</b> 系・計 <b>'+totalDefs+'</b> 定義（セル）を凍結検定。墓標は <b>'+counts.grave+'</b> 系・<b>'+deadDefs+'</b> 定義（酒田10法・022の10セルなど1系に複数定義を含む）。';
 
