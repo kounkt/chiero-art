@@ -254,6 +254,7 @@
   <p class="note">通った流れと、詰まった跡。各行を開くと理由・検証・生死・次の仮説と、<span class="red">次フェーズへ進む条件</span>が読める。<br>昇格ルート（不変）: <b>種</b> → 探索一回判定 → Fable審査 → ホールドアウト → <b>紙孵化(n=30)</b> → 本人YES → <b>本番稼働</b>。</p>
   <div class="band tnum" id="band"></div>
   <p class="note defnote" id="defnote" style="padding-left:0;margin-top:12px"></p>
+  <p id="progStamp" style="padding-left:0;margin:2px 0 0;font-size:11.5px;color:var(--faint);line-height:1.6"></p>
   <div class="filters" id="filters" role="group" aria-label="状態で絞り込み"></div>
   <div class="cards" id="cards"></div>
 
@@ -655,11 +656,16 @@ const DATA = {
   }
   renderData(EMBEDDED_STATS);
   // 日次生成 data.json があれば最新値へ差し替え（同一オリジンでホストした場合のみ有効。artifactのCSP下では失敗し埋め込み値のまま）
-  try{
-    fetch('./data.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():null;})
-      .then(function(d){if(d){if(d.data_stats){var s=d.data_stats;s.generated_at_jst=d.generated_at_jst;renderData(s);}if(d.hyp_progress&&window.__mergeHypProgress)window.__mergeHypProgress(d.hyp_progress);}})
-      .catch(function(){});
-  }catch(e){}
+  function refreshData(){
+    try{
+      fetch('./data.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():null;})
+        .then(function(d){if(d){if(d.data_stats){var s=d.data_stats;s.generated_at_jst=d.generated_at_jst;renderData(s);}if(d.hyp_progress&&window.__mergeHypProgress)window.__mergeHypProgress(d.hyp_progress);if(d.progress_checked_at){var ps=document.getElementById('progStamp');if(ps)ps.textContent='状態 最終取得 '+d.progress_checked_at+' JST ／ 前向き解決の増減は約15分以内に反映（データレイク実数は日次）。';}}})
+        .catch(function(){});
+    }catch(e){}
+  }
+  refreshData();
+  // 開いたタブを自動更新（5分ごとに data.json を再取得）＝リロード不要で状態を追える。変化時だけ再描画。
+  setInterval(refreshData, 300000);
 
   // filters + cards
   var STATES=[["live","本番稼働"],["all","すべて"],["paper","紙孵化"],["surviving","生存"],["grave","墓標"],["seed","種"]];
@@ -722,8 +728,12 @@ const DATA = {
   renderCards(); // 初期描画（applyFilter('live')を内包）。data.json到着後にhyp_progressを合流して再描画する
 
   // data.json の hyp_progress（現在n・前日値）が来たら各仮説の prog を上書きして再描画（前日比を自動更新）
+  var __lastProg=null;
   window.__mergeHypProgress=function(hp){
     if(!hp) return;
+    var key=JSON.stringify(hp);
+    if(key===__lastProg) return;   // 値が同じなら再描画しない（カードの開閉・フィルタ選択を保持）
+    __lastProg=key;
     DATA.hyps.forEach(function(h){ if(hp[h.id]){ h.prog=Object.assign({}, h.prog||{}, hp[h.id]); } });
     renderCards();
   };
