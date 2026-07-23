@@ -1,0 +1,125 @@
+{
+  "schema": "operations_public_v2",
+  "updated_at_jst": "2026-07-23T17:32:47+09:00",
+  "os1": {
+    "family_id": "OS-1",
+    "status": "TERMINAL_FAILED_4_OF_4",
+    "monuments": [
+      {
+        "cell_id": "G3_E0915",
+        "status": "FAILED"
+      },
+      {
+        "cell_id": "G3_E0930",
+        "status": "FAILED"
+      },
+      {
+        "cell_id": "G5_E0915",
+        "status": "FAILED"
+      },
+      {
+        "cell_id": "G5_E0930",
+        "status": "FAILED"
+      }
+    ]
+  },
+  "universe": {
+    "id": "LIVE-1450-UNIVERSE-V3.1",
+    "accepted_rows": [
+      50,
+      55
+    ],
+    "normalized_rows": 50,
+    "normalization": "response_order",
+    "row_count_retry": false
+  },
+  "evaluation_clocks": [
+    {
+      "card_id": "PB-1v2",
+      "label": "PB-1v2 実弾評価",
+      "kind": "LIVE_EVALUATION",
+      "n": 0,
+      "target": 20,
+      "state": "AWAITING_FIRST_RECEIPT"
+    },
+    {
+      "card_id": "NIGHT-HARVESTER",
+      "label": "夜間持続ハーベスタ",
+      "kind": "PAPER",
+      "n": 7,
+      "target": 14,
+      "state": "ACTIVE_BLIND"
+    },
+    {
+      "card_id": "D0v4-035",
+      "label": "14時50分の早乗り",
+      "kind": "PAPER",
+      "n": 3,
+      "target": 14,
+      "state": "ACTIVE_BLIND"
+    },
+    {
+      "card_id": "D0v4-041-G7",
+      "label": "高値圏の夜間持続",
+      "kind": "PAPER",
+      "n": 1,
+      "target": 14,
+      "state": "ACTIVE_BLIND"
+    },
+    {
+      "card_id": "D0v4-041-G2",
+      "label": "大幅窓の夜間持続",
+      "kind": "PAPER",
+      "n": 6,
+      "target": 14,
+      "state": "ACTIVE_BLIND"
+    },
+    {
+      "card_id": "D0v4-033",
+      "label": "自社株取得後の持続",
+      "kind": "PAPER",
+      "n": 0,
+      "target": 14,
+      "state": "ACTIVE_BLIND"
+    },
+    {
+      "card_id": "D0v4-052",
+      "label": "決算集中日の持続",
+      "kind": "PAPER",
+      "n": 0,
+      "target": 14,
+      "state": "ACTIVE_BLIND"
+    },
+    {
+      "card_id": "D0v4-039B",
+      "label": "上方修正後の持続",
+      "kind": "PAPER",
+      "n": 0,
+      "target": 14,
+      "state": "ACTIVE_BLIND"
+    }
+  ],
+  "survival": {
+    "cells": 14,
+    "effective_independent_mechanisms": 2
+  },
+  "red_history": [
+    {
+      "trade_date": "2026-07-22",
+      "red_class": "INFRA_RED",
+      "reason_codes": [
+        "SCAN_INPUT_INCOMPLETE_AT_0832",
+        "LIVE_UNIVERSE_PROBE_REJECTED"
+      ]
+    },
+    {
+      "trade_date": "2026-07-23",
+      "red_class": "INFRA_RED",
+      "reason_codes": [
+        "PB1_TDNET_COVERAGE_INCOMPLETE",
+        "CONTINUOUS_GREEN_GATE_NOT_MET"
+      ]
+    }
+  ],
+  "orders_sent": false
+}

@@ -1,0 +1,220 @@
+/* LIVING-ARTWORK motion vocabulary v2 — A1 through A6 are reusable components. */
+
+/* A1 — drop, squash/stretch, double ripple */
+.motion-drop { position: absolute; width: 28px; height: 86px; pointer-events: none; }
+.motion-drop-scene { z-index: 9; left: calc(50% - 14px); top: 82%; height: 7%; }
+.motion-drop-body {
+  position: absolute;
+  left: 11px;
+  top: 0;
+  width: 6px;
+  height: 9px;
+  border-radius: 65% 45% 70% 55%;
+  background: var(--red);
+  opacity: 0;
+  transform-origin: 50% 100%;
+}
+.motion-ripple {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 22px;
+  height: 8px;
+  margin-left: -11px;
+  border: 1px solid var(--red);
+  border-radius: 50%;
+  opacity: 0;
+}
+.ripple-two { animation-delay: .12s !important; }
+.motion-drop.is-playing .motion-drop-body { animation: motion-drop-fall .9s ease-in forwards; }
+.motion-drop.is-playing .motion-ripple { animation: motion-ripple .72s .82s ease-out forwards; }
+.drop-toy .motion-drop { left: 50%; top: 10px; transform: translateX(-50%); }
+.drop-cup {
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  width: 58px;
+  height: 22px;
+  border: 1px solid var(--ink);
+  border-top: 0;
+  border-radius: 0 0 50% 50%;
+  transform: translateX(-50%);
+}
+
+/* A2 — staggered digits and data-driven bars */
+.stagger-value.is-playing [data-pulse] { animation: motion-pop .24s ease-out both; }
+.stagger-value.is-playing [data-pulse]:nth-of-type(2) { animation-delay: 60ms; }
+.motion-bars { display: flex; align-items: end; justify-content: center; gap: 9px; padding: 18px 16% 20px; }
+.motion-bars i {
+  width: min(18px, 13%);
+  height: var(--bar-height, 24%);
+  min-height: 10px;
+  border: 1px solid rgba(52,47,41,.4);
+  border-bottom: 3px solid var(--red);
+  background: linear-gradient(to top, rgba(230,0,18,.13), transparent);
+  transform-origin: 50% 100%;
+  animation: motion-bar-breathe 3.8s ease-in-out infinite;
+  animation-delay: var(--bar-delay, 0ms);
+}
+.motion-bars i:nth-child(2) { --bar-delay: -760ms; }
+.motion-bars i:nth-child(3) { --bar-delay: -1520ms; }
+.motion-bars i:nth-child(4) { --bar-delay: -2280ms; }
+.motion-bars i:nth-child(5) { --bar-delay: -3040ms; }
+.motion-bars.is-playing i { animation: motion-bar-play .34s ease-out both; animation-delay: var(--tap-delay, 0ms); }
+.motion-bars.is-playing i:nth-child(2) { --tap-delay: 60ms; }
+.motion-bars.is-playing i:nth-child(3) { --tap-delay: 120ms; }
+.motion-bars.is-playing i:nth-child(4) { --tap-delay: 180ms; }
+.motion-bars.is-playing i:nth-child(5) { --tap-delay: 240ms; }
+
+/* A3 — current-time satellite and task orbits */
+.time-orbit { position: absolute; z-index: 6; inset: 0; pointer-events: none; }
+.current-satellite, .task-satellite { position: absolute; left: 50%; top: 50%; border-radius: 50%; transform: translate(-50%, -50%); }
+.current-satellite {
+  width: 9px;
+  height: 9px;
+  background: var(--red);
+  box-shadow: 0 0 0 5px rgba(230,0,18,.1);
+}
+.task-satellite { width: 5px; height: 5px; border: 1px solid var(--ink); background: var(--paper); }
+.task-satellite.is-past { background: var(--ink); }
+.task-satellite.is-now { background: var(--warm); border-color: var(--warm); animation: motion-task-light 1.4s ease-in-out infinite; }
+.orbit-toy { display: grid; place-items: center; }
+.orbit-ring {
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 88px; height: 88px;
+  margin: -44px 0 0 -44px;
+  border: 1px solid rgba(52,47,41,.28);
+  border-radius: 50%;
+  animation: motion-orbit 12s linear infinite;
+}
+.orbit-ring.ring-two { width: 118px; height: 70px; margin: -35px 0 0 -59px; animation-duration: 18s; animation-direction: reverse; }
+.orbit-ring b { position: absolute; left: 50%; top: -4px; width: 8px; height: 8px; margin-left: -4px; border-radius: 50%; background: var(--red); }
+.orbit-ring.ring-two b { background: var(--ink); }
+.orbit-core { width: 14px; height: 14px; border: 1px solid var(--ink); border-radius: 50%; background: var(--paper); }
+.orbit-toy.is-playing .orbit-ring { animation-duration: 1.2s; }
+
+/* A4 — force passes through a fixed gate */
+.motion-cradle { display: flex; justify-content: center; align-items: start; gap: 1px; padding-top: 20px; }
+.motion-cradle::before { content: ""; position: absolute; left: 24%; right: 24%; top: 18px; height: 1px; background: var(--ink); }
+.motion-cradle > i { position: relative; width: 24px; height: 76px; transform-origin: 50% 0; }
+.motion-cradle > i::before { content: ""; position: absolute; left: 50%; top: 0; width: 1px; height: 52px; background: rgba(52,47,41,.55); }
+.motion-cradle > i > b { position: absolute; left: 2px; top: 50px; width: 22px; height: 22px; border: 1px solid var(--ink); border-radius: 50%; background: var(--paper); }
+.motion-cradle > i:nth-child(3) > b { background: var(--ink); }
+.motion-cradle.is-playing > i:first-child { animation: motion-cradle-left .72s ease-in-out 1; }
+.motion-cradle.is-playing > i:last-child { animation: motion-cradle-right .72s .33s ease-in-out 1; }
+
+/* A5 — actual PB-1 n/max waterline, transform-only slosh */
+.vessel-toy { display: grid; place-items: center; }
+.vessel-glass {
+  position: relative;
+  width: 86px;
+  height: 94px;
+  border: 1px solid var(--ink);
+  border-top-color: rgba(52,47,41,.28);
+  border-radius: 8px 8px 28px 28px;
+  overflow: hidden;
+}
+.vessel-liquid {
+  position: absolute;
+  left: -5%;
+  right: -5%;
+  bottom: -1px;
+  height: var(--liquid-level, 0%);
+  min-height: 4px;
+  display: block;
+  background: rgba(230,0,18,.17);
+  border-top: 1px solid var(--red);
+  transform-origin: 50% 100%;
+  animation: motion-liquid-breathe 5.4s ease-in-out infinite;
+}
+.vessel-liquid u {
+  position: absolute;
+  left: -20%;
+  top: -4px;
+  width: 140%;
+  height: 8px;
+  border: 1px solid rgba(230,0,18,.42);
+  border-radius: 50%;
+  text-decoration: none;
+}
+.vessel-level { position: absolute; right: calc(50% - 74px); top: 50%; color: var(--red); font: 10px/1 ui-monospace, monospace; }
+.vessel-toy.is-playing .vessel-liquid { animation: motion-liquid-play .8s ease-in-out 1; }
+
+/* A6 — nested inverse loops */
+.loop-toy { position: relative; display: grid; place-items: center; }
+.loop-toy > i {
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 94px; height: 94px;
+  margin: -47px 0 0 -47px;
+  border: 1px solid rgba(52,47,41,.42);
+  border-radius: 24%;
+  animation: motion-loop var(--loop-one, 60s) linear infinite;
+}
+.loop-toy > i:nth-child(2) { width: 70px; height: 70px; margin: -35px 0 0 -35px; border-radius: 28%; animation-duration: var(--loop-two, 90s); animation-direction: reverse; }
+.loop-toy > i:nth-child(3) { width: 46px; height: 46px; margin: -23px 0 0 -23px; border-radius: 32%; animation-duration: var(--loop-three, 120s); }
+.loop-toy.is-playing > i { animation-duration: 1.2s; }
+
+/* Ambient bridge — the quiet loop remains visible between components. */
+.scene-loop { position: absolute; z-index: -1; right: -8vw; top: 50%; width: 36vw; height: 36vw; opacity: .055; transform: translateY(-50%); }
+.scene-loop i { position: absolute; inset: 0; border: 1px solid var(--ink); border-radius: 24%; animation: motion-loop 80s linear infinite; }
+.scene-loop i:nth-child(2) { inset: 18%; animation-duration: 110s; animation-direction: reverse; }
+.scene-loop i:nth-child(3) { inset: 36%; animation-duration: 140s; }
+
+/* Scene-level continuity */
+.sea-layers { position: absolute; z-index: 1; inset: 0; overflow: hidden; pointer-events: none; }
+.sea-layer { position: absolute; inset: 0; background: url("act1-world-gates.webp") center / contain no-repeat; opacity: .24; }
+.sea-layer-one { clip-path: inset(6% 5% 86% 5%); animation: motion-sea-one 9s ease-in-out infinite; }
+.sea-layer-two { clip-path: inset(10% 5% 82% 5%); opacity: .16; animation: motion-sea-two 12s ease-in-out infinite; }
+.sea-layer-three { clip-path: inset(14% 5% 78% 5%); opacity: .1; animation: motion-sea-three 15s ease-in-out infinite; }
+.flow-lines { position: absolute; inset: 0; z-index: 2; width: 100%; height: 100%; pointer-events: none; }
+.flow-lines path { fill: none; stroke: var(--ink); stroke-width: 1.2; stroke-dasharray: 4 15; opacity: .14; animation: motion-river 18s linear infinite; }
+.resident-motion { animation: motion-resident-breathe 3.2s ease-in-out infinite; }
+.resident.is-hopping .resident-motion { animation: motion-resident-hop .3s ease-out 1; }
+.night-lights i { animation: motion-lamp-breathe var(--d) ease-in-out infinite; }
+.steam path { animation: motion-steam 8s ease-out infinite; }
+.steam path + path { animation-delay: 3.6s; }
+.falling-number { animation: motion-number-rain 24s linear forwards; }
+.tower-heart { animation: motion-heart 4s ease-in-out infinite; }
+.lifeline-pulse { animation: motion-lifeline 2s ease-out infinite; }
+.next-scene i { animation: motion-next 2.4s ease-in-out infinite; }
+
+@keyframes motion-drop-fall {
+  0% { opacity: 0; transform: translateY(0) scale(.75, 1.25); }
+  10% { opacity: 1; }
+  84% { opacity: 1; transform: translateY(64px) scale(.78, 1.24); }
+  91% { opacity: 1; transform: translateY(68px) scale(1.4, .6); }
+  100% { opacity: 0; transform: translateY(68px) scale(1, 1); }
+}
+@keyframes motion-ripple { 0% { opacity: .68; transform: scale(.18); } 100% { opacity: 0; transform: scale(2.25); } }
+@keyframes motion-pop { 0%,100% { transform: scale(1); } 45% { color: var(--red); transform: scale(1.15); } }
+@keyframes motion-bar-breathe { 0%,100% { transform: scaleY(.96); } 50% { transform: scaleY(1.04); } }
+@keyframes motion-bar-play { 0%,100% { transform: scaleY(1); } 50% { transform: scaleY(1.18); } }
+@keyframes motion-orbit { to { transform: rotate(360deg); } }
+@keyframes motion-task-light { 0%,100% { opacity: .5; transform: translate(-50%,-50%) scale(.8); } 50% { opacity: 1; transform: translate(-50%,-50%) scale(1.5); } }
+@keyframes motion-cradle-left { 0%,100% { transform: rotate(0); } 30% { transform: rotate(28deg); } }
+@keyframes motion-cradle-right { 0%,100% { transform: rotate(0); } 45% { transform: rotate(-28deg); } }
+@keyframes motion-liquid-breathe { 0%,100% { transform: rotate(calc(var(--slosh-angle, 0deg) - .8deg)) scaleX(1.02); } 50% { transform: rotate(calc(var(--slosh-angle, 0deg) + .8deg)) scaleX(1.02); } }
+@keyframes motion-liquid-play { 0%,100% { transform: rotate(0) scaleX(1); } 25% { transform: rotate(-5deg) scaleX(1.04); } 65% { transform: rotate(4deg) scaleX(1.04); } }
+@keyframes motion-loop { to { transform: rotate(360deg); } }
+@keyframes motion-sea-one { 0%,100% { transform: translate3d(-3px,0,0); } 50% { transform: translate3d(3px,-1px,0); } }
+@keyframes motion-sea-two { 0%,100% { transform: translate3d(3px,0,0); } 50% { transform: translate3d(-4px,1px,0); } }
+@keyframes motion-sea-three { 0%,100% { transform: translate3d(-2px,1px,0); } 50% { transform: translate3d(4px,-1px,0); } }
+@keyframes motion-river { to { stroke-dashoffset: -76; } }
+@keyframes motion-resident-breathe { 0%,100% { transform: translateY(0); } 50% { transform: translateY(1.5px); } }
+@keyframes motion-resident-hop { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+@keyframes motion-lamp-breathe { 0%,100% { opacity: .25; } 50% { opacity: .56; } }
+@keyframes motion-steam { 0%,20% { opacity: 0; transform: translateY(2px); } 35% { opacity: .32; } 75% { opacity: .12; } 100% { opacity: 0; transform: translateY(-7px); } }
+@keyframes motion-number-rain { from { transform: translateY(0); opacity: 0; } 12% { opacity: 1; } 88% { opacity: 1; } to { transform: translateY(680px); opacity: 0; } }
+@keyframes motion-heart { 0%,100% { opacity: .6; transform: scale(.92); box-shadow: 0 0 0 0 rgba(230,0,18,.2); } 48% { opacity: .72; } 54% { opacity: 1; transform: scale(1.08); box-shadow: 0 0 0 7px rgba(230,0,18,0); } 60% { transform: scale(.97); } }
+@keyframes motion-lifeline { 0% { box-shadow: 0 0 0 0 rgba(230,0,18,.6); } 70%,100% { box-shadow: 0 0 0 7px rgba(230,0,18,0); } }
+@keyframes motion-next { 0%,100% { transform: scaleX(.65); opacity: .45; } 50% { transform: scaleX(1); opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-bars i, .orbit-ring, .vessel-liquid, .loop-toy > i, .scene-loop i,
+  .sea-layer, .flow-lines path, .resident-motion, .night-lights i, .steam path,
+  .tower-heart, .lifeline-pulse, .next-scene i { animation: none !important; }
+  .motion-bars i { transform: none; }
+  .vessel-liquid { transform: none; }
+}

@@ -1,0 +1,322 @@
+{
+  "schema": "ecosystem_v2",
+  "generated_at": "2026-07-17T08:40:06+09:00",
+  "garden": {
+    "day": 11,
+    "since": "2026-07-07"
+  },
+  "totals": {
+    "verdicts": 13,
+    "hypotheses_ever": 17,
+    "monuments": 6,
+    "safe_streak_days": 0
+  },
+  "daily_delta": {
+    "advanced": 3,
+    "born": 0,
+    "died": 2,
+    "blocked": 10,
+    "no_trade": true
+  },
+  "hypotheses": [
+    {
+      "id": "ki-01",
+      "label_public": "朝の傾き（余命観測中）",
+      "stage": "tree",
+      "clock": {
+        "n": 0,
+        "target": 40
+      },
+      "state": "green",
+      "blocker_public": null,
+      "epitaph": null,
+      "born_on": "2026-07-13",
+      "last_change": "2026-07-17T08:40:06+09:00"
+    },
+    {
+      "id": "ki-02",
+      "label_public": "場中の偏り",
+      "stage": "young_tree",
+      "clock": {
+        "n": 0,
+        "target": 30
+      },
+      "state": "yellow",
+      "blocker_public": "前向きの決着を待っています",
+      "epitaph": null,
+      "born_on": "2026-07-13",
+      "last_change": "2026-07-17T08:40:06+09:00"
+    },
+    {
+      "id": "ki-03",
+      "label_public": "短い余韻",
+      "stage": "young_tree",
+      "clock": {
+        "n": 0,
+        "target": 30
+      },
+      "state": "yellow",
+      "blocker_public": "前向きの決着を待っています",
+      "epitaph": null,
+      "born_on": "2026-07-13",
+      "last_change": "2026-07-17T08:40:06+09:00"
+    },
+    {
+      "id": "ki-04",
+      "label_public": "下限の売り尽くし",
+      "stage": "young_tree",
+      "clock": {
+        "n": 0,
+        "target": 30
+      },
+      "state": "yellow",
+      "blocker_public": "前向きイベントを待っています",
+      "epitaph": null,
+      "born_on": "2026-07-14",
+      "last_change": "2026-07-14T23:45:43+09:00"
+    },
+    {
+      "id": "ki-05",
+      "label_public": "価値の床",
+      "stage": "monument",
+      "clock": null,
+      "state": "gray",
+      "blocker_public": null,
+      "epitaph": "対照では差が見えたが、資格には使えませんでした",
+      "born_on": "2026-07-15",
+      "last_change": "2026-07-15T10:24:00+09:00"
+    },
+    {
+      "id": "ki-06",
+      "label_public": "期限の盲流",
+      "stage": "monument",
+      "clock": null,
+      "state": "gray",
+      "blocker_public": null,
+      "epitaph": "独立した出来事が足りず、追加購入を見送って終端しました",
+      "born_on": "2026-07-15",
+      "last_change": "2026-07-16T15:05:00+09:00"
+    },
+    {
+      "id": "ki-07",
+      "label_public": "出来高の火花",
+      "stage": "monument",
+      "clock": null,
+      "state": "gray",
+      "blocker_public": null,
+      "epitaph": "現象は残りましたが、費用と誤差の門を越えませんでした",
+      "born_on": "2026-07-15",
+      "last_change": "2026-07-15T10:24:00+09:00"
+    },
+    {
+      "id": "ki-16",
+      "label_public": "銘柄ごとの手触り",
+      "stage": "monument",
+      "clock": null,
+      "state": "gray",
+      "blocker_public": null,
+      "epitaph": "測定に必要な反復数へ届かず、存在を決めずに終端しました",
+      "born_on": "2026-07-17",
+      "last_change": "2026-07-17T02:42:54+09:00"
+    },
+    {
+      "id": "ki-17",
+      "label_public": "週をまたがない流れ",
+      "stage": "monument",
+      "clock": null,
+      "state": "gray",
+      "blocker_public": null,
+      "epitaph": "十の流れを測り、費用と誤差の門を越えるものはありませんでした",
+      "born_on": "2026-07-17",
+      "last_change": "2026-07-17T02:42:54+09:00"
+    },
+    {
+      "id": "ki-08",
+      "label_public": "温室・夜の清算連鎖",
+      "stage": "monument",
+      "clock": null,
+      "state": "gray",
+      "blocker_public": null,
+      "epitaph": "前向き資格時計は、事前登録した停止境界に達して終端しました",
+      "born_on": "2026-07-16",
+      "last_change": "2026-07-16T16:26:53+09:00"
+    },
+    {
+      "id": "ki-09",
+      "label_public": "企業行動の赤信号",
+      "stage": "seed",
+      "clock": null,
+      "state": "yellow",
+      "blocker_public": "時点整合データを準備中",
+      "epitaph": null,
+      "born_on": "2026-07-16",
+      "last_change": "2026-07-16T09:40:12+09:00"
+    },
+    {
+      "id": "ki-10",
+      "label_public": "価値床の急落",
+      "stage": "seed",
+      "clock": null,
+      "state": "yellow",
+      "blocker_public": "時点整合データを準備中",
+      "epitaph": null,
+      "born_on": "2026-07-16",
+      "last_change": "2026-07-16T09:40:12+09:00"
+    },
+    {
+      "id": "ki-11",
+      "label_public": "外生波の残差",
+      "stage": "seed",
+      "clock": null,
+      "state": "yellow",
+      "blocker_public": "時点整合データを準備中",
+      "epitaph": null,
+      "born_on": "2026-07-16",
+      "last_change": "2026-07-16T09:40:12+09:00"
+    },
+    {
+      "id": "ki-12",
+      "label_public": "仲介の連鎖",
+      "stage": "seed",
+      "clock": null,
+      "state": "yellow",
+      "blocker_public": "時点整合データを準備中",
+      "epitaph": null,
+      "born_on": "2026-07-16",
+      "last_change": "2026-07-16T09:40:12+09:00"
+    },
+    {
+      "id": "ki-13",
+      "label_public": "期限の在庫",
+      "stage": "seed",
+      "clock": null,
+      "state": "yellow",
+      "blocker_public": "時点整合データを準備中",
+      "epitaph": null,
+      "born_on": "2026-07-16",
+      "last_change": "2026-07-16T01:00:12+09:00"
+    },
+    {
+      "id": "ki-14",
+      "label_public": "解かれる在庫",
+      "stage": "seed",
+      "clock": null,
+      "state": "yellow",
+      "blocker_public": "時点整合データを準備中",
+      "epitaph": null,
+      "born_on": "2026-07-16",
+      "last_change": "2026-07-16T01:00:12+09:00"
+    },
+    {
+      "id": "ki-15",
+      "label_public": "供給の波",
+      "stage": "seed",
+      "clock": null,
+      "state": "yellow",
+      "blocker_public": "時点整合データを準備中",
+      "epitaph": null,
+      "born_on": "2026-07-16",
+      "last_change": "2026-07-16T01:00:12+09:00"
+    }
+  ],
+  "organs": [
+    {
+      "name": "器",
+      "kind": "market",
+      "status": "red",
+      "last_ok": null
+    },
+    {
+      "name": "世界の脈",
+      "kind": "observer",
+      "status": "red",
+      "last_ok": null
+    },
+    {
+      "name": "清算の目",
+      "kind": "observer",
+      "status": "red",
+      "last_ok": null
+    },
+    {
+      "name": "国内板の目",
+      "kind": "observer",
+      "status": "red",
+      "last_ok": null
+    },
+    {
+      "name": "予測市場の目",
+      "kind": "observer",
+      "status": "red",
+      "last_ok": "2026-07-11T23:19:05+09:00"
+    },
+    {
+      "name": "板記録",
+      "kind": "observer",
+      "status": "red",
+      "last_ok": null
+    },
+    {
+      "name": "レイク",
+      "kind": "lake",
+      "status": "red",
+      "last_ok": null
+    },
+    {
+      "name": "退避庫",
+      "kind": "vault",
+      "status": "red",
+      "last_ok": "2026-07-13T22:52:27+09:00"
+    }
+  ],
+  "history": [
+    {
+      "daily_delta": {
+        "advanced": 10,
+        "blocked": 10,
+        "born": 7,
+        "died": 2,
+        "no_trade": true
+      },
+      "date": "2026-07-16",
+      "garden": {
+        "day": 10,
+        "since": "2026-07-07"
+      },
+      "generated_at": "2026-07-16T19:00:06+09:00",
+      "snapshot_id": "073ac477f7726b4d3630b9ac4d56f9101cfe13d281cd26af38866e2cf6e5985e",
+      "stages": {
+        "monument": 4,
+        "sapling": 0,
+        "seed": 7,
+        "sprout": 0,
+        "tree": 1,
+        "young_tree": 3
+      }
+    },
+    {
+      "snapshot_id": "8909b71c2fb3a2cc4da309f6cef7e68592a8691de735e8cfd789d2bffaa69119",
+      "generated_at": "2026-07-17T08:40:06+09:00",
+      "date": "2026-07-17",
+      "garden": {
+        "day": 11,
+        "since": "2026-07-07"
+      },
+      "daily_delta": {
+        "advanced": 3,
+        "born": 0,
+        "died": 2,
+        "blocked": 10,
+        "no_trade": true
+      },
+      "stages": {
+        "tree": 1,
+        "monument": 6,
+        "seed": 7,
+        "young_tree": 3,
+        "sapling": 0,
+        "sprout": 0
+      }
+    }
+  ]
+}

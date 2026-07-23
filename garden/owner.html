@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>庭・朝の一分</title>
+<link rel="icon" href="data:,">
+<style>
+/* ============================================================
+   本人用ビュー — 毎朝1分の主接触面
+   ------------------------------------------------------------
+   公開版と同じデータ・同じ色・同じ書体。違うのは密度だけ。
+   ここは対外の面ではないので、情報を詰めてよい。ただし
+   「赤は詰まりを取る一点」の掟は守る——赤いのは、今日あなたが
+   見るべき一点（実弾の樹）だけ。
+   ============================================================ */
+:root{
+  --red:#E60012; --red-d:#B8000E; --ink:#0E0E0E; --sub:#565656; --faint:#8E8E8E;
+  --paper:#FFFFFF; --alt:#F7F6F3; --line:#E5E3DE;
+  --g:"Hiragino Sans","Yu Gothic Medium","Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;
+  --m:"Hiragino Mincho ProN","Yu Mincho",serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--g);color:var(--ink);background:var(--alt);font-size:14px;line-height:1.8;
+  font-feature-settings:"palt" 1;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1240px;margin:0 auto;padding:26px 26px 60px}
+
+/* ---- 上段 ---- */
+.top{display:flex;align-items:baseline;gap:16px;margin-bottom:18px;flex-wrap:wrap}
+.top h1{font-family:var(--m);font-size:21px;font-weight:600;letter-spacing:.08em}
+.top .when{font-size:11.5px;color:var(--faint);font-feature-settings:"tnum"}
+.top .pub{margin-left:auto;font-size:11.5px;color:var(--sub);border-bottom:1px solid var(--line);padding-bottom:2px}
+.top .pub:hover{color:var(--red);border-color:var(--red)}
+
+/* ---- 今日の一行。ここだけ読めば終わる ---- */
+.head{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:22px 24px;margin-bottom:14px}
+.head p{font-family:var(--m);font-size:min(20px,4.4vw);font-weight:600;letter-spacing:.05em;line-height:1.7}
+.head p em{font-style:normal;color:var(--red)}
+/* 二つ目以降は名指ししない。赤は一点に保つ */
+.head p .rest{font-family:var(--g);font-size:13px;font-weight:400;color:var(--sub);margin-left:8px;letter-spacing:0}
+.head .sub{font-family:var(--g);font-size:12px;font-weight:400;color:var(--faint);letter-spacing:0;margin-top:8px}
+/* 昨日→今日の最小差分。一行目の直下に常設する（勾配はここに宿る） */
+.head .kinou{font-family:var(--g);font-size:12.5px;font-weight:400;letter-spacing:0;
+  margin-top:10px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;color:var(--sub)}
+.head .kinou .lbl{font-size:10.5px;letter-spacing:.14em;color:var(--faint)}
+.head .kinou .it{display:inline-flex;align-items:baseline;gap:3px}
+.head .kinou .it b{font-family:var(--m);font-size:17px;font-weight:600;font-feature-settings:"tnum"}
+.head .kinou .it small{font-size:10.5px;color:var(--faint)}
+.head .kinou .flat{font-size:12px;color:var(--faint)}
+
+/* ---- 帯 ---- */
+.delta{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:4px;overflow:hidden;margin-bottom:14px}
+.delta div{background:var(--paper);padding:14px 16px}
+.delta b{display:block;font-size:24px;font-weight:700;line-height:1.2;font-feature-settings:"tnum"}
+.delta i{font-style:normal;font-size:10.5px;color:var(--faint);letter-spacing:.08em}
+/* 帯に赤は置かない。赤は「今日みるべき一行」に一点だけ残す */
+
+/* ---- 庭 ---- */
+.garden{position:relative;border:1px solid var(--line);border-radius:4px;background:var(--paper);
+  overflow:hidden;margin-bottom:14px}
+#niwa{display:block;width:100%;height:min(40vw,340px)}
+.tenki{position:absolute;top:12px;left:12px;display:flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:4px;padding:6px 12px}
+.tenki b{font-family:var(--m);font-size:12.5px;font-weight:600;letter-spacing:.08em}
+.tenki span{font-size:11px;color:var(--faint)}
+.hint{position:absolute;right:12px;bottom:12px;font-size:10.5px;color:var(--faint)}
+
+
+/* ---------- 庭が語る。参考作品の下部ティッカーに当たる ---------- */
+.katari{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);max-width:min(560px,86%);
+  background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border:1px solid var(--line);
+  border-radius:4px;padding:12px 20px;text-align:center}
+.katari p{font-family:var(--m);font-size:13.5px;font-weight:600;letter-spacing:.05em;line-height:1.8;
+  opacity:0;transition:opacity .42s ease}
+.katari p[data-on="1"]{opacity:1}
+/* 周期。世界が回り続けていることの目盛り */
+.shuki{position:absolute;left:16px;bottom:16px;font-size:10.5px;letter-spacing:.18em;color:var(--faint);
+  font-feature-settings:"tnum"}
+
+/* ---- タイムラプス ---- */
+.lapse{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:18px 22px;margin-bottom:14px}
+.lapse-top{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:12px}
+.lapse-top b{font-family:var(--m);font-size:15px;font-weight:600;letter-spacing:.06em}
+.lapse-top .d{margin-left:auto;font-size:11.5px;color:var(--sub);display:flex;gap:10px;flex-wrap:wrap;align-items:baseline}
+.lapse-item{display:inline-flex;align-items:baseline;gap:3px}
+.lapse-item b{font-family:var(--m);font-size:15px;font-feature-settings:"tnum"}
+.lapse-item small{font-size:10px;color:var(--faint)}
+.lapse input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:2px;background:var(--line);outline:none}
+.lapse input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:14px;height:14px;
+  border-radius:2px;background:var(--ink);cursor:pointer}
+.lapse input[type=range]:disabled::-webkit-slider-thumb{background:var(--line)}
+.lapse-note{font-size:11px;color:var(--faint);margin-top:10px;line-height:1.8}
+.lapse[data-state="ready"] .lapse-note{display:none}
+.lapse[data-state="thin"] .d{display:none}
+
+/* ---- 二列 ---- */
+.cols{display:grid;grid-template-columns:1.35fr .65fr;gap:14px;align-items:start}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.panel h2{font-family:var(--m);font-size:14px;font-weight:600;letter-spacing:.08em;
+  padding:14px 18px;border-bottom:1px solid var(--line);background:var(--alt)}
+.panel h2 span{font-size:10.5px;color:var(--faint);font-family:var(--g);margin-left:8px;font-weight:400}
+
+/* 一覧。密度優先 */
+.row{display:grid;grid-template-columns:70px 1fr 120px;gap:12px;align-items:center;
+  padding:11px 18px;border-bottom:1px solid var(--line);font-size:13px}
+.row:last-child{border-bottom:none}
+.row:hover{background:var(--alt)}
+.row .stage{font-size:10px;font-weight:700;letter-spacing:.06em;color:var(--faint);
+  display:flex;align-items:center;gap:6px}
+.row .stage i{width:7px;height:7px;flex:none;border:1px solid var(--ink);border-radius:50%;font-style:normal}
+.row[data-stage="seed"] .stage i{background:var(--ink);transform:scale(.55)}
+.row[data-stage="sprout"] .stage i{border-radius:50% 50% 50% 0;transform:rotate(45deg) scale(.8)}
+.row[data-stage="sapling"] .stage i{border-radius:2px;transform:scale(.75)}
+.row[data-stage="young_tree"] .stage i{background:linear-gradient(var(--ink) 50%,transparent 50%)}
+.row[data-stage="tree"] .stage i{background:var(--ink)}
+.row[data-stage="monument"] .stage i{border-radius:3px 3px 0 0;background:var(--ink);transform:scale(.8)}
+.row .name{font-family:var(--m);font-size:14.5px;font-weight:600;letter-spacing:.03em}
+.row .epi,.row .fuda{display:block;font-family:var(--g);font-size:11px;font-weight:400;
+  color:var(--faint);letter-spacing:0;line-height:1.7;margin-top:2px}
+.row .fuda::before{content:"待ち　"}
+.row .clock{font-size:11px;color:var(--sub);font-feature-settings:"tnum";text-align:right}
+.row .clock .bar{display:block;height:2px;background:var(--line);margin-top:5px;position:relative}
+.row .clock .bar i{position:absolute;inset:0 auto 0 0;background:var(--ink)}
+.row .clock .none{color:var(--faint);font-size:10.5px}
+.row[data-state="yellow"] .name{opacity:.75}
+.row[data-state="red"] .name{opacity:.55}
+.row[data-state="gray"] .name{color:var(--faint)}
+/* 今日動いたものに印。ここが勾配 */
+.row[data-moved="1"]{background:rgba(230,0,18,.03)}
+.row[data-moved="1"] .stage{color:var(--red)}
+
+/* 設備 */
+.organ{display:flex;align-items:center;gap:10px;padding:10px 18px;border-bottom:1px solid var(--line);font-size:12.5px}
+.organ:last-child{border-bottom:none}
+.organ .dot{width:8px;height:8px;flex:none;border-radius:50%;border:1px solid var(--ink)}
+.organ[data-status="green"] .dot{background:var(--ink)}
+.organ[data-status="yellow"] .dot{background:linear-gradient(var(--ink) 50%,transparent 50%)}
+.organ[data-status="red"] .dot{background:transparent;border-style:dashed}
+.organ b{font-weight:600;font-size:12.5px}
+.organ .k{font-size:9.5px;color:var(--faint);letter-spacing:.1em}
+.organ .t{margin-left:auto;font-size:10.5px;color:var(--faint);font-feature-settings:"tnum"}
+.organ[data-status="red"] b{color:var(--faint)}
+
+@media(max-width:900px){
+  .delta{grid-template-columns:1fr 1fr 1fr}
+  .cols{grid-template-columns:1fr}
+  #niwa{height:52vw}
+  .row{grid-template-columns:60px 1fr;gap:8px}
+  .row .clock{grid-column:2;text-align:left}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <h1>庭・朝の一分</h1>
+    <span class="when" data-when>—</span>
+    <a class="pub" href="graves.html">裂け目 →</a>
+    <a class="pub" style="margin-left:14px" href="index.html">公開版 →</a>
+  </div>
+
+  <div class="head">
+    <p data-head>　</p>
+    <p class="kinou" data-kinou>　</p>
+    <p class="sub" data-head-sub>　</p>
+  </div>
+
+  <div class="delta" data-delta>
+    <div><b data-d="advanced">0</b><i>進んだ</i></div>
+    <div><b data-d="born">0</b><i>芽が出た</i></div>
+    <div><b data-d="died">0</b><i>枯れた</i></div>
+    <div><b data-d="blocked">0</b><i>待っている</i></div>
+    <div><b data-total-monument>0</b><i>石碑（累計）</i></div>
+  </div>
+
+  <div class="garden">
+    <canvas id="niwa" aria-hidden="true"></canvas>
+    <p class="tenki" data-tenki><b>—</b><span></span></p>
+    <span class="hint">株にカーソルを合わせると、時計と待ちが出ます</span>
+      <p class="shuki" data-shuki>　</p>
+      <div class="katari"><p data-katari>　</p></div>
+
+  </div>
+
+  <div class="lapse" data-lapse data-state="thin">
+    <p class="lapse-top"><b data-lapse-label>今日</b><span class="d" data-lapse-diff></span></p>
+    <input type="range" min="0" max="0" value="0" step="1" disabled aria-label="庭を遡る日付">
+    <p class="lapse-note" data-lapse-note>履歴はまだ今日ぶんだけです。</p>
+  </div>
+
+  <div class="cols">
+    <div class="panel">
+      <h2>いま庭にあるもの<span data-count></span></h2>
+      <div data-list></div>
+    </div>
+    <div class="panel">
+      <h2>設備</h2>
+      <div data-organs></div>
+    </div>
+  </div>
+</div>
+<script src="owner.js" type="module"></script>
+</body>
+</html>
