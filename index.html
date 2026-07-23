@@ -1,230 +1,859 @@
-<!doctype html>
-<html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f2ecdf">
-  <meta name="description" content="赤い帽子の小さな住人と、眠らない機械。数字はすべて本物。">
-  <meta property="og:title" content="日次変化の変換機">
-  <meta property="og:description" content="赤い帽子の小さな住人と、眠らない機械。数字はすべて本物。">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://art.chiero.jp/">
-  <meta property="og:image" content="https://art.chiero.jp/assets/act2-sleepless-ring.webp">
-  <meta name="twitter:card" content="summary_large_image">
-  <title>日次変化の変換機 — CHIERO</title>
-  <link rel="icon" href="data:,">
-  <link rel="preload" href="assets/act1-world-gates.webp" as="image" type="image/webp">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="assets/motion.css">
-  <script id="pulse-fallback" type="application/json">{"days_running":1,"judgments_total":25,"judgments_today":0,"judgments_week":24,"judgments_market":9,"lessons_total":3,"no_trade_days":1,"updated_at_jst":"2026-07-13T18:23:45+09:00"}</script>
-  <script src="assets/motion.js" defer></script>
-  <script src="artwork.js" defer></script>
-</head>
-<body>
-  <a class="skip-link" href="#scene-one">作品へ移動</a>
-  <main id="artwork">
-    <section class="scene scene-one" id="scene-one" data-scene="S1" aria-labelledby="scene-one-title">
-      <div class="scene-loop" aria-hidden="true" data-motion-active="ambient-loop"><i></i><i></i><i></i></div>
-      <header class="scene-heading">
-        <span>SCENE 01 / 海と門</span>
-        <h1 id="scene-one-title">日次変化の変換機</h1>
-        <p>CHIERO — 動き続ける作品</p>
-      </header>
-      <div class="scene-stage portrait-stage scene-enter" data-scene-stage>
-        <img class="art-image eager" src="assets/act1-world-gates.webp" alt="海から三つの門を通り、一滴が器へ落ちる銅版画" width="1024" height="1536">
-        <div class="sea-layers" aria-hidden="true" data-motion-active="sea-parallax">
-          <i class="sea-layer sea-layer-one"></i>
-          <i class="sea-layer sea-layer-two"></i>
-          <i class="sea-layer sea-layer-three"></i>
-        </div>
-        <svg class="flow-lines" viewBox="0 0 1024 1536" aria-hidden="true" data-motion-active="river-flow">
-          <path d="M 504 170 C 475 300, 548 390, 505 515 S 556 700, 506 835 S 548 1040, 510 1268"/>
-          <path d="M 396 190 C 432 322, 457 425, 486 530"/>
-          <path d="M 622 190 C 592 318, 562 420, 526 530"/>
-        </svg>
-        <div class="motion-drop motion-drop-scene" data-motion="A1" data-motion-active="drop" aria-hidden="true">
-          <i class="motion-drop-body"></i><i class="motion-ripple ripple-one"></i><i class="motion-ripple ripple-two"></i>
-        </div>
-        <button class="resident resident-one" type="button" aria-label="チエロくんに声をかける">
-          <span class="resident-motion">
-            <img src="assets/chiero-thinking.webp" alt="考えているチエロくん" width="168" height="234">
-            <span class="blink blink-left"></span><span class="blink blink-right"></span>
-          </span>
-          <span class="speech" role="status">ふふん、まかせてよ。</span>
-        </button>
-        <p class="scene-data-ribbon"><span>今日の判定</span><strong data-pulse="judgments_today">0</strong><small>滴の間隔 <b data-derived="drop-interval">30.0</b>秒</small></p>
+<meta charset="utf-8">
+<title>AIによる身体知の蒸留器つき複利機械</title>
+<style>
+  :root{
+    --red:#E60012; --red-d:#B8000E;
+    --ink:#0E0E0E; --sub:#565656; --faint:#8E8E8E;
+    --paper:#FFFFFF; --alt:#F7F6F3; --line:#E5E3DE;
+    --g:"Hiragino Sans","Yu Gothic Medium","Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;
+    --m:"Hiragino Mincho ProN","Yu Mincho",serif;
+    color-scheme:light;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--paper)}
+  body{
+    color:var(--ink); font-family:var(--g); font-size:16px; line-height:1.95;
+    font-feature-settings:"palt" 1; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .wrap{max-width:1040px;margin:0 auto;padding:0 22px 110px}
+  .tnum{font-feature-settings:"tnum" 1,"palt" 1}
+  .red{color:var(--red)}
+
+  /* ---------- HERO ---------- */
+  header.hero{padding:40px 0 8px}
+  .kicker{font-size:11.5px;letter-spacing:.16em;color:var(--red);text-transform:uppercase;margin:0 0 16px;font-weight:700}
+  .kicker span{color:var(--faint);font-weight:400;letter-spacing:.08em}
+  h1{font-family:var(--m);font-weight:600;letter-spacing:.02em;line-height:1.28;
+    font-size:clamp(32px,9.6vw,46px);margin:0;max-width:16ch}
+  .lede{font-size:16px;color:var(--sub);margin:20px 0 0;max-width:52ch;line-height:1.95}
+  .thesis{font-family:var(--m);font-size:17px;line-height:1.95;color:var(--ink);margin:22px 0 0;max-width:42ch;
+    padding-left:16px;border-left:2px solid var(--red)}
+  .rules{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:5px;overflow:hidden;margin-top:8px}
+  @media(max-width:640px){.rules{grid-template-columns:1fr}}
+  .rule{background:var(--paper);padding:20px 22px}
+  .rule .rh{font-family:var(--m);font-size:16px;font-weight:600;letter-spacing:.02em;color:var(--ink);position:relative;padding-left:16px}
+  .rule .rh::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:2px;background:var(--red)}
+  .rule .rb{font-size:13px;color:var(--sub);line-height:1.85;margin-top:9px}
+  .disclaimer{margin-top:44px;padding:20px 22px;background:var(--alt);border:1px solid var(--line);border-radius:5px}
+  .disclaimer p{font-size:12px;color:var(--sub);line-height:1.9;margin:0;max-width:74ch}
+  .disclaimer p b{color:var(--ink);font-weight:600}
+  .disclaimer .upd{margin-top:12px;padding-top:12px;border-top:1px solid var(--line);font-size:11.5px;color:var(--faint)}
+  .disclaimer .upd b{color:var(--sub);font-weight:600}
+
+  /* saved-value block (white paper · red+ink) */
+  .saved{margin-top:8px;padding:30px 30px 28px;border:1px solid var(--line);border-radius:5px;background:var(--paper)}
+  .savedlabel{font-size:12px;letter-spacing:.06em;color:var(--faint);margin:0 0 10px}
+  .savednum{font-family:var(--g);font-weight:700;line-height:1;letter-spacing:-.03em;
+    font-size:clamp(26px,8.4vw,80px);color:var(--ink);white-space:nowrap}
+  .savednum span{color:var(--red)}
+  .savedsub{font-size:12.5px;line-height:1.85;color:var(--sub);margin:16px 0 0;max-width:62ch}
+  .savedsub b{color:var(--ink);font-weight:600}
+  .calc{width:100%;border-collapse:collapse;margin:18px 0 4px}
+  .calc td{padding:11px 0;border-bottom:1px solid var(--line);font-size:13.5px;color:var(--sub);vertical-align:baseline}
+  .calc td:last-child{text-align:right;color:var(--ink);font-weight:600;white-space:nowrap}
+  .calc tr.sum td{border-bottom:none;border-top:2px solid var(--ink);padding-top:13px;color:var(--ink);font-weight:700;font-size:14.5px}
+  .calc tr.sum td:last-child{color:var(--red)}
+  .calc .cnote{display:block;font-size:11px;color:var(--faint);margin-top:2px}
+  .savedtime{margin-top:22px;padding:18px 0 4px;border-top:1px solid var(--line)}
+  .stlabel{font-size:11.5px;letter-spacing:.06em;color:var(--red);font-weight:700;margin:0 0 10px}
+  .strow{font-size:14px;color:var(--ink);line-height:1.7}
+  .strow b{color:var(--ink);font-weight:700;font-size:19px}
+  .strow span{color:var(--sub)}
+  .strow b + span{margin-left:4px}
+  .stnote{font-size:11.5px;color:var(--faint);line-height:1.75;margin:12px 0 0}
+  .stnote b{color:var(--sub);font-weight:600}
+  .savedsub{font-size:11.5px;line-height:1.75;color:var(--faint);margin:16px 0 0;max-width:64ch}
+  .savedsub b{color:var(--sub);font-weight:600}
+  @media(max-width:520px){.saved{padding:24px 18px 22px}}
+
+  /* data table */
+  .datatable-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:5px;margin-top:8px}
+  .datatable{width:100%;border-collapse:collapse;min-width:520px}
+  .datatable th,.datatable td{padding:13px 16px;text-align:left;font-size:13px;border-bottom:1px solid var(--line)}
+  .datatable th{background:var(--alt);color:var(--sub);font-weight:600;font-size:11.5px;letter-spacing:.03em}
+  .datatable td{color:var(--sub)}
+  .datatable td.num{text-align:right;color:var(--ink);font-weight:600;white-space:nowrap}
+  .datatable td.nm{color:var(--ink);font-weight:600}
+  .datatable tr:last-child td{border-bottom:none}
+  .datatable tr.tot td{background:var(--alt);color:var(--ink);font-weight:700;border-top:2px solid var(--ink)}
+  .datatable tr.tot td.num{color:var(--red)}
+
+  /* big projection dashboard */
+  .proj{margin-top:16px;border:1px solid var(--line);border-radius:5px;overflow:hidden}
+  .proj .top{padding:30px 30px 26px;position:relative}
+  .proj .toplabel{font-size:12px;color:var(--faint);letter-spacing:.04em;margin:0 0 8px}
+  .proj .toplabel b{color:var(--ink);font-weight:600}
+  .bignum{font-family:var(--g);font-weight:700;line-height:1.02;letter-spacing:-.02em;
+    font-size:clamp(30px,12vw,84px);color:var(--ink);white-space:nowrap}
+  .bignum .yen{font-size:.34em;font-weight:600;color:var(--sub);letter-spacing:0;margin-left:.08em}
+  .bignum .arrow{color:var(--faint);font-weight:400;font-size:.36em;margin:0 .14em;vertical-align:.28em}
+  .bignum .from{font-size:.4em;color:var(--faint);font-weight:600}
+  @media(max-width:520px){.proj .top{padding:22px 18px 20px}.ctrl{padding:18px 18px 24px}.srcnote{padding:14px 18px 20px}}
+  .mult{display:inline-flex;align-items:baseline;gap:8px;margin-top:10px;font-size:15px;color:var(--sub)}
+  .mult b{color:var(--red);font-size:22px;font-weight:700;font-family:var(--g)}
+  .heroCanvasWrap{position:relative;border-top:1px solid var(--line);background:var(--alt)}
+  canvas#hero{width:100%;height:150px;display:block}
+
+  /* control strip */
+  .ctrl{padding:22px 30px 28px;border-top:1px solid var(--line)}
+  .ctrlhead{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap}
+  .ctrlcap{font-family:var(--g);font-size:26px;font-weight:700;letter-spacing:-.01em}
+  .ctrlcap span{font-size:14px;color:var(--sub);font-weight:400}
+  .ctrlmeta{font-size:12.5px;color:var(--sub)}
+  .ctrlmeta b{color:var(--ink);font-weight:600}
+  input[type=range]{width:100%;margin:20px 0 4px;-webkit-appearance:none;appearance:none;background:transparent;height:30px}
+  input[type=range]::-webkit-slider-runnable-track{height:2px;background:var(--line)}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:20px;height:20px;border-radius:50%;
+    background:var(--red);margin-top:-9px;cursor:pointer;transition:transform .12s}
+  input[type=range]:active::-webkit-slider-thumb{transform:scale(1.25)}
+  input[type=range]:focus-visible{outline:2px solid var(--red);outline-offset:4px}
+  .ticks{display:flex;justify-content:space-between;font-size:10.5px;color:var(--faint);margin-top:6px;letter-spacing:.02em}
+
+  .statrow{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line)}
+  .stat{background:var(--paper);padding:20px 18px}
+  .stat .v{font-family:var(--g);font-size:27px;font-weight:700;letter-spacing:-.01em;line-height:1.05}
+  .stat .v.r{color:var(--red)}
+  .stat .k{font-size:11.5px;color:var(--faint);margin-top:6px;line-height:1.5}
+  @media(max-width:720px){.statrow{grid-template-columns:repeat(2,1fr)}}
+  .srcnote{padding:14px 30px 22px;font-size:11.5px;color:var(--faint);line-height:1.75;border-top:1px solid var(--line);background:var(--alt)}
+  .srcnote b{color:var(--sub);font-weight:600}
+
+  /* ---------- ecosystem ---------- */
+  h2{font-family:var(--m);font-weight:600;font-size:clamp(23px,6.4vw,30px);letter-spacing:.03em;
+    line-height:1.3;margin:72px 0 8px;position:relative;padding-left:34px}
+  h2::before{content:"";position:absolute;left:0;top:.72em;width:22px;height:2px;background:var(--red);transform:translateY(-5px)}
+  .note{font-size:14px;color:var(--sub);padding-left:34px;margin:0 0 22px;max-width:66ch;line-height:1.9}
+  .note b{color:var(--sub);font-weight:600}
+
+  .band{display:flex;flex-wrap:wrap;gap:0;margin:26px 0 8px;border:1px solid var(--line);border-radius:5px;overflow:hidden}
+  .band .cell{flex:1 1 0;min-width:120px;padding:18px 16px;border-right:1px solid var(--line)}
+  .band .cell:last-child{border-right:none}
+  .band b{display:block;font-family:var(--g);font-size:30px;font-weight:700;line-height:1.1;letter-spacing:-.01em}
+  .band i{display:block;font-style:normal;font-size:11.5px;color:var(--faint);margin-top:5px;letter-spacing:.02em}
+  .band .cell.accent b{color:var(--red)}
+  /* バンドの前日比（毎日の変化を検知） */
+  .band .bd{display:block;font-family:var(--g);font-size:11.5px;font-weight:700;margin-top:5px;letter-spacing:.02em}
+  .band .bd.z{color:var(--faint);font-weight:400}
+  .band .bd.nz{color:var(--red)}
+  @media(max-width:640px){.band .cell{flex:1 1 40%;border-bottom:1px solid var(--line)}}
+  /* 圧縮の当日分 */
+  .saveddelta{margin:9px 0 0;font-size:13px;line-height:1.7}
+  .saveddelta .nz{color:var(--red);font-weight:700}
+  .saveddelta .z{color:var(--faint)}
+  /* 自動更新中インジケータ（生きていることを可視化） */
+  .livedot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--red);margin-right:7px;vertical-align:1px;animation:livepulse 2s ease-in-out infinite}
+  @keyframes livepulse{0%,100%{opacity:1}50%{opacity:.2}}
+
+  .filters{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 22px}
+  .filters button{font-family:var(--g);font-size:13px;color:var(--sub);background:transparent;
+    border:1px solid var(--line);border-radius:3px;padding:7px 14px;cursor:pointer;letter-spacing:.02em;
+    transition:border-color .15s,color .15s,background .15s}
+  .filters button:hover{border-color:var(--faint)}
+  .filters button[aria-pressed="true"]{background:var(--red);color:#fff;border-color:var(--red)}
+  .filters button:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+
+  .cards{display:flex;flex-direction:column;gap:12px}
+  details.hx{border:1px solid var(--line);border-radius:5px;background:var(--paper);overflow:hidden}
+  details.hx[data-state="grave"]{background:var(--alt)}
+  details.hx summary{list-style:none;cursor:pointer;padding:16px 18px;display:flex;align-items:flex-start;gap:14px}
+  details.hx summary::-webkit-details-marker{display:none}
+  .stt{flex-shrink:0;width:64px;font-size:11px;font-weight:700;letter-spacing:.06em;padding-top:3px}
+  .stt.live{color:var(--red)} .stt.paper{color:var(--ink)} .stt.surv{color:var(--ink)}
+  .stt.grave{color:var(--faint)} .stt.seed{color:var(--sub)}
+  .stt .tick{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:6px;vertical-align:1px}
+  .stt.live .tick{background:var(--red)} .stt.paper .tick{background:var(--ink)}
+  .stt.surv .tick{background:var(--ink);opacity:.5}
+  .stt.grave .tick{background:transparent;border:1px solid var(--faint);width:6px;height:6px}
+  .stt.seed .tick{background:transparent;border:1px dashed var(--sub);width:6px;height:6px}
+  .hmain{flex:1;min-width:0}
+  .hname{font-size:16px;font-weight:600;letter-spacing:.01em;line-height:1.55}
+  /* 状況タグ（前日/当日に入った仮説）。ユーザー指示により赤で立てる（当日=赤ベタ/前日=赤枠） */
+  .ntag{display:inline-block;margin-left:9px;font-family:var(--g);font-size:9px;font-weight:700;letter-spacing:.1em;
+    color:#fff;background:var(--red);border-radius:3px;padding:1.5px 5px;vertical-align:2.5px;line-height:1.5;white-space:nowrap}
+  .ntag.day1{color:var(--red);background:transparent;border:1px solid var(--red);padding:.5px 4px}
+  details.hx[data-state="grave"] .hname{color:var(--sub);text-decoration:line-through;text-decoration-color:var(--faint);text-decoration-thickness:1px}
+  .hmet{font-size:13px;color:var(--sub);margin-top:4px;line-height:1.6}
+  .hmet .k{color:var(--faint)}
+  /* 紙孵化の現在n・前日比（小さく・変化なしも検知できるように） */
+  .prog{display:block;font-size:11.5px;color:var(--faint);margin-top:4px;line-height:1.55;letter-spacing:.01em}
+  .prog b{color:var(--ink);font-weight:600}
+  .prog .dz{color:var(--faint)}            /* 前日比ゼロ＝変化なし */
+  .prog .dup{color:var(--red);font-weight:700}   /* 前日から増えた */
+  .prog .ddn{color:var(--sub);font-weight:600}   /* 減った */
+  .prog .await{color:var(--faint)}
+  .chev{flex-shrink:0;color:var(--faint);font-size:12px;padding-top:4px;transition:transform .2s}
+  details.hx[open] .chev{transform:rotate(90deg)}
+  .body{padding:2px 18px 20px 96px;border-top:1px solid var(--line)}
+  @media(max-width:560px){.body{padding-left:18px}}
+  .body dl{margin:0;display:grid;grid-template-columns:118px 1fr;gap:2px 18px}
+  @media(max-width:560px){.body dl{grid-template-columns:1fr}}
+  .body dt{font-size:11.5px;color:var(--red);font-weight:600;letter-spacing:.04em;padding-top:12px}
+  .body dd{margin:0;font-size:14.5px;color:var(--sub);line-height:1.9;padding-top:10px}
+  .body dd b{color:var(--ink);font-weight:600}
+  .simline{margin-top:14px;padding:12px 14px;background:var(--alt);border-radius:4px;font-size:12.5px;color:var(--sub)}
+  details.hx[data-state="grave"] .simline{background:var(--paper)}
+  .simline b{color:var(--ink)}
+  .promote{margin-top:16px;padding:13px 15px;border:1px solid var(--red);border-radius:4px;
+    display:flex;gap:12px;align-items:flex-start;background:var(--paper)}
+  .promote .parrow{flex-shrink:0;font-size:10.5px;font-weight:700;color:#fff;background:var(--red);
+    border-radius:3px;padding:4px 8px;letter-spacing:.03em;line-height:1.3;margin-top:1px}
+  .promote .ptext{font-size:14px;color:var(--ink);line-height:1.85}
+  .promote .ptext b{color:var(--red);font-weight:600}
+  @media(max-width:560px){.promote{flex-direction:column;gap:8px}}
+  .hidden{display:none !important}
+
+  .sig{margin-top:60px;padding-top:22px;border-top:1px solid var(--line);font-size:12px;color:var(--faint)}
+  .sig a{color:var(--red);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:1px}
+  .sig a:hover{border-color:var(--red)}
+  @media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important}}
+  /* スマホ読みやすさ（公式サイト水準） */
+  @media(max-width:560px){
+    body{font-size:16.5px;line-height:2.0}
+    .wrap{padding:0 18px 90px}
+    .lede{font-size:16.5px}
+    .thesis{font-size:17px}
+    .note{font-size:14.5px;padding-left:0}
+    h2{padding-left:26px}
+    h2::before{width:18px}
+    .note.defnote{padding-left:0}
+    .savedsub,.srcnote,.simcap2,.stnote{font-size:13px}
+    .body dd{font-size:15px}
+    .hname{font-size:16.5px}
+    .hmet{font-size:13.5px}
+    .promote .ptext{font-size:14.5px}
+    .rule .rb{font-size:14px}
+    .filters button{font-size:14px;padding:9px 15px}
+    .stat .k,.simcell .k{font-size:12px}
+  }
+</style>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="kicker">作品 <span>／ 日次変化の変換機</span></p>
+    <h1>AIによる身体知の<br>蒸留器つき複利機械</h1>
+    <p class="lede">人間が長い年月をかけて身体で覚える相場の勘を、AIが測定可能な知識へ蒸留する試み。効くものだけを紙の上で選び、効かないものは墓標として地図に残す。赤い点は、詰まりが取れて流れが通った一点。</p>
+    <p class="thesis">これは投資の勧誘でも運用実績の広告でもない。ひとつの機械が、何を確かめ、何を捨て、何を残したかの記録である。</p>
+  </header>
+
+  <h2>将来の予測 — 実験の記述的シミュレーション</h2>
+  <p class="note">測定されたエッジが、投下資本の大きさによって複利でどう積み上がるかを描いた実験的な地図。スライダーを動かすと容量の天井まで見える。<span class="red">保証ではなく、過去データに基づく推定である。</span></p>
+  <div class="proj">
+    <div class="top">
+      <p class="toplabel">投下資本 <b id="capTop">300万円</b> の場合 · 測定エッジを12ヶ月複利した中央値</p>
+      <div class="bignum tnum"><span class="from" id="fromV">300万</span><span class="arrow">→</span><span id="bigV">503</span><span class="yen" id="bigU">万円</span></div>
+      <div class="mult">成長倍率 <b id="multV">1.68×</b><span id="multSub">／ 12ヶ月中央値 +67.5%</span></div>
+    </div>
+    <div class="heroCanvasWrap"><canvas id="hero" width="2000" height="300" aria-hidden="true"></canvas></div>
+    <div class="ctrl">
+      <div class="ctrlhead">
+        <div class="ctrlcap tnum" id="capLabel">300<span>万円</span></div>
+        <div class="ctrlmeta tnum">建玉可能率 <b id="feas">60%</b> · 検定済み戦略との相関 <b id="corr">0.85</b></div>
       </div>
-      <a class="next-scene" href="#scene-two" aria-label="次の場面へ"><span>円環へ</span><i></i></a>
-    </section>
+      <input type="range" id="cap" min="50" max="10000" step="10" value="300" aria-label="投下資本（万円）">
+      <div class="ticks tnum"><span>50万</span><span>500万</span><span>2,000万</span><span>5,000万</span><span>1億</span></div>
+    </div>
+    <div class="statrow tnum">
+      <div class="stat"><div class="v r" id="mMed">+4.2%</div><div class="k">月次リターン中央値</div></div>
+      <div class="stat"><div class="v" id="y1">+67.5%</div><div class="k">12ヶ月 中央値(p50)</div></div>
+      <div class="stat"><div class="v" id="y3">+377%</div><div class="k">36ヶ月 中央値(p50)</div></div>
+      <div class="stat"><div class="v" id="y1band">38〜108%</div><div class="k">12ヶ月 p5〜p95</div></div>
+    </div>
+    <p class="srcnote">旗艦戦略「夜間持続ハーベスタ」の10年イベント台帳（19,658イベント / 2,054営業日）× 単元株約定モデル（参加率上限0.3%込み）。<b>月次利率は約2,000万で頂点、以降は参加率上限で低下する（容量天井）。</b>測定点を線形補間・ブートストラップ10,000試行。<b>これは実験の記述的シミュレーションであり、将来の成果を保証するものではない。</b></p>
+  </div>
 
-    <section class="scene scene-two" id="scene-two" data-scene="S2" aria-labelledby="scene-two-title">
-      <div class="scene-loop" aria-hidden="true" data-motion-active="ambient-loop"><i></i><i></i><i></i></div>
-      <header class="scene-heading compact-heading">
-        <span>SCENE 02 / 眠らない円環</span>
-        <h2 id="scene-two-title">時間は、止まらず門を通る。</h2>
-      </header>
-      <div class="scene-stage landscape-stage scene-enter" data-scene-stage>
-        <img class="art-image lazy-art" src="assets/act2-sleepless-ring.webp" alt="昼と夜を一周する眠らない円環の銅版画" loading="lazy" width="1536" height="1024">
-        <div class="time-orbit scene-time-orbit" data-motion="A3" data-motion-active="time-orbit" aria-hidden="true">
-          <i class="current-satellite" data-current-satellite></i>
-          <i class="task-satellite orbit-a" data-task-minute="350"></i>
-          <i class="task-satellite orbit-b" data-task-minute="512"></i>
-          <i class="task-satellite orbit-c" data-task-minute="910"></i>
-          <i class="task-satellite orbit-d" data-task-minute="1140"></i>
-        </div>
-        <div class="night-lights" aria-hidden="true" data-motion-active="night-lights">
-          <i style="--x:29%;--y:42%;--d:6.3s"></i><i style="--x:28%;--y:48%;--d:7.7s"></i>
-          <i style="--x:29%;--y:55%;--d:9.1s"></i><i style="--x:31%;--y:61%;--d:10.4s"></i>
-          <i style="--x:34%;--y:67%;--d:8.2s"></i><i style="--x:38%;--y:72%;--d:6.8s"></i>
-          <i style="--x:43%;--y:76%;--d:9.8s"></i><i style="--x:48%;--y:78%;--d:7.2s"></i>
-        </div>
-        <svg class="steam" viewBox="0 0 100 100" aria-hidden="true" data-motion-active="steam">
-          <path d="M47 52 C45 49 49 47 47 44 C45 42 48 40 47 37"/>
-          <path d="M49 52 C51 49 48 47 50 44 C52 42 49 40 50 37"/>
-        </svg>
-        <button class="resident-hotspot resident-two" type="button" aria-label="くつろぐチエロくんに声をかける">
-          <span class="speech" role="status">ふふん、まかせてよ。</span>
-        </button>
-      </div>
-      <p class="data-line stagger-value" data-motion="A2" data-motion-active="digit-stagger" aria-live="polite">
-        <span><b data-pulse="days_running">1</b><small>稼働日</small></span>
-        <i></i>
-        <span><b data-pulse="judgments_total">25</b><small>判定</small></span>
-        <i></i>
-        <span class="voice">ふふん、順調。</span>
-      </p>
-    </section>
+  <h2>仮説の生態</h2>
+  <p class="note">通った流れと、詰まった跡。各行を開くと理由・検証・生死・次の仮説と、<span class="red">次フェーズへ進む条件</span>が読める。<br>昇格ルート（不変）: <b>種</b> → 探索一回判定 → Fable審査 → ホールドアウト → <b>紙孵化(n=30)</b> → 本人YES → <b>本番稼働</b>。</p>
+  <div class="band tnum" id="band"></div>
+  <p class="note defnote" id="defnote" style="padding-left:0;margin-top:12px"></p>
+  <p id="progStamp" style="padding-left:0;margin:2px 0 0;font-size:11.5px;color:var(--faint);line-height:1.6"></p>
+  <div class="filters" id="filters" role="group" aria-label="状態で絞り込み"></div>
+  <div class="cards" id="cards"></div>
 
-    <section class="scene scene-three" id="scene-three" data-scene="S3" aria-labelledby="scene-three-title">
-      <div class="scene-loop" aria-hidden="true" data-motion-active="ambient-loop"><i></i><i></i><i></i></div>
-      <header class="scene-heading machine-heading">
-        <span>SCENE 03 / 機械室</span>
-        <h2 id="scene-three-title">触れると、データが物理になる。</h2>
-        <p>六つの機械は同じ公開台帳を読み、違う動きへ変換しています。</p>
-      </header>
-      <div class="machine-grid" aria-label="六つの動くデータ機械">
-        <button class="machine-card" type="button" data-motion-card="A1" aria-label="しずくで遊ぶ">
-          <span class="card-index">A1</span><strong>しずく</strong><small>今日 <b data-pulse="judgments_today">0</b>件 / 累計 <b data-pulse="judgments_total">25</b>件</small>
-          <span class="card-toy drop-toy" data-motion-active="drop-card">
-            <span class="motion-drop" data-motion="A1" aria-hidden="true"><i class="motion-drop-body"></i><i class="motion-ripple ripple-one"></i><i class="motion-ripple ripple-two"></i></span>
-            <i class="drop-cup"></i>
-          </span>
-          <em>落として遊ぶ</em>
-        </button>
+  <h2>この機械が自分に課す規律</h2>
+  <p class="note">なぜ墓標がこれほど多いのか。効いてほしいという願いを、機械に持たせない仕組みがあるからだ。</p>
+  <div class="rules">
+    <div class="rule"><div class="rh">凍結一回検定</div><div class="rb">検定する前に定義をハッシュで凍結し、リターンは一度だけ見る。後から条件をいじる余地をなくす。事後の言い訳が構造的に効かない。</div></div>
+    <div class="rule"><div class="rh">敵対的監査</div><div class="rb">設計・判断する層と、それを反証しにいく独立の監査層を分ける。自分の丸め誤りや実装の穴も、監査側が繰り返し止めてきた。</div></div>
+    <div class="rule"><div class="rh">事後救済の禁止</div><div class="rb">一度死んだ仮説は、同じデータで蘇らせない。復活には新しい前向きデータでの独立検定だけを許す。</div></div>
+    <div class="rule"><div class="rh">地合いの割り引き</div><div class="rb">上げ相場に居るだけで出る利益を「エッジ」と誤認しないため、無条件のベンチマークを常に併走させ、超過分だけを見る。</div></div>
+    <div class="rule"><div class="rh">紙で先に死ぬ</div><div class="rb">効かないものは実弾の前に、紙とデータの上でゼロ円で殺す。損の大部分を、口座でなく検定で払う。</div></div>
+    <div class="rule"><div class="rh">測定が導く</div><div class="rb">分布の形にも手法の新しさにも、あらかじめの好みを持ち込まない。残すか捨てるかは、測定された値だけが決める。</div></div>
+  </div>
 
-        <button class="machine-card" type="button" data-motion-card="A2" aria-label="時間差の踊りで遊ぶ">
-          <span class="card-index">A2</span><strong>時間差の踊り</strong><small>直近7日 <b data-pulse="judgments_week">24</b>件</small>
-          <span class="card-toy motion-bars" data-motion="A2" data-motion-active="data-bars" aria-hidden="true">
-            <i data-bar="judgments_today"></i><i data-bar="judgments_week"></i><i data-bar="judgments_market"></i><i data-bar="lessons_total"></i><i data-bar="no_trade_days"></i>
-          </span>
-          <em>順に弾ませる</em>
-        </button>
+  <h2>AIが圧縮したもの</h2>
+  <p class="note">2026-06末からの全検証を、人間の分析チームが実際に手で行ったら何がかかるか（推定・積み上げ計算）。ここで見せたいのは誰かの成果ではなく、<b>AIと規律を組み合わせると、この規模の検証労働をこれだけ圧縮できる</b>という一点だ。</p>
+  <div class="saved">
+    <p class="savedlabel">浮いた金額（人手で全検証を実施した場合の推定合計）</p>
+    <div class="savednum tnum">¥<span id="savedYen">0</span></div>
+    <p class="saveddelta" id="savedDelta"></p>
 
-        <button class="machine-card" type="button" data-motion-card="A3" aria-label="軌道で遊ぶ">
-          <span class="card-index">A3</span><strong>軌道</strong><small>JST <b data-live="jst-short">--:--</b> / 今日の4タスク</small>
-          <span class="card-toy orbit-toy" data-motion="A3" data-motion-active="orbit-card" aria-hidden="true">
-            <i class="orbit-ring ring-one"><b></b></i><i class="orbit-ring ring-two"><b></b></i><i class="orbit-core"></i>
-          </span>
-          <em>衛星を加速する</em>
-        </button>
+    <table class="calc tnum" id="calcMoney"></table>
+    <div class="savedtime tnum">
+      <p class="stlabel">圧縮した時間</p>
+      <div class="strow"><b id="calcDays">408</b><span>人日（約 <b id="calcMonths">19</b> 人月 ≒ 1.6人年）の検証・エンジニアリング労働を</span></div>
+      <div class="strow"><b>約4週間</b><span>で完了　＝　人時ベース 約 <b id="calcX">20</b> 倍の圧縮</span></div>
+      <p class="stnote">内訳: データ基盤の取得・整形・監査 90人日 ＋ 探索スクリーニング（数百セルを分割標本で選別）40人日 ＋ 凍結検定 <b id="calcTestDays">156</b>人日（全 <b id="calcTotalDefs">104</b> 定義 × 1.5人日）＋ 独立監査（敵対的B監査）30人日 ＋ 実行インフラ（檻・朝チェーン・RECHECK・発注経路）70人日 ＋ 一次資料の読解・蒸留 22人日。192ヶ月の身体知コーパスの読解はこのうちの一部にすぎない。</p>
+    </div>
+    <p class="savedsub" id="savedSub"></p>
+  </div>
 
-        <button class="machine-card" type="button" data-motion-card="A4" aria-label="ゆりかごで遊ぶ">
-          <span class="card-index">A4</span><strong>ゆりかご</strong><small>今日の判定到着 <b data-pulse="judgments_today">0</b>件</small>
-          <span class="card-toy motion-cradle" data-motion="A4" data-motion-active="cradle" aria-hidden="true">
-            <i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i>
-          </span>
-          <em>力だけを通す</em>
-        </button>
+  <h2>活用しているデータ</h2>
+  <p class="note">この作品が10年の市場を測るために保持・日次同期しているデータの実数（SSDデータレイク実測）。</p>
+  <div class="band tnum" id="databand"></div>
+  <div class="datatable-wrap"><table class="datatable tnum" id="datatable"></table></div>
 
-        <button class="machine-card" type="button" data-motion-card="A5" aria-label="液体の器で遊ぶ">
-          <span class="card-index">A5</span><strong>液体の器</strong><small>PB-1v2 <b data-operations-clock="n">—</b>/<b data-operations-clock="target">—</b></small>
-          <span class="card-toy vessel-toy" data-motion="A5" data-motion-active="liquid" aria-hidden="true">
-            <i class="vessel-glass"><b class="vessel-liquid"><u></u></b></i><i class="vessel-level" data-derived="pb1-percent">0%</i>
-          </span>
-          <em>水面を揺らす</em>
-        </button>
+  <div class="disclaimer">
+    <p>本ページは、ひとつのAI実験（作品）の状態を記録するものです。<b>特定の金融商品の取得を勧誘するものではなく、運用実績・将来の利益を約束・示唆するものでもありません。</b>掲載する検定結果は過去データに基づく記述であり、将来の成果を保証しません。個別の投資判断はご自身の責任と、必要に応じ専門家の助言のもとで行ってください。</p>
+    <p class="upd">最終更新 <b id="lastUpd">2026-07-21</b> ／ データは原則1日1回更新。実銘柄コード・保有・当日シグナルは掲載していません。</p>
+  </div>
 
-        <button class="machine-card" type="button" data-motion-card="A6" aria-label="無限の環で遊ぶ">
-          <span class="card-index">A6</span><strong>無限の環</strong><small>稼働 <b data-pulse="days_running">1</b>日 / 学び <b data-pulse="lessons_total">3</b></small>
-          <span class="card-toy loop-toy" data-motion="A6" data-motion-active="loop-card" aria-hidden="true"><i></i><i></i><i></i></span>
-          <em>環を重ねて回す</em>
-        </button>
-      </div>
-      <p class="machine-status" id="machine-status" aria-live="polite">どの機械にも触れます。</p>
-    </section>
+  <p class="sig"><a href="https://chiero.jp/" target="_blank" rel="noopener">chiero.jp</a></p>
+</div>
 
-    <section class="scene scene-four" id="scene-four" data-scene="S4" aria-labelledby="scene-four-title">
-      <div class="scene-loop" aria-hidden="true" data-motion-active="ambient-loop"><i></i><i></i><i></i></div>
-      <header class="scene-heading compact-heading">
-        <span>SCENE 04 / ドアと塔</span>
-        <h2 id="scene-four-title">数字は降り、記憶は塔に残る。</h2>
-      </header>
-      <div class="scene-stage portrait-stage tower-stage scene-enter" data-scene-stage>
-        <img class="art-image lazy-art" src="assets/act3-door-tower.webp" alt="数字を刻む塔と開いたドアの前に立つチエロくんの銅版画" loading="lazy" width="1024" height="1536">
-        <div class="number-rain" aria-hidden="true" data-motion-active="number-rain"></div>
-        <span class="tower-heart" aria-hidden="true" data-motion-active="heart"></span>
-        <button class="resident-hotspot resident-three" type="button" aria-label="ドアを見つめるチエロくんに声をかける">
-          <span class="speech" role="status">ふふん、まかせてよ。</span>
-        </button>
-      </div>
-      <p class="tower-caption"><span>死因辞書</span><strong data-pulse="lessons_total">3</strong><small>学びは数字になって降り続ける。</small></p>
-    </section>
+<script>
+const DATA = {
+  asof:"2026-07-22",
+  tiers:[
+    {c:50, m:0.58, y1p5:1.9,  y1:11.7, y1p95:23.3,  y3:39.5,  feas:9.6,  corr:0.453},
+    {c:100,m:1.52, y1p5:11.3, y1:25.0, y1p95:43.0,  y3:96.4,  feas:22.1, corr:0.593},
+    {c:200,m:3.26, y1p5:28.9, y1:51.2, y1p95:81.4,  y3:248.4, feas:42.6, corr:0.746},
+    {c:300,m:4.21, y1p5:37.8, y1:67.5, y1p95:107.9, y3:376.7, feas:60.0, corr:0.847},
+    {c:500,m:5.16, y1p5:49.0, y1:87.7, y1p95:142.9, y3:566.7, feas:80.1, corr:0.908},
+    {c:1000,m:5.71,y1p5:53.1, y1:100.2,y1p95:165.1, y3:703.9, feas:94.8, corr:0.941},
+    {c:2000,m:5.73,y1p5:52.1, y1:101.7,y1p95:172.7, y3:738.1, feas:98.3, corr:0.945},
+    {c:3000,m:5.62,y1p5:52.0, y1:100.3,y1p95:170.5, y3:711.9, feas:98.8, corr:0.943},
+    {c:5000,m:5.29,y1p5:49.8, y1:98.4, y1p95:169.3, y3:685.3, feas:99.0, corr:0.935},
+    {c:7000,m:5.06,y1p5:45.7, y1:93.9, y1p95:163.3, y3:638.4, feas:99.1, corr:0.936},
+    {c:10000,m:4.48,y1p5:39.7,y1:83.6, y1p95:145.6, y3:529.1, feas:99.1, corr:0.926}
+  ],
+  hyps:[
+    {id:"pb1",state:"live",name:"PB-1v2 本番稼働（現在は一時停止）",fam:"実弾・夜間持続",cells:0,
+     metric:"本番モード稼働中 · 建玉0 · 本日はデータ被覆不足で発注ゼロ停止 · ENTRY_SYMBOLS空",
+     prog:{n:0,target:40,prev:0,label:"前向き実弾"},
+     arose:"検定済みハーベスタシグナルを実弾で撃つ本番経路。旧ルールは廃し、検定済みシグナル限定・小資本集中モード(PB-1v2)として再設計。",
+     verif:"発注経路は7月上旬に実弾約定実績。毎朝の健全性チェック(token/PUSH/wallet/manifest)をGREENで通過。使用シグナルはホールドアウトt=5.49/5.41のもの。",
+     outcome:"本番モード(production・live_enabled)だが現在アーム無し。今週火曜のtoken競合401でPAPER_DAY(RED_SAFETY)判定→安全側で一時停止中。さらに本日(7/22)は、買い候補を選ぶための売買代金ランキングが仕様上50件しか返らず、必要な被覆(300件)に届かないと判定して14:50の発注を自動で見送った(UNEXECUTABLE_RANKING_DEPTH)。門が正しく閉じた例で、建玉0・未約定0・KILLなし。",
+     next:"明朝の二重GREEN門（インフラ全GREEN＋ルール同一性）成立で自動アーム→14:50判定から発注有効。本人YESは事前表明済み。RED日は撃たない。初週N=1銘柄・建玉≤資本50%×レバ1.5x・引け買い翌寄り売り。300万到達でポートフォリオ本則へ。",
+     sim:"初弾はVa降順で予算内に買える最上位銘柄1つ。10年分布は投下資本あたり+87.6bp/日の現象を使用。"},
+    {id:"harvester",state:"paper",name:"統合ハーベスタ（旗艦）",fam:"夜間持続",
+     metric:"+87.6bp/日（投下資本） · t=17.7 · 11年全年プラス",
+     prog:{n:0,target:30,prev:0,label:"前向き解決"},
+     arose:"身体知の移植（公開記録のある個人投資家）(D0v4-030)と教義「上は持続」から。大出来高で強く上げ高値で引ける株は翌朝まで持続する、という仮説。",
+     verif:"3定義の和集合（vr≥5&ret≥5%&Va≥1e9 ∪ 引け位置cH≥0.9 ∪ gap≥7%維持）を14:50に判定し引け買い→翌寄り売り。ホールドアウト一発 t=5.49/5.41 両PASS。地合い除去後の超過も+90.8bp(t=17.7)。",
+     outcome:"生存。月次勝率97%・最大DD-24%（投下資本基準）。10年全年プラス。実弾昇格は資金300万以上が条件。",
+     next:"早乗り(035)・張り付き(041-G7)・ギャップ維持(041-G2)へ分岐。",
+     sim:"月次利率の頂点は約2,000万(+5.73%/月)。1億では参加率上限で+4.48%/月に低下。"},
+    {id:"035",state:"paper",name:"D0v4-035 早乗り 15:30",fam:"夜間持続",
+     metric:"precision 0.958 · 確認検定PASS",
+     prog:{n:0,target:30,prev:0,label:"前向き解決"},
+     arose:"ハーベスタの14:50判定を、引け確定を待たずに乗る早乗り版。執行現実性の検証を兼ねる。",
+     verif:"14:50フラグの引け確定一致precision=0.958を一発測定。035_036家族でPASS（036は非対称で墓標）。",
+     outcome:"生存・ACTIVE_BLIND紙孵化中。precision維持が主指標。",next:"—",
+     sim:"ハーベスタと同分布。単独昇格には別途Fable裁定。"},
+    {id:"041g7",state:"paper",name:"D0v4-041-G7 張り付き高値引け",fam:"夜間持続",
+     metric:"+128.9bp/夜 · t=9.02 · n=2,318",
+     prog:{n:0,target:30,prev:0,label:"前向き解決"},
+     arose:"「上げの持続は引けの位置(cH)が支配」の教義精密化。張り付き(cH≥0.9)は飽和ではなく持続、という条件付き仮説。",
+     verif:"79セルから分割スクリーニング→8セル確認検定8/8 PASS。カードhashは詳細契約へ更新（経済的内容不変・厳格化のみ）。",
+     outcome:"生存・ACTIVE_BLIND。本日の裁定でカード時計が始動可能に。",
+     next:"050で「引け位置条件はイベント族に移植不可」と判明→教義の境界を確定。",sim:"高精度セル。単独では稼働率が低い。"},
+    {id:"041g2",state:"paper",name:"D0v4-041-G2 ギャップ維持",fam:"夜間持続",
+     metric:"gap≥7%が14:50まで維持 · 確認検定通過",
+     prog:{n:0,target:30,prev:0,label:"前向き解決"},
+     arose:"寄りで大きく飛んだ株が日中維持できれば夜も持続する、という窓埋め回避型の仮説。",
+     verif:"041家族の確認検定を通過。ギャップ維持=引け≥寄りで定義。",
+     outcome:"生存・ACTIVE_BLIND。",next:"—",sim:"ハーベスタ和集合の一角。"},
+    {id:"039b",state:"surviving",name:"D0v4-039B 上方修正ドリフト",fam:"イベントドリフト",
+     metric:"+132bp/20日 · イベント鉱脈の長兄",
+     prog:{n:0,target:30,prev:0,label:"前向き解決"},
+     arose:"業績上方修正の後、機関の緩慢な織り込みでドリフトが続く（PEAD/最頑健イベント）の日本版。",
+     verif:"スクリーニング→確認で生存。足型とは無関係＝イベント族は緩慢織り込み＋機械買いが機序。",
+     outcome:"生存。20日保有型。033・052と同じイベント鉱脈。",
+     next:"033(自社株買い)・052(決算集中)へ機序を横展開。",sim:"20日+132bp。"},
+    {id:"033",state:"paper",name:"D0v4-033 自社株買いドリフト",fam:"イベントドリフト",
+     metric:"+165.0bp/20日 · t=5.08 · n=2,252",
+     prog:{n:0,target:30,prev:0,label:"前向き解決"},
+     arose:"自社株買い表明企業は自ら止まれない買い手＝需給が読める、という仮説。TDnetアドオン購読の事後正当化を兼ねる。",
+     verif:"TDnet 5年×分類器。週+60bp(t=2.99)/月+165bp(t=5.08)。歴史消費済みのため前向き紙ルートへ。D=722・σ_day=872.7bp確定(リターン非参照)。",
+     outcome:"生存・B監査待ち→紙時計開始。039Bと同輩。",
+     next:"050で「引け位置条件の付与は逆効果(+96 vs 無条件+147)」と判明。",sim:"20日+165bp。"},
+    {id:"052",state:"paper",name:"D0v4-052 決算集中日ドリフト",fam:"イベントドリフト",
+     metric:"+170.8bp/20日 · t=2.96 · 本日生存",
+     prog:{n:0,target:30,prev:0,label:"前向き解決"},
+     arose:"決算が集中する日は1件あたりの注意が薄まり織り込みが遅れドリフトが太る（limited attention）。",
+     verif:"高集中日(P75超=79件/日)の正サプライズ vs 低密度日の反条件。反条件は日次t=-0.89で符号分離＝『集中は条件である』が成立。",
+     outcome:"生存（本日）。前向き専用。高集中日は年約60日で稼働率は低い。",
+     next:"境界発行済み(σ_day=1002.6bp・閾値79凍結)。B監査後に紙時計。",sim:"20日+170.8bp。"},
+    {id:"051",state:"grave",name:"D0v4-051 TOB発表後ドリフト",fam:"イベントドリフト",
+     metric:"+22.5bp t=0.55 / +70.0bp t=1.46 — 有意性なし",
+     arose:"公開買付の買付者は届出価格で買わねばならない＝止まれない買い手の極致。最強クラスの機序。",
+     verif:"EDINET直接コード314件×日足。発表翌営業日寄り買い→+5日/+20日寄り売り。中央値≈0・勝率5割。",
+     outcome:"死亡。機序は最強なのに翌朝には収束が完了している。死因=SPEED_INFEASIBLE。",
+     next:"種へ:『TOB当日中アクセス』。機序は死んでいない、死んだのは翌寄りエントリー。",sim:"20bpコスト後に非対称な左尾を抱え分布が悪い。"},
+    {id:"053",state:"grave",name:"D0v4-053 CAN SLIM C×N",fam:"古典",
+     metric:"t=-0.63 / +0.85 · 中央値-73〜-222bp · 超過は地合い以下",
+     arose:"米国の古典的成長株手法(1988)の公式:単独四半期増益(C)×52週高値ブレイク(N)×出来高。生存2鉱脈の1988年版という仮説。",
+     verif:"単独四半期YoY(PIT再構築104,988行)→イベント4,619件。デトレンド義務適用。C×出来高までは価値がある(反条件t=6.08)。",
+     outcome:"死亡。N(52週高値ブレイクの終値買い)が価値を破壊。終値は既に伸び切っており日次tは負。死因=ENTRY_EXTENDED_AT_BREAK。",
+     next:"教義:『52週新高値ブレイク終値買いは日本2016-24で負値。上は持続はHOT日スケール限定』。050判例の再確認。",sim:"60日保有の超過リターンは無条件ベンチマーク以下。"},
+    {id:"sakata",state:"grave",name:"酒田五法 全10法",fam:"古典",
+     metric:"通過0/10 · 8法が有意にマイナス（黒三兵 t=-9.90）",
+     arose:"江戸期の米相場で生まれ400年生き延びた形状文法。時の試練に耐えた古典。",
+     verif:"分割スクリーニング2016-21・事前固定基準(t≥3,net≥+25bp,n≥300)。10セル全て。",
+     outcome:"死亡。8法が有意にマイナス＝教科書方向に張ると負ける。パターン完成＝織り込み済み＋逆流開始。死因=PATTERN_COMPLETION_PRICED_IN。確認標本2022-24は未開封のまま封印。",
+     next:"種へ:『酒田下落継続形の逆符号』。古典プログラム第1判例=「時の試練」と「現代の符号」は別物。",sim:"下落追撃ショートは踏み上げの燃料——教義「下は反転」と整合。"},
+    {id:"049",state:"grave",name:"D0v4-049 大量保有報告ドリフト",fam:"イベントドリフト",
+     metric:"両セル墓標",
+     arose:"大量保有報告(5%ルール)は著名投資家参入シグナルとしてドリフトを生む、という仮説。",
+     verif:"報告書イベント×日足で検定。",
+     outcome:"死亡。制度的な開示遅延が鮮度を殺す。報告書は残響。",
+     next:"教義:『注目の鮮度が通貨。開示の遅い情報は死ぬ』。",sim:"—"},
+    {id:"050",state:"grave",name:"D0v4-050 イベント×引け位置の相互作用",fam:"横断検定",
+     metric:"相互作用不在",
+     arose:"夜間持続の教義(引け位置cH支配)をイベント族に移植すれば相乗効果が出るのでは、という合成仮説。",
+     verif:"自社株買い×引け位置・上方修正×引け位置を反条件随伴で検定。",
+     outcome:"死亡。相互作用不在。自社株買いでは条件付けが逆効果(+96 vs 無条件+147)。",
+     next:"教義:『夜間持続=注目の熱力学／イベント=緩慢織り込み。教義は機序ファミリー内でのみ有効』。",sim:"—"},
+    {id:"036",state:"grave",name:"D0v4-036 PEAR ショート側",fam:"イベントドリフト",
+     metric:"墓標＋非対称",
+     arose:"上方修正ドリフト(039B)の裏——下方修正後の下落ドリフトも取れるはず、という対称仮説。",
+     verif:"035_036家族で検定。",
+     outcome:"死亡。ショート側は非対称で消える。「上は持続・下は反転」の再確認。",next:"039Bはロング前向きへ(037)。",sim:"—"},
+    {id:"032",state:"grave",name:"D0v4-032 余波（aftermath）",fam:"横断検定",metric:"2墓標",
+     arose:"大変動の翌日に反転や継続の余波が取れる、という仮説。",
+     verif:"一発検定。",outcome:"死亡・2セル墓標。",next:"暴落後レジームは注釈のみ。",sim:"—"},
+    {id:"024",state:"grave",name:"D0v4-024 嵐×拡散",fam:"移植",metric:"グロス正確に0.00bp",
+     arose:"暗号資産の嵐(急変動)と拡散の移植検定。",
+     verif:"凍結一発。",outcome:"死亡。グロスが正確に0.00bp——エッジ完全不在の綺麗な墓標。",next:"—",sim:"—"},
+    {id:"r002",state:"grave",name:"R002 トレンドフォロー移植家族",fam:"移植",metric:"4セル全滅",
+     arose:"トレンドフォローの教科書2冊を土台にした仮想通貨トレンド戦略。",
+     verif:"4セルを一発検定(設計欠陥を事前修正)。",outcome:"死亡・家族閉鎖。",
+     next:"暗号資産はKEEP_PAPER_ONLY(引け寄せがなく忠実な移植不能)。",sim:"—"},
+    {id:"038",state:"grave",name:"D0v4-038 ストップ高追撃",fam:"イベントドリフト",metric:"墓標",
+     arose:"ストップ高翌日の追撃で取れる、という仮説。",
+     verif:"仮説スイープで検定。",outcome:"死亡。",next:"039Bのみ生存。",sim:"—"},
+    {id:"early",state:"grave",name:"D0v4-025〜029 初期群",fam:"探索初期",metric:"全墓標",
+     arose:"身体知移植の初期探索群(各種の順張り・逆張り定義)。",
+     verif:"凍結一発×5。",outcome:"死亡。030/031だけが生き残りハーベスタの核になった。",
+     next:"生存2セルが身体知移植の本体へ。",sim:"—"},
+    {id:"seed-tob",state:"seed",name:"種: TOB当日中アクセス",fam:"再生種",metric:"条件つき再生種",
+     arose:"051の墓標から。止まれない買付者の機序は死んでいない——死んだのは翌寄りエントリーだけ。",
+     verif:"—（未検定）",outcome:"待機。発表当日中に入れる執行インフラができた時のみ、新ID・posterior_informedで検定可。",next:"—",sim:"—"},
+    {id:"seed-sakata",state:"seed",name:"種: 酒田下落継続形の逆符号",fam:"再生種",
+     metric:"負のt(黒三兵-9.90/三山-7.69)が示す反転エッジの可能性",
+     arose:"酒田の墓標から。教科書方向が有意に負なら、逆に張る余地があるかもしれない。",
+     verif:"—（posterior_informed・未使用データ限定）",outcome:"待機。封印中の2022-24または前向きでのみ検定可。",next:"—",sim:"—"},
+    {id:"seed-hf",state:"seed",name:"種: HF-09/HF-10（Foundry自動生成）",fam:"機械生成",
+     metric:"HF-09=既知機序衝突 / HF-10=探索死",
+     arose:"HYPOTHESIS-FOUNDRYが機序/教義/墓標台帳から自動生成した候補。",
+     verif:"一発検定。",outcome:"死亡。0選択は正常——Foundryは月次凍結枠4に対し0でも良い。",
+     next:"T3蒸留技法マップからの候補(気配切り上がり・寄り・スイング)を8月枠へ準備中。",sim:"—"},
+    {id:"seed-atlas",state:"seed",name:"種: D0v4-ATLAS-v0 / 011 / 014",fam:"初期種",
+     metric:"NOT_PREDICTIVE / NOT_RESCUED / INSUFFICIENT_EVIDENCE",
+     arose:"初期の探索仮説群(レジーム分類ATLAS・固定試行)。",
+     verif:"固定試行台帳で検定。",outcome:"死亡。事後救済は禁止。新データのみが独立な未来検定を作れる。",next:"—",sim:"—"},
 
-    <section class="scene scene-five" id="scene-five" data-scene="S5" aria-labelledby="scene-five-title">
-      <div class="operations-section" aria-labelledby="scene-operations-title">
-      <header class="operations-heading">
-        <span>SCENE 05 / 今日までの運転記録</span>
-        <h2 id="scene-operations-title">失敗も、停止も、時計も、そのまま残す。</h2>
-      </header>
-      <div class="operations-grid scene-enter" data-operations-root>
-        <article>
-          <small>OS-1</small>
-          <strong data-operations="os1">4/4 墓標</strong>
-          <p data-operations="os1-cells">読込中</p>
-        </article>
-        <article>
-          <small>LIVE-1450</small>
-          <strong data-operations="universe">宇宙契約 v3.1</strong>
-          <p>50–55行を受理し、応答順の先頭50行へ正規化</p>
-        </article>
-        <article>
-          <small>凍結検定の生存</small>
-          <strong data-operations="survival-cells">14セル</strong>
-          <p data-operations="survival-mechanisms">実効独立機序=2</p>
-        </article>
-        <article class="operations-wide">
-          <small>実state時計 8枚</small>
-          <div class="paper-clock-list" data-operations="evaluation-clocks">読込中</div>
-        </article>
-        <article class="operations-wide">
-          <small>日次RED分類</small>
-          <div class="red-history-list" data-operations="red-history">読込中</div>
-        </article>
-      </div>
-      </div>
-      <div class="colophon-loop loop-toy" data-motion="A6" data-motion-active="colophon-loop" aria-hidden="true"><i></i><i></i><i></i></div>
-      <div class="colophon scene-enter" data-scene-stage>
-        <span class="scene-number">SCENE 05 / 奥付</span>
-        <h2 id="scene-five-title">事前登録した基準だけが、<br>本物に触れる。</h2>
-        <p>— CHIERO</p>
-        <button class="resident resident-colophon" type="button" aria-label="チエロくんに声をかける">
-          <span class="resident-motion"><img src="assets/chiero-thinking.webp" alt="チエロくん" loading="lazy" width="168" height="234"></span>
-          <span class="speech" role="status">ふふん、まかせてよ。</span>
-        </button>
-        <div class="colophon-meta">
-          <span>毎日15:35に更新</span>
-          <time data-live="updated-at">2026.07.13 18:23 JST</time>
-        </div>
-        <a class="share-button" href="https://twitter.com/intent/tweet?text=%E8%B5%A4%E3%81%84%E5%B8%BD%E5%AD%90%E3%81%AE%E5%B0%8F%E3%81%95%E3%81%AA%E4%BD%8F%E4%BA%BA%E3%81%A8%E3%80%81%E7%9C%A0%E3%82%89%E3%81%AA%E3%81%84%E6%A9%9F%E6%A2%B0%E3%80%82&url=https%3A%2F%2Fart.chiero.jp%2F" target="_blank" rel="noopener noreferrer">Xで作品を分ける</a>
-      </div>
-    </section>
-  </main>
+    /* ===== 6月末〜の全数（試行台帳 logs/research/d0v4_fixed_trials.jsonl 実測）===== */
+    {id:"041fam",state:"paper",name:"D0v4-041 家族（8セル生存）",fam:"夜間持続",cells:8,
+     metric:"G1×3 / G2×3 / G7 / G8 — 全8セル SURVIVED_BY_FDR",
+     arose:"HOT日の持続を出来高倍率×リターン×引け位置×サプライズで8定義に分解し確認検定。",
+     verif:"79セルから分割スクリーニング→8セルが確認標本でBY-FDR通過(8/8)。うちG7/G2をカード化。",
+     outcome:"生存。ハーベスタ和集合の骨格。カード化は稼働率と重複で2枚に絞った。",next:"050で条件移植の限界を確定。",sim:"和集合でハーベスタへ。"},
+    {id:"013",state:"surviving",name:"D0v4-013 対照陽性",fam:"探索",cells:1,
+     metric:"記述+121bp · CONTROL_POSITIVE · 資格なし",
+     arose:"対照群として置いた素朴な順張り定義。",verif:"記述測定で+121bpだが資格判定は通さず(横断のみ)。",
+     outcome:"資格なし（対照）。エッジではなく地合いの写し。",next:"デトレンド義務の動機になった。",sim:"—"},
+    {id:"015",state:"surviving",name:"D0v4-015 6倍出来高観察",fam:"探索",cells:1,
+     metric:"OBSERVATIONAL_POSITIVE · 資格なし",
+     arose:"出来高6倍の異常日を観察的に抽出。",verif:"観察陽性だが横断のみで資格化せず。",
+     outcome:"資格なし。後のHOT定義(vr≥5)の素地。",next:"041家族のvr条件へ。",sim:"—"},
+    {id:"012",state:"surviving",name:"D0v4-012-FWD 前向き凍結",fam:"前向き",cells:1,
+     metric:"FROZEN_PENDING_B_AUDIT",arose:"前向き専用の凍結仮説。",verif:"B監査待ちで凍結。",
+     outcome:"係属中（前向き）。",next:"—",sim:"—"},
+    {id:"018",state:"surviving",name:"D0v4-018-FWD v2前向き",fam:"前向き",cells:1,
+     metric:"V2_FROZEN_PENDING_B_REAUDIT",arose:"18番の前向きv2。",verif:"B再監査＋実行時データゲート待ち。",
+     outcome:"係属中。",next:"—",sim:"—"},
+    {id:"007",state:"grave",name:"D0v4-007 探索一号",fam:"探索初期",cells:1,
+     metric:"NO_GO · n=53 · net+46bp（月次比率0.43で不合格）",
+     arose:"最初期の順張り探索定義。",verif:"探索ゲート。ネットは正だが陽性月比率が閾値未満。",
+     outcome:"死亡。単月偏りで頑健性なし。",next:"011が事後スライスとして派生→救済不可。",sim:"—"},
+    {id:"008",state:"grave",name:"D0v4-008 探索二号",fam:"探索初期",cells:1,
+     metric:"NO_GO · n=2 · net-5.5bp",arose:"探索定義。イベント数極少。",verif:"探索ゲートで即死(n=2)。",
+     outcome:"死亡。サンプル不足。",next:"—",sim:"—"},
+    {id:"016",state:"grave",name:"D0v4-016 6定義・証拠不足",fam:"夜間探索",cells:6,
+     metric:"INSUFFICIENT_EVIDENCE_TERMINAL · 6,954エピソード",
+     arose:"夜間の6定義でイベント密度を確保して一括評価。",verif:"6定義6,954件を一回評価。",
+     outcome:"死亡・終端。密度は解消したが資格には届かず。",next:"密度確保の手法は後続へ。",sim:"—"},
+    {id:"017",state:"grave",name:"D0v4-017 夜間探索",fam:"夜間探索",cells:1,
+     metric:"FAMILY_DEATH_NO_SURVIVORS",arose:"夜間探索判定の家族。",verif:"家族一括検定。",
+     outcome:"死亡・生存者なし。",next:"—",sim:"—"},
+    {id:"019",state:"grave",name:"D0v4-019 超流動大型株の日中トレンド",fam:"日中",cells:6,
+     metric:"SIX_DEFINITIONS_TERMINAL · 2事実再利用",
+     arose:"超流動大型株の日中トレンド追随（実戦系の書き手が語る板の速さの領域）。",verif:"6定義を終端検定。",
+     outcome:"死亡。2つの再利用可能な事実だけ残した。",next:"TAPE-1前向き観測領域へ委譲。",sim:"—"},
+    {id:"020",state:"grave",name:"D0v4-020 探索",fam:"探索",cells:1,
+     metric:"A_RESULT_ZERO_SURVIVORS",arose:"探索定義群。",verif:"一括検定。",outcome:"死亡・ゼロ生存。",next:"—",sim:"—"},
+    {id:"021",state:"grave",name:"D0v4-021 探索",fam:"探索",cells:1,
+     metric:"A_RESULT_ZERO_SURVIVORS",arose:"探索定義群。",verif:"一括検定。",outcome:"死亡・ゼロ生存。",next:"—",sim:"—"},
+    {id:"022",state:"grave",name:"D0v4-022 10セル探索",fam:"探索",cells:10,
+     metric:"DISCOVERY_DEATH_ALL_10_CELLS",arose:"10定義の大規模探索。",verif:"10セル一括。",
+     outcome:"死亡・10セル全滅。",next:"板の見えざる目(022-BE)も未検出。",sim:"—"},
+    {id:"027",state:"grave",name:"D0v4-027 暗号嵐×拡散移植",fam:"移植",cells:1,
+     metric:"移植墓標",arose:"暗号資産の嵐×拡散を株へ移植。",verif:"凍結一発(hash 82f81cba)。",
+     outcome:"死亡。金曜再現キャンペーンで閉鎖。",next:"024と同族の暗号移植の限界。",sim:"—"},
+    {id:"028",state:"grave",name:"D0v4-028 トレーリング",fam:"横断検定",cells:1,
+     metric:"トレーリング墓標",arose:"利を伸ばすトレーリング決済の検定。",verif:"凍結一発。",
+     outcome:"死亡。固定出口に劣後。",next:"翌寄り一括決済が正へ。",sim:"—"},
+    {id:"ipomap",state:"grave",name:"IPO-MAP 2016-2021",fam:"IPO",cells:1,
+     metric:"NO_FREEZABLE_STRUCTURE",arose:"新規上場後のドリフト地図。",verif:"6年分を地図化。",
+     outcome:"死亡。凍結可能な構造が見つからず。",next:"—",sim:"—"},
+    {id:"r001",state:"grave",name:"R001 分岐要因",fam:"再現",cells:1,
+     metric:"設計欠陥の検出（検出力ゼロ）",arose:"初期の再現検定。",verif:"事前に検出力ゼロを発見(理論最小p)。",
+     outcome:"設計欠陥として死亡。恒久教訓=凍結前に検出力を必ず計算。",next:"S1に検出力必須を追記。",sim:"—"},
+    {id:"selfprice",state:"grave",name:"SELF_PRICE 自己価格日中トレンド",fam:"探索",cells:1,
+     metric:"TERMINAL_EXCLUDED_FROM_GENERATION",arose:"自己価格の日中トレンド枝。",verif:"生成対象から除外。",
+     outcome:"死亡・終端。",next:"—",sim:"—"},
+    {id:"043",state:"grave",name:"D0v4-043 PIT財務品質セレクタ",fam:"ファクター",cells:4,
+     metric:"5つのPIT財務品質×4ファクター・低生存",arose:"実戦記事由来の財務品質セレクタ群。",verif:"PIT財務でファクター検定。",
+     outcome:"死亡。低ボラ以外は資格化せず。",next:"—",sim:"—"},
+    {id:"045",state:"grave",name:"D0v4-045 営業益予想符号転換",fam:"ファクター",cells:4,
+     metric:"operating-profit forecast sign transition · 4セル",arose:"営業利益予想の符号転換をシグナル化。",verif:"4セル検定。",
+     outcome:"死亡。",next:"上方修正(039B)のみ生存。",sim:"—"},
+    {id:"047",state:"grave",name:"D0v4-047 月次4ファクター",fam:"ファクター",cells:4,
+     metric:"four distinct monthly factors · 低生存",arose:"月次の4ファクター。",verif:"4ファクター検定。",
+     outcome:"死亡。低ボラ因子のみ痕跡。",next:"—",sim:"—"},
+    {id:"hf0919",state:"seed",name:"種: HF-2026-07-19-05/06",fam:"機械生成",cells:2,
+     metric:"Foundry生成・キュー待ち→凍結枠温存",arose:"Foundryが7/19に生成した候補2件。",verif:"優先度づけ待ち。",
+     outcome:"待機。月次凍結枠は温存(0選択は正常)。",next:"T3蒸留技法マップと合流。",sim:"—"},
+    {id:"d0v5",state:"seed",name:"種: D0v5-001/002 較正",fam:"次世代",cells:2,
+     metric:"高密度前向きへ一本化(7/12結論)",arose:"D0v5系の較正。高密度の場では前向きが十分速い。",verif:"較正検定。",
+     outcome:"前向き一本化。",next:"前向き紙ルートの設計へ。",sim:"—"},
 
-  <aside class="lifeline" data-motion-active="lifeline" aria-label="作品の生命線">
-    <i class="lifeline-pulse" aria-hidden="true"></i>
-    <time data-live="jst-clock">--:--:-- JST</time>
-    <span class="lifeline-countdown"><b data-live="next-event-name">次の自動イベント</b>まで <strong data-live="countdown">--:--:--</strong></span>
-    <span class="lifeline-days">稼働<b data-pulse="days_running">1</b>日目</span>
-  </aside>
-</body>
-</html>
+    /* ===== 2026-07-22 S7 記述地図が生んだ種（FDR非消費・holdout未接触・orders_sent=false・凍結前）===== */
+    {id:"s7-h1",state:"seed",added:"2026-07-22",name:"種: 決算集中度の連続化",fam:"記述地図",cells:0,
+     metric:"集中度↑と20日超過↑ Spearman 0.854（記述地図・FDR非消費）",
+     arose:"052の高集中日(閾値79件)を二値でなく連続量として測ったらどうか、というS7用量反応の問い。",
+     verif:"2016-2024・正サプライズ×事前Va中央値1億円以上を開示件数で10分位化。分位と20日超過のSpearman 0.854。記述のみで資格判定はしていない。",
+     outcome:"待機（種）。順位関係は強いが、これは記述地図でありエッジではない。",
+     next:"閾値79を連続変数化した新定義を起草→Fable審査→凍結一回検定へ。",sim:"—"},
+    {id:"s7-h2",state:"seed",added:"2026-07-22",name:"種: 反条件除去後の残余ドリフト",fam:"記述地図",cells:0,
+     metric:"20日+43.4bp(記述t=5.03)/60日+84.1bp(t=6.56)の残余 · イベント同一性照合待ち",
+     arose:"上方修正(039B)と決算反応(052)を除いた後にもドリフトの残余があるか、というS7重複測定。",
+     verif:"反条件44,264件を再構築し既知イベント±3日を除外。残余に20日+43.4bp/60日+84.1bpの記述的な正。ただし元053反条件集合と件数不一致(既報69,801件)ゆえ、イベント同一性をID単位で照合するまで凍結審査には送らない。",
+     outcome:"待機（種・凍結前）。残余は記述上プラスだが、入力の同一性が未解消のためエッジは主張しない。",
+     next:"元イベント集合とID照合→同一なら凍結一回検定、不同なら別の記述集合として保存。",sim:"—"},
+    {id:"s7-decay",state:"seed",added:"2026-07-22",name:"種: 注目減衰の鮮度軸",fam:"記述地図",cells:0,
+     metric:"夜間ハーベスタはD+1のみ正・D+2以降は負 → 保有短縮の記述",
+     arose:"シグナル後のリターンがどう減衰するかを家族別に測るS7注目減衰。",
+     verif:"2016-2024・各家族のD+n独立1日超過を測定。夜間ハーベスタD+1 +31.6bp(記述t=2.69)だがD+2以降は負。開示側(033/039B)には小さな正の中間日が散在。",
+     outcome:"待機（種）。保有期間と注目の鮮度を次の記述軸にする示唆。",
+     next:"暦日でなく出来高の半減時点を横軸にした鮮度定義を起草→審査へ。",sim:"—"}
+  ]
+};
+
+(function(){
+  var css=getComputedStyle(document.documentElement);
+  function col(v){return css.getPropertyValue(v).trim()}
+  function f1(x){return x.toFixed(1)}
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // 次フェーズへ進む条件（種→紙孵化→本番稼働）
+  var PROMOTE={
+    pb1:"<b>明朝の二重GREEN門</b>（インフラ全GREEN＋ルール同一性pytest PASS）成立で自動アーム → 14:50判定から発注有効。本人YESは事前表明済み・RED日は撃たない。<b>+50万入金で建玉200万（レバ2x）</b>へ拡張可、300万到達でポートフォリオ本則へ失効。",
+    harvester:"紙で <b>n=30解決</b>（独立10営業日以上）→ L1〜L4境界クリア → <b>資金300万到達</b> → <b>本人YES</b>で実弾稼働。現在は前向き解決0/30（解決待ち）。",
+    "035":"紙 n=30 かつ 14:50判定precision≥0.90を維持 → 昇格カード提出 → 本人YESの檻へ。",
+    "041fam":"041二カードの時計始動（本日裁定済）→ n=30解決 → 境界クリア → 本人YES。",
+    "041g7":"n=30解決 → 経済非棄却(L2)・整合(L1) → 本人YES。",
+    "041g2":"n=30解決 → 境界クリア → 本人YES。",
+    "033":"<b>B監査PASS</b>（σ_day確定済）→ 紙時計開始 → n=30 → L1〜L4 → 本人YES。",
+    "052":"<b>B監査PASS</b>（実装＝036同一の確認＋境界式検算）→ 紙時計開始 → n=30 → 本人YES。前向き専用。",
+    "039b":"前向き紙カード化 → n=30 → 本人YES。033と資本競合を紙期間に実測。",
+    "013":"資格検定を通していない対照のため昇格経路になし。デトレンド義務の教材として残置。",
+    "015":"観察陽性のみで資格化せず。定義はvr条件として041家族に吸収済み。",
+    "012":"B監査PASS → 前向き紙へ。",
+    "018":"B再監査＋実行時データゲート通過 → 前向き紙へ。",
+    "seed-tob":"<b>発表当日中にエントリーできる執行インフラ</b>が整う → 新ID・posterior_informedで探索一回判定 → 通れば紙孵化へ。",
+    "seed-sakata":"<b>封印中の2022-24 または前向きデータ</b>で逆符号を探索一回判定（同一データ再検は禁止）→ 通れば紙へ。",
+    "seed-hf":"T3蒸留技法マップと合流 → Fable審査で月次凍結枠に採用 → 探索一回判定。",
+    "seed-atlas":"<b>新しい前向きデータのみ</b>が独立検定を作れる（事後救済は永久に禁止）。",
+    "hf0919":"優先度づけ → Fable審査 → 月次凍結枠採用 → 探索一回判定。",
+    "d0v5":"前向き紙ルートの設計完了 → 紙孵化へ。",
+    "s7-h1":"集中度を連続化した新定義を起草 → Fable審査 → 凍結一回検定 → BY-FDR。記述地図は資格ではない。",
+    "s7-h2":"<b>元053反条件集合とのイベント同一性をID単位で照合</b> → 同一なら凍結一回検定、不同なら別集合として保存。照合前は凍結しない。",
+    "s7-decay":"出来高半減を横軸にした鮮度定義を起草 → Fable審査 → 探索一回判定。"
+  };
+  // cell counts for multi-cell named entries (definitions tested)
+  var CELLMAP={sakata:10,early:5,r002:4,"049":2,"036":2,"032":2,"038":2,"051":2,"053":2};
+  function cellsOf(h){return (h.cells!=null)?h.cells:(CELLMAP[h.id]||1);}
+  var deadDefs=0,totalDefs=0;
+  DATA.hyps.forEach(function(h){var c=cellsOf(h);totalDefs+=c;if(h.state==='grave')deadDefs+=c;});
+
+  // band
+  var counts={paper:0,surviving:0,grave:0,seed:0,live:0};
+  DATA.hyps.forEach(function(h){counts[h.state]=(counts[h.state]||0)+1});
+  var totalCards=DATA.hyps.length;
+  // バンド描画（前日比つき）。prev は data.json の aggregates.prev.counts から来る（初日はなし＝基準）。
+  function renderBand(){
+    var prev=(window.__AGG&&window.__AGG.prev)?window.__AGG.prev.counts:null;
+    var cells=[{k:'live',l:'本番稼働',a:1},{k:'paper',l:'紙孵化中',a:1},{k:'surviving',l:'生存・係属'},{k:'grave',l:'墓標（系）'},{k:'seed',l:'種（再生待ち）'}];
+    document.getElementById('band').innerHTML=cells.map(function(c){
+      var n=counts[c.k]||0,dtxt='';
+      if(prev){var d=n-(prev[c.k]||0);dtxt=(d===0)?'<u class="bd z">前日比 ±0</u>':'<u class="bd nz">前日比 '+(d>0?'+':'')+d+'</u>';}
+      return '<div class="cell'+(c.a?' accent':'')+'"><b>'+n+'</b>'+dtxt+'<i>'+c.l+'</i></div>';
+    }).join('');
+  }
+  renderBand();
+  var dn=document.getElementById('defnote');
+  if(dn) dn.innerHTML='全 <b>'+totalCards+'</b> 系・計 <b>'+totalDefs+'</b> 定義（セル）を凍結検定。墓標は <b>'+counts.grave+'</b> 系・<b>'+deadDefs+'</b> 定義（酒田10法・022の10セルなど1系に複数定義を含む）。';
+
+  // ===== 浮いた金額・時間（人手で全検証を実施した場合の積み上げ計算）=====
+  var DAY_RATE=50000;          // クオンツ日当（年1,100万換算）
+  var TUITION=300000;          // 1定義あたり回避授業料
+  var platformDays=90;     // データ取得・整形・監査
+  var screeningDays=40;    // 探索スクリーニング（数百セル選別）
+  var testDays=Math.round(totalDefs*1.5);   // 凍結検定 104定義×1.5
+  var auditDays=30;        // 独立監査（敵対的B監査）
+  var infraDays=70;        // 実行インフラ（檻・朝チェーン・RECHECK・発注経路）
+  var readingDays=22;      // 一次資料の読解・蒸留
+  var analystDays=platformDays+screeningDays+testDays+auditDays+infraDays+readingDays; // ≈408
+  var analystMonths=Math.round(analystDays/21.7);    // ≈19
+  var compressX=Math.round((analystDays/5)/4);       // 4週間 → ~20倍
+  var labor=analystDays*DAY_RATE;
+  var dataSpend=80000;
+  var tuition=deadDefs*TUITION;
+  var savedTotal=labor+dataSpend+tuition;
+  function yen(n){return n.toLocaleString();}
+  document.getElementById('calcMoney').innerHTML=
+    '<tr><td>検証・エンジニアリング労働　'+analystDays+'人日 × ¥'+yen(DAY_RATE)+'/日<span class="cnote">クオンツ日当・年1,100万換算</span></td><td>¥'+yen(labor)+'</td></tr>'
+   +'<tr><td>データ取得　J-Quants Standard＋アドオン<span class="cnote">実支出（分速・Tick・適時開示の数ヶ月分）</span></td><td>¥'+yen(dataSpend)+'</td></tr>'
+   +'<tr><td>回避した実弾授業料　墓標 '+deadDefs+'定義 × ¥30万<span class="cnote">人間が実弾で「効かない」と確信するまでの平均授業料の推定</span></td><td>¥'+yen(tuition)+'</td></tr>'
+   +'<tr class="sum"><td>合計</td><td>¥'+yen(savedTotal)+'</td></tr>';
+  document.getElementById('calcDays').textContent=analystDays;
+  document.getElementById('calcMonths').textContent=analystMonths;
+  document.getElementById('calcX').textContent=compressX;
+  document.getElementById('calcTestDays').textContent=testDays;
+  document.getElementById('calcTotalDefs').textContent=totalDefs;
+  document.getElementById('savedSub').innerHTML='※ 日当¥50,000・授業料¥30万/定義はいずれも推定の係数。総検証 <b>'+totalDefs+'</b> 定義のうち生き残ったのは <b>'+((counts.live||0)+counts.paper+counts.surviving)+'</b> 系のみで、残りは紙とデータの上でゼロ円で死んだ。';
+  // その日に圧縮された分（前日比）。合計(savedTotal)には既に反映済み。
+  function updateSavedDelta(){
+    var el=document.getElementById('savedDelta'); if(!el)return;
+    var prev=(window.__AGG&&window.__AGG.prev)?window.__AGG.prev:null;
+    if(!prev){el.innerHTML='<span class="z">前日比 基準日（明日から本日圧縮分を表示）</span>';return;}
+    var dMoney=savedTotal-(prev.saved_total||0),dDead=deadDefs-(prev.dead_defs||0),dDefs=totalDefs-(prev.total_defs||0);
+    if(dMoney===0){el.innerHTML='<span class="z">本日の新規圧縮 ±0（前日比）</span>';return;}
+    var parts=[];
+    if(dDead) parts.push('新規墓標 '+(dDead>0?'+':'')+dDead+'定義');
+    if(dDefs) parts.push('検定 '+(dDefs>0?'+':'')+dDefs+'定義');
+    el.innerHTML='<span class="nz">本日の圧縮 '+(dMoney>0?'+':'')+'¥'+Math.abs(dMoney).toLocaleString().replace('-','')+'</span>'
+      +(dMoney<0?'（減）':'')+(parts.length?'（'+parts.join(' ・ ')+'）':'')+' ／ 上の合計に反映済み';
+  }
+  updateSavedDelta();
+  var syEl=document.getElementById('savedYen');
+  syEl.textContent=savedTotal.toLocaleString(); // 最終値を確実に表示（rAF抑制時の保険）
+  (function(){var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;if(reduce)return;
+    var t0=null,dur=1200;
+    function step(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/dur);var e=1-Math.pow(1-p,3);
+      syEl.textContent=Math.round(savedTotal*e).toLocaleString();if(p<1)requestAnimationFrame(step);}
+    requestAnimationFrame(step);})();
+
+  // ===== 活用データ（実測・日次更新対応）=====
+  // 埋め込みフォールバック（fetch不可＝artifact等ではこれを表示）
+  var EMBEDDED_STATS={
+    generated_at_jst:"2026-07-21",
+    datasets:[
+      {nm:"分足バー",desc:"500営業日 · 2024-07〜直近",rows:230622497},
+      {nm:"日足バー",desc:"全上場銘柄 · 2016〜（10年）",rows:10109523},
+      {nm:"指数（TOPIX等）",desc:"10年 · 日次",rows:2442},
+      {nm:"決算サマリ",desc:"108項目/件 · 単独/連結",rows:190944},
+      {nm:"TDnet開示索引",desc:"適時開示イベント",rows:764824},
+      {nm:"XBRL財務文書",desc:"構造化財務（件数）",rows:128647},
+      {nm:"EDINET本文",desc:"有価証券報告書等（全文・件数）",rows:21570},
+      {nm:"TDnet開示PDF",desc:"開示原本PDF（件数）",rows:5325},
+      {nm:"身体知コーパス",desc:"蒸留元・192ヶ月（件数）",rows:2993}
+    ],
+    rows_total:241690230, cells_total:2507046346, docs_total:158535, gb:50
+  };
+  function jrows(n){if(n>=1e8)return (n/1e8).toFixed(2)+'億';if(n>=1e4)return (n/1e4).toFixed(n>=1e6?0:1)+'万';return n.toLocaleString();}
+  function oku(n){return (n/1e8).toFixed(n>=1e9?0:2)+'億';}
+  function man(n){return (n/1e4).toFixed(1)+'万';}
+  function renderData(st){
+    document.getElementById('databand').innerHTML=[
+      {n:oku(st.rows_total),l:"総行数",a:1},{n:oku(st.cells_total),l:"データ点（行×列）",a:1},
+      {n:man(st.docs_total),l:"財務・開示文書",a:1},{n:"約"+st.gb+"GB",l:"データレイク容量"},{n:"10年",l:"カバー期間"}
+    ].map(function(b){return '<div class="cell'+(b.a?' accent':'')+'"><b>'+b.n+'</b><i>'+b.l+'</i></div>';}).join('');
+    document.getElementById('datatable').innerHTML=
+      '<tr><th>データセット</th><th>内容</th><th style="text-align:right">行数・件数</th></tr>'
+      +st.datasets.map(function(d){return '<tr><td class="nm">'+d.nm+'</td><td>'+d.desc+'</td><td class="num">'+jrows(d.rows)+'</td></tr>';}).join('')
+      +'<tr class="tot"><td class="nm">合計</td><td>約'+st.gb+'GB · 財務/開示文書'+man(st.docs_total)+'件</td><td class="num">約'+oku(st.rows_total)+'行 / '+oku(st.cells_total)+'データ点</td></tr>';
+    if(st.generated_at_jst){var el=document.getElementById('lastUpd');if(el)el.textContent=st.generated_at_jst;}
+  }
+  renderData(EMBEDDED_STATS);
+  // 自動更新中インジケータ：ブラウザが2分ごとに再取得している「生きている」ことを可視化。
+  // 最終確認＝この画面が最後にデータを取りに行った時刻（閲覧者の時計）。状態データ＝サーバ側の最終確認(JST)。
+  function pad(n){return (n<10?'0':'')+n;}
+  function updateLiveStamp(){
+    var ps=document.getElementById('progStamp'); if(!ps)return;
+    var t=new Date(),hh=pad(t.getHours())+':'+pad(t.getMinutes())+':'+pad(t.getSeconds());
+    var srv=window.__srvStamp?('状態データ '+window.__srvStamp+' JST時点'):'状態データ 取得中';
+    ps.innerHTML='<span class="livedot"></span>自動更新中 ／ 最終確認 '+hh+' ／ '+srv+' ・ 変化は約15分以内に反映';
+  }
+  updateLiveStamp();
+  // 日次生成 data.json があれば最新値へ差し替え（同一オリジンでホストした場合のみ有効。artifactのCSP下では失敗し埋め込み値のまま）
+  function refreshData(){
+    try{
+      fetch('./data.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():null;})
+        .then(function(d){if(d){if(d.data_stats){var s=d.data_stats;s.generated_at_jst=d.generated_at_jst;renderData(s);}if(d.hyp_progress&&window.__mergeHypProgress)window.__mergeHypProgress(d.hyp_progress);if(d.aggregates){window.__AGG=d.aggregates;renderBand();updateSavedDelta();}window.__srvStamp=d.progress_checked_at||window.__srvStamp;}updateLiveStamp();})
+        .catch(function(){});
+    }catch(e){}
+  }
+  refreshData();
+  // 開いたタブを自動更新：データは2分ごとに再取得（変化時だけ再描画）、最終確認の時刻表示は30秒ごとに更新＝生きていることが一目で分かる。
+  setInterval(refreshData, 120000);
+  setInterval(updateLiveStamp, 30000);
+
+  // filters + cards
+  var STATES=[["live","本番稼働"],["all","すべて"],["paper","紙孵化"],["surviving","生存"],["grave","墓標"],["seed","種"]];
+  var fWrap=document.getElementById('filters');
+  fWrap.innerHTML=STATES.map(function(s,i){return '<button data-f="'+s[0]+'" aria-pressed="'+(i===0)+'">'+s[1]+'</button>';}).join('');
+  var STT={live:["live","本番"],paper:["paper","紙"],surviving:["surv","生存"],grave:["grave","墓標"],seed:["seed","種"]};
+  // 状況タグ: h.added（"YYYY-MM-DD"）が当日=0/前日=1日前なら「NEW」を出し、翌々日には自動で消える。
+  // 閲覧者のローカル日付基準なので、新しい仮説を追加してaddedを入れるだけで前日・当日だけ光る。
+  function daysSince(d){
+    if(!d)return null;var m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(d);if(!m)return null;
+    var now=new Date(),today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+    var a=new Date(+m[1],+m[2]-1,+m[3]);if(isNaN(a))return null;
+    return Math.round((today-a)/86400000);
+  }
+  function newTag(h){
+    var g=daysSince(h.added);
+    if(g===0)return '<span class="ntag" title="当日エントリー">NEW</span>';
+    if(g===1)return '<span class="ntag day1" title="前日エントリー">NEW</span>';
+    return '';
+  }
+  function addedNum(h){return h.added?parseInt(h.added.replace(/-/g,''),10):0;}
+  // 現在n / 前日比（変化なし＝±0も明示して検知できるように）
+  function progLine(h){
+    var p=h.prog; if(!p) return '';
+    var lab=p.label||'前向き解決';
+    var delta=(p.prev==null)?null:(p.n-p.prev);
+    var dtxt;
+    if(delta==null) dtxt='<span class="await">前日比 —（基準日）</span>';
+    else if(delta>0) dtxt='<span class="dup">前日比 +'+delta+'</span>';
+    else if(delta<0) dtxt='<span class="ddn">前日比 '+delta+'</span>';
+    else dtxt='<span class="dz">前日比 ±0（変化なし）</span>';
+    return '<span class="prog">'+lab+' <b>'+p.n+'/'+p.target+'</b> · '+dtxt+'</span>';
+  }
+  function card(h){
+    var s=STT[h.state],dl='';
+    [["立てた理由",h.arose],["検証",h.verif],["生死の理由",h.outcome],["次に生まれた",h.next]].forEach(function(r){
+      if(r[1]&&r[1]!=="—") dl+='<dt>'+r[0]+'</dt><dd>'+r[1]+'</dd>';});
+    var pm=PROMOTE[h.id];
+    var promo=pm?'<div class="promote"><span class="parrow">次フェーズ条件</span><span class="ptext">'+pm+'</span></div>':'';
+    var sim=(h.sim&&h.sim!=="—")?'<div class="simline">シミュレーション: '+h.sim+'</div>':'';
+    return '<details class="hx" data-state="'+h.state+'"><summary><span class="stt '+s[0]+'"><span class="tick"></span>'+s[1]+'</span>'
+      +'<span class="hmain"><span class="hname">'+h.name+'</span>'+newTag(h)+'<span class="hmet"><span class="k">'+h.fam+'</span> · '+h.metric+'</span>'+progLine(h)+'</span>'
+      +'<span class="chev">▸</span></summary><div class="body"><dl>'+dl+'</dl>'+promo+sim+'</div></details>';
+  }
+  var order={live:-1,paper:0,surviving:1,grave:2,seed:3};
+  var currentF='live';
+  // 状態順→同状態内はadded降順（NEW＝新しいものほど上に積む）
+  function renderCards(){
+    document.getElementById('cards').innerHTML=DATA.hyps.slice()
+      .sort(function(a,b){var d=order[a.state]-order[b.state];return d?d:(addedNum(b)-addedNum(a));})
+      .map(card).join('');
+    applyFilter(currentF);
+  }
+  function applyFilter(f){
+    currentF=f;
+    [].forEach.call(fWrap.children,function(b){b.setAttribute('aria-pressed',b.getAttribute('data-f')===f);});
+    [].forEach.call(document.querySelectorAll('.hx'),function(el){el.classList.toggle('hidden',!(f==='all'||el.getAttribute('data-state')===f));});
+  }
+  fWrap.addEventListener('click',function(e){var btn=e.target.closest('button');if(!btn)return;applyFilter(btn.getAttribute('data-f'));});
+  renderCards(); // 初期描画（applyFilter('live')を内包）。data.json到着後にhyp_progressを合流して再描画する
+
+  // data.json の hyp_progress（現在n・前日値）が来たら各仮説の prog を上書きして再描画（前日比を自動更新）
+  var __lastProg=null;
+  window.__mergeHypProgress=function(hp){
+    if(!hp) return;
+    var key=JSON.stringify(hp);
+    if(key===__lastProg) return;   // 値が同じなら再描画しない（カードの開閉・フィルタ選択を保持）
+    __lastProg=key;
+    DATA.hyps.forEach(function(h){ if(hp[h.id]){ h.prog=Object.assign({}, h.prog||{}, hp[h.id]); } });
+    renderCards();
+  };
+
+  // simulator
+  var tiers=DATA.tiers;
+  function interp(c,key){if(c<=tiers[0].c)return tiers[0][key];
+    for(var i=1;i<tiers.length;i++){if(c<=tiers[i].c){var a=tiers[i-1],b=tiers[i],t=(c-a.c)/(b.c-a.c);return a[key]+(b[key]-a[key])*t;}}
+    return tiers[tiers.length-1][key];}
+  function jpyParts(man){ // man = 万円単位の数値 → {n:数字, u:単位}
+    if(man>=10000){var o=man/10000;return {n:(o>=10?o.toFixed(1):o.toFixed(2)).replace(/\.?0+$/,''),u:'億'};}
+    return {n:Math.round(man).toLocaleString(),u:'万'};
+  }
+  function jpyFull(man){var p=jpyParts(man);return p.n+p.u;} // 例: 300万 / 1.36億
+  var cap=document.getElementById('cap');
+  // hero curve (animated draw)
+  var animT=1;
+  function drawHero(prog){
+    var cv=document.getElementById('hero'),ctx=cv.getContext('2d');
+    var W=cv.width,H=cv.height,pad=2;var c=+cap.value;
+    ctx.clearRect(0,0,W,H);
+    var y1=interp(c,'y1'),p5=interp(c,'y1p5'),p95=interp(c,'y1p95');
+    var r50=Math.pow(1+y1/100,1/12)-1,r5=Math.pow(1+p5/100,1/12)-1,r95=Math.pow(1+p95/100,1/12)-1;
+    var m=[],lo=[],hi=[];for(var i=0;i<=12;i++){m.push(Math.pow(1+r50,i));lo.push(Math.pow(1+r5,i));hi.push(Math.pow(1+r95,i));}
+    var ymax=hi[12]*1.02,ymin=0.99;
+    function X(i){return pad+(W-pad*2)*i/12}
+    function Y(v){return H-pad-(H-pad*2)*(v-ymin)/(ymax-ymin)}
+    var n=Math.max(1,Math.round(12*prog));
+    // band
+    ctx.beginPath();ctx.moveTo(X(0),Y(lo[0]));
+    for(var i=1;i<=n;i++)ctx.lineTo(X(i),Y(lo[i]));
+    for(var i=n;i>=0;i--)ctx.lineTo(X(i),Y(hi[i]));
+    ctx.closePath();ctx.fillStyle='rgba(230,0,18,.06)';ctx.fill();
+    // median
+    ctx.beginPath();ctx.moveTo(X(0),Y(m[0]));
+    for(var i=1;i<=n;i++)ctx.lineTo(X(i),Y(m[i]));
+    ctx.strokeStyle=col('--red');ctx.lineWidth=3;ctx.lineJoin='round';ctx.stroke();
+    var xi=n; ctx.beginPath();ctx.arc(X(xi),Y(m[xi]),5,0,7);ctx.fillStyle=col('--red');ctx.fill();
+  }
+  // count-up
+  var curBig=300;
+  function renderBig(v){var p=jpyParts(v);document.getElementById('bigV').textContent=p.n;document.getElementById('bigU').textContent=p.u+'円';}
+  function setBig(target,from){
+    var start=curBig,t0=null,dur=reduce?0:650;
+    function step(ts){if(!t0)t0=ts;var p=dur?Math.min(1,(ts-t0)/dur):1;var e=1-Math.pow(1-p,3);
+      renderBig(start+(target-start)*e);
+      if(p<1)requestAnimationFrame(step);else curBig=target;}
+    document.getElementById('fromV').textContent=jpyFull(from);
+    requestAnimationFrame(step);
+  }
+  function update(animate){
+    var c=+cap.value,y1=interp(c,'y1');
+    var proj=c*(1+y1/100);
+    document.getElementById('capTop').textContent=jpyFull(c)+'円';
+    document.getElementById('capLabel').innerHTML=jpyFull(c)+'<span>円</span>';
+    document.getElementById('feas').textContent=Math.round(interp(c,'feas'))+'%';
+    document.getElementById('corr').textContent=interp(c,'corr').toFixed(2);
+    document.getElementById('mMed').textContent='+'+f1(interp(c,'m'))+'%';
+    document.getElementById('y1').textContent='+'+f1(y1)+'%';
+    document.getElementById('y3').textContent='+'+Math.round(interp(c,'y3'))+'%';
+    document.getElementById('y1band').textContent=Math.round(interp(c,'y1p5'))+'〜'+Math.round(interp(c,'y1p95'))+'%';
+    document.getElementById('multV').textContent=(proj/c).toFixed(2)+'×';
+    document.getElementById('multSub').textContent='／ 12ヶ月中央値 +'+f1(y1)+'%';
+    document.getElementById('fromV').textContent=jpyFull(c);
+    if(animate){setBig(proj,c);} else {curBig=proj;renderBig(proj);}
+    drawHero(1);
+  }
+  cap.addEventListener('input',function(){update(false)});
+  cap.addEventListener('change',function(){update(true)});
+  // initial: animate count-up + curve draw
+  update(false);
+  if(!reduce){
+    var t0=null;function anim(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/900);drawHero(p);if(p<1)requestAnimationFrame(anim);}
+    requestAnimationFrame(anim);
+    // count big from base
+    curBig=+cap.value; update(true);
+  }
+})();
+</script>
