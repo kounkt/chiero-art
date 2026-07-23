@@ -1,6 +1,6 @@
 {
   "schema": "operations_public_v2",
-  "updated_at_jst": "2026-07-23T17:36:31+09:00",
+  "updated_at_jst": "2026-07-23T18:50:41+09:00",
   "os1": {
     "family_id": "OS-1",
     "status": "TERMINAL_FAILED_4_OF_4",
@@ -54,7 +54,7 @@
       "card_id": "D0v4-035",
       "label": "14時50分の早乗り",
       "kind": "PAPER",
-      "n": 3,
+      "n": 4,
       "target": 14,
       "state": "ACTIVE_BLIND"
     },
