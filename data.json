@@ -93,7 +93,7 @@
     },
     "033": {
       "n": 0,
-      "target": 30,
+      "target": 14,
       "label": "前向き解決",
       "prev": 0
     },
@@ -135,5 +135,5 @@
     },
     "prev_date": "2026-07-22"
   },
-  "progress_checked_at": "2026-07-23 17:38"
+  "progress_checked_at": "2026-07-23 18:23"
 }
