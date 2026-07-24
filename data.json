@@ -1,37 +1,37 @@
 {
   "schema": "public_site_data_v1",
-  "generated_at_jst": "2026-07-22",
+  "generated_at_jst": "2026-07-25",
   "data_stats": {
     "datasets": [
       {
         "nm": "分足バー",
         "desc": "500営業日 · 2024-07〜直近",
-        "rows": 231564479
+        "rows": 232438161
       },
       {
         "nm": "日足バー",
         "desc": "全上場銘柄 · 2016〜（10年）",
-        "rows": 10113968
+        "rows": 10122856
       },
       {
         "nm": "指数（TOPIX等）",
         "desc": "10年 · 日次",
-        "rows": 2442
+        "rows": 2443
       },
       {
         "nm": "決算サマリ",
         "desc": "108項目/件 · 単独/連結",
-        "rows": 190944
+        "rows": 190955
       },
       {
         "nm": "TDnet開示索引",
         "desc": "適時開示イベント",
-        "rows": 764253
+        "rows": 765091
       },
       {
         "nm": "XBRL財務文書",
         "desc": "構造化財務（件数）",
-        "rows": 128662
+        "rows": 128710
       },
       {
         "nm": "EDINET本文",
@@ -49,10 +49,106 @@
         "rows": 2993
       }
     ],
-    "rows_total": 242636086,
-    "cells_total": 2516625633,
-    "docs_total": 174714,
-    "gb": 50.3
+    "rows_total": 243519506,
+    "cells_total": 2525523961,
+    "docs_total": 174762,
+    "gb": 197.028,
+    "storage": {
+      "measured_at_jst": "2026-07-25T08:50:44+0900",
+      "receipt_path": "logs/build_evidence/public_site_data_measurement_20260725085044.json",
+      "receipt_sha256": "ff753cc16a811ecd05166df5ccb26bad415e95dbf0607d0ca5f7aeccf5189042",
+      "total_bytes": 211557285888,
+      "total_gib": 197.028,
+      "categories": [
+        {
+          "id": "validation_lake",
+          "label": "検定レイク",
+          "bytes": 90488700928,
+          "gib": 84.274,
+          "source_count": 1,
+          "manifest_count": 6
+        },
+        {
+          "id": "crypto_raw",
+          "label": "仮想通貨原料",
+          "bytes": 98642165760,
+          "gib": 91.868,
+          "source_count": 1,
+          "manifest_count": 2
+        },
+        {
+          "id": "historical_tick",
+          "label": "歴史tick",
+          "bytes": 19642712064,
+          "gib": 18.294,
+          "source_count": 1,
+          "manifest_count": 1
+        },
+        {
+          "id": "verified_archive",
+          "label": "退避アーカイブ",
+          "bytes": 2783707136,
+          "gib": 2.593,
+          "source_count": 1,
+          "manifest_count": 1
+        }
+      ]
+    }
+  },
+  "foundry": {
+    "ledger": {
+      "total": 47,
+      "born": 43,
+      "stillborn": 4,
+      "today": {
+        "date_jst": "2026-07-25",
+        "total": 2,
+        "born": 1,
+        "stillborn": 1
+      },
+      "latest_generated_at_jst": "2026-07-25T08:00:00+09:00",
+      "latest_public_birth_ids": [
+        "DR3-004-LONG-MATCHED-BENCHMARK-PAIR-GATE-V1",
+        "DR3-005-COURT-SHELF-RELEASE-EVIDENCE-GATE-V1",
+        "DR3-006-PHYSICAL-PRE2025-PARTITION-GATE-V1",
+        "BH-20260725T08-01-88ff0e3ee4",
+        "BH-20260725T08-02-cd4b049d56"
+      ],
+      "sha256": "829c953ef6370dcb8dc02d281e2d4c03acd350e156d5620c64970256b65e5494",
+      "head_sha256": "e5f7693cced85df3fc07caea94aab6eedb282bab7f689a671667063c34d5e943"
+    },
+    "first_court": {
+      "births": 39,
+      "born": 37,
+      "stillborn": 2,
+      "submitted": 3,
+      "freeze_pending": 3,
+      "shelved": 24,
+      "parked_component": 11,
+      "counts_are_nonexclusive": true,
+      "overlap_note": "B-002は法廷提出済みかつ前向き観測待ちの棚にも含まれる",
+      "source_sha256": "c52f1ae060db6c9052505ff4aeb6852bf454ed59516911190178fbc7b86b79cd"
+    },
+    "weekly_kpi": {
+      "birth_count": 47,
+      "court_submission_rate": {
+        "numerator": 3,
+        "denominator": 43,
+        "value": 0.06976744186046512
+      },
+      "freeze_rate": {
+        "numerator": 0,
+        "denominator": 3,
+        "value": 0.0
+      },
+      "test_survival_rate": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      }
+    },
+    "orders_sent": false,
+    "sendorder_count": 0
   },
   "hyp_progress": {
     "pb1": {
@@ -93,7 +189,7 @@
     },
     "033": {
       "n": 0,
-      "target": 14,
+      "target": 30,
       "label": "前向き解決",
       "prev": 0
     },
@@ -135,5 +231,5 @@
     },
     "prev_date": "2026-07-24"
   },
-  "progress_checked_at": "2026-07-25 08:57"
+  "progress_checked_at": "2026-07-25 08:58"
 }
