@@ -298,16 +298,9 @@
   </div>
 
   <h2>活用しているデータ</h2>
-  <p class="note">この作品が検証に使うデータだけを4区分で機械計測した実数。個人コンテンツは含めない。</p>
+  <p class="note">この作品が10年の市場を測るために保持・日次同期しているデータの実数（SSDデータレイク実測）。</p>
   <div class="band tnum" id="databand"></div>
   <div class="datatable-wrap"><table class="datatable tnum" id="datatable"></table></div>
-  <div class="datatable-wrap"><table class="datatable tnum" id="storagetable"></table></div>
-
-  <h2>Foundryの誕生と法廷</h2>
-  <p class="note">生まれた仮説だけでなく、死産・棚・凍結待ちも同じ面に出す。法廷の区分は重複を含むため合計39にはならない。</p>
-  <div class="band tnum" id="foundryband"></div>
-  <div class="datatable-wrap"><table class="datatable tnum" id="courttable"></table></div>
-  <div class="datatable-wrap"><table class="datatable tnum" id="weeklytable"></table></div>
 
   <div class="disclaimer">
     <p>本ページは、ひとつのAI実験（作品）の状態を記録するものです。<b>特定の金融商品の取得を勧誘するものではなく、運用実績・将来の利益を約束・示唆するものでもありません。</b>掲載する検定結果は過去データに基づく記述であり、将来の成果を保証しません。個別の投資判断はご自身の責任と、必要に応じ専門家の助言のもとで行ってください。</p>
@@ -678,56 +671,21 @@ const DATA = {
       {nm:"TDnet開示PDF",desc:"開示原本PDF（件数）",rows:5325},
       {nm:"身体知コーパス",desc:"蒸留元・192ヶ月（件数）",rows:2993}
     ],
-    rows_total:241690230, cells_total:2507046346, docs_total:158535, gb:null
+    rows_total:241690230, cells_total:2507046346, docs_total:158535, gb:50
   };
   function jrows(n){if(n>=1e8)return (n/1e8).toFixed(2)+'億';if(n>=1e4)return (n/1e4).toFixed(n>=1e6?0:1)+'万';return n.toLocaleString();}
   function oku(n){return (n/1e8).toFixed(n>=1e9?0:2)+'億';}
   function man(n){return (n/1e4).toFixed(1)+'万';}
   function renderData(st){
-    var storage=st.storage||null;
-    var totalGib=storage?storage.total_gib:st.gb;
-    var totalLabel=(totalGib==null)?"計測中":Number(totalGib).toFixed(1)+" GiB";
     document.getElementById('databand').innerHTML=[
       {n:oku(st.rows_total),l:"総行数",a:1},{n:oku(st.cells_total),l:"データ点（行×列）",a:1},
-      {n:man(st.docs_total),l:"財務・開示文書",a:1},{n:totalLabel,l:"検証データ総量"},{n:"10年",l:"カバー期間"}
+      {n:man(st.docs_total),l:"財務・開示文書",a:1},{n:"約"+st.gb+"GB",l:"データレイク容量"},{n:"10年",l:"カバー期間"}
     ].map(function(b){return '<div class="cell'+(b.a?' accent':'')+'"><b>'+b.n+'</b><i>'+b.l+'</i></div>';}).join('');
     document.getElementById('datatable').innerHTML=
       '<tr><th>データセット</th><th>内容</th><th style="text-align:right">行数・件数</th></tr>'
       +st.datasets.map(function(d){return '<tr><td class="nm">'+d.nm+'</td><td>'+d.desc+'</td><td class="num">'+jrows(d.rows)+'</td></tr>';}).join('')
-      +'<tr class="tot"><td class="nm">合計</td><td>'+totalLabel+' · 財務/開示文書'+man(st.docs_total)+'件</td><td class="num">約'+oku(st.rows_total)+'行 / '+oku(st.cells_total)+'データ点</td></tr>';
-    document.getElementById('storagetable').innerHTML=storage
-      ?'<tr><th>検証データ区分</th><th>計測根拠</th><th style="text-align:right">実測量</th></tr>'
-       +storage.categories.map(function(c){return '<tr><td class="nm">'+c.label+'</td><td>du実測 · manifest '+c.manifest_count+'件</td><td class="num">'+Number(c.gib).toFixed(3)+' GiB</td></tr>';}).join('')
-       +'<tr class="tot"><td class="nm">4区分合計</td><td>'+storage.measured_at_jst+' · receipt '+storage.receipt_sha256.slice(0,12)+'…</td><td class="num">'+Number(storage.total_gib).toFixed(3)+' GiB</td></tr>'
-      :'<tr><td class="nm">4区分計測中</td><td>SSDとmanifestを確認中</td><td class="num">—</td></tr>';
+      +'<tr class="tot"><td class="nm">合計</td><td>約'+st.gb+'GB · 財務/開示文書'+man(st.docs_total)+'件</td><td class="num">約'+oku(st.rows_total)+'行 / '+oku(st.cells_total)+'データ点</td></tr>';
     if(st.generated_at_jst){var el=document.getElementById('lastUpd');if(el)el.textContent=st.generated_at_jst;}
-  }
-  function rateCell(v){
-    if(!v||v.denominator===0||v.value==null)return (v?v.numerator:0)+' / '+(v?v.denominator:0)+'（未観測）';
-    return v.numerator+' / '+v.denominator+'（'+(v.value*100).toFixed(1)+'%）';
-  }
-  function renderFoundry(f){
-    var l=f.ledger,c=f.first_court,k=f.weekly_kpi;
-    document.getElementById('foundryband').innerHTML=[
-      {n:l.today.total,l:"今日生まれた仮説",a:1},
-      {n:l.total,l:"誕生台帳 合計"},
-      {n:l.born,l:"BORN"},
-      {n:l.stillborn,l:"STILLBORN"},
-      {n:c.submitted,l:"法廷提出"}
-    ].map(function(b){return '<div class="cell'+(b.a?' accent':'')+'"><b>'+b.n+'</b><i>'+b.l+'</i></div>';}).join('');
-    document.getElementById('courttable').innerHTML=
-      '<tr><th>第1回法廷</th><th>状態</th><th style="text-align:right">件数</th></tr>'
-      +'<tr><td class="nm">提出</td><td>法廷へ提出済み</td><td class="num">'+c.submitted+'</td></tr>'
-      +'<tr><td class="nm">凍結待ち</td><td>提出3件の資格時計待ち</td><td class="num">'+c.freeze_pending+'</td></tr>'
-      +'<tr><td class="nm">棚</td><td>解除条件待ち</td><td class="num">'+c.shelved+'</td></tr>'
-      +'<tr><td class="nm">部品</td><td>Phase2で選別</td><td class="num">'+c.parked_component+'</td></tr>'
-      +'<tr><td class="nm">死産</td><td>非排他的集計 · '+c.overlap_note+'</td><td class="num">'+c.stillborn+'</td></tr>';
-    document.getElementById('weeklytable').innerHTML=
-      '<tr><th>週次KPI</th><th>分子 / 分母</th><th style="text-align:right">値</th></tr>'
-      +'<tr><td class="nm">誕生数</td><td>台帳全件</td><td class="num">'+k.birth_count+'</td></tr>'
-      +'<tr><td class="nm">法廷提出率</td><td>BORNを分母</td><td class="num">'+rateCell(k.court_submission_rate)+'</td></tr>'
-      +'<tr><td class="nm">凍結率</td><td>法廷提出を分母</td><td class="num">'+rateCell(k.freeze_rate)+'</td></tr>'
-      +'<tr><td class="nm">検定生存率</td><td>完了一発を分母</td><td class="num">'+rateCell(k.test_survival_rate)+'</td></tr>';
   }
   renderData(EMBEDDED_STATS);
   // 自動更新中インジケータ：ブラウザが2分ごとに再取得している「生きている」ことを可視化。
@@ -744,7 +702,7 @@ const DATA = {
   function refreshData(){
     try{
       fetch('./data.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():null;})
-        .then(function(d){if(d){if(d.data_stats){var s=d.data_stats;s.generated_at_jst=d.generated_at_jst;renderData(s);}if(d.foundry){renderFoundry(d.foundry);}if(d.hyp_progress&&window.__mergeHypProgress)window.__mergeHypProgress(d.hyp_progress);if(d.aggregates){window.__AGG=d.aggregates;renderBand();updateSavedDelta();}window.__srvStamp=d.progress_checked_at||window.__srvStamp;}updateLiveStamp();})
+        .then(function(d){if(d){if(d.data_stats){var s=d.data_stats;s.generated_at_jst=d.generated_at_jst;renderData(s);}if(d.hyp_progress&&window.__mergeHypProgress)window.__mergeHypProgress(d.hyp_progress);if(d.aggregates){window.__AGG=d.aggregates;renderBand();updateSavedDelta();}window.__srvStamp=d.progress_checked_at||window.__srvStamp;}updateLiveStamp();})
         .catch(function(){});
     }catch(e){}
   }

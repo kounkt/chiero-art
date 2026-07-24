@@ -1,37 +1,37 @@
 {
   "schema": "public_site_data_v1",
-  "generated_at_jst": "2026-07-25",
+  "generated_at_jst": "2026-07-22",
   "data_stats": {
     "datasets": [
       {
         "nm": "分足バー",
         "desc": "500営業日 · 2024-07〜直近",
-        "rows": 232438161
+        "rows": 231564479
       },
       {
         "nm": "日足バー",
         "desc": "全上場銘柄 · 2016〜（10年）",
-        "rows": 10122856
+        "rows": 10113968
       },
       {
         "nm": "指数（TOPIX等）",
         "desc": "10年 · 日次",
-        "rows": 2443
+        "rows": 2442
       },
       {
         "nm": "決算サマリ",
         "desc": "108項目/件 · 単独/連結",
-        "rows": 190955
+        "rows": 190944
       },
       {
         "nm": "TDnet開示索引",
         "desc": "適時開示イベント",
-        "rows": 765091
+        "rows": 764253
       },
       {
         "nm": "XBRL財務文書",
         "desc": "構造化財務（件数）",
-        "rows": 128710
+        "rows": 128662
       },
       {
         "nm": "EDINET本文",
@@ -49,106 +49,10 @@
         "rows": 2993
       }
     ],
-    "rows_total": 243519506,
-    "cells_total": 2525523961,
-    "docs_total": 174762,
-    "gb": 197.028,
-    "storage": {
-      "measured_at_jst": "2026-07-25T08:50:44+0900",
-      "receipt_path": "logs/build_evidence/public_site_data_measurement_20260725085044.json",
-      "receipt_sha256": "ff753cc16a811ecd05166df5ccb26bad415e95dbf0607d0ca5f7aeccf5189042",
-      "total_bytes": 211557285888,
-      "total_gib": 197.028,
-      "categories": [
-        {
-          "id": "validation_lake",
-          "label": "検定レイク",
-          "bytes": 90488700928,
-          "gib": 84.274,
-          "source_count": 1,
-          "manifest_count": 6
-        },
-        {
-          "id": "crypto_raw",
-          "label": "仮想通貨原料",
-          "bytes": 98642165760,
-          "gib": 91.868,
-          "source_count": 1,
-          "manifest_count": 2
-        },
-        {
-          "id": "historical_tick",
-          "label": "歴史tick",
-          "bytes": 19642712064,
-          "gib": 18.294,
-          "source_count": 1,
-          "manifest_count": 1
-        },
-        {
-          "id": "verified_archive",
-          "label": "退避アーカイブ",
-          "bytes": 2783707136,
-          "gib": 2.593,
-          "source_count": 1,
-          "manifest_count": 1
-        }
-      ]
-    }
-  },
-  "foundry": {
-    "ledger": {
-      "total": 45,
-      "born": 42,
-      "stillborn": 3,
-      "today": {
-        "date_jst": "2026-07-25",
-        "total": 0,
-        "born": 0,
-        "stillborn": 0
-      },
-      "latest_generated_at_jst": "2026-07-24T23:45:00+09:00",
-      "latest_public_birth_ids": [
-        "DR3-002-CANONICAL-SIX-ELEMENT-IDENTITY-GATE-V1",
-        "DR3-003-BUYBACK-DEADLINE-UNUSED-CAPACITY-D6-LONG-V1",
-        "DR3-004-LONG-MATCHED-BENCHMARK-PAIR-GATE-V1",
-        "DR3-005-COURT-SHELF-RELEASE-EVIDENCE-GATE-V1",
-        "DR3-006-PHYSICAL-PRE2025-PARTITION-GATE-V1"
-      ],
-      "sha256": "0d23af1c0c9134755c0f1253feb9b0fba219ede1d03b2b47ab5252b96ecba31c",
-      "head_sha256": "16f556ccc561a1f69c80ebd9ece830a603b3f7b9e3a979e8a3e4374578a6c3bb"
-    },
-    "first_court": {
-      "births": 39,
-      "born": 37,
-      "stillborn": 2,
-      "submitted": 3,
-      "freeze_pending": 3,
-      "shelved": 24,
-      "parked_component": 11,
-      "counts_are_nonexclusive": true,
-      "overlap_note": "B-002は法廷提出済みかつ前向き観測待ちの棚にも含まれる",
-      "source_sha256": "c52f1ae060db6c9052505ff4aeb6852bf454ed59516911190178fbc7b86b79cd"
-    },
-    "weekly_kpi": {
-      "birth_count": 45,
-      "court_submission_rate": {
-        "numerator": 3,
-        "denominator": 42,
-        "value": 0.07142857142857142
-      },
-      "freeze_rate": {
-        "numerator": 0,
-        "denominator": 3,
-        "value": 0.0
-      },
-      "test_survival_rate": {
-        "numerator": 0,
-        "denominator": 0,
-        "value": null
-      }
-    },
-    "orders_sent": false,
-    "sendorder_count": 0
+    "rows_total": 242636086,
+    "cells_total": 2516625633,
+    "docs_total": 174714,
+    "gb": 50.3
   },
   "hyp_progress": {
     "pb1": {
@@ -189,7 +93,7 @@
     },
     "033": {
       "n": 0,
-      "target": 30,
+      "target": 14,
       "label": "前向き解決",
       "prev": 0
     },
@@ -231,5 +135,5 @@
     },
     "prev_date": "2026-07-24"
   },
-  "progress_checked_at": "2026-07-25 08:50"
+  "progress_checked_at": "2026-07-25 08:57"
 }
