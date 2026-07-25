@@ -97,25 +97,25 @@
   },
   "foundry": {
     "ledger": {
-      "total": 59,
-      "born": 44,
-      "stillborn": 15,
+      "total": 61,
+      "born": 45,
+      "stillborn": 16,
       "today": {
         "date_jst": "2026-07-25",
-        "total": 14,
-        "born": 2,
-        "stillborn": 12
+        "total": 16,
+        "born": 3,
+        "stillborn": 13
       },
-      "latest_generated_at_jst": "2026-07-25T14:00:00+09:00",
+      "latest_generated_at_jst": "2026-07-25T15:00:00+09:00",
       "latest_public_birth_ids": [
-        "BH-20260725T12-02-8e0f9c7ae3",
-        "BH-20260725T13-01-50e7278887",
         "BH-20260725T13-02-e7e813b920",
         "BH-20260725T14-01-f5cd412858",
-        "BH-20260725T14-02-eaa027bcdf"
+        "BH-20260725T14-02-eaa027bcdf",
+        "BH-20260725T15-01-b2f0146a0a",
+        "BH-20260725T15-02-ea768f8488"
       ],
-      "sha256": "16d2a9c5dd0d860c1d2520fa5d282d12f04de1a68c352dc728c4511800464ea4",
-      "head_sha256": "d9bfda0ada494f924ecd117adce2d9b2b7b001ff3c45c4e3b74c09582a893e53"
+      "sha256": "ace24997b3222b8a4f6e53fde2accc181e70d0f51c2cc99bea5bf377e2230760",
+      "head_sha256": "362c9b22614d61b795ff24dcfce13151449da205bf97304c1e85e9a955e3cd6e"
     },
     "first_court": {
       "births": 39,
@@ -130,11 +130,11 @@
       "source_sha256": "c52f1ae060db6c9052505ff4aeb6852bf454ed59516911190178fbc7b86b79cd"
     },
     "weekly_kpi": {
-      "birth_count": 59,
+      "birth_count": 61,
       "court_submission_rate": {
         "numerator": 3,
-        "denominator": 44,
-        "value": 0.06818181818181818
+        "denominator": 45,
+        "value": 0.06666666666666667
       },
       "freeze_rate": {
         "numerator": 0,
@@ -231,5 +231,5 @@
     },
     "prev_date": "2026-07-24"
   },
-  "progress_checked_at": "2026-07-25 15:01"
+  "progress_checked_at": "2026-07-25 15:16"
 }
