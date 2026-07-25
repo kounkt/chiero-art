@@ -306,6 +306,7 @@
   <h2>Foundryの誕生と法廷</h2>
   <p class="note">生まれた仮説だけでなく、死産・棚・凍結待ちも同じ面に出す。法廷の区分は重複を含むため合計39にはならない。</p>
   <div class="band tnum" id="foundryband"></div>
+  <div class="band tnum" id="defectband"></div>
   <div class="datatable-wrap"><table class="datatable tnum" id="courttable"></table></div>
   <div class="datatable-wrap"><table class="datatable tnum" id="weeklytable"></table></div>
 
@@ -729,6 +730,14 @@ const DATA = {
       +'<tr><td class="nm">凍結率</td><td>法廷提出を分母</td><td class="num">'+rateCell(k.freeze_rate)+'</td></tr>'
       +'<tr><td class="nm">検定生存率</td><td>完了一発を分母</td><td class="num">'+rateCell(k.test_survival_rate)+'</td></tr>';
   }
+  function renderDefects(d){
+    if(!d)return;
+    document.getElementById('defectband').innerHTML=[
+      {n:d.open_count,l:"未解決の既知欠陥",a:1},
+      {n:d.status_counts.BLOCKED,l:"外部・前段待ち"},
+      {n:d.status_counts.CLOSED,l:"解除済み"}
+    ].map(function(x){return '<div class="stat'+(x.a?' active':'')+'"><div class="n">'+x.n+'</div><div class="l">'+x.l+'</div></div>';}).join('');
+  }
   renderData(EMBEDDED_STATS);
   // 自動更新中インジケータ：ブラウザが2分ごとに再取得している「生きている」ことを可視化。
   // 最終確認＝この画面が最後にデータを取りに行った時刻（閲覧者の時計）。状態データ＝サーバ側の最終確認(JST)。
@@ -744,7 +753,7 @@ const DATA = {
   function refreshData(){
     try{
       fetch('./data.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():null;})
-        .then(function(d){if(d){if(d.data_stats){var s=d.data_stats;s.generated_at_jst=d.generated_at_jst;renderData(s);}if(d.foundry){renderFoundry(d.foundry);}if(d.hyp_progress&&window.__mergeHypProgress)window.__mergeHypProgress(d.hyp_progress);if(d.aggregates){window.__AGG=d.aggregates;renderBand();updateSavedDelta();}window.__srvStamp=d.progress_checked_at||window.__srvStamp;}updateLiveStamp();})
+        .then(function(d){if(d){if(d.data_stats){var s=d.data_stats;s.generated_at_jst=d.generated_at_jst;renderData(s);}if(d.foundry){renderFoundry(d.foundry);}if(d.defects){renderDefects(d.defects);}if(d.hyp_progress&&window.__mergeHypProgress)window.__mergeHypProgress(d.hyp_progress);if(d.aggregates){window.__AGG=d.aggregates;renderBand();updateSavedDelta();}window.__srvStamp=d.progress_checked_at||window.__srvStamp;}updateLiveStamp();})
         .catch(function(){});
     }catch(e){}
   }

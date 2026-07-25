@@ -150,6 +150,20 @@
     "orders_sent": false,
     "sendorder_count": 0
   },
+  "defects": {
+    "open_count": 9,
+    "total_count": 9,
+    "status_counts": {
+      "OPEN": 7,
+      "BLOCKED": 2,
+      "CLOSED": 0
+    },
+    "ledger_path": "governance/DEFECT_LEDGER.md",
+    "ledger_sha256": "5d1aaf518f4698acdbc43c9f549c643110264ab261b0302997dd42495875df51",
+    "measured_at_jst": "2026-07-25T23:05:30+0900",
+    "orders_sent": false,
+    "sendorder_count": 0
+  },
   "hyp_progress": {
     "pb1": {
       "n": 0,
