@@ -97,25 +97,25 @@
   },
   "foundry": {
     "ledger": {
-      "total": 47,
-      "born": 43,
-      "stillborn": 4,
+      "total": 49,
+      "born": 44,
+      "stillborn": 5,
       "today": {
         "date_jst": "2026-07-25",
-        "total": 2,
-        "born": 1,
-        "stillborn": 1
+        "total": 4,
+        "born": 2,
+        "stillborn": 2
       },
-      "latest_generated_at_jst": "2026-07-25T08:00:00+09:00",
+      "latest_generated_at_jst": "2026-07-25T09:00:00+09:00",
       "latest_public_birth_ids": [
-        "DR3-004-LONG-MATCHED-BENCHMARK-PAIR-GATE-V1",
-        "DR3-005-COURT-SHELF-RELEASE-EVIDENCE-GATE-V1",
         "DR3-006-PHYSICAL-PRE2025-PARTITION-GATE-V1",
         "BH-20260725T08-01-88ff0e3ee4",
-        "BH-20260725T08-02-cd4b049d56"
+        "BH-20260725T08-02-cd4b049d56",
+        "BH-20260725T09-01-1eab7050c2",
+        "BH-20260725T09-02-e00b45deda"
       ],
-      "sha256": "829c953ef6370dcb8dc02d281e2d4c03acd350e156d5620c64970256b65e5494",
-      "head_sha256": "e5f7693cced85df3fc07caea94aab6eedb282bab7f689a671667063c34d5e943"
+      "sha256": "48d3a44da6949ac3a3ce72b2320a56bdc07486beb945a64ef2b8b6ab9670781e",
+      "head_sha256": "d1ac3bc35eb362a11eda4a6645a575fb654990353d691e0da656a0e082b3e3d9"
     },
     "first_court": {
       "births": 39,
@@ -130,11 +130,11 @@
       "source_sha256": "c52f1ae060db6c9052505ff4aeb6852bf454ed59516911190178fbc7b86b79cd"
     },
     "weekly_kpi": {
-      "birth_count": 47,
+      "birth_count": 49,
       "court_submission_rate": {
         "numerator": 3,
-        "denominator": 43,
-        "value": 0.06976744186046512
+        "denominator": 44,
+        "value": 0.06818181818181818
       },
       "freeze_rate": {
         "numerator": 0,
@@ -231,5 +231,5 @@
     },
     "prev_date": "2026-07-24"
   },
-  "progress_checked_at": "2026-07-25 08:58"
+  "progress_checked_at": "2026-07-25 09:13"
 }
