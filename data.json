@@ -54,9 +54,9 @@
     "docs_total": 174762,
     "gb": 197.028,
     "storage": {
-      "measured_at_jst": "2026-07-25T13:00:48+0900",
-      "receipt_path": "logs/build_evidence/public_site_data_measurement_20260725130048.json",
-      "receipt_sha256": "a316c67f74c08f7cb1fb4deeea357b2d0022cd9a3738c28808e6f070ba48c5a4",
+      "measured_at_jst": "2026-07-25T14:01:14+0900",
+      "receipt_path": "logs/build_evidence/public_site_data_measurement_20260725140114.json",
+      "receipt_sha256": "cc3b10a8eea4fcaafdc4e933828dc6b867f6dd6a4bdc560bfc12adbf971e2f52",
       "total_bytes": 211557285888,
       "total_gib": 197.028,
       "categories": [
@@ -231,5 +231,5 @@
     },
     "prev_date": "2026-07-24"
   },
-  "progress_checked_at": "2026-07-25 13:15"
+  "progress_checked_at": "2026-07-25 14:01"
 }
