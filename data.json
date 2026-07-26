@@ -160,7 +160,7 @@
     },
     "ledger_path": "governance/DEFECT_LEDGER.md",
     "ledger_sha256": "5d1aaf518f4698acdbc43c9f549c643110264ab261b0302997dd42495875df51",
-    "measured_at_jst": "2026-07-26T19:35:01+0900",
+    "measured_at_jst": "2026-07-26T19:50:25+0900",
     "orders_sent": false,
     "sendorder_count": 0
   },
@@ -245,7 +245,7 @@
     },
     "prev_date": "2026-07-25"
   },
-  "progress_checked_at": "2026-07-26 19:35",
+  "progress_checked_at": "2026-07-26 19:50",
   "active_cards": {
     "schema": "public_active_cards_v1",
     "state_data_at_jst": "2026-07-26T17:05:21+09:00",
@@ -470,7 +470,7 @@
   },
   "storage_refresh": {
     "status": "FAIL_CLOSED",
-    "measured_at_jst": "2026-07-26T19:35:22+0900",
+    "measured_at_jst": "2026-07-26T19:50:39+0900",
     "reason_code": "STORAGE_MANIFEST_SHA_MISMATCH",
     "preserved_last_verified_measurement": true,
     "orders_sent": false,
