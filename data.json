@@ -97,27 +97,27 @@
   },
   "foundry": {
     "ledger": {
-      "total": 47,
-      "born": 43,
-      "stillborn": 4,
+      "total": 127,
+      "born": 45,
+      "stillborn": 82,
       "today": {
         "date_jst": "2026-07-27",
-        "total": 0,
+        "total": 2,
         "born": 0,
-        "stillborn": 0
+        "stillborn": 2
       },
-      "latest_generated_at_jst": "2026-07-25T08:00:00+09:00",
+      "latest_generated_at_jst": "2026-07-27T00:00:00+09:00",
       "latest_public_birth_ids": [
-        "DR3-004-LONG-MATCHED-BENCHMARK-PAIR-GATE-V1",
-        "DR3-005-COURT-SHELF-RELEASE-EVIDENCE-GATE-V1",
-        "DR3-006-PHYSICAL-PRE2025-PARTITION-GATE-V1",
-        "BH-20260725T08-01-88ff0e3ee4",
-        "BH-20260725T08-02-cd4b049d56"
+        "BH-20260726T22-02-5fd8489f32",
+        "BH-20260726T23-01-3e6f05348f",
+        "BH-20260726T23-02-92acae6a34",
+        "BH-20260727T00-01-efd7de43a9",
+        "BH-20260727T00-02-89c626cf14"
       ],
       "repository": "art-daytrader-public-runtime",
       "path": "research_hypothesis_foundry/perpetual/births_ledger.jsonl",
-      "sha256": "829c953ef6370dcb8dc02d281e2d4c03acd350e156d5620c64970256b65e5494",
-      "head_sha256": "e5f7693cced85df3fc07caea94aab6eedb282bab7f689a671667063c34d5e943"
+      "sha256": "5b105aae82c5db7a2b5c021acef8d6f12cca88fa6630c37848ed1a38b4fb1f53",
+      "head_sha256": "a5c7567a224197e370bd1319d612783496196d8b502201d75d7c6e70d059d32a"
     },
     "first_court": {
       "births": 39,
@@ -132,11 +132,11 @@
       "source_sha256": "c52f1ae060db6c9052505ff4aeb6852bf454ed59516911190178fbc7b86b79cd"
     },
     "weekly_kpi": {
-      "birth_count": 47,
+      "birth_count": 127,
       "court_submission_rate": {
         "numerator": 3,
-        "denominator": 43,
-        "value": 0.06976744186046512
+        "denominator": 45,
+        "value": 0.06666666666666667
       },
       "freeze_rate": {
         "numerator": 1,
@@ -180,7 +180,7 @@
     "repository": "art-daytrader-fable-28-53",
     "ledger_path": "governance/DEFECT_LEDGER.md",
     "ledger_sha256": "c4aa0e5ef9d34aef3f869c1aa57d6cd1217a0708cf1e085ffb0e94e4e8befd94",
-    "measured_at_jst": "2026-07-27T00:33:43+0900",
+    "measured_at_jst": "2026-07-27T00:34:36+0900",
     "orders_sent": false,
     "sendorder_count": 0
   },
@@ -265,10 +265,10 @@
     },
     "prev_date": "2026-07-26"
   },
-  "progress_checked_at": "2026-07-27 00:33",
+  "progress_checked_at": "2026-07-27 00:34",
   "active_cards": {
     "schema": "public_active_cards_v2",
-    "state_data_at_jst": "2026-07-27T00:33:43+09:00",
+    "state_data_at_jst": "2026-07-27T00:34:36+09:00",
     "governance_revision": {
       "ruling": "Fable裁定139",
       "source_mode": "canonical_files_direct"
@@ -374,7 +374,7 @@
         "next_born": "約定可能エッジが正のカードだけを、実証済みチェーンへ接続する。",
         "simulation": "実証1発はcampaign開始や自動増額を意味しない。",
         "provisional": false,
-        "state_data_at_jst": "2026-07-27T00:33:43+09:00",
+        "state_data_at_jst": "2026-07-27T00:34:36+09:00",
         "evidence": [
           {
             "path": "governance/micro_allocation_boundary_v2_20260725.json",
@@ -428,7 +428,7 @@
         "next_born": "クリーンな前向き実測10イベントが増額審査を開く。R-20残差監査は増額審査へ別添する。",
         "simulation": "歴史値は20日ドリフトの記述であり、月曜GREENや注文成功を示さない。",
         "provisional": false,
-        "state_data_at_jst": "2026-07-27T00:33:43+09:00",
+        "state_data_at_jst": "2026-07-27T00:34:36+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_033_V6_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T143446+0900.json",
@@ -497,7 +497,7 @@
         "next_born": "当選・未約定を分けたクリーンな前向き実測10イベントが増額審査を開く。",
         "simulation": "未約定時の売買コストは0。注文を送れること自体は現在まだ未証明。",
         "provisional": false,
-        "state_data_at_jst": "2026-07-27T00:33:43+09:00",
+        "state_data_at_jst": "2026-07-27T00:34:36+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_PIN_LOTTERY_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T140307+0900.json",
@@ -566,7 +566,7 @@
         "next_born": "B PASS後だけlauncherが一発検定を消費し、結果独立Bが生死を確定する。",
         "simulation": "FAIL_CLOSEDを検定FAILへ読み替えず、結果0件を維持する。",
         "provisional": false,
-        "state_data_at_jst": "2026-07-27T00:33:43+09:00",
+        "state_data_at_jst": "2026-07-27T00:34:36+09:00",
         "evidence": [
           {
             "path": "governance/rulings125_20260726/testa_t3_swing_5d_independent_b_audit_retry_fail_closed_20260726T1513JST.json",
@@ -615,7 +615,7 @@
         "next_born": "B PASS後に限り、分散込みの残差値を033の増額審査証拠束へ添付する。",
         "simulation": "夜間proxyは入力保持率86.63%が凍結下限95%を下回り未算出のままfail-close。",
         "provisional": false,
-        "state_data_at_jst": "2026-07-27T00:33:43+09:00",
+        "state_data_at_jst": "2026-07-27T00:34:36+09:00",
         "evidence": [
           {
             "path": "research/r20_residual_audit_v2_20260726/d0v4_033/provisional_result.json",
@@ -651,7 +651,7 @@
   "public_surface_generated_at_jst": "2026-07-27",
   "storage_refresh": {
     "status": "FAIL_CLOSED",
-    "measured_at_jst": "2026-07-27T00:33:52+0900",
+    "measured_at_jst": "2026-07-27T00:34:45+0900",
     "reason_code": "STORAGE_MANIFEST_SHA_MISMATCH",
     "preserved_last_verified_measurement": true,
     "orders_sent": false,
@@ -659,17 +659,17 @@
   },
   "freshness": {
     "status": "PASS",
-    "checked_at_jst": "2026-07-27T00:33:52+09:00",
-    "state_data_at_jst": "2026-07-27T00:33:43+09:00",
-    "age_seconds": 9.879,
+    "checked_at_jst": "2026-07-27T00:34:45+09:00",
+    "state_data_at_jst": "2026-07-27T00:34:36+09:00",
+    "age_seconds": 9.494,
     "max_age_seconds": 1800,
     "canonical_source_count": 20,
-    "canonical_source_set_sha256": "9982baae7a4e8cda53545d2c10f75146051b2827875ad5bfa6ee303a96698033",
+    "canonical_source_set_sha256": "07775fa65e7423cd8cbc4f22ba3e0ff161285b0bb797cccaa34e23be7a077b58",
     "card_source_set_sha256": "803793056e9576cdb171a035a26a525f47a6960b2bc03429edbd02f33aea4468",
     "orders_sent": false,
     "sendorder_count": 0
   },
-  "public_surface_state_at_jst": "2026-07-27T00:33:52+09:00",
+  "public_surface_state_at_jst": "2026-07-27T00:34:45+09:00",
   "operations": {
     "trade_date": "2026-07-27",
     "status": "MONDAY_NO_TRADE_INFRA",
