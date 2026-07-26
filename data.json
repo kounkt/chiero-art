@@ -1,6 +1,6 @@
 {
   "schema": "public_site_data_v1",
-  "generated_at_jst": "2026-07-25",
+  "generated_at_jst": "2026-07-26",
   "data_stats": {
     "datasets": [
       {
@@ -16,7 +16,7 @@
       {
         "nm": "指数（TOPIX等）",
         "desc": "10年 · 日次",
-        "rows": 2443
+        "rows": 2442
       },
       {
         "nm": "決算サマリ",
@@ -26,12 +26,12 @@
       {
         "nm": "TDnet開示索引",
         "desc": "適時開示イベント",
-        "rows": 765091
+        "rows": 765841
       },
       {
         "nm": "XBRL財務文書",
         "desc": "構造化財務（件数）",
-        "rows": 128710
+        "rows": 128748
       },
       {
         "nm": "EDINET本文",
@@ -49,120 +49,10 @@
         "rows": 2993
       }
     ],
-    "rows_total": 243519506,
-    "cells_total": 2525523961,
-    "docs_total": 174762,
-    "gb": 197.028,
-    "storage": {
-      "measured_at_jst": "2026-07-25T17:02:52+0900",
-      "receipt_path": "logs/build_evidence/public_site_data_measurement_20260725170252.json",
-      "receipt_sha256": "098b02bbeb4e4aa83c4c36302c7fd82be425e5aa7194c9e2dd0209ca91f191b0",
-      "total_bytes": 211557285888,
-      "total_gib": 197.028,
-      "categories": [
-        {
-          "id": "validation_lake",
-          "label": "検定レイク",
-          "bytes": 90488700928,
-          "gib": 84.274,
-          "source_count": 1,
-          "manifest_count": 6
-        },
-        {
-          "id": "crypto_raw",
-          "label": "仮想通貨原料",
-          "bytes": 98642165760,
-          "gib": 91.868,
-          "source_count": 1,
-          "manifest_count": 2
-        },
-        {
-          "id": "historical_tick",
-          "label": "歴史tick",
-          "bytes": 19642712064,
-          "gib": 18.294,
-          "source_count": 1,
-          "manifest_count": 1
-        },
-        {
-          "id": "verified_archive",
-          "label": "退避アーカイブ",
-          "bytes": 2783707136,
-          "gib": 2.593,
-          "source_count": 1,
-          "manifest_count": 1
-        }
-      ]
-    }
-  },
-  "foundry": {
-    "ledger": {
-      "total": 125,
-      "born": 45,
-      "stillborn": 80,
-      "today": {
-        "date_jst": "2026-07-26",
-        "total": 48,
-        "born": 0,
-        "stillborn": 48
-      },
-      "latest_generated_at_jst": "2026-07-26T23:00:00+09:00",
-      "latest_public_birth_ids": [
-        "BH-20260726T21-02-870344c05f",
-        "BH-20260726T22-01-29a8538a49",
-        "BH-20260726T22-02-5fd8489f32",
-        "BH-20260726T23-01-3e6f05348f",
-        "BH-20260726T23-02-92acae6a34"
-      ],
-      "sha256": "8ff4accacb047c4280ae03019309f8581d15462ef168db9dfc4ad0f1299f4a27",
-      "head_sha256": "bd4c418afe4b4ba78e100be54819cebc4a7b58e0e1274d4d1c1eacb8e9d75ffb"
-    },
-    "first_court": {
-      "births": 39,
-      "born": 37,
-      "stillborn": 2,
-      "submitted": 3,
-      "freeze_pending": 3,
-      "shelved": 24,
-      "parked_component": 11,
-      "counts_are_nonexclusive": true,
-      "overlap_note": "B-002は法廷提出済みかつ前向き観測待ちの棚にも含まれる",
-      "source_sha256": "c52f1ae060db6c9052505ff4aeb6852bf454ed59516911190178fbc7b86b79cd"
-    },
-    "weekly_kpi": {
-      "birth_count": 125,
-      "court_submission_rate": {
-        "numerator": 3,
-        "denominator": 45,
-        "value": 0.06666666666666667
-      },
-      "freeze_rate": {
-        "numerator": 0,
-        "denominator": 3,
-        "value": 0.0
-      },
-      "test_survival_rate": {
-        "numerator": 0,
-        "denominator": 0,
-        "value": null
-      }
-    },
-    "orders_sent": false,
-    "sendorder_count": 0
-  },
-  "defects": {
-    "open_count": 9,
-    "total_count": 9,
-    "status_counts": {
-      "OPEN": 7,
-      "BLOCKED": 2,
-      "CLOSED": 0
-    },
-    "ledger_path": "governance/DEFECT_LEDGER.md",
-    "ledger_sha256": "5d1aaf518f4698acdbc43c9f549c643110264ab261b0302997dd42495875df51",
-    "measured_at_jst": "2026-07-26T23:43:49+0900",
-    "orders_sent": false,
-    "sendorder_count": 0
+    "rows_total": 243520255,
+    "cells_total": 2525532205,
+    "docs_total": 174800,
+    "gb": 50.3
   },
   "hyp_progress": {
     "pb1": {
@@ -203,7 +93,7 @@
     },
     "033": {
       "n": 0,
-      "target": 30,
+      "target": 14,
       "label": "前向き解決",
       "prev": 0
     },
@@ -217,17 +107,17 @@
   "aggregates": {
     "current": {
       "counts": {
-        "live": 3,
-        "paper": 6,
-        "surviving": 7,
+        "live": 1,
+        "paper": 7,
+        "surviving": 5,
         "grave": 27,
         "seed": 9
       },
-      "total_defs": 107,
+      "total_defs": 104,
       "dead_defs": 77,
-      "cards": 52,
-      "analyst_days": 412,
-      "saved_total": 43780000
+      "cards": 49,
+      "analyst_days": 408,
+      "saved_total": 43580000
     },
     "prev": {
       "counts": {
@@ -245,236 +135,5 @@
     },
     "prev_date": "2026-07-25"
   },
-  "progress_checked_at": "2026-07-26 23:44",
-  "active_cards": {
-    "schema": "public_active_cards_v1",
-    "state_data_at_jst": "2026-07-26T17:05:21+09:00",
-    "governance_revision": {
-      "ruling": "Fable裁定125改",
-      "revised_at_jst": "2026-07-26T16:00:00+09:00",
-      "source_path": "art-daytrader/governance/FABLE_SUCCESSION_20260719.md",
-      "source_sha256": "34c7cb8f2d08934139673f0489b630378a9c499c4195aab2da393a1783718327"
-    },
-    "contract_sha256": "1526d51cc010898d3764ef2bc7254280eb5753c592cb38cf6728f4ea1ccffff8",
-    "cards": [
-      {
-        "id": "pb1",
-        "state": "live",
-        "name": "PB-1v2 日次停止・実証1発待ち",
-        "family": "実弾・夜間持続",
-        "metric": "日次発射停止 · 2026-07-27 14:50の実証1発のみ · 配分v2総枠30万円",
-        "progress": {
-          "n": 0,
-          "target": 1,
-          "label": "INFRA-PROOF SHOT"
-        },
-        "arose": "凍結済みチェーンの発注・照合・返済を実市場で一度だけ証明するためのINFRA-PROOF SHOT。約定可能エッジの負値判明後は日次戦略として停止した。",
-        "verification": "裁定20・29により日次発射を停止。月曜14:50の1発だけを実証に限定し、配分v2の総枠30万円と日次停止を同時に拘束する。",
-        "outcome": "戦略としては停止中。月曜の1発は利益キャンペーンではなく、残存する発注・照合・翌朝返済部品の実証である。REDまたは欠測ならSKIPし、無言で発射しない。",
-        "next_born": "約定可能エッジが正のカードだけを、実証済みチェーンへ接続する。",
-        "simulation": "実証1発はcampaign開始や自動増額を意味しない。",
-        "provisional": false,
-        "state_data_at_jst": "2026-07-26T17:05:21+09:00",
-        "evidence": [
-          {
-            "path": "governance/micro_allocation_boundary_v2_20260725.json",
-            "sha256": "e6ecca219a6c67474662fd0601acead5d151c250f9fdaccc70c2dc082a52e639",
-            "repository": "art-daytrader-fable-28-53"
-          },
-          {
-            "path": "reports/FABLE_RULING127_MONDAY_READINESS_PASS1_SEAL_20260726T164309+0900.json",
-            "sha256": "1e2a17ce6670db6d42c1da57b48e5571f1abd985d27b42d804c53e5e5f602f67",
-            "repository": "art-daytrader-fable-28-53"
-          }
-        ],
-        "next_phase": {
-          "id": "ruling127_final_seal",
-          "label": "12行の最終seal",
-          "status": "PENDING",
-          "scheduled_at_jst": "2026-07-27T00:05:00+09:00",
-          "scheduled_at_display": "2026-07-27 00:05 JSTより前",
-          "text": "<b>次の門:</b> 12行の最終seal （現在 PENDING） <b>時刻:</b> 2026-07-27 00:05 JSTより前"
-        }
-      },
-      {
-        "id": "033",
-        "state": "live",
-        "name": "D0v4-033 ライブ準備",
-        "family": "イベントドリフト",
-        "metric": "月曜09:00初弾候補 · 個別檻15万円 · GREEN朝条件が必須",
-        "progress": {
-          "n": 0,
-          "target": 10,
-          "label": "前向き実測"
-        },
-        "arose": "自社株買い表明後の20営業日ドリフトを、凍結済みD+1寄り入口のまま前向きに測るため。歴史値を実装都合で14:50へ移植しない。",
-        "verification": "事前登録Bは入口を2026-07-27 09:00寄りへ固定した。配分v2は個別15万円を上限とし、朝のKabuS・返済受入・候補・資金・intentがGREENの時だけ同じ入口を評価する。",
-        "outcome": "ライブ準備は継続中。裁定127の是正candidateは独立B再監査待ちで、配備・タスク登録・月曜注文権限はまだ成立していない。",
-        "next_born": "クリーンな前向き実測10イベントが増額審査を開く。R-20残差監査は増額審査へ別添する。",
-        "simulation": "歴史値は20日ドリフトの記述であり、月曜GREENや注文成功を示さない。",
-        "provisional": false,
-        "state_data_at_jst": "2026-07-26T17:05:21+09:00",
-        "evidence": [
-          {
-            "path": "reports/B_FABLE_033_V6_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T143446+0900.json",
-            "sha256": "4ddfdd43b8921e544f414e697934029efb29824b4884be3d67e6b690ed06af75",
-            "repository": "art-daytrader-fable-28-53"
-          },
-          {
-            "path": "reports/B_FABLE_RULING113_PHASE2_MINI_AMENDED_CANDIDATE_INDEPENDENT_B_REAUDIT_FAIL_CLOSED_20260726T162055+0900.json",
-            "sha256": "c615c819d00419d00c28f4b1aeb5cf576b1a8f43a33835c4b60c955c6ef10300",
-            "repository": "art-daytrader-fable-28-53"
-          },
-          {
-            "path": "reports/FABLE_RULING127_MONDAY_READINESS_PASS1_SEAL_20260726T164309+0900.json",
-            "sha256": "1e2a17ce6670db6d42c1da57b48e5571f1abd985d27b42d804c53e5e5f602f67",
-            "repository": "art-daytrader-fable-28-53"
-          },
-          {
-            "path": "reports/A_FABLE_RULING127_PHASE2_AMENDED_CANDIDATE_READY_FOR_FRESH_B_20260726T165243+0900.json",
-            "sha256": "4a6e8fda05f9dd3fc5c3725e34bfa043cc905babbbeab8ca3d19115f61946fc2",
-            "repository": "art-daytrader-fable-28-53"
-          }
-        ],
-        "next_phase": {
-          "id": "phase2_mini_fresh_b",
-          "label": "既知3 finding是正後のPhase2 mini独立B",
-          "status": "PENDING",
-          "scheduled_at_jst": "IMMEDIATE_FRESH_B",
-          "scheduled_at_display": "即時（16:52 JSTにcandidate固定済み）",
-          "text": "<b>次の門:</b> 既知3 finding是正後のPhase2 mini独立B （現在 PENDING） <b>時刻:</b> 即時（16:52 JSTにcandidate固定済み）"
-        }
-      },
-      {
-        "id": "pin-lottery",
-        "state": "live",
-        "name": "PIN-LOTTERY ライブ準備",
-        "family": "引け値到達・未約定観測",
-        "metric": "月曜14:50初弾候補 · 未約定なら売買コスト0",
-        "progress": {
-          "n": 0,
-          "target": 10,
-          "label": "前向き実測"
-        },
-        "arose": "引け値到達時だけ成立する稀な機会を、最小単元1銘柄・未約定時コスト0で前向きに測るため。",
-        "verification": "preregと実装の監査済み境界を維持し、14:50初弾では当選率と当選バイアスを記録する。未約定を失敗や費用発生へ読み替えない。",
-        "outcome": "候補は凍結済み。裁定127の共通Phase2 mini是正candidateは独立B再監査待ちで、月曜14:50のタスク登録・発注権限はまだ成立していない。",
-        "next_born": "当選・未約定を分けたクリーンな前向き実測10イベントが増額審査を開く。",
-        "simulation": "未約定時の売買コストは0。注文を送れること自体は現在まだ未証明。",
-        "provisional": false,
-        "state_data_at_jst": "2026-07-26T17:05:21+09:00",
-        "evidence": [
-          {
-            "path": "reports/B_FABLE_PIN_LOTTERY_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T140307+0900.json",
-            "sha256": "9502a6951f1645227a1e52b367b5d9d170044d80e4f32ca4ad17846447c147aa",
-            "repository": "art-daytrader-fable-28-53"
-          },
-          {
-            "path": "reports/B_FABLE_RULING113_PHASE2_MINI_AMENDED_CANDIDATE_INDEPENDENT_B_REAUDIT_FAIL_CLOSED_20260726T162055+0900.json",
-            "sha256": "c615c819d00419d00c28f4b1aeb5cf576b1a8f43a33835c4b60c955c6ef10300",
-            "repository": "art-daytrader-fable-28-53"
-          },
-          {
-            "path": "reports/FABLE_RULING127_MONDAY_READINESS_PASS1_SEAL_20260726T164309+0900.json",
-            "sha256": "1e2a17ce6670db6d42c1da57b48e5571f1abd985d27b42d804c53e5e5f602f67",
-            "repository": "art-daytrader-fable-28-53"
-          },
-          {
-            "path": "reports/A_FABLE_RULING127_PHASE2_AMENDED_CANDIDATE_READY_FOR_FRESH_B_20260726T165243+0900.json",
-            "sha256": "4a6e8fda05f9dd3fc5c3725e34bfa043cc905babbbeab8ca3d19115f61946fc2",
-            "repository": "art-daytrader-fable-28-53"
-          }
-        ],
-        "next_phase": {
-          "id": "phase2_mini_fresh_b",
-          "label": "既知3 finding是正後のPhase2 mini独立B",
-          "status": "PENDING",
-          "scheduled_at_jst": "IMMEDIATE_FRESH_B",
-          "scheduled_at_display": "即時（16:52 JSTにcandidate固定済み）",
-          "text": "<b>次の門:</b> 既知3 finding是正後のPhase2 mini独立B （現在 PENDING） <b>時刻:</b> 即時（16:52 JSTにcandidate固定済み）"
-        }
-      },
-      {
-        "id": "testa-5d",
-        "state": "surviving",
-        "name": "TESTA-5D 一発検定待ち",
-        "family": "凍結済み歴史一発",
-        "metric": "一発検定未実行 · 残る門は独立B監査",
-        "progress": {
-          "n": 0,
-          "target": 1,
-          "label": "凍結一発"
-        },
-        "arose": "Testaのイベント条件と5営業日スイングを、pre-2025固定入力で一度だけ検定するため。",
-        "verification": "入力・prereg・freezeは固定済み。2026-07-26 15:13の独立B再監査は、append-only汚染台帳の全体SHA更新をrequest v2が追随していないためFAIL_CLOSEDとなり、launcherは動いていない。",
-        "outcome": "仮説の生死は未判定。一発検定結果は存在せず、B PASSだけがlauncher前に残る門である。",
-        "next_born": "B PASS後だけlauncherが一発検定を消費し、結果独立Bが生死を確定する。",
-        "simulation": "FAIL_CLOSEDを検定FAILへ読み替えず、結果0件を維持する。",
-        "provisional": false,
-        "state_data_at_jst": "2026-07-26T17:05:21+09:00",
-        "evidence": [
-          {
-            "path": "governance/rulings125_20260726/testa_t3_swing_5d_independent_b_audit_retry_fail_closed_20260726T1513JST.json",
-            "sha256": "d61745d544c87048bdbfc97a30d95c847665c57fd201a7a7bc569836275f9c49",
-            "repository": "art-daytrader-research-0723"
-          }
-        ],
-        "next_phase": {
-          "id": "testa_request_v2_reissue",
-          "label": "append-only台帳headへ追随したrequest v2再発行と独立B PASS",
-          "status": "FAIL_CLOSED",
-          "scheduled_at_jst": "UNSCHEDULED_AFTER_REQUEST_REISSUE",
-          "scheduled_at_display": "時刻未登録（request v2再発行後）",
-          "text": "<b>次の門:</b> append-only台帳headへ追随したrequest v2再発行と独立B PASS （現在 FAIL_CLOSED） <b>時刻:</b> 時刻未登録（request v2再発行後）"
-        }
-      },
-      {
-        "id": "r20",
-        "state": "surviving",
-        "name": "暫定 R-20 残差監査",
-        "family": "因子残差・記述監査",
-        "metric": "暫定: B_month R² 0.191 · 因子調整後 +95.35bp/20日",
-        "progress": {
-          "n": 0,
-          "target": 1,
-          "label": "独立B監査"
-        },
-        "arose": "D0v4-033の歴史平均が既知の市場・幅・モメンタム因子の変装か、固有の残余を持つかを増額審査前に記述測定するため。",
-        "verification": "pre-2025、決済日cluster OLS、可逆スプレッド3因子で測定。B_monthはR² 0.191392、因子調整後net20 mean +95.35bp、非年率残差Sharpe 0.119。A_weekはR² 0.197585、+36.59bp。",
-        "outcome": "暫定・B監査待ち。値は記述専用で、B PASS前は資格・増額・本番統治へ編入しない。",
-        "next_born": "B PASS後に限り、分散込みの残差値を033の増額審査証拠束へ添付する。",
-        "simulation": "夜間proxyは入力保持率86.63%が凍結下限95%を下回り未算出のままfail-close。",
-        "provisional": true,
-        "state_data_at_jst": "2026-07-26T17:05:21+09:00",
-        "evidence": [
-          {
-            "path": "research/r20_residual_audit_v2_20260726/d0v4_033/provisional_result.json",
-            "sha256": "20422463273448b33833d7ca54ac5396b0f47559690cf73b5582037b2154ef14",
-            "repository": "art-daytrader-research-0723"
-          }
-        ],
-        "next_phase": {
-          "id": "r20_design_v2_independent_b",
-          "label": "design v2・評価器・X-only・残差出力の独立B監査",
-          "status": "PENDING",
-          "scheduled_at_jst": "UNSCHEDULED",
-          "scheduled_at_display": "時刻未登録",
-          "text": "<b>次の門:</b> design v2・評価器・X-only・残差出力の独立B監査 （現在 PENDING） <b>時刻:</b> 時刻未登録"
-        }
-      }
-    ],
-    "actual_tickers_included": false,
-    "current_day_signals_included": false,
-    "orders_sent": false,
-    "sendorder_count": 0
-  },
-  "storage_refresh": {
-    "status": "FAIL_CLOSED",
-    "measured_at_jst": "2026-07-26T23:44:03+0900",
-    "reason_code": "STORAGE_MANIFEST_SHA_MISMATCH",
-    "preserved_last_verified_measurement": true,
-    "orders_sent": false,
-    "sendorder_count": 0
-  },
-  "public_surface_generated_at_jst": "2026-07-26"
+  "progress_checked_at": "2026-07-26 23:47"
 }
