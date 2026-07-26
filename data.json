@@ -97,25 +97,25 @@
   },
   "foundry": {
     "ledger": {
-      "total": 121,
+      "total": 123,
       "born": 45,
-      "stillborn": 76,
+      "stillborn": 78,
       "today": {
         "date_jst": "2026-07-26",
-        "total": 44,
+        "total": 46,
         "born": 0,
-        "stillborn": 44
+        "stillborn": 46
       },
-      "latest_generated_at_jst": "2026-07-26T21:00:00+09:00",
+      "latest_generated_at_jst": "2026-07-26T22:00:00+09:00",
       "latest_public_birth_ids": [
-        "BH-20260726T19-02-987360bf43",
-        "BH-20260726T20-01-76aa27d4db",
         "BH-20260726T20-02-76edac41e5",
         "BH-20260726T21-01-a478504a06",
-        "BH-20260726T21-02-870344c05f"
+        "BH-20260726T21-02-870344c05f",
+        "BH-20260726T22-01-29a8538a49",
+        "BH-20260726T22-02-5fd8489f32"
       ],
-      "sha256": "a2397694d8fe760960b24c2420fd3184455133000b17f52df698d8a59f2ea0a0",
-      "head_sha256": "11db745ff776f4b68961946b0957d62c031b46a1825443b84d7d0e89cb65a8a2"
+      "sha256": "4254193b0b02918732e0f62c10908eb944f9f19c42565d289ab0f8ce2bba50b3",
+      "head_sha256": "91bc12d85db65ba8810431fcf4020acbcc17ceae33b6545972452934de9c233d"
     },
     "first_court": {
       "births": 39,
@@ -130,7 +130,7 @@
       "source_sha256": "c52f1ae060db6c9052505ff4aeb6852bf454ed59516911190178fbc7b86b79cd"
     },
     "weekly_kpi": {
-      "birth_count": 121,
+      "birth_count": 123,
       "court_submission_rate": {
         "numerator": 3,
         "denominator": 45,
@@ -160,7 +160,7 @@
     },
     "ledger_path": "governance/DEFECT_LEDGER.md",
     "ledger_sha256": "5d1aaf518f4698acdbc43c9f549c643110264ab261b0302997dd42495875df51",
-    "measured_at_jst": "2026-07-26T21:56:01+0900",
+    "measured_at_jst": "2026-07-26T22:11:22+0900",
     "orders_sent": false,
     "sendorder_count": 0
   },
@@ -245,7 +245,7 @@
     },
     "prev_date": "2026-07-25"
   },
-  "progress_checked_at": "2026-07-26 21:56",
+  "progress_checked_at": "2026-07-26 22:12",
   "active_cards": {
     "schema": "public_active_cards_v1",
     "state_data_at_jst": "2026-07-26T17:05:21+09:00",
@@ -470,7 +470,7 @@
   },
   "storage_refresh": {
     "status": "FAIL_CLOSED",
-    "measured_at_jst": "2026-07-26T21:56:18+0900",
+    "measured_at_jst": "2026-07-26T22:12:05+0900",
     "reason_code": "STORAGE_MANIFEST_SHA_MISMATCH",
     "preserved_last_verified_measurement": true,
     "orders_sent": false,
