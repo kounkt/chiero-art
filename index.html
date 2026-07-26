@@ -236,6 +236,7 @@
     <p class="lede">人間が長い年月をかけて身体で覚える相場の勘を、AIが測定可能な知識へ蒸留する試み。効くものだけを紙の上で選び、効かないものは墓標として地図に残す。赤い点は、詰まりが取れて流れが通った一点。</p>
     <p class="thesis">これは投資の勧誘でも運用実績の広告でもない。ひとつの機械が、何を確かめ、何を捨て、何を残したかの記録である。</p>
   </header>
+  <div class="band tnum" id="operationband" style="display:none"></div>
 
   <h2>将来の予測 — 実験の記述的シミュレーション</h2>
   <p class="note">測定されたエッジが、投下資本の大きさによって複利でどう積み上がるかを描いた実験的な地図。スライダーを動かすと容量の天井まで見える。<span class="red">保証ではなく、過去データに基づく推定である。</span></p>
@@ -774,6 +775,17 @@ const DATA = {
       {n:d.status_counts.CLOSED,l:"解除済み"}
     ].map(function(x){return '<div class="stat'+(x.a?' active':'')+'"><div class="n">'+x.n+'</div><div class="l">'+x.l+'</div></div>';}).join('');
   }
+  function renderOperations(o){
+    var el=document.getElementById('operationband');if(!el||!o)return;
+    el.style.display='';
+    el.innerHTML=[
+      {n:o.label_ja,l:o.trade_date,a:1},
+      {n:o.reason_class,l:"見送り理由"},
+      {n:"¥"+Number(o.realized_trade_loss_jpy).toLocaleString(),l:"実現取引損失"},
+      {n:o.sendorder_count,l:"送信注文数"},
+      {n:"7/28 00:05",l:"次の共通門"}
+    ].map(function(x){return '<div class="cell'+(x.a?' accent':'')+'"><b>'+x.n+'</b><i>'+x.l+'</i></div>';}).join('');
+  }
   renderData(EMBEDDED_STATS);
   // 自動更新中インジケータ：ブラウザが2分ごとに再取得している「生きている」ことを可視化。
   // 最終確認＝この画面が最後にデータを取りに行った時刻（閲覧者の時計）。状態データ＝サーバ側の最終確認(JST)。
@@ -793,6 +805,7 @@ const DATA = {
           if(d.data_stats){var s=d.data_stats;s.generated_at_jst=d.public_surface_generated_at_jst||d.generated_at_jst;renderData(s);}
           if(d.foundry){renderFoundry(d.foundry);}
           if(d.defects){renderDefects(d.defects);}
+          if(d.operations){renderOperations(d.operations);}
           if(d.active_cards){
             if(window.__mergeActiveCards)window.__mergeActiveCards(d.active_cards);
             else window.__pendingActiveCards=d.active_cards;
