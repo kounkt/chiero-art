@@ -236,6 +236,7 @@
     <p class="lede">人間が長い年月をかけて身体で覚える相場の勘を、AIが測定可能な知識へ蒸留する試み。効くものだけを紙の上で選び、効かないものは墓標として地図に残す。赤い点は、詰まりが取れて流れが通った一点。</p>
     <p class="thesis">これは投資の勧誘でも運用実績の広告でもない。ひとつの機械が、何を確かめ、何を捨て、何を残したかの記録である。</p>
   </header>
+  <div class="band tnum" id="operationband" style="display:none"></div>
 
   <h2>将来の予測 — 実験の記述的シミュレーション</h2>
   <p class="note">測定されたエッジが、投下資本の大きさによって複利でどう積み上がるかを描いた実験的な地図。スライダーを動かすと容量の天井まで見える。<span class="red">保証ではなく、過去データに基づく推定である。</span></p>
@@ -400,24 +401,24 @@ const DATA = {
      outcome:"候補は凍結済みだが、最新postdeploy Bと共通Phase2 mini BはFAIL_CLOSED。月曜14:50のタスク登録・発注権限はまだ成立していない。",
      next:"当選・未約定を分けたクリーンな前向き実測10イベントが増額審査を開く。",
      sim:"未約定時の売買コストは0。注文を送れること自体は現在まだ未証明。"},
-    {id:"testa-5d",state:"surviving",added:"2026-07-26",state_data_at_jst:"2026-07-26T16:42:28+09:00",
-     name:"TESTA-5D 一発検定待ち",fam:"凍結済み歴史一発",
-     metric:"一発検定未実行 · 残る門は独立B監査",
-     prog:{n:0,target:1,prev:0,label:"凍結一発"},
+    {id:"testa-5d",state:"grave",added:"2026-07-26",state_data_at_jst:"2026-07-27T01:18:14+09:00",
+     name:"TESTA-5D 墓標",fam:"凍結済み歴史一発",
+     metric:"検定死亡 · 生存率 0/1 · 平均 +42.07bp · p=0.1058 · BY=false",
+     prog:{n:1,target:1,prev:0,label:"凍結一発"},
      arose:"Testaのイベント条件と5営業日スイングを、pre-2025固定入力で一度だけ検定するため。",
-     verif:"入力・prereg・freezeは固定済み。2026-07-26 15:13の独立B再監査は、append-only汚染台帳の全体SHA更新をrequest v2が追随していないためFAIL_CLOSEDとなり、launcherは動いていない。",
-     outcome:"仮説の生死は未判定。一発検定結果は存在せず、B PASSだけがlauncher前に残る門である。",
-     next:"B PASS後だけlauncherが一発検定を消費し、結果独立Bが生死を確定する。",
-     sim:"FAIL_CLOSEDを検定FAILへ読み替えず、結果0件を維持する。"},
+     verif:"pre-2025固定入力の一発検定490イベントを独立Bが再構築し、結果行と集計を再照合。最大イベント日2024-12-20、最大決済日2024-12-30。",
+     outcome:"独立B判定はPASS_RESULT_RECHECK_DIED。平均は正でも資格判定は死亡。検定生存率0/1、first_passage=falseとして墓標登録済み。",
+     next:"033姉妹カードは作らず裁定12継承審査へ進めない。death seedはR-16のIR構造抽出完了後に別preregと法廷凍結を要する。",
+     sim:"選択式・選択閾値・銘柄は非公開。result handoffと独立B判定の集計値・生死・証拠SHAだけを表示する。"},
     {id:"r20",state:"surviving",added:"2026-07-26",state_data_at_jst:"2026-07-26T16:42:28+09:00",
-     name:"暫定 R-20 残差監査",fam:"因子残差・記述監査",
-     metric:"暫定: B_month R² 0.191 · 因子調整後 +95.35bp/20日",
-     prog:{n:0,target:1,prev:0,label:"独立B監査"},
+     name:"R-20 残差監査",fam:"因子残差・記述監査",
+     metric:"B_month R² 0.191 · 因子調整後 +95.35bp/20日",
+     prog:{n:1,target:1,prev:0,label:"独立B監査"},
      arose:"D0v4-033の歴史平均が既知の市場・幅・モメンタム因子の変装か、固有の残余を持つかを増額審査前に記述測定するため。",
      verif:"pre-2025、決済日cluster OLS、可逆スプレッド3因子で測定。B_monthはR² 0.191392、因子調整後net20 mean +95.35bp、非年率残差Sharpe 0.119。A_weekはR² 0.197585、+36.59bp。",
-     outcome:"暫定・B監査待ち。値は記述専用で、B PASS前は資格・増額・本番統治へ編入しない。",
-     next:"B PASS後に限り、分散込みの残差値を033の増額審査証拠束へ添付する。",
-     sim:"夜間proxyは入力保持率86.63%が凍結下限95%を下回り未算出のままfail-close。"},
+     outcome:"独立B v4 PASS。+95.35bp/20日の記述値を033増額審査の記述証拠束へ編入済み。資格証拠ではなく、資本変更を自動承認しない。",
+     next:"資本変更は、この記述証拠とは別のFable裁定と本人承認がある場合だけ審査する。",
+     sim:"description_only=true / qualification_evidence=false / fdr_consumed=false。夜間proxyは入力保持率86.63%が凍結下限95%を下回り未算出のままfail-close。"},
     {id:"052",state:"paper",name:"D0v4-052 決算集中日ドリフト",fam:"イベントドリフト",
      metric:"+170.8bp/20日 · t=2.96 · 本日生存",
      prog:{n:0,target:30,prev:0,label:"前向き解決"},
@@ -608,7 +609,7 @@ const DATA = {
     "041g2":"n=30解決 → 境界クリア → 本人YES。",
     "033":"<b>次の門:</b> 裁定127の12行pass 1 seal（現在 PENDING） <b>時刻:</b> 即時（条件駆動）",
     "pin-lottery":"<b>次の門:</b> 裁定127の12行pass 1 seal（現在 PENDING） <b>時刻:</b> 即時（条件駆動）",
-    "testa-5d":"<b>次の門:</b> append-only台帳headへ追随したrequest v2再発行と独立B PASS（現在 FAIL_CLOSED） <b>時刻:</b> 時刻未登録（request v2再発行後）",
+    "testa-5d":"<b>次の門:</b> 全門PASS（現在 PASS） <b>時刻:</b> 墓標・death seed登録済み",
     "r20":"<b>次の門:</b> design v2・評価器・X-only・残差出力の独立B監査（現在 PENDING） <b>時刻:</b> 時刻未登録",
     "052":"<b>B監査PASS</b>（実装＝036同一の確認＋境界式検算）→ 紙時計開始 → n=30 → 本人YES。前向き専用。",
     "039b":"前向き紙カード化 → n=30 → 本人YES。033と資本競合を紙期間に実測。",
@@ -774,6 +775,17 @@ const DATA = {
       {n:d.status_counts.CLOSED,l:"解除済み"}
     ].map(function(x){return '<div class="stat'+(x.a?' active':'')+'"><div class="n">'+x.n+'</div><div class="l">'+x.l+'</div></div>';}).join('');
   }
+  function renderOperations(o){
+    var el=document.getElementById('operationband');if(!el||!o)return;
+    el.style.display='';
+    el.innerHTML=[
+      {n:o.label_ja,l:o.trade_date,a:1},
+      {n:o.reason_class,l:"見送り理由"},
+      {n:"¥"+Number(o.realized_trade_loss_jpy).toLocaleString(),l:"実現取引損失"},
+      {n:o.sendorder_count,l:"送信注文数"},
+      {n:"7/28 00:05",l:"次の共通門"}
+    ].map(function(x){return '<div class="cell'+(x.a?' accent':'')+'"><b>'+x.n+'</b><i>'+x.l+'</i></div>';}).join('');
+  }
   renderData(EMBEDDED_STATS);
   // 自動更新中インジケータ：ブラウザが2分ごとに再取得している「生きている」ことを可視化。
   // 最終確認＝この画面が最後にデータを取りに行った時刻（閲覧者の時計）。状態データ＝サーバ側の最終確認(JST)。
@@ -793,6 +805,7 @@ const DATA = {
           if(d.data_stats){var s=d.data_stats;s.generated_at_jst=d.public_surface_generated_at_jst||d.generated_at_jst;renderData(s);}
           if(d.foundry){renderFoundry(d.foundry);}
           if(d.defects){renderDefects(d.defects);}
+          if(d.operations){renderOperations(d.operations);}
           if(d.active_cards){
             if(window.__mergeActiveCards)window.__mergeActiveCards(d.active_cards);
             else window.__pendingActiveCards=d.active_cards;
