@@ -1,6 +1,6 @@
 {
   "schema": "public_site_data_v1",
-  "generated_at_jst": "2026-07-26",
+  "generated_at_jst": "2026-07-27",
   "data_stats": {
     "datasets": [
       {
@@ -101,10 +101,10 @@
       "born": 45,
       "stillborn": 80,
       "today": {
-        "date_jst": "2026-07-26",
-        "total": 48,
+        "date_jst": "2026-07-27",
+        "total": 0,
         "born": 0,
-        "stillborn": 48
+        "stillborn": 0
       },
       "latest_generated_at_jst": "2026-07-26T23:00:00+09:00",
       "latest_public_birth_ids": [
@@ -159,17 +159,17 @@
     "sendorder_count": 0
   },
   "defects": {
-    "open_count": 13,
-    "total_count": 15,
+    "open_count": 15,
+    "total_count": 17,
     "status_counts": {
-      "OPEN": 11,
+      "OPEN": 13,
       "BLOCKED": 2,
       "CLOSED": 2
     },
     "repository": "art-daytrader-fable-28-53",
     "ledger_path": "governance/DEFECT_LEDGER.md",
-    "ledger_sha256": "3dc5c86dc4e52f7fd6c7a44664cb9d320cb93ce2629339d02bdd0a6d5bb71953",
-    "measured_at_jst": "2026-07-26T23:46:41+0900",
+    "ledger_sha256": "b8c1da2612ab60b9c3210f83ab2e57fcf0747b70401d2d6d2e44f122fe754c6f",
+    "measured_at_jst": "2026-07-27T00:02:51+0900",
     "orders_sent": false,
     "sendorder_count": 0
   },
@@ -240,24 +240,24 @@
     },
     "prev": {
       "counts": {
-        "live": 1,
-        "paper": 7,
-        "surviving": 5,
+        "live": 3,
+        "paper": 6,
+        "surviving": 7,
         "grave": 27,
         "seed": 9
       },
-      "total_defs": 104,
+      "total_defs": 107,
       "dead_defs": 77,
-      "cards": 49,
-      "analyst_days": 408,
-      "saved_total": 43580000
+      "cards": 52,
+      "analyst_days": 412,
+      "saved_total": 43780000
     },
-    "prev_date": "2026-07-25"
+    "prev_date": "2026-07-26"
   },
-  "progress_checked_at": "2026-07-26 23:47",
+  "progress_checked_at": "2026-07-27 00:03",
   "active_cards": {
     "schema": "public_active_cards_v2",
-    "state_data_at_jst": "2026-07-26T23:46:41+09:00",
+    "state_data_at_jst": "2026-07-27T00:02:51+09:00",
     "governance_revision": {
       "ruling": "Fable裁定139",
       "source_mode": "canonical_files_direct"
@@ -333,7 +333,7 @@
         "next_born": "約定可能エッジが正のカードだけを、実証済みチェーンへ接続する。",
         "simulation": "実証1発はcampaign開始や自動増額を意味しない。",
         "provisional": false,
-        "state_data_at_jst": "2026-07-26T23:46:41+09:00",
+        "state_data_at_jst": "2026-07-27T00:02:51+09:00",
         "evidence": [
           {
             "path": "governance/micro_allocation_boundary_v2_20260725.json",
@@ -382,7 +382,7 @@
         "next_born": "クリーンな前向き実測10イベントが増額審査を開く。R-20残差監査は増額審査へ別添する。",
         "simulation": "歴史値は20日ドリフトの記述であり、月曜GREENや注文成功を示さない。",
         "provisional": false,
-        "state_data_at_jst": "2026-07-26T23:46:41+09:00",
+        "state_data_at_jst": "2026-07-27T00:02:51+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_033_V6_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T143446+0900.json",
@@ -446,7 +446,7 @@
         "next_born": "当選・未約定を分けたクリーンな前向き実測10イベントが増額審査を開く。",
         "simulation": "未約定時の売買コストは0。注文を送れること自体は現在まだ未証明。",
         "provisional": false,
-        "state_data_at_jst": "2026-07-26T23:46:41+09:00",
+        "state_data_at_jst": "2026-07-27T00:02:51+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_PIN_LOTTERY_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T140307+0900.json",
@@ -510,7 +510,7 @@
         "next_born": "B PASS後だけlauncherが一発検定を消費し、結果独立Bが生死を確定する。",
         "simulation": "FAIL_CLOSEDを検定FAILへ読み替えず、結果0件を維持する。",
         "provisional": false,
-        "state_data_at_jst": "2026-07-26T23:46:41+09:00",
+        "state_data_at_jst": "2026-07-27T00:02:51+09:00",
         "evidence": [
           {
             "path": "governance/rulings125_20260726/testa_t3_swing_5d_independent_b_audit_retry_fail_closed_20260726T1513JST.json",
@@ -549,7 +549,7 @@
         "next_born": "B PASS後に限り、分散込みの残差値を033の増額審査証拠束へ添付する。",
         "simulation": "夜間proxyは入力保持率86.63%が凍結下限95%を下回り未算出のままfail-close。",
         "provisional": true,
-        "state_data_at_jst": "2026-07-26T23:46:41+09:00",
+        "state_data_at_jst": "2026-07-27T00:02:51+09:00",
         "evidence": [
           {
             "path": "research/r20_residual_audit_v2_20260726/d0v4_033/provisional_result.json",
@@ -579,24 +579,24 @@
   },
   "storage_refresh": {
     "status": "FAIL_CLOSED",
-    "measured_at_jst": "2026-07-26T23:47:45+0900",
+    "measured_at_jst": "2026-07-27T00:03:09+0900",
     "reason_code": "STORAGE_MANIFEST_SHA_MISMATCH",
     "preserved_last_verified_measurement": true,
     "orders_sent": false,
     "sendorder_count": 0
   },
-  "public_surface_generated_at_jst": "2026-07-26",
+  "public_surface_generated_at_jst": "2026-07-27",
   "freshness": {
     "status": "PASS",
-    "checked_at_jst": "2026-07-26T23:47:45+09:00",
-    "state_data_at_jst": "2026-07-26T23:46:41+09:00",
-    "age_seconds": 64.525,
+    "checked_at_jst": "2026-07-27T00:03:09+09:00",
+    "state_data_at_jst": "2026-07-27T00:02:51+09:00",
+    "age_seconds": 18.576,
     "max_age_seconds": 1800,
     "canonical_source_count": 12,
-    "canonical_source_set_sha256": "f6c3648d1078b40381d24c3021b24af2f7f3d93bfc922f641f8d802c7b076516",
+    "canonical_source_set_sha256": "29adc73e1e1437bd90dd9fe907cbc482deeee7cd60e111f33035ebe3f31f5873",
     "card_source_set_sha256": "f94c8280323b78ea3cd812c1004a0f579f8b23ceadfc35f73b07e1bb7965e62b",
     "orders_sent": false,
     "sendorder_count": 0
   },
-  "public_surface_state_at_jst": "2026-07-26T23:47:45+09:00"
+  "public_surface_state_at_jst": "2026-07-27T00:03:09+09:00"
 }
