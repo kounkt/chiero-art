@@ -181,8 +181,6 @@
   .prog .dup{color:var(--red);font-weight:700}   /* 前日から増えた */
   .prog .ddn{color:var(--sub);font-weight:600}   /* 減った */
   .prog .await{color:var(--faint)}
-  .state-data{display:block;font-family:var(--g);font-size:10.5px;color:var(--faint);
-    margin-top:5px;line-height:1.5;letter-spacing:.02em}
   .chev{flex-shrink:0;color:var(--faint);font-size:12px;padding-top:4px;transition:transform .2s}
   details.hx[open] .chev{transform:rotate(90deg)}
   .body{padding:2px 18px 20px 96px;border-top:1px solid var(--line)}
@@ -300,21 +298,13 @@
   </div>
 
   <h2>活用しているデータ</h2>
-  <p class="note">この作品が検証に使うデータだけを4区分で機械計測した実数。個人コンテンツは含めない。</p>
+  <p class="note">この作品が10年の市場を測るために保持・日次同期しているデータの実数（SSDデータレイク実測）。</p>
   <div class="band tnum" id="databand"></div>
   <div class="datatable-wrap"><table class="datatable tnum" id="datatable"></table></div>
-  <div class="datatable-wrap"><table class="datatable tnum" id="storagetable"></table></div>
-
-  <h2>Foundryの誕生と法廷</h2>
-  <p class="note">生まれた仮説だけでなく、死産・棚・凍結待ちも同じ面に出す。法廷の区分は重複を含むため合計39にはならない。</p>
-  <div class="band tnum" id="foundryband"></div>
-  <div class="band tnum" id="defectband"></div>
-  <div class="datatable-wrap"><table class="datatable tnum" id="courttable"></table></div>
-  <div class="datatable-wrap"><table class="datatable tnum" id="weeklytable"></table></div>
 
   <div class="disclaimer">
     <p>本ページは、ひとつのAI実験（作品）の状態を記録するものです。<b>特定の金融商品の取得を勧誘するものではなく、運用実績・将来の利益を約束・示唆するものでもありません。</b>掲載する検定結果は過去データに基づく記述であり、将来の成果を保証しません。個別の投資判断はご自身の責任と、必要に応じ専門家の助言のもとで行ってください。</p>
-    <p class="upd">最終更新 <b id="lastUpd">2026-07-26</b> ／ データは原則1日1回更新。実銘柄コード・保有・当日シグナルは掲載していません。</p>
+    <p class="upd">最終更新 <b id="lastUpd">2026-07-21</b> ／ データは原則1日1回更新。実銘柄コード・保有・当日シグナルは掲載していません。</p>
   </div>
 
   <p class="sig"><a href="https://chiero.jp/" target="_blank" rel="noopener">chiero.jp</a></p>
@@ -322,8 +312,7 @@
 
 <script>
 const DATA = {
-  asof:"2026-07-26",
-  state_data_at_jst:"2026-07-26T16:42:28+09:00",
+  asof:"2026-07-22",
   tiers:[
     {c:50, m:0.58, y1p5:1.9,  y1:11.7, y1p95:23.3,  y3:39.5,  feas:9.6,  corr:0.453},
     {c:100,m:1.52, y1p5:11.3, y1:25.0, y1p95:43.0,  y3:96.4,  feas:22.1, corr:0.593},
@@ -338,15 +327,14 @@ const DATA = {
     {c:10000,m:4.48,y1p5:39.7,y1:83.6, y1p95:145.6, y3:529.1, feas:99.1, corr:0.926}
   ],
   hyps:[
-    {id:"pb1",state:"live",added:"2026-07-26",state_data_at_jst:"2026-07-26T16:42:28+09:00",
-     name:"PB-1v2 日次停止・実証1発待ち",fam:"実弾・夜間持続",cells:0,
-     metric:"日次発射停止 · 2026-07-27 14:50の実証1発のみ · 配分v2総枠30万円",
-     prog:{n:0,target:1,prev:0,label:"INFRA-PROOF SHOT"},
-     arose:"凍結済みチェーンの発注・照合・返済を実市場で一度だけ証明するためのINFRA-PROOF SHOT。約定可能エッジの負値判明後は日次戦略として停止した。",
-     verif:"裁定20・29により日次発射を停止。月曜14:50の1発だけを実証に限定し、配分v2の総枠30万円と日次停止を同時に拘束する。",
-     outcome:"戦略としては停止中。月曜の1発は利益キャンペーンではなく、残存する発注・照合・翌朝返済部品の実証である。REDまたは欠測ならSKIPし、無言で発射しない。",
-     next:"約定可能エッジが正のカードだけを、実証済みチェーンへ接続する。",
-     sim:"実証1発はcampaign開始や自動増額を意味しない。"},
+    {id:"pb1",state:"live",name:"PB-1v2 本番稼働（現在は一時停止）",fam:"実弾・夜間持続",cells:0,
+     metric:"本番モード稼働中 · 建玉0 · 本日はデータ被覆不足で発注ゼロ停止 · ENTRY_SYMBOLS空",
+     prog:{n:0,target:40,prev:0,label:"前向き実弾"},
+     arose:"検定済みハーベスタシグナルを実弾で撃つ本番経路。旧ルールは廃し、検定済みシグナル限定・小資本集中モード(PB-1v2)として再設計。",
+     verif:"発注経路は7月上旬に実弾約定実績。毎朝の健全性チェック(token/PUSH/wallet/manifest)をGREENで通過。使用シグナルはホールドアウトt=5.49/5.41のもの。",
+     outcome:"本番モード(production・live_enabled)だが現在アーム無し。今週火曜のtoken競合401でPAPER_DAY(RED_SAFETY)判定→安全側で一時停止中。さらに本日(7/22)は、買い候補を選ぶための売買代金ランキングが仕様上50件しか返らず、必要な被覆(300件)に届かないと判定して14:50の発注を自動で見送った(UNEXECUTABLE_RANKING_DEPTH)。門が正しく閉じた例で、建玉0・未約定0・KILLなし。",
+     next:"明朝の二重GREEN門（インフラ全GREEN＋ルール同一性）成立で自動アーム→14:50判定から発注有効。本人YESは事前表明済み。RED日は撃たない。初週N=1銘柄・建玉≤資本50%×レバ1.5x・引け買い翌寄り売り。300万到達でポートフォリオ本則へ。",
+     sim:"初弾はVa降順で予算内に買える最上位銘柄1つ。10年分布は投下資本あたり+87.6bp/日の現象を使用。"},
     {id:"harvester",state:"paper",name:"統合ハーベスタ（旗艦）",fam:"夜間持続",
      metric:"+87.6bp/日（投下資本） · t=17.7 · 11年全年プラス",
      prog:{n:0,target:30,prev:0,label:"前向き解決"},
@@ -382,42 +370,13 @@ const DATA = {
      verif:"スクリーニング→確認で生存。足型とは無関係＝イベント族は緩慢織り込み＋機械買いが機序。",
      outcome:"生存。20日保有型。033・052と同じイベント鉱脈。",
      next:"033(自社株買い)・052(決算集中)へ機序を横展開。",sim:"20日+132bp。"},
-    {id:"033",state:"live",added:"2026-07-26",state_data_at_jst:"2026-07-26T16:42:28+09:00",
-     name:"D0v4-033 ライブ準備",fam:"イベントドリフト",
-     metric:"月曜09:00初弾候補 · 個別檻15万円 · GREEN朝条件が必須",
-     prog:{n:0,target:10,prev:0,label:"前向き実測"},
-     arose:"自社株買い表明後の20営業日ドリフトを、凍結済みD+1寄り入口のまま前向きに測るため。歴史値を実装都合で14:50へ移植しない。",
-     verif:"事前登録Bは入口を2026-07-27 09:00寄りへ固定した。配分v2は個別15万円を上限とし、朝のKabuS・返済受入・候補・資金・intentがGREENの時だけ同じ入口を評価する。",
-     outcome:"ライブ準備は継続中だが、Phase2 miniの最新独立BはFAIL_CLOSED。配備・タスク登録・月曜注文権限はまだ成立していない。",
-     next:"クリーンな前向き実測10イベントが増額審査を開く。R-20残差監査は増額審査へ別添する。",
-     sim:"歴史値は20日ドリフトの記述であり、月曜GREENや注文成功を示さない。"},
-    {id:"pin-lottery",state:"live",added:"2026-07-26",state_data_at_jst:"2026-07-26T16:42:28+09:00",
-     name:"PIN-LOTTERY ライブ準備",fam:"引け値到達・未約定観測",
-     metric:"月曜14:50初弾候補 · 未約定なら売買コスト0",
-     prog:{n:0,target:10,prev:0,label:"前向き実測"},
-     arose:"引け値到達時だけ成立する稀な機会を、最小単元1銘柄・未約定時コスト0で前向きに測るため。",
-     verif:"preregと実装の監査済み境界を維持し、14:50初弾では当選率と当選バイアスを記録する。未約定を失敗や費用発生へ読み替えない。",
-     outcome:"候補は凍結済みだが、最新postdeploy Bと共通Phase2 mini BはFAIL_CLOSED。月曜14:50のタスク登録・発注権限はまだ成立していない。",
-     next:"当選・未約定を分けたクリーンな前向き実測10イベントが増額審査を開く。",
-     sim:"未約定時の売買コストは0。注文を送れること自体は現在まだ未証明。"},
-    {id:"testa-5d",state:"surviving",added:"2026-07-26",state_data_at_jst:"2026-07-26T16:42:28+09:00",
-     name:"TESTA-5D 一発検定待ち",fam:"凍結済み歴史一発",
-     metric:"一発検定未実行 · 残る門は独立B監査",
-     prog:{n:0,target:1,prev:0,label:"凍結一発"},
-     arose:"Testaのイベント条件と5営業日スイングを、pre-2025固定入力で一度だけ検定するため。",
-     verif:"入力・prereg・freezeは固定済み。2026-07-26 15:13の独立B再監査は、append-only汚染台帳の全体SHA更新をrequest v2が追随していないためFAIL_CLOSEDとなり、launcherは動いていない。",
-     outcome:"仮説の生死は未判定。一発検定結果は存在せず、B PASSだけがlauncher前に残る門である。",
-     next:"B PASS後だけlauncherが一発検定を消費し、結果独立Bが生死を確定する。",
-     sim:"FAIL_CLOSEDを検定FAILへ読み替えず、結果0件を維持する。"},
-    {id:"r20",state:"surviving",added:"2026-07-26",state_data_at_jst:"2026-07-26T16:42:28+09:00",
-     name:"暫定 R-20 残差監査",fam:"因子残差・記述監査",
-     metric:"暫定: B_month R² 0.191 · 因子調整後 +95.35bp/20日",
-     prog:{n:0,target:1,prev:0,label:"独立B監査"},
-     arose:"D0v4-033の歴史平均が既知の市場・幅・モメンタム因子の変装か、固有の残余を持つかを増額審査前に記述測定するため。",
-     verif:"pre-2025、決済日cluster OLS、可逆スプレッド3因子で測定。B_monthはR² 0.191392、因子調整後net20 mean +95.35bp、非年率残差Sharpe 0.119。A_weekはR² 0.197585、+36.59bp。",
-     outcome:"暫定・B監査待ち。値は記述専用で、B PASS前は資格・増額・本番統治へ編入しない。",
-     next:"B PASS後に限り、分散込みの残差値を033の増額審査証拠束へ添付する。",
-     sim:"夜間proxyは入力保持率86.63%が凍結下限95%を下回り未算出のままfail-close。"},
+    {id:"033",state:"paper",name:"D0v4-033 自社株買いドリフト",fam:"イベントドリフト",
+     metric:"+165.0bp/20日 · t=5.08 · n=2,252",
+     prog:{n:0,target:30,prev:0,label:"前向き解決"},
+     arose:"自社株買い表明企業は自ら止まれない買い手＝需給が読める、という仮説。TDnetアドオン購読の事後正当化を兼ねる。",
+     verif:"TDnet 5年×分類器。週+60bp(t=2.99)/月+165bp(t=5.08)。歴史消費済みのため前向き紙ルートへ。D=722・σ_day=872.7bp確定(リターン非参照)。",
+     outcome:"生存・B監査待ち→紙時計開始。039Bと同輩。",
+     next:"050で「引け位置条件の付与は逆効果(+96 vs 無条件+147)」と判明。",sim:"20日+165bp。"},
     {id:"052",state:"paper",name:"D0v4-052 決算集中日ドリフト",fam:"イベントドリフト",
      metric:"+170.8bp/20日 · t=2.96 · 本日生存",
      prog:{n:0,target:30,prev:0,label:"前向き解決"},
@@ -600,16 +559,13 @@ const DATA = {
 
   // 次フェーズへ進む条件（種→紙孵化→本番稼働）
   var PROMOTE={
-    pb1:"<b>次の門:</b> 裁定127の12行pass 1 seal（現在 PENDING） <b>時刻:</b> 即時（条件駆動）",
+    pb1:"<b>明朝の二重GREEN門</b>（インフラ全GREEN＋ルール同一性pytest PASS）成立で自動アーム → 14:50判定から発注有効。本人YESは事前表明済み・RED日は撃たない。<b>+50万入金で建玉200万（レバ2x）</b>へ拡張可、300万到達でポートフォリオ本則へ失効。",
     harvester:"紙で <b>n=30解決</b>（独立10営業日以上）→ L1〜L4境界クリア → <b>資金300万到達</b> → <b>本人YES</b>で実弾稼働。現在は前向き解決0/30（解決待ち）。",
     "035":"紙 n=30 かつ 14:50判定precision≥0.90を維持 → 昇格カード提出 → 本人YESの檻へ。",
     "041fam":"041二カードの時計始動（本日裁定済）→ n=30解決 → 境界クリア → 本人YES。",
     "041g7":"n=30解決 → 経済非棄却(L2)・整合(L1) → 本人YES。",
     "041g2":"n=30解決 → 境界クリア → 本人YES。",
-    "033":"<b>次の門:</b> 裁定127の12行pass 1 seal（現在 PENDING） <b>時刻:</b> 即時（条件駆動）",
-    "pin-lottery":"<b>次の門:</b> 裁定127の12行pass 1 seal（現在 PENDING） <b>時刻:</b> 即時（条件駆動）",
-    "testa-5d":"<b>次の門:</b> append-only台帳headへ追随したrequest v2再発行と独立B PASS（現在 FAIL_CLOSED） <b>時刻:</b> 時刻未登録（request v2再発行後）",
-    "r20":"<b>次の門:</b> design v2・評価器・X-only・残差出力の独立B監査（現在 PENDING） <b>時刻:</b> 時刻未登録",
+    "033":"<b>B監査PASS</b>（σ_day確定済）→ 紙時計開始 → n=30 → L1〜L4 → 本人YES。",
     "052":"<b>B監査PASS</b>（実装＝036同一の確認＋境界式検算）→ 紙時計開始 → n=30 → 本人YES。前向き専用。",
     "039b":"前向き紙カード化 → n=30 → 本人YES。033と資本競合を紙期間に実測。",
     "013":"資格検定を通していない対照のため昇格経路になし。デトレンド義務の教材として残置。",
@@ -715,64 +671,21 @@ const DATA = {
       {nm:"TDnet開示PDF",desc:"開示原本PDF（件数）",rows:5325},
       {nm:"身体知コーパス",desc:"蒸留元・192ヶ月（件数）",rows:2993}
     ],
-    rows_total:241690230, cells_total:2507046346, docs_total:158535, gb:null
+    rows_total:241690230, cells_total:2507046346, docs_total:158535, gb:50
   };
   function jrows(n){if(n>=1e8)return (n/1e8).toFixed(2)+'億';if(n>=1e4)return (n/1e4).toFixed(n>=1e6?0:1)+'万';return n.toLocaleString();}
   function oku(n){return (n/1e8).toFixed(n>=1e9?0:2)+'億';}
   function man(n){return (n/1e4).toFixed(1)+'万';}
   function renderData(st){
-    var storage=st.storage||null;
-    var totalGib=storage?storage.total_gib:st.gb;
-    var totalLabel=(totalGib==null)?"計測中":Number(totalGib).toFixed(1)+" GiB";
     document.getElementById('databand').innerHTML=[
       {n:oku(st.rows_total),l:"総行数",a:1},{n:oku(st.cells_total),l:"データ点（行×列）",a:1},
-      {n:man(st.docs_total),l:"財務・開示文書",a:1},{n:totalLabel,l:"検証データ総量"},{n:"10年",l:"カバー期間"}
+      {n:man(st.docs_total),l:"財務・開示文書",a:1},{n:"約"+st.gb+"GB",l:"データレイク容量"},{n:"10年",l:"カバー期間"}
     ].map(function(b){return '<div class="cell'+(b.a?' accent':'')+'"><b>'+b.n+'</b><i>'+b.l+'</i></div>';}).join('');
     document.getElementById('datatable').innerHTML=
       '<tr><th>データセット</th><th>内容</th><th style="text-align:right">行数・件数</th></tr>'
       +st.datasets.map(function(d){return '<tr><td class="nm">'+d.nm+'</td><td>'+d.desc+'</td><td class="num">'+jrows(d.rows)+'</td></tr>';}).join('')
-      +'<tr class="tot"><td class="nm">合計</td><td>'+totalLabel+' · 財務/開示文書'+man(st.docs_total)+'件</td><td class="num">約'+oku(st.rows_total)+'行 / '+oku(st.cells_total)+'データ点</td></tr>';
-    document.getElementById('storagetable').innerHTML=storage
-      ?'<tr><th>検証データ区分</th><th>計測根拠</th><th style="text-align:right">実測量</th></tr>'
-       +storage.categories.map(function(c){return '<tr><td class="nm">'+c.label+'</td><td>du実測 · manifest '+c.manifest_count+'件</td><td class="num">'+Number(c.gib).toFixed(3)+' GiB</td></tr>';}).join('')
-       +'<tr class="tot"><td class="nm">4区分合計</td><td>'+storage.measured_at_jst+' · receipt '+storage.receipt_sha256.slice(0,12)+'…</td><td class="num">'+Number(storage.total_gib).toFixed(3)+' GiB</td></tr>'
-      :'<tr><td class="nm">4区分計測中</td><td>SSDとmanifestを確認中</td><td class="num">—</td></tr>';
+      +'<tr class="tot"><td class="nm">合計</td><td>約'+st.gb+'GB · 財務/開示文書'+man(st.docs_total)+'件</td><td class="num">約'+oku(st.rows_total)+'行 / '+oku(st.cells_total)+'データ点</td></tr>';
     if(st.generated_at_jst){var el=document.getElementById('lastUpd');if(el)el.textContent=st.generated_at_jst;}
-  }
-  function rateCell(v){
-    if(!v||v.denominator===0||v.value==null)return (v?v.numerator:0)+' / '+(v?v.denominator:0)+'（未観測）';
-    return v.numerator+' / '+v.denominator+'（'+(v.value*100).toFixed(1)+'%）';
-  }
-  function renderFoundry(f){
-    var l=f.ledger,c=f.first_court,k=f.weekly_kpi;
-    document.getElementById('foundryband').innerHTML=[
-      {n:l.today.total,l:"今日生まれた仮説",a:1},
-      {n:l.total,l:"誕生台帳 合計"},
-      {n:l.born,l:"BORN"},
-      {n:l.stillborn,l:"STILLBORN"},
-      {n:c.submitted,l:"法廷提出"}
-    ].map(function(b){return '<div class="cell'+(b.a?' accent':'')+'"><b>'+b.n+'</b><i>'+b.l+'</i></div>';}).join('');
-    document.getElementById('courttable').innerHTML=
-      '<tr><th>第1回法廷</th><th>状態</th><th style="text-align:right">件数</th></tr>'
-      +'<tr><td class="nm">提出</td><td>法廷へ提出済み</td><td class="num">'+c.submitted+'</td></tr>'
-      +'<tr><td class="nm">凍結待ち</td><td>提出3件の資格時計待ち</td><td class="num">'+c.freeze_pending+'</td></tr>'
-      +'<tr><td class="nm">棚</td><td>解除条件待ち</td><td class="num">'+c.shelved+'</td></tr>'
-      +'<tr><td class="nm">部品</td><td>Phase2で選別</td><td class="num">'+c.parked_component+'</td></tr>'
-      +'<tr><td class="nm">死産</td><td>非排他的集計 · '+c.overlap_note+'</td><td class="num">'+c.stillborn+'</td></tr>';
-    document.getElementById('weeklytable').innerHTML=
-      '<tr><th>週次KPI</th><th>分子 / 分母</th><th style="text-align:right">値</th></tr>'
-      +'<tr><td class="nm">誕生数</td><td>台帳全件</td><td class="num">'+k.birth_count+'</td></tr>'
-      +'<tr><td class="nm">法廷提出率</td><td>BORNを分母</td><td class="num">'+rateCell(k.court_submission_rate)+'</td></tr>'
-      +'<tr><td class="nm">凍結率</td><td>法廷提出を分母</td><td class="num">'+rateCell(k.freeze_rate)+'</td></tr>'
-      +'<tr><td class="nm">検定生存率</td><td>完了一発を分母</td><td class="num">'+rateCell(k.test_survival_rate)+'</td></tr>';
-  }
-  function renderDefects(d){
-    if(!d)return;
-    document.getElementById('defectband').innerHTML=[
-      {n:d.open_count,l:"未解決の既知欠陥",a:1},
-      {n:d.status_counts.BLOCKED,l:"外部・前段待ち"},
-      {n:d.status_counts.CLOSED,l:"解除済み"}
-    ].map(function(x){return '<div class="stat'+(x.a?' active':'')+'"><div class="n">'+x.n+'</div><div class="l">'+x.l+'</div></div>';}).join('');
   }
   renderData(EMBEDDED_STATS);
   // 自動更新中インジケータ：ブラウザが2分ごとに再取得している「生きている」ことを可視化。
@@ -789,18 +702,7 @@ const DATA = {
   function refreshData(){
     try{
       fetch('./data.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():null;})
-        .then(function(d){if(d){
-          if(d.data_stats){var s=d.data_stats;s.generated_at_jst=d.public_surface_generated_at_jst||d.generated_at_jst;renderData(s);}
-          if(d.foundry){renderFoundry(d.foundry);}
-          if(d.defects){renderDefects(d.defects);}
-          if(d.active_cards){
-            if(window.__mergeActiveCards)window.__mergeActiveCards(d.active_cards);
-            else window.__pendingActiveCards=d.active_cards;
-          }
-          if(d.hyp_progress&&window.__mergeHypProgress)window.__mergeHypProgress(d.hyp_progress);
-          if(d.aggregates){window.__AGG=d.aggregates;renderBand();updateSavedDelta();}
-          window.__srvStamp=d.progress_checked_at||window.__srvStamp;
-        }updateLiveStamp();})
+        .then(function(d){if(d){if(d.data_stats){var s=d.data_stats;s.generated_at_jst=d.generated_at_jst;renderData(s);}if(d.hyp_progress&&window.__mergeHypProgress)window.__mergeHypProgress(d.hyp_progress);if(d.aggregates){window.__AGG=d.aggregates;renderBand();updateSavedDelta();}window.__srvStamp=d.progress_checked_at||window.__srvStamp;}updateLiveStamp();})
         .catch(function(){});
     }catch(e){}
   }
@@ -841,10 +743,6 @@ const DATA = {
     else dtxt='<span class="dz">前日比 ±0（変化なし）</span>';
     return '<span class="prog">'+lab+' <b>'+p.n+'/'+p.target+'</b> · '+dtxt+'</span>';
   }
-  function stateDataLine(h){
-    var stamp=h.state_data_at_jst||DATA.state_data_at_jst;
-    return '<span class="state-data">状態データ '+stamp+' 時点</span>';
-  }
   function card(h){
     var s=STT[h.state],dl='';
     [["立てた理由",h.arose],["検証",h.verif],["生死の理由",h.outcome],["次に生まれた",h.next]].forEach(function(r){
@@ -853,7 +751,7 @@ const DATA = {
     var promo=pm?'<div class="promote"><span class="parrow">次フェーズ条件</span><span class="ptext">'+pm+'</span></div>':'';
     var sim=(h.sim&&h.sim!=="—")?'<div class="simline">シミュレーション: '+h.sim+'</div>':'';
     return '<details class="hx" data-state="'+h.state+'"><summary><span class="stt '+s[0]+'"><span class="tick"></span>'+s[1]+'</span>'
-      +'<span class="hmain"><span class="hname">'+h.name+'</span>'+newTag(h)+'<span class="hmet"><span class="k">'+h.fam+'</span> · '+h.metric+'</span>'+progLine(h)+stateDataLine(h)+'</span>'
+      +'<span class="hmain"><span class="hname">'+h.name+'</span>'+newTag(h)+'<span class="hmet"><span class="k">'+h.fam+'</span> · '+h.metric+'</span>'+progLine(h)+'</span>'
       +'<span class="chev">▸</span></summary><div class="body"><dl>'+dl+'</dl>'+promo+sim+'</div></details>';
   }
   var order={live:-1,paper:0,surviving:1,grave:2,seed:3};
@@ -872,36 +770,6 @@ const DATA = {
   }
   fWrap.addEventListener('click',function(e){var btn=e.target.closest('button');if(!btn)return;applyFilter(btn.getAttribute('data-f'));});
   renderCards(); // 初期描画（applyFilter('live')を内包）。data.json到着後にhyp_progressを合流して再描画する
-
-  // data.json の機械状態契約から、同じ既存カードIDを置換し、新規IDだけ同じ一覧へ追加する。
-  // ordered_gatesの最初の非PASS門と時刻はbuild_data.py側で生成済み。
-  var __lastActiveCards=null;
-  window.__mergeActiveCards=function(payload){
-    if(!payload||!payload.cards)return;
-    var key=JSON.stringify(payload);
-    if(key===__lastActiveCards)return;
-    __lastActiveCards=key;
-    payload.cards.forEach(function(c){
-      var h={
-        id:c.id,state:c.state,name:c.name,fam:c.family,metric:c.metric,
-        prog:Object.assign({prev:0},c.progress||{}),
-        arose:c.arose,verif:c.verification,outcome:c.outcome,
-        next:c.next_born,sim:c.simulation,added:"2026-07-26",
-        state_data_at_jst:c.state_data_at_jst
-      };
-      var pos=-1;
-      DATA.hyps.some(function(row,i){if(row.id===c.id){pos=i;return true;}return false;});
-      if(pos>=0)DATA.hyps[pos]=Object.assign({},DATA.hyps[pos],h);
-      else DATA.hyps.push(h);
-      PROMOTE[c.id]=c.next_phase.text;
-    });
-    DATA.state_data_at_jst=payload.state_data_at_jst||DATA.state_data_at_jst;
-    renderCards();
-  };
-  if(window.__pendingActiveCards){
-    window.__mergeActiveCards(window.__pendingActiveCards);
-    window.__pendingActiveCards=null;
-  }
 
   // data.json の hyp_progress（現在n・前日値）が来たら各仮説の prog を上書きして再描画（前日比を自動更新）
   var __lastProg=null;
