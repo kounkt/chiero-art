@@ -211,7 +211,7 @@
     "repository": "art-daytrader-fable-28-53",
     "ledger_path": "governance/DEFECT_LEDGER.md",
     "ledger_sha256": "7460ddd188d51c3bb3717a88cf6a83f4a9b7baccfbe3c0bf72e7a92405bc028d",
-    "measured_at_jst": "2026-07-27T17:44:16+0900",
+    "measured_at_jst": "2026-07-27T17:59:36+0900",
     "orders_sent": false,
     "sendorder_count": 0
   },
@@ -296,10 +296,10 @@
     },
     "prev_date": "2026-07-26"
   },
-  "progress_checked_at": "2026-07-27 17:44",
+  "progress_checked_at": "2026-07-27 17:59",
   "active_cards": {
     "schema": "public_active_cards_v2",
-    "state_data_at_jst": "2026-07-27T17:44:16+09:00",
+    "state_data_at_jst": "2026-07-27T17:59:36+09:00",
     "governance_revision": {
       "ruling": "Fable裁定139",
       "source_mode": "canonical_files_direct"
@@ -432,7 +432,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-07-27T17:44:16+09:00",
+        "state_data_at_jst": "2026-07-27T17:59:36+09:00",
         "evidence": [
           {
             "path": "governance/micro_allocation_boundary_v2_20260725.json",
@@ -488,7 +488,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-07-27T17:44:16+09:00",
+        "state_data_at_jst": "2026-07-27T17:59:36+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_033_V6_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T143446+0900.json",
@@ -559,7 +559,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-07-27T17:44:16+09:00",
+        "state_data_at_jst": "2026-07-27T17:59:36+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_PIN_LOTTERY_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T140307+0900.json",
@@ -630,7 +630,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-07-27T17:44:16+09:00",
+        "state_data_at_jst": "2026-07-27T17:59:36+09:00",
         "evidence": [
           {
             "path": "governance/rulings141_20260727/testa_swing5d_result_site_handoff_r141.json",
@@ -691,7 +691,7 @@
         "provisional": false,
         "description_only": true,
         "qualification_evidence": false,
-        "state_data_at_jst": "2026-07-27T17:44:16+09:00",
+        "state_data_at_jst": "2026-07-27T17:59:36+09:00",
         "evidence": [
           {
             "path": "research/r20_residual_audit_v2_20260726/d0v4_033/provisional_result.json",
@@ -731,7 +731,7 @@
   },
   "storage_refresh": {
     "status": "FAIL_CLOSED",
-    "measured_at_jst": "2026-07-27T17:44:30+0900",
+    "measured_at_jst": "2026-07-27T17:59:48+0900",
     "reason_code": "STORAGE_MANIFEST_SHA_MISMATCH",
     "preserved_last_verified_measurement": true,
     "orders_sent": false,
@@ -740,9 +740,9 @@
   "public_surface_generated_at_jst": "2026-07-27",
   "freshness": {
     "status": "PASS",
-    "checked_at_jst": "2026-07-27T17:44:30+09:00",
-    "state_data_at_jst": "2026-07-27T17:44:16+09:00",
-    "age_seconds": 14.912,
+    "checked_at_jst": "2026-07-27T17:59:48+09:00",
+    "state_data_at_jst": "2026-07-27T17:59:36+09:00",
+    "age_seconds": 12.939,
     "max_age_seconds": 1800,
     "canonical_source_count": 28,
     "canonical_source_set_sha256": "9f8a458bfd29b1ddc555c41d63d17080c202625a8877f60c95cee7cbf67ea77c",
@@ -750,7 +750,7 @@
     "orders_sent": false,
     "sendorder_count": 0
   },
-  "public_surface_state_at_jst": "2026-07-27T17:44:30+09:00",
+  "public_surface_state_at_jst": "2026-07-27T17:59:48+09:00",
   "operations": {
     "trade_date": "2026-07-27",
     "status": "MONDAY_NO_TRADE_INFRA",
