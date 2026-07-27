@@ -1,6 +1,6 @@
 {
   "schema": "operations_public_v2",
-  "updated_at_jst": "2026-07-23T18:56:22+09:00",
+  "updated_at_jst": "2026-07-27T13:25:20+09:00",
   "os1": {
     "family_id": "OS-1",
     "status": "TERMINAL_FAILED_4_OF_4",
@@ -46,7 +46,7 @@
       "card_id": "NIGHT-HARVESTER",
       "label": "夜間持続ハーベスタ",
       "kind": "PAPER",
-      "n": 7,
+      "n": 3,
       "target": 14,
       "state": "ACTIVE_BLIND"
     },
@@ -70,7 +70,7 @@
       "card_id": "D0v4-041-G2",
       "label": "大幅窓の夜間持続",
       "kind": "PAPER",
-      "n": 6,
+      "n": 16,
       "target": 14,
       "state": "ACTIVE_BLIND"
     },

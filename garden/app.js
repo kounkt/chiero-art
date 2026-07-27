@@ -16,6 +16,18 @@ const ORDER = ['tree', 'young_tree', 'sapling', 'sprout', 'seed', 'monument'];
 document.body.classList.remove('no-js');
 document.documentElement.classList.add('js');
 
+function paintStaleBanner(generatedAt) {
+  const stamp = new Date(generatedAt || '');
+  if (Number.isNaN(stamp.getTime())) return;
+  const hours = Math.max(0, (Date.now() - stamp.getTime()) / 3_600_000);
+  if (hours <= 6) return;
+  const banner = document.createElement('div');
+  banner.className = 'stale-banner';
+  banner.setAttribute('role', 'status');
+  banner.textContent = `この庭は${Math.floor(hours)}時間前の姿です`;
+  document.body.prepend(banner);
+}
+
 /* ---------------- 本文の更新 ---------------- */
 
 function paintDelta(d) {
@@ -218,6 +230,7 @@ load().then((data) => {
     return;
   }
   recordToday(data);
+  paintStaleBanner(data.generated_at);
   paintDelta(data.daily_delta);
   paintTenki(data.daily_delta);
   paintList(data.hypotheses, document.querySelector('[data-list]'));

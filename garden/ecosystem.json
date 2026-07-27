@@ -1,21 +1,21 @@
 {
   "schema": "ecosystem_v2",
-  "generated_at": "2026-07-17T08:40:06+09:00",
+  "generated_at": "2026-07-27T13:23:51+09:00",
   "garden": {
-    "day": 11,
+    "day": 21,
     "since": "2026-07-07"
   },
   "totals": {
-    "verdicts": 13,
-    "hypotheses_ever": 17,
-    "monuments": 6,
+    "verdicts": 15,
+    "hypotheses_ever": 36,
+    "monuments": 14,
     "safe_streak_days": 0
   },
   "daily_delta": {
-    "advanced": 3,
+    "advanced": 4,
     "born": 0,
-    "died": 2,
-    "blocked": 10,
+    "died": 0,
+    "blocked": 19,
     "no_trade": true
   },
   "hypotheses": [
@@ -31,7 +31,7 @@
       "blocker_public": null,
       "epitaph": null,
       "born_on": "2026-07-13",
-      "last_change": "2026-07-17T08:40:06+09:00"
+      "last_change": "2026-07-27T13:23:51+09:00"
     },
     {
       "id": "ki-02",
@@ -45,7 +45,7 @@
       "blocker_public": "前向きの決着を待っています",
       "epitaph": null,
       "born_on": "2026-07-13",
-      "last_change": "2026-07-17T08:40:06+09:00"
+      "last_change": "2026-07-27T13:23:51+09:00"
     },
     {
       "id": "ki-03",
@@ -59,7 +59,7 @@
       "blocker_public": "前向きの決着を待っています",
       "epitaph": null,
       "born_on": "2026-07-13",
-      "last_change": "2026-07-17T08:40:06+09:00"
+      "last_change": "2026-07-27T13:23:51+09:00"
     },
     {
       "id": "ki-04",
@@ -109,7 +109,7 @@
       "last_change": "2026-07-15T10:24:00+09:00"
     },
     {
-      "id": "ki-16",
+      "id": "ki-08",
       "label_public": "銘柄ごとの手触り",
       "stage": "monument",
       "clock": null,
@@ -120,7 +120,7 @@
       "last_change": "2026-07-17T02:42:54+09:00"
     },
     {
-      "id": "ki-17",
+      "id": "ki-09",
       "label_public": "週をまたがない流れ",
       "stage": "monument",
       "clock": null,
@@ -131,7 +131,139 @@
       "last_change": "2026-07-17T02:42:54+09:00"
     },
     {
-      "id": "ki-08",
+      "id": "ki-10",
+      "label_public": "定時金利の偏り",
+      "stage": "monument",
+      "clock": null,
+      "state": "gray",
+      "blocker_public": null,
+      "epitaph": "極端な偏りを六つの窓で測りましたが、誤差の門を越えませんでした",
+      "born_on": "2026-07-18",
+      "last_change": "2026-07-18T15:15:00.330594+09:00"
+    },
+    {
+      "id": "ki-11",
+      "label_public": "月替わりの流れ",
+      "stage": "monument",
+      "clock": null,
+      "state": "gray",
+      "blocker_public": null,
+      "epitaph": "かつての季節性は年々薄れ、近年は符号まで反転しました",
+      "born_on": "2026-07-18",
+      "last_change": "2026-07-18T15:15:00.330594+09:00"
+    },
+    {
+      "id": "ki-12",
+      "label_public": "朝の傾き・上向き",
+      "stage": "monument",
+      "clock": null,
+      "state": "gray",
+      "blocker_public": null,
+      "epitaph": "薄い摩擦でも、月をまたぐ安定性を残しませんでした",
+      "born_on": "2026-07-17",
+      "last_change": "2026-07-17T23:22:08+09:00"
+    },
+    {
+      "id": "ki-13",
+      "label_public": "朝の傾き・下向き",
+      "stage": "monument",
+      "clock": null,
+      "state": "gray",
+      "blocker_public": null,
+      "epitaph": "方向を反転しても、再現できる余白は残りませんでした",
+      "born_on": "2026-07-17",
+      "last_change": "2026-07-17T23:22:08+09:00"
+    },
+    {
+      "id": "ki-14",
+      "label_public": "平均の上の押し",
+      "stage": "monument",
+      "clock": null,
+      "state": "gray",
+      "blocker_public": null,
+      "epitaph": "平均の片側に居続けるだけでは、門を越えませんでした",
+      "born_on": "2026-07-17",
+      "last_change": "2026-07-17T23:22:08+09:00"
+    },
+    {
+      "id": "ki-15",
+      "label_public": "平均の下の戻り",
+      "stage": "monument",
+      "clock": null,
+      "state": "gray",
+      "blocker_public": null,
+      "epitaph": "対称な下向きの型も、門を越えませんでした",
+      "born_on": "2026-07-17",
+      "last_change": "2026-07-17T23:22:08+09:00"
+    },
+    {
+      "id": "ki-16",
+      "label_public": "高値の初押し",
+      "stage": "monument",
+      "clock": null,
+      "state": "gray",
+      "blocker_public": null,
+      "epitaph": "銘柄差は見えましたが、家族全体は負のまま終端しました",
+      "born_on": "2026-07-17",
+      "last_change": "2026-07-17T23:22:08+09:00"
+    },
+    {
+      "id": "ki-17",
+      "label_public": "安値の初戻し",
+      "stage": "monument",
+      "clock": null,
+      "state": "gray",
+      "blocker_public": null,
+      "epitaph": "安値更新後の戻りも、再現できる余白を残しませんでした",
+      "born_on": "2026-07-17",
+      "last_change": "2026-07-17T23:22:08+09:00"
+    },
+    {
+      "id": "ki-18",
+      "label_public": "薄い摩擦の地図",
+      "stage": "sapling",
+      "clock": null,
+      "state": "green",
+      "blocker_public": null,
+      "epitaph": null,
+      "born_on": "2026-07-17",
+      "last_change": "2026-07-17T23:22:08+09:00"
+    },
+    {
+      "id": "ki-19",
+      "label_public": "銘柄差の足跡",
+      "stage": "sapling",
+      "clock": null,
+      "state": "green",
+      "blocker_public": null,
+      "epitaph": null,
+      "born_on": "2026-07-17",
+      "last_change": "2026-07-17T23:22:08+09:00"
+    },
+    {
+      "id": "ki-38",
+      "label_public": "明瞭な流れ",
+      "stage": "sapling",
+      "clock": null,
+      "state": "yellow",
+      "blocker_public": "独立監査と最終審査を待っています",
+      "epitaph": null,
+      "born_on": "2026-07-17",
+      "last_change": "2026-07-18T00:01:41+09:00"
+    },
+    {
+      "id": "ki-39",
+      "label_public": "事前属性の群",
+      "stage": "sapling",
+      "clock": null,
+      "state": "yellow",
+      "blocker_public": "独立監査と最終審査を待っています",
+      "epitaph": null,
+      "born_on": "2026-07-17",
+      "last_change": "2026-07-17T23:57:49+09:00"
+    },
+    {
+      "id": "ki-40",
       "label_public": "温室・夜の清算連鎖",
       "stage": "monument",
       "clock": null,
@@ -142,7 +274,7 @@
       "last_change": "2026-07-16T16:26:53+09:00"
     },
     {
-      "id": "ki-09",
+      "id": "ki-41",
       "label_public": "企業行動の赤信号",
       "stage": "seed",
       "clock": null,
@@ -153,7 +285,7 @@
       "last_change": "2026-07-16T09:40:12+09:00"
     },
     {
-      "id": "ki-10",
+      "id": "ki-42",
       "label_public": "価値床の急落",
       "stage": "seed",
       "clock": null,
@@ -164,7 +296,7 @@
       "last_change": "2026-07-16T09:40:12+09:00"
     },
     {
-      "id": "ki-11",
+      "id": "ki-43",
       "label_public": "外生波の残差",
       "stage": "seed",
       "clock": null,
@@ -175,7 +307,7 @@
       "last_change": "2026-07-16T09:40:12+09:00"
     },
     {
-      "id": "ki-12",
+      "id": "ki-44",
       "label_public": "仲介の連鎖",
       "stage": "seed",
       "clock": null,
@@ -186,7 +318,7 @@
       "last_change": "2026-07-16T09:40:12+09:00"
     },
     {
-      "id": "ki-13",
+      "id": "ki-45",
       "label_public": "期限の在庫",
       "stage": "seed",
       "clock": null,
@@ -197,7 +329,7 @@
       "last_change": "2026-07-16T01:00:12+09:00"
     },
     {
-      "id": "ki-14",
+      "id": "ki-46",
       "label_public": "解かれる在庫",
       "stage": "seed",
       "clock": null,
@@ -208,7 +340,7 @@
       "last_change": "2026-07-16T01:00:12+09:00"
     },
     {
-      "id": "ki-15",
+      "id": "ki-47",
       "label_public": "供給の波",
       "stage": "seed",
       "clock": null,
@@ -217,6 +349,104 @@
       "epitaph": null,
       "born_on": "2026-07-16",
       "last_change": "2026-07-16T01:00:12+09:00"
+    },
+    {
+      "id": "ki-48",
+      "label_public": "夜間持続ハーベスタ",
+      "stage": "young_tree",
+      "clock": {
+        "n": 3,
+        "target": 14
+      },
+      "state": "yellow",
+      "blocker_public": "前向きの決着を待っています",
+      "epitaph": null,
+      "born_on": "2026-07-21",
+      "last_change": "2026-07-21T13:28:00+09:00"
+    },
+    {
+      "id": "ki-49",
+      "label_public": "14時50分の早乗り",
+      "stage": "young_tree",
+      "clock": {
+        "n": 4,
+        "target": 14
+      },
+      "state": "yellow",
+      "blocker_public": "前向きの決着を待っています",
+      "epitaph": null,
+      "born_on": "2026-07-19",
+      "last_change": "2026-07-19T20:30:00+09:00"
+    },
+    {
+      "id": "ki-50",
+      "label_public": "高値圏の夜間持続",
+      "stage": "young_tree",
+      "clock": {
+        "n": 1,
+        "target": 14
+      },
+      "state": "yellow",
+      "blocker_public": "前向きの決着を待っています",
+      "epitaph": null,
+      "born_on": "2026-07-21",
+      "last_change": "2026-07-21T13:28:00+09:00"
+    },
+    {
+      "id": "ki-51",
+      "label_public": "大幅窓の夜間持続",
+      "stage": "young_tree",
+      "clock": {
+        "n": 16,
+        "target": 14
+      },
+      "state": "yellow",
+      "blocker_public": "前向きの決着を待っています",
+      "epitaph": null,
+      "born_on": "2026-07-21",
+      "last_change": "2026-07-21T13:28:00+09:00"
+    },
+    {
+      "id": "ki-20",
+      "label_public": "自社株取得後の持続",
+      "stage": "young_tree",
+      "clock": {
+        "n": 0,
+        "target": 14
+      },
+      "state": "yellow",
+      "blocker_public": "前向きの決着を待っています",
+      "epitaph": null,
+      "born_on": "2026-07-27",
+      "last_change": "2026-07-27T13:19:28+09:00"
+    },
+    {
+      "id": "ki-52",
+      "label_public": "決算集中日の持続",
+      "stage": "young_tree",
+      "clock": {
+        "n": 0,
+        "target": 14
+      },
+      "state": "yellow",
+      "blocker_public": "前向きの決着を待っています",
+      "epitaph": null,
+      "born_on": "2026-07-22",
+      "last_change": "2026-07-22T10:52:00+09:00"
+    },
+    {
+      "id": "ki-53",
+      "label_public": "上方修正後の持続",
+      "stage": "young_tree",
+      "clock": {
+        "n": 0,
+        "target": 14
+      },
+      "state": "yellow",
+      "blocker_public": "前向きの決着を待っています",
+      "epitaph": null,
+      "born_on": "2026-07-22",
+      "last_change": "2026-07-22T20:10:00+09:00"
     }
   ],
   "organs": [
@@ -295,27 +525,267 @@
       }
     },
     {
-      "snapshot_id": "8909b71c2fb3a2cc4da309f6cef7e68592a8691de735e8cfd789d2bffaa69119",
-      "generated_at": "2026-07-17T08:40:06+09:00",
+      "daily_delta": {
+        "advanced": 5,
+        "blocked": 10,
+        "born": 0,
+        "died": 8,
+        "no_trade": true
+      },
       "date": "2026-07-17",
       "garden": {
         "day": 11,
         "since": "2026-07-07"
       },
+      "generated_at": "2026-07-17T23:34:54+09:00",
+      "snapshot_id": "5439d3092b66632b969a42c4641f7a5f95dd5232579de04325f27bb93c4c25c4",
+      "stages": {
+        "monument": 12,
+        "sapling": 2,
+        "seed": 7,
+        "sprout": 0,
+        "tree": 1,
+        "young_tree": 3
+      }
+    },
+    {
       "daily_delta": {
-        "advanced": 3,
+        "advanced": 4,
+        "blocked": 12,
         "born": 0,
         "died": 2,
-        "blocked": 10,
+        "no_trade": true
+      },
+      "date": "2026-07-18",
+      "garden": {
+        "day": 12,
+        "since": "2026-07-07"
+      },
+      "generated_at": "2026-07-18T19:00:05+09:00",
+      "snapshot_id": "89e9c58166e34a18ae84b5801b621b5ba72a702d2461ac98ce7978cb3902d3aa",
+      "stages": {
+        "monument": 14,
+        "sapling": 4,
+        "seed": 7,
+        "sprout": 0,
+        "tree": 1,
+        "young_tree": 3
+      }
+    },
+    {
+      "daily_delta": {
+        "advanced": 13,
+        "blocked": 15,
+        "born": 0,
+        "died": 8,
+        "no_trade": true
+      },
+      "date": "2026-07-19",
+      "garden": {
+        "day": 13,
+        "since": "2026-07-07"
+      },
+      "generated_at": "2026-07-19T19:12:58+09:00",
+      "snapshot_id": "45ece69f66fc7debb8cb42f1f17afca388ca679bd5b2b3c172c86fdc2a4e5123",
+      "stages": {
+        "monument": 22,
+        "sapling": 13,
+        "seed": 7,
+        "sprout": 0,
+        "tree": 1,
+        "young_tree": 4
+      }
+    },
+    {
+      "daily_delta": {
+        "advanced": 3,
+        "blocked": 15,
+        "born": 0,
+        "died": 0,
+        "no_trade": true
+      },
+      "date": "2026-07-20",
+      "garden": {
+        "day": 14,
+        "since": "2026-07-07"
+      },
+      "generated_at": "2026-07-20T15:35:08+09:00",
+      "snapshot_id": "84941fe1ac89c5508dc0b2f6662269ab4d97a308ea385dab75b41af4268363c4",
+      "stages": {
+        "monument": 22,
+        "sapling": 13,
+        "seed": 7,
+        "sprout": 0,
+        "tree": 1,
+        "young_tree": 4
+      }
+    },
+    {
+      "daily_delta": {
+        "advanced": 3,
+        "blocked": 15,
+        "born": 0,
+        "died": 0,
+        "no_trade": true
+      },
+      "date": "2026-07-21",
+      "garden": {
+        "day": 15,
+        "since": "2026-07-07"
+      },
+      "generated_at": "2026-07-21T19:00:05+09:00",
+      "snapshot_id": "07e435f8b56c14832a6a35b4d725792f06318f1052dbb51dbd7b4bed9572da82",
+      "stages": {
+        "monument": 22,
+        "sapling": 13,
+        "seed": 7,
+        "sprout": 0,
+        "tree": 1,
+        "young_tree": 4
+      }
+    },
+    {
+      "daily_delta": {
+        "advanced": 3,
+        "blocked": 15,
+        "born": 0,
+        "died": 0,
+        "no_trade": true
+      },
+      "date": "2026-07-22",
+      "garden": {
+        "day": 16,
+        "since": "2026-07-07"
+      },
+      "generated_at": "2026-07-22T19:00:01+09:00",
+      "snapshot_id": "dbc8f1960f95feee428b73dc4a16db9a82bf6f32ca3edf8a055bf5f9ceeac1b8",
+      "stages": {
+        "monument": 22,
+        "sapling": 13,
+        "seed": 7,
+        "sprout": 0,
+        "tree": 1,
+        "young_tree": 4
+      }
+    },
+    {
+      "daily_delta": {
+        "advanced": 3,
+        "blocked": 15,
+        "born": 0,
+        "died": 0,
+        "no_trade": true
+      },
+      "date": "2026-07-23",
+      "garden": {
+        "day": 17,
+        "since": "2026-07-07"
+      },
+      "generated_at": "2026-07-23T15:35:06+09:00",
+      "snapshot_id": "e2fcdd4b46bfbe67e2fab0f6a90237213f2f51a6a8d5a6ee2bcefd0f4dd27b36",
+      "stages": {
+        "monument": 22,
+        "sapling": 13,
+        "seed": 7,
+        "sprout": 0,
+        "tree": 1,
+        "young_tree": 4
+      }
+    },
+    {
+      "daily_delta": {
+        "advanced": 3,
+        "blocked": 15,
+        "born": 0,
+        "died": 0,
+        "no_trade": true
+      },
+      "date": "2026-07-24",
+      "garden": {
+        "day": 18,
+        "since": "2026-07-07"
+      },
+      "generated_at": "2026-07-24T19:00:05+09:00",
+      "snapshot_id": "f79957e766f34e9613eab1280cd6c27761d029adff53f39894fb311f6e861e02",
+      "stages": {
+        "monument": 22,
+        "sapling": 13,
+        "seed": 7,
+        "sprout": 0,
+        "tree": 1,
+        "young_tree": 4
+      }
+    },
+    {
+      "daily_delta": {
+        "advanced": 3,
+        "blocked": 15,
+        "born": 0,
+        "died": 0,
+        "no_trade": true
+      },
+      "date": "2026-07-25",
+      "garden": {
+        "day": 19,
+        "since": "2026-07-07"
+      },
+      "generated_at": "2026-07-25T19:00:08+09:00",
+      "snapshot_id": "558c29e76fb869d59ecee498321eb22b1a221bfd63ea9763728713dde74b7cef",
+      "stages": {
+        "monument": 22,
+        "sapling": 13,
+        "seed": 7,
+        "sprout": 0,
+        "tree": 1,
+        "young_tree": 4
+      }
+    },
+    {
+      "daily_delta": {
+        "advanced": 3,
+        "blocked": 15,
+        "born": 0,
+        "died": 0,
+        "no_trade": true
+      },
+      "date": "2026-07-26",
+      "garden": {
+        "day": 20,
+        "since": "2026-07-07"
+      },
+      "generated_at": "2026-07-26T19:00:05+09:00",
+      "snapshot_id": "d6afc9a7a698d3d7ebce2dc70b3f35243ef02a05a913a050c45f03dcd408cc64",
+      "stages": {
+        "monument": 22,
+        "sapling": 13,
+        "seed": 7,
+        "sprout": 0,
+        "tree": 1,
+        "young_tree": 4
+      }
+    },
+    {
+      "snapshot_id": "057d045edee4e374d780f4eea63d511b6179a216ee2bee697d85e11ec3e86f57",
+      "generated_at": "2026-07-27T13:23:51+09:00",
+      "date": "2026-07-27",
+      "garden": {
+        "day": 21,
+        "since": "2026-07-07"
+      },
+      "daily_delta": {
+        "advanced": 4,
+        "born": 0,
+        "died": 0,
+        "blocked": 19,
         "no_trade": true
       },
       "stages": {
+        "young_tree": 10,
+        "monument": 14,
+        "sapling": 4,
+        "sprout": 0,
         "tree": 1,
-        "monument": 6,
-        "seed": 7,
-        "young_tree": 3,
-        "sapling": 0,
-        "sprout": 0
+        "seed": 7
       }
     }
   ]
