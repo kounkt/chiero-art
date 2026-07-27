@@ -136,27 +136,6 @@
   .band .bd.z{color:var(--faint);font-weight:400}
   .band .bd.nz{color:var(--red)}
   @media(max-width:640px){.band .cell{flex:1 1 40%;border-bottom:1px solid var(--line)}}
-  .stillborn-signal{margin:18px 0 8px;padding:24px 26px;border:2px solid var(--ink);border-radius:5px;
-    display:grid;grid-template-columns:minmax(120px,.35fr) 1fr;gap:24px;align-items:center;background:var(--ink);color:var(--paper)}
-  .stillborn-signal .n{font-size:clamp(44px,10vw,78px);font-weight:800;line-height:1;color:var(--paper)}
-  .stillborn-signal .l{font-size:12px;letter-spacing:.12em;font-weight:700;color:#FF7A84;margin-top:7px}
-  .stillborn-signal p{margin:0;font-family:var(--m);font-size:16px;line-height:1.85;color:var(--paper)}
-  .stillborn-signal p b{color:#FF7A84}
-  .foundry-volume{margin-top:8px}
-  .trial-heading{margin:30px 0 8px;font-family:var(--m);font-size:18px;font-weight:600}
-  .trial-note{font-size:12px;color:var(--sub);line-height:1.8;margin:0 0 12px}
-  .trial-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:10px}
-  .trial-card{border:1px solid var(--line);border-top:3px solid var(--red);border-radius:5px;padding:20px;background:var(--paper)}
-  .trial-card h4{font-family:var(--m);font-size:17px;margin:0 0 10px}
-  .trial-stage{font-size:11.5px;font-weight:700;line-height:1.8;color:var(--sub);letter-spacing:.01em}
-  .trial-stage .done{color:var(--ink)}
-  .trial-stage .terminal{color:var(--red)}
-  .trial-metric{font-size:12px;color:var(--sub);line-height:1.75;margin:12px 0 0}
-  .trial-metric b{color:var(--ink)}
-  @media(max-width:640px){
-    .stillborn-signal{grid-template-columns:1fr;gap:12px;padding:22px 20px}
-    .trial-grid{grid-template-columns:1fr}
-  }
   /* 圧縮の当日分 */
   .saveddelta{margin:9px 0 0;font-size:13px;line-height:1.7}
   .saveddelta .nz{color:var(--red);font-weight:700}
@@ -257,7 +236,6 @@
     <p class="lede">人間が長い年月をかけて身体で覚える相場の勘を、AIが測定可能な知識へ蒸留する試み。効くものだけを紙の上で選び、効かないものは墓標として地図に残す。赤い点は、詰まりが取れて流れが通った一点。</p>
     <p class="thesis">これは投資の勧誘でも運用実績の広告でもない。ひとつの機械が、何を確かめ、何を捨て、何を残したかの記録である。</p>
   </header>
-  <div class="band tnum" id="operationband" style="display:none"></div>
 
   <h2>将来の予測 — 実験の記述的シミュレーション</h2>
   <p class="note">測定されたエッジが、投下資本の大きさによって複利でどう積み上がるかを描いた実験的な地図。スライダーを動かすと容量の天井まで見える。<span class="red">保証ではなく、過去データに基づく推定である。</span></p>
@@ -327,14 +305,9 @@
   <div class="datatable-wrap"><table class="datatable tnum" id="datatable"></table></div>
   <div class="datatable-wrap"><table class="datatable tnum" id="storagetable"></table></div>
 
-  <h2>Foundry — 量より質</h2>
-  <p class="note">主指標は生成数ではなく、新規BORN率・法廷提出率・凍結率・検定生存率。誕生数は選別機械への入力総量として副次表示する。</p>
+  <h2>Foundryの誕生と法廷</h2>
+  <p class="note">生まれた仮説だけでなく、死産・棚・凍結待ちも同じ面に出す。法廷の区分は重複を含むため合計39にはならない。</p>
   <div class="band tnum" id="foundryband"></div>
-  <div class="stillborn-signal tnum" id="stillbornsignal"></div>
-  <div class="band tnum foundry-volume" id="foundryvolume"></div>
-  <h3 class="trial-heading">増配2セル — 法廷提出から検定終端まで</h3>
-  <p class="trial-note">本番稼働へ最も近づいた2セルの通過履歴。COURT_SUBMITTEDだけで成功とせず、独立B後の終端まで表示する。</p>
-  <div class="trial-grid tnum" id="dividendtrack"></div>
   <div class="band tnum" id="defectband"></div>
   <div class="datatable-wrap"><table class="datatable tnum" id="courttable"></table></div>
   <div class="datatable-wrap"><table class="datatable tnum" id="weeklytable"></table></div>
@@ -427,24 +400,24 @@ const DATA = {
      outcome:"候補は凍結済みだが、最新postdeploy Bと共通Phase2 mini BはFAIL_CLOSED。月曜14:50のタスク登録・発注権限はまだ成立していない。",
      next:"当選・未約定を分けたクリーンな前向き実測10イベントが増額審査を開く。",
      sim:"未約定時の売買コストは0。注文を送れること自体は現在まだ未証明。"},
-    {id:"testa-5d",state:"grave",added:"2026-07-26",state_data_at_jst:"2026-07-27T01:18:14+09:00",
-     name:"TESTA-5D 墓標",fam:"凍結済み歴史一発",
-     metric:"検定死亡 · 生存率 0/1 · 平均 +42.07bp · p=0.1058 · BY=false",
-     prog:{n:1,target:1,prev:0,label:"凍結一発"},
+    {id:"testa-5d",state:"surviving",added:"2026-07-26",state_data_at_jst:"2026-07-26T16:42:28+09:00",
+     name:"TESTA-5D 一発検定待ち",fam:"凍結済み歴史一発",
+     metric:"一発検定未実行 · 残る門は独立B監査",
+     prog:{n:0,target:1,prev:0,label:"凍結一発"},
      arose:"Testaのイベント条件と5営業日スイングを、pre-2025固定入力で一度だけ検定するため。",
-     verif:"pre-2025固定入力の一発検定490イベントを独立Bが再構築し、結果行と集計を再照合。最大イベント日2024-12-20、最大決済日2024-12-30。",
-     outcome:"独立B判定はPASS_RESULT_RECHECK_DIED。平均は正でも資格判定は死亡。検定生存率0/1、first_passage=falseとして墓標登録済み。",
-     next:"033姉妹カードは作らず裁定12継承審査へ進めない。death seedはR-16のIR構造抽出完了後に別preregと法廷凍結を要する。",
-     sim:"選択式・選択閾値・銘柄は非公開。result handoffと独立B判定の集計値・生死・証拠SHAだけを表示する。"},
+     verif:"入力・prereg・freezeは固定済み。2026-07-26 15:13の独立B再監査は、append-only汚染台帳の全体SHA更新をrequest v2が追随していないためFAIL_CLOSEDとなり、launcherは動いていない。",
+     outcome:"仮説の生死は未判定。一発検定結果は存在せず、B PASSだけがlauncher前に残る門である。",
+     next:"B PASS後だけlauncherが一発検定を消費し、結果独立Bが生死を確定する。",
+     sim:"FAIL_CLOSEDを検定FAILへ読み替えず、結果0件を維持する。"},
     {id:"r20",state:"surviving",added:"2026-07-26",state_data_at_jst:"2026-07-26T16:42:28+09:00",
-     name:"R-20 残差監査",fam:"因子残差・記述監査",
-     metric:"B_month R² 0.191 · 因子調整後 +95.35bp/20日",
-     prog:{n:1,target:1,prev:0,label:"独立B監査"},
+     name:"暫定 R-20 残差監査",fam:"因子残差・記述監査",
+     metric:"暫定: B_month R² 0.191 · 因子調整後 +95.35bp/20日",
+     prog:{n:0,target:1,prev:0,label:"独立B監査"},
      arose:"D0v4-033の歴史平均が既知の市場・幅・モメンタム因子の変装か、固有の残余を持つかを増額審査前に記述測定するため。",
      verif:"pre-2025、決済日cluster OLS、可逆スプレッド3因子で測定。B_monthはR² 0.191392、因子調整後net20 mean +95.35bp、非年率残差Sharpe 0.119。A_weekはR² 0.197585、+36.59bp。",
-     outcome:"独立B v4 PASS。+95.35bp/20日の記述値を033増額審査の記述証拠束へ編入済み。資格証拠ではなく、資本変更を自動承認しない。",
-     next:"資本変更は、この記述証拠とは別のFable裁定と本人承認がある場合だけ審査する。",
-     sim:"description_only=true / qualification_evidence=false / fdr_consumed=false。夜間proxyは入力保持率86.63%が凍結下限95%を下回り未算出のままfail-close。"},
+     outcome:"暫定・B監査待ち。値は記述専用で、B PASS前は資格・増額・本番統治へ編入しない。",
+     next:"B PASS後に限り、分散込みの残差値を033の増額審査証拠束へ添付する。",
+     sim:"夜間proxyは入力保持率86.63%が凍結下限95%を下回り未算出のままfail-close。"},
     {id:"052",state:"paper",name:"D0v4-052 決算集中日ドリフト",fam:"イベントドリフト",
      metric:"+170.8bp/20日 · t=2.96 · 本日生存",
      prog:{n:0,target:30,prev:0,label:"前向き解決"},
@@ -635,7 +608,7 @@ const DATA = {
     "041g2":"n=30解決 → 境界クリア → 本人YES。",
     "033":"<b>次の門:</b> 裁定127の12行pass 1 seal（現在 PENDING） <b>時刻:</b> 即時（条件駆動）",
     "pin-lottery":"<b>次の門:</b> 裁定127の12行pass 1 seal（現在 PENDING） <b>時刻:</b> 即時（条件駆動）",
-    "testa-5d":"<b>次の門:</b> 全門PASS（現在 PASS） <b>時刻:</b> 墓標・death seed登録済み",
+    "testa-5d":"<b>次の門:</b> append-only台帳headへ追随したrequest v2再発行と独立B PASS（現在 FAIL_CLOSED） <b>時刻:</b> 時刻未登録（request v2再発行後）",
     "r20":"<b>次の門:</b> design v2・評価器・X-only・残差出力の独立B監査（現在 PENDING） <b>時刻:</b> 時刻未登録",
     "052":"<b>B監査PASS</b>（実装＝036同一の確認＋境界式検算）→ 紙時計開始 → n=30 → 本人YES。前向き専用。",
     "039b":"前向き紙カード化 → n=30 → 本人YES。033と資本競合を紙期間に実測。",
@@ -770,38 +743,15 @@ const DATA = {
     if(!v||v.denominator===0||v.value==null)return (v?v.numerator:0)+' / '+(v?v.denominator:0)+'（未観測）';
     return v.numerator+' / '+v.denominator+'（'+(v.value*100).toFixed(1)+'%）';
   }
-  function ratePercent(v){
-    if(!v||v.denominator===0||v.value==null)return "—";
-    return (v.value*100).toFixed(1)+"%";
-  }
   function renderFoundry(f){
-    var l=f.ledger,c=f.first_court,k=f.weekly_kpi,d=f.dividend_trials||{cards:[]};
+    var l=f.ledger,c=f.first_court,k=f.weekly_kpi;
     document.getElementById('foundryband').innerHTML=[
-      {n:ratePercent(k.new_born_rate),l:"新規BORN率",a:1},
-      {n:ratePercent(k.court_submission_rate),l:"法廷提出率"},
-      {n:ratePercent(k.freeze_rate),l:"凍結率"},
-      {n:ratePercent(k.test_survival_rate),l:"検定生存率"}
+      {n:l.today.total,l:"今日生まれた仮説",a:1},
+      {n:l.total,l:"誕生台帳 合計"},
+      {n:l.born,l:"BORN"},
+      {n:l.stillborn,l:"STILLBORN"},
+      {n:c.submitted,l:"法廷提出"}
     ].map(function(b){return '<div class="cell'+(b.a?' accent':'')+'"><b>'+b.n+'</b><i>'+b.l+'</i></div>';}).join('');
-    document.getElementById('stillbornsignal').innerHTML=
-      '<div><div class="n">'+l.stillborn+'</div><div class="l">STILLBORN 累計</div></div>'
-      +'<p><b>量でなく質。</b>死産の多さは、重複を通さない免疫系が働いている証明。これは仮説を増やす作品ではなく、仮説を測定する機械である。</p>';
-    document.getElementById('foundryvolume').innerHTML=[
-      {n:l.today.total,l:"今日の入力数（副次）"},
-      {n:l.total,l:"誕生台帳 合計（副次）"},
-      {n:l.born,l:"BORN 累計"},
-      {n:(f.current_funnel||{}).court_submitted,l:"法廷提出 累計"}
-    ].map(function(b){return '<div class="cell"><b>'+b.n+'</b><i>'+b.l+'</i></div>';}).join('');
-    document.getElementById('dividendtrack').innerHTML=d.cards.map(function(card){
-      var stages=card.stage_sequence.map(function(stage){
-        var cls=stage===card.current_state?'terminal':'done';
-        return '<span class="'+cls+'">'+stage+'</span>';
-      }).join(' → ');
-      return '<article class="trial-card"><h4>'+card.label+'</h4>'
-        +'<div class="trial-stage">'+stages+'</div>'
-        +'<p class="trial-metric"><b>現在 '+card.current_state+'</b> · n='+card.events_n
-        +' · net '+Number(card.mean_net_bp).toFixed(1)+'bp · p='+Number(card.raw_p_two_sided).toFixed(4)
-        +' · BY='+(card.by_pass?'PASS':'false')+'</p></article>';
-    }).join('');
     document.getElementById('courttable').innerHTML=
       '<tr><th>第1回法廷</th><th>状態</th><th style="text-align:right">件数</th></tr>'
       +'<tr><td class="nm">提出</td><td>法廷へ提出済み</td><td class="num">'+c.submitted+'</td></tr>'
@@ -810,12 +760,11 @@ const DATA = {
       +'<tr><td class="nm">部品</td><td>Phase2で選別</td><td class="num">'+c.parked_component+'</td></tr>'
       +'<tr><td class="nm">死産</td><td>非排他的集計 · '+c.overlap_note+'</td><td class="num">'+c.stillborn+'</td></tr>';
     document.getElementById('weeklytable').innerHTML=
-      '<tr><th>質KPIの計算</th><th>分子 / 分母</th><th style="text-align:right">値</th></tr>'
-      +'<tr><td class="nm">新規BORN率</td><td>本日BORN / 本日全入力</td><td class="num">'+rateCell(k.new_born_rate)+'</td></tr>'
+      '<tr><th>週次KPI</th><th>分子 / 分母</th><th style="text-align:right">値</th></tr>'
+      +'<tr><td class="nm">誕生数</td><td>台帳全件</td><td class="num">'+k.birth_count+'</td></tr>'
       +'<tr><td class="nm">法廷提出率</td><td>BORNを分母</td><td class="num">'+rateCell(k.court_submission_rate)+'</td></tr>'
       +'<tr><td class="nm">凍結率</td><td>法廷提出を分母</td><td class="num">'+rateCell(k.freeze_rate)+'</td></tr>'
-      +'<tr><td class="nm">検定生存率</td><td>完了一発を分母</td><td class="num">'+rateCell(k.test_survival_rate)+'</td></tr>'
-      +'<tr><td class="nm">誕生数（副次）</td><td>台帳全件</td><td class="num">'+k.birth_count+'</td></tr>';
+      +'<tr><td class="nm">検定生存率</td><td>完了一発を分母</td><td class="num">'+rateCell(k.test_survival_rate)+'</td></tr>';
   }
   function renderDefects(d){
     if(!d)return;
@@ -824,17 +773,6 @@ const DATA = {
       {n:d.status_counts.BLOCKED,l:"外部・前段待ち"},
       {n:d.status_counts.CLOSED,l:"解除済み"}
     ].map(function(x){return '<div class="stat'+(x.a?' active':'')+'"><div class="n">'+x.n+'</div><div class="l">'+x.l+'</div></div>';}).join('');
-  }
-  function renderOperations(o){
-    var el=document.getElementById('operationband');if(!el||!o)return;
-    el.style.display='';
-    el.innerHTML=[
-      {n:o.label_ja,l:o.trade_date,a:1},
-      {n:o.reason_class,l:"見送り理由"},
-      {n:"¥"+Number(o.realized_trade_loss_jpy).toLocaleString(),l:"実現取引損失"},
-      {n:o.sendorder_count,l:"送信注文数"},
-      {n:"7/28 00:05",l:"次の共通門"}
-    ].map(function(x){return '<div class="cell'+(x.a?' accent':'')+'"><b>'+x.n+'</b><i>'+x.l+'</i></div>';}).join('');
   }
   renderData(EMBEDDED_STATS);
   // 自動更新中インジケータ：ブラウザが2分ごとに再取得している「生きている」ことを可視化。
@@ -855,7 +793,6 @@ const DATA = {
           if(d.data_stats){var s=d.data_stats;s.generated_at_jst=d.public_surface_generated_at_jst||d.generated_at_jst;renderData(s);}
           if(d.foundry){renderFoundry(d.foundry);}
           if(d.defects){renderDefects(d.defects);}
-          if(d.operations){renderOperations(d.operations);}
           if(d.active_cards){
             if(window.__mergeActiveCards)window.__mergeActiveCards(d.active_cards);
             else window.__pendingActiveCards=d.active_cards;
