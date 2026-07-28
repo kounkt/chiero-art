@@ -117,7 +117,17 @@
       "repository": "art-daytrader-public-runtime",
       "path": "research_hypothesis_foundry/perpetual/births_ledger.jsonl",
       "sha256": "7f6502309cc8ed996d637839fda62b76c20d681051d6b279cd98097aea637308",
-      "head_sha256": "e597509a446ca8119971f6ffae46871497e5fa9a324f735fe430c8af59b2dbb7"
+      "head_sha256": "e597509a446ca8119971f6ffae46871497e5fa9a324f735fe430c8af59b2dbb7",
+      "snapshot": {
+        "mode": "APPEND_ONLY_PREFIX",
+        "captured_at_jst": "2026-07-28T21:55:46+0900",
+        "source_git_commit": "fca7e31e1822826c72ec737a6d59968667c90b80",
+        "line_count": 217,
+        "prefix_sha256": "7f6502309cc8ed996d637839fda62b76c20d681051d6b279cd98097aea637308",
+        "head_record_sha256": "e597509a446ca8119971f6ffae46871497e5fa9a324f735fe430c8af59b2dbb7",
+        "later_appends_allowed": true,
+        "prefix_mutation_allowed": false
+      }
     },
     "first_court": {
       "births": 39,
@@ -289,7 +299,7 @@
     "repository": "art-daytrader-fable-28-53",
     "ledger_path": "governance/DEFECT_LEDGER.md",
     "ledger_sha256": "7460ddd188d51c3bb3717a88cf6a83f4a9b7baccfbe3c0bf72e7a92405bc028d",
-    "measured_at_jst": "2026-07-28T21:47:36+0900",
+    "measured_at_jst": "2026-07-28T21:55:46+0900",
     "orders_sent": false,
     "sendorder_count": 0
   },
@@ -346,9 +356,16 @@
   "aggregates": {
     "current": {
       "counts": {
-        "live": 0,
-        "paper": 5,
-        "surviving": 9,
+        "live": 1,
+        "paper": 6,
+        "surviving": 8,
+        "grave": 29,
+        "seed": 9
+      },
+      "exclusive_counts": {
+        "live": 1,
+        "paper": 6,
+        "surviving": 7,
         "grave": 29,
         "seed": 9
       },
@@ -374,12 +391,12 @@
     },
     "prev_date": "2026-07-27"
   },
-  "progress_checked_at": "2026-07-28 21:47",
+  "progress_checked_at": "2026-07-28 21:55",
   "active_cards": {
     "schema": "public_active_cards_v2",
-    "state_data_at_jst": "2026-07-28T21:47:36+09:00",
+    "state_data_at_jst": "2026-07-28T21:55:46+09:00",
     "governance_revision": {
-      "ruling": "Fable裁定221",
+      "ruling": "Fable裁定231(a)",
       "source_mode": "canonical_files_direct"
     },
     "canonical_sources": [
@@ -465,6 +482,16 @@
       },
       {
         "repository": "art-daytrader-main-source",
+        "path": "reports/A3_FABLE_RULING233C_LIVE_CLASSIFICATION_HANDOFF_20260728T191341+0900.json",
+        "sha256": "2b4a975c39444273d5fcd7de6be9032248a51f16c24eb9f83420657bd9b9228d"
+      },
+      {
+        "repository": "art-daytrader-main-source",
+        "path": "reports/A3_FABLE_RULING233C_LIVE_CLASSIFICATION_HANDOFF_20260728T191341+0900.json",
+        "sha256": "2b4a975c39444273d5fcd7de6be9032248a51f16c24eb9f83420657bd9b9228d"
+      },
+      {
+        "repository": "art-daytrader-main-source",
         "path": "reports/A_FABLE_RULING195_R192_KABU_READ_ONLY_AND_033_PAPER_TWIN_POSTDEPLOY_REGISTERED_20260728.json",
         "sha256": "d79c953aa1d0230548084b275182f545fcf298095ff9635a55fae39470535262"
       },
@@ -534,7 +561,7 @@
         "sha256": "20422463273448b33833d7ca54ac5396b0f47559690cf73b5582037b2154ef14"
       }
     ],
-    "canonical_sources_sha256": "3ecbf470d608ab63afe22057a673c9faf7cf0dde1fc256f28700aaa6e23e0954",
+    "canonical_sources_sha256": "969350b4de68933687be8f0f960bf432e79118d58a0c2f17f42197af292ed5cf",
     "cards": [
       {
         "id": "pb1",
@@ -555,7 +582,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-07-28T21:47:36+09:00",
+        "state_data_at_jst": "2026-07-28T21:55:46+09:00",
         "evidence": [
           {
             "path": "governance/micro_allocation_boundary_v2_20260725.json",
@@ -599,7 +626,7 @@
       },
       {
         "id": "033",
-        "state": "surviving",
+        "state": "live",
         "name": "D0v4-033 本番task Ready・未実行",
         "family": "イベントドリフト",
         "metric": "2026-07-29 08:57 JST一回性task · 発注瞬間Q1六条件が必須 · 配分額は非公開",
@@ -616,7 +643,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-07-28T21:47:36+09:00",
+        "state_data_at_jst": "2026-07-28T21:55:46+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_033_V6_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T143446+0900.json",
@@ -647,6 +674,11 @@
             "path": "reports/A_FABLE_RULINGS190_192_PAPER_FLEET_KABU_PREP_20260728.json",
             "sha256": "ec308985d9f11d937932fdf47c35ce9aed16b84900159b5c8fee4705ee918bcb",
             "repository": "art-daytrader-fable-28-53"
+          },
+          {
+            "path": "reports/A3_FABLE_RULING233C_LIVE_CLASSIFICATION_HANDOFF_20260728T191341+0900.json",
+            "sha256": "2b4a975c39444273d5fcd7de6be9032248a51f16c24eb9f83420657bd9b9228d",
+            "repository": "art-daytrader-main-source"
           },
           {
             "repository": "art-daytrader-fable-28-53",
@@ -710,24 +742,24 @@
       },
       {
         "id": "pin-lottery",
-        "state": "surviving",
-        "name": "PIN-LOTTERY 紙runner新造中",
+        "state": "paper",
+        "name": "PIN-LOTTERY 紙runner配備・登録済み・未実行",
         "family": "引け値到達・未約定観測",
-        "metric": "read-only紙runner実装中 · 注文機能なし · 勝ち/不成を記録",
+        "metric": "DEPLOYED_REGISTERED_NOT_EXECUTED · 注文機能なし",
         "progress": {
           "n": 0,
           "target": 10,
           "label": "前向き実測"
         },
         "arose": "引け値到達時だけ成立する稀な機会を、最小単元1銘柄・未約定時コスト0で前向きに測るため。",
-        "verification": "preregと実装の監査済み境界は維持するが、broker送信を持たないpaper専用runnerが存在するまでlive runnerで代用しない。",
-        "outcome": "A4が注文機能を持たない紙runnerを新造中。Fresh Bと紙task登録は未成立で、紙runnerは未実行。",
+        "verification": "独立Fresh Bがfinding 0でPASSしたbroker送信なしのpaper専用runnerを、隔離releaseとして配備・task登録済み。live runnerでは代用しない。",
+        "outcome": "紙taskはState=Ready、2026-07-29 14:50 JSTに初回自然実行予定。現在は未実行で、注文機能なし・orders_sent=false。",
         "next_born": "当選・未約定を分けたクリーンな前向き実測10イベントが増額審査を開く。",
         "simulation": "未約定時の売買コストは0。注文を送れること自体は現在まだ未証明。",
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-07-28T21:47:36+09:00",
+        "state_data_at_jst": "2026-07-28T21:55:46+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_PIN_LOTTERY_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T140307+0900.json",
@@ -753,6 +785,11 @@
             "path": "reports/A_FABLE_RULINGS190_192_PAPER_FLEET_KABU_PREP_20260728.json",
             "sha256": "ec308985d9f11d937932fdf47c35ce9aed16b84900159b5c8fee4705ee918bcb",
             "repository": "art-daytrader-fable-28-53"
+          },
+          {
+            "path": "reports/A3_FABLE_RULING233C_LIVE_CLASSIFICATION_HANDOFF_20260728T191341+0900.json",
+            "sha256": "2b4a975c39444273d5fcd7de6be9032248a51f16c24eb9f83420657bd9b9228d",
+            "repository": "art-daytrader-main-source"
           },
           {
             "repository": "art-daytrader-fable-28-53",
@@ -781,12 +818,12 @@
           }
         ],
         "next_phase": {
-          "id": "pin_paper_runner_implementation",
-          "label": "注文機能を持たない紙runnerの実装",
-          "status": "IN_PROGRESS",
-          "scheduled_at_jst": "FABLE_RULING_214_A4",
-          "scheduled_at_display": "裁定214④によりA4が実装中",
-          "text": "<b>次の門:</b> 注文機能を持たない紙runnerの実装 （現在 IN_PROGRESS） <b>時刻:</b> 裁定214④によりA4が実装中"
+          "id": "pin_first_natural_paper_observation",
+          "label": "PIN紙runnerの初回自然実行",
+          "status": "NOT_YET_OBSERVABLE",
+          "scheduled_at_jst": "2026-07-29T14:50:00+09:00",
+          "scheduled_at_display": "2026-07-29 14:50 JSTまでは未取得",
+          "text": "<b>次の門:</b> PIN紙runnerの初回自然実行 （現在 NOT_YET_OBSERVABLE） <b>時刻:</b> 2026-07-29 14:50 JSTまでは未取得"
         }
       },
       {
@@ -808,7 +845,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-07-28T21:47:36+09:00",
+        "state_data_at_jst": "2026-07-28T21:55:46+09:00",
         "evidence": [
           {
             "path": "governance/rulings141_20260727/testa_swing5d_result_site_handoff_r141.json",
@@ -869,7 +906,7 @@
         "provisional": false,
         "description_only": true,
         "qualification_evidence": false,
-        "state_data_at_jst": "2026-07-28T21:47:36+09:00",
+        "state_data_at_jst": "2026-07-28T21:55:46+09:00",
         "evidence": [
           {
             "path": "research/r20_residual_audit_v2_20260726/d0v4_033/provisional_result.json",
@@ -920,7 +957,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-07-28T21:47:36+09:00",
+        "state_data_at_jst": "2026-07-28T21:55:46+09:00",
         "evidence": [
           {
             "path": "reports/A3_FABLE_RULING221_052_PUBLIC_DISPLAY_HANDOFF_20260728T153600+0900.json",
@@ -945,7 +982,7 @@
   },
   "storage_refresh": {
     "status": "FAIL_CLOSED",
-    "measured_at_jst": "2026-07-28T21:47:49+0900",
+    "measured_at_jst": "2026-07-28T21:55:55+0900",
     "reason_code": "STORAGE_MANIFEST_SHA_MISMATCH",
     "preserved_last_verified_measurement": true,
     "orders_sent": false,
@@ -954,17 +991,17 @@
   "public_surface_generated_at_jst": "2026-07-28",
   "freshness": {
     "status": "PASS",
-    "checked_at_jst": "2026-07-28T21:47:49+09:00",
-    "state_data_at_jst": "2026-07-28T21:47:36+09:00",
-    "age_seconds": 13.026,
+    "checked_at_jst": "2026-07-28T21:55:55+09:00",
+    "state_data_at_jst": "2026-07-28T21:55:46+09:00",
+    "age_seconds": 9.202,
     "max_age_seconds": 1800,
-    "canonical_source_count": 37,
-    "canonical_source_set_sha256": "12628f01570fbf2b285aba976c44ec5bd4c48e7ead60da077fa6d123ded0dabc",
-    "card_source_set_sha256": "3ecbf470d608ab63afe22057a673c9faf7cf0dde1fc256f28700aaa6e23e0954",
+    "canonical_source_count": 39,
+    "canonical_source_set_sha256": "591360cd9de02bec82f0b3af199bbb2cca2b030856b38f9a1db9a3079f8b934b",
+    "card_source_set_sha256": "969350b4de68933687be8f0f960bf432e79118d58a0c2f17f42197af292ed5cf",
     "orders_sent": false,
     "sendorder_count": 0
   },
-  "public_surface_state_at_jst": "2026-07-28T21:47:49+09:00",
+  "public_surface_state_at_jst": "2026-07-28T21:55:55+09:00",
   "operations": {
     "trade_date": "2026-07-27",
     "status": "MONDAY_NO_TRADE_INFRA",

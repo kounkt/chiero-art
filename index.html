@@ -261,21 +261,21 @@
   <div class="band tnum" id="operationband" style="display:none"></div>
 
   <h2>将来の予測 — 実験の記述的シミュレーション</h2>
-  <p class="note">測定されたエッジが、投下資本の大きさによって複利でどう積み上がるかを描いた実験的な地図。スライダーを動かすと容量の天井まで見える。<span class="red">保証ではなく、過去データに基づく推定である。</span></p>
+  <p class="note">測定されたエッジが、非公開の正規化容量点によって複利でどう積み上がるかを描いた実験的な地図。スライダーを動かすと容量による変化が見える。<span class="red">口座・資本・配分額は公開しない。保証ではなく、過去データに基づく推定である。</span></p>
   <div class="proj">
     <div class="top">
-      <p class="toplabel">投下資本 <b id="capTop">300万円</b> の場合 · 測定エッジを12ヶ月複利した中央値</p>
-      <div class="bignum tnum"><span class="from" id="fromV">300万</span><span class="arrow">→</span><span id="bigV">503</span><span class="yen" id="bigU">万円</span></div>
+      <p class="toplabel">配分額 <b id="capTop">非公開</b> · 測定エッジを12ヶ月複利した中央値</p>
+      <div class="bignum tnum"><span class="from" id="fromV">1.00</span><span class="arrow">→</span><span id="bigV">1.68</span><span class="yen" id="bigU">倍</span></div>
       <div class="mult">成長倍率 <b id="multV">1.68×</b><span id="multSub">／ 12ヶ月中央値 +67.5%</span></div>
     </div>
     <div class="heroCanvasWrap"><canvas id="hero" width="2000" height="300" aria-hidden="true"></canvas></div>
     <div class="ctrl">
       <div class="ctrlhead">
-        <div class="ctrlcap tnum" id="capLabel">300<span>万円</span></div>
+        <div class="ctrlcap tnum" id="capLabel">正規化点 4/11</div>
         <div class="ctrlmeta tnum">建玉可能率 <b id="feas">60%</b> · 検定済み戦略との相関 <b id="corr">0.85</b></div>
       </div>
-      <input type="range" id="cap" min="50" max="10000" step="10" value="300" aria-label="投下資本（万円）">
-      <div class="ticks tnum"><span>50万</span><span>500万</span><span>2,000万</span><span>5,000万</span><span>1億</span></div>
+      <input type="range" id="cap" min="1" max="11" step="1" value="4" aria-label="非公開の正規化容量点">
+      <div class="ticks tnum"><span>低</span><span>中低</span><span>中</span><span>中高</span><span>高</span></div>
     </div>
     <div class="statrow tnum">
       <div class="stat"><div class="v r" id="mMed">+4.2%</div><div class="k">月次リターン中央値</div></div>
@@ -283,7 +283,7 @@
       <div class="stat"><div class="v" id="y3">+377%</div><div class="k">36ヶ月 中央値(p50)</div></div>
       <div class="stat"><div class="v" id="y1band">38〜108%</div><div class="k">12ヶ月 p5〜p95</div></div>
     </div>
-    <p class="srcnote">旗艦戦略「夜間持続ハーベスタ」の10年イベント台帳（19,658イベント / 2,054営業日）× 単元株約定モデル（参加率上限0.3%込み）。<b>月次利率は約2,000万で頂点、以降は参加率上限で低下する（容量天井）。</b>測定点を線形補間・ブートストラップ10,000試行。<b>これは実験の記述的シミュレーションであり、将来の成果を保証するものではない。</b></p>
+    <p class="srcnote">旗艦戦略「夜間持続ハーベスタ」の10年イベント台帳（19,658イベント / 2,054営業日）× 単元株約定モデル（参加率上限0.3%込み）。<b>正規化容量曲線には頂点があり、以降は参加率上限で低下する。</b>資本額・口座額・配分額は非公開。測定点を線形補間・ブートストラップ10,000試行。<b>これは実験の記述的シミュレーションであり、将来の成果を保証するものではない。</b></p>
   </div>
 
   <h2>仮説の生態</h2>
@@ -353,17 +353,17 @@ const DATA = {
   asof:"2026-07-28",
   state_data_at_jst:"2026-07-28T14:34:51+09:00",
   tiers:[
-    {c:50, m:0.58, y1p5:1.9,  y1:11.7, y1p95:23.3,  y3:39.5,  feas:9.6,  corr:0.453},
-    {c:100,m:1.52, y1p5:11.3, y1:25.0, y1p95:43.0,  y3:96.4,  feas:22.1, corr:0.593},
-    {c:200,m:3.26, y1p5:28.9, y1:51.2, y1p95:81.4,  y3:248.4, feas:42.6, corr:0.746},
-    {c:300,m:4.21, y1p5:37.8, y1:67.5, y1p95:107.9, y3:376.7, feas:60.0, corr:0.847},
-    {c:500,m:5.16, y1p5:49.0, y1:87.7, y1p95:142.9, y3:566.7, feas:80.1, corr:0.908},
-    {c:1000,m:5.71,y1p5:53.1, y1:100.2,y1p95:165.1, y3:703.9, feas:94.8, corr:0.941},
-    {c:2000,m:5.73,y1p5:52.1, y1:101.7,y1p95:172.7, y3:738.1, feas:98.3, corr:0.945},
-    {c:3000,m:5.62,y1p5:52.0, y1:100.3,y1p95:170.5, y3:711.9, feas:98.8, corr:0.943},
-    {c:5000,m:5.29,y1p5:49.8, y1:98.4, y1p95:169.3, y3:685.3, feas:99.0, corr:0.935},
-    {c:7000,m:5.06,y1p5:45.7, y1:93.9, y1p95:163.3, y3:638.4, feas:99.1, corr:0.936},
-    {c:10000,m:4.48,y1p5:39.7,y1:83.6, y1p95:145.6, y3:529.1, feas:99.1, corr:0.926}
+    {c:1, m:0.58, y1p5:1.9,  y1:11.7, y1p95:23.3,  y3:39.5,  feas:9.6,  corr:0.453},
+    {c:2, m:1.52, y1p5:11.3, y1:25.0, y1p95:43.0,  y3:96.4,  feas:22.1, corr:0.593},
+    {c:3, m:3.26, y1p5:28.9, y1:51.2, y1p95:81.4,  y3:248.4, feas:42.6, corr:0.746},
+    {c:4, m:4.21, y1p5:37.8, y1:67.5, y1p95:107.9, y3:376.7, feas:60.0, corr:0.847},
+    {c:5, m:5.16, y1p5:49.0, y1:87.7, y1p95:142.9, y3:566.7, feas:80.1, corr:0.908},
+    {c:6, m:5.71,y1p5:53.1, y1:100.2,y1p95:165.1, y3:703.9, feas:94.8, corr:0.941},
+    {c:7, m:5.73,y1p5:52.1, y1:101.7,y1p95:172.7, y3:738.1, feas:98.3, corr:0.945},
+    {c:8, m:5.62,y1p5:52.0, y1:100.3,y1p95:170.5, y3:711.9, feas:98.8, corr:0.943},
+    {c:9, m:5.29,y1p5:49.8, y1:98.4, y1p95:169.3, y3:685.3, feas:99.0, corr:0.935},
+    {c:10,m:5.06,y1p5:45.7, y1:93.9, y1p95:163.3, y3:638.4, feas:99.1, corr:0.936},
+    {c:11,m:4.48,y1p5:39.7,y1:83.6, y1p95:145.6, y3:529.1, feas:99.1, corr:0.926}
   ],
   hyps:[
     {id:"pb1",state:"surviving",added:"2026-07-26",state_data_at_jst:"2026-07-28T14:34:51+09:00",
@@ -382,7 +382,7 @@ const DATA = {
      verif:"3定義の和集合（vr≥5&ret≥5%&Va≥1e9 ∪ 引け位置cH≥0.9 ∪ gap≥7%維持）を14:50に判定し引け買い→翌寄り売り。ホールドアウト一発 t=5.49/5.41 両PASS。地合い除去後の超過も+90.8bp(t=17.7)。",
      outcome:"生存。月次勝率97%・最大DD-24%（投下資本基準）。10年全年プラス。前向き紙時計は4/14。",
      next:"早乗り(035)・張り付き(041-G7)・ギャップ維持(041-G2)へ分岐。",
-     sim:"月次利率の頂点は約2,000万(+5.73%/月)。1億では参加率上限で+4.48%/月に低下。"},
+     sim:"正規化容量曲線には月次利率の頂点があり、高容量側では参加率上限によって低下。資本額・口座額・配分額は非公開。"},
     {id:"035",state:"paper",name:"D0v4-035 早乗り 15:30",fam:"夜間持続",
      metric:"precision 0.958 · 確認検定PASS",
      prog:{n:7,target:14,prev:0,label:"前向き解決"},
@@ -412,7 +412,7 @@ const DATA = {
      verif:"スクリーニング→確認で生存。足型とは無関係＝イベント族は緩慢織り込み＋機械買いが機序。",
      outcome:"生存。20日保有型。033・052と同じイベント鉱脈。",
      next:"033(自社株買い)・052(決算集中)へ機序を横展開。",sim:"20日+132bp。"},
-    {id:"033",state:"surviving",added:"2026-07-26",state_data_at_jst:"2026-07-28T14:34:51+09:00",
+    {id:"033",state:"live",added:"2026-07-26",state_data_at_jst:"2026-07-28T17:50:00+09:00",
      name:"D0v4-033 本番task Ready・未実行",fam:"イベントドリフト",
      metric:"2026-07-29 08:57 JST一回性task · 発注瞬間Q1六条件が必須 · 配分額は非公開",
      prog:{n:0,target:10,prev:0,label:"前向き実測"},
@@ -421,13 +421,13 @@ const DATA = {
      outcome:"監査済みreleaseを配備し、一回性taskはState=Ready。本人YESは2026-07-29 08:57 JSTの一回だけに限定済み。自然実行・発注瞬間Q1・注文はいずれも未観測。",
      next:"クリーンな前向き実測10イベントが増額審査を開く。R-20残差監査は増額審査へ別添する。",
      sim:"歴史値は20日ドリフトの記述であり、月曜GREENや注文成功を示さない。"},
-    {id:"pin-lottery",state:"surviving",added:"2026-07-26",state_data_at_jst:"2026-07-28T14:34:51+09:00",
-     name:"PIN-LOTTERY 紙runner新造中",fam:"引け値到達・未約定観測",
-     metric:"read-only紙runner実装中 · 注文機能なし · 勝ち/不成を記録",
+    {id:"pin-lottery",state:"paper",added:"2026-07-26",state_data_at_jst:"2026-07-28T17:50:00+09:00",
+     name:"PIN-LOTTERY 紙runner配備・登録済み・未実行",fam:"引け値到達・未約定観測",
+     metric:"DEPLOYED_REGISTERED_NOT_EXECUTED · 注文機能なし",
      prog:{n:0,target:10,prev:0,label:"前向き実測"},
      arose:"引け値到達時だけ成立する稀な機会を、最小単元1銘柄・未約定時コスト0で前向きに測るため。",
-     verif:"裁定214④によりA4がbroker送信を持たないpaper専用runnerを新造中。live runnerでは代用しない。",
-     outcome:"A4が注文機能を持たない紙runnerを新造中。Fresh Bと紙task登録は未成立で、紙runnerは未実行。",
+     verif:"独立Fresh Bがfinding 0でPASSしたbroker送信なしのpaper専用runnerを、隔離releaseとして配備・task登録済み。live runnerでは代用しない。",
+     outcome:"紙taskはState=Ready、2026-07-29 14:50 JSTに初回自然実行予定。現在は未実行で、注文機能なし・orders_sent=false。",
      next:"当選・未約定を分けたクリーンな前向き実測10イベントが増額審査を開く。",
      sim:"未約定時の売買コストは0。注文を送れること自体は現在まだ未証明。"},
     {id:"testa-5d",state:"grave",added:"2026-07-26",state_data_at_jst:"2026-07-27T01:18:14+09:00",
@@ -638,7 +638,7 @@ const DATA = {
     "041g7":"n=14解決 → 経済非棄却(L2)・整合(L1) → 本人YESが別にある場合だけ審査。現在は2/14。",
     "041g2":"<b>次の門:</b> なし。DEATH_ECONOMIC_3SIGMAの墓標を保持し、同じカードを昇格・再開しない。",
     "033":"<b>次の門:</b> 監査済みreleaseの実配備一致 → live task登録・readback → 対象時刻のQ1六条件実測。paper twinは配備・登録済みだが未実行。",
-    "pin-lottery":"<b>次の門:</b> paper専用runnerを新造するかPIN枠を凍結するFable裁定。live runnerで代用しない。",
+    "pin-lottery":"<b>次の門:</b> PIN紙runnerの初回自然実行（現在 NOT_YET_OBSERVABLE） <b>時刻:</b> 2026-07-29 14:50 JST。注文機能なし。",
     "testa-5d":"<b>次の門:</b> 全門PASS（現在 PASS） <b>時刻:</b> 墓標・death seed登録済み",
     "r20":"独立B v4と033記述証拠束への編入は完了。資本変更は別Fable裁定と本人承認がある場合だけ審査する。",
     "052":"紙時計 n=14 → 境界照合 → 本人YESが別にある場合だけ審査。前向き専用。",
@@ -664,13 +664,21 @@ const DATA = {
   DATA.hyps.forEach(function(h){var c=cellsOf(h);totalDefs+=c;if(h.state==='grave')deadDefs+=c;});
 
   // band
-  var counts={paper:0,surviving:0,grave:0,seed:0,live:0};
-  DATA.hyps.forEach(function(h){counts[h.state]=(counts[h.state]||0)+1});
+  var exclusiveCounts={paper:0,surviving:0,grave:0,seed:0,live:0};
+  DATA.hyps.forEach(function(h){exclusiveCounts[h.state]=(exclusiveCounts[h.state]||0)+1});
+  // 裁定231(a): live は生存集合の内数。state は排他的だが、公開の生存件数は live を含む。
+  var counts={
+    paper:exclusiveCounts.paper,
+    surviving:exclusiveCounts.surviving+exclusiveCounts.live,
+    grave:exclusiveCounts.grave,
+    seed:exclusiveCounts.seed,
+    live:exclusiveCounts.live
+  };
   var totalCards=DATA.hyps.length;
   // バンド描画（前日比つき）。prev は data.json の aggregates.prev.counts から来る（初日はなし＝基準）。
   function renderBand(){
     var prev=(window.__AGG&&window.__AGG.prev)?window.__AGG.prev.counts:null;
-    var cells=[{k:'live',l:'本番稼働',a:1},{k:'paper',l:'紙孵化中',a:1},{k:'surviving',l:'生存・係属'},{k:'grave',l:'墓標（系）'},{k:'seed',l:'種（再生待ち）'}];
+    var cells=[{k:'live',l:'本番稼働',a:1},{k:'paper',l:'紙孵化中',a:1},{k:'surviving',l:'生存・係属（本番を含む）'},{k:'grave',l:'墓標（系）'},{k:'seed',l:'種（再生待ち）'}];
     document.getElementById('band').innerHTML=cells.map(function(c){
       var n=counts[c.k]||0,dtxt='';
       if(prev){var d=n-(prev[c.k]||0);dtxt=(d===0)?'<u class="bd z">前日比 ±0</u>':'<u class="bd nz">前日比 '+(d>0?'+':'')+d+'</u>';}
@@ -708,7 +716,7 @@ const DATA = {
   document.getElementById('calcX').textContent=compressX;
   document.getElementById('calcTestDays').textContent=testDays;
   document.getElementById('calcTotalDefs').textContent=totalDefs;
-  document.getElementById('savedSub').innerHTML='※ 日当¥50,000・授業料¥30万/定義はいずれも推定の係数。総検証 <b>'+totalDefs+'</b> 定義のうち生き残ったのは <b>'+((counts.live||0)+counts.paper+counts.surviving)+'</b> 系のみで、残りは紙とデータの上でゼロ円で死んだ。';
+  document.getElementById('savedSub').innerHTML='※ 日当¥50,000・授業料¥30万/定義はいずれも推定の係数。総検証 <b>'+totalDefs+'</b> 定義のうち生き残ったのは <b>'+(counts.paper+counts.surviving)+'</b> 系のみ（本番は生存の内数）で、残りは紙とデータの上でゼロ円で死んだ。';
   // その日に圧縮された分（前日比）。合計(savedTotal)には既に反映済み。
   function updateSavedDelta(){
     var el=document.getElementById('savedDelta'); if(!el)return;
@@ -877,7 +885,7 @@ const DATA = {
   setInterval(updateLiveStamp, 30000);
 
   // filters + cards
-  var STATES=[["live","本番稼働"],["all","すべて"],["paper","紙孵化"],["surviving","生存"],["grave","墓標"],["seed","種"]];
+  var STATES=[["live","本番稼働"],["all","すべて"],["paper","紙孵化"],["surviving","生存（本番を含む）"],["grave","墓標"],["seed","種"]];
   var fWrap=document.getElementById('filters');
   fWrap.innerHTML=STATES.map(function(s,i){return '<button data-f="'+s[0]+'" aria-pressed="'+(i===0)+'">'+s[1]+'</button>';}).join('');
   var STT={live:["live","本番"],paper:["paper","紙"],surviving:["surv","生存"],grave:["grave","墓標"],seed:["seed","種"]};
@@ -935,7 +943,11 @@ const DATA = {
   function applyFilter(f){
     currentF=f;
     [].forEach.call(fWrap.children,function(b){b.setAttribute('aria-pressed',b.getAttribute('data-f')===f);});
-    [].forEach.call(document.querySelectorAll('.hx'),function(el){el.classList.toggle('hidden',!(f==='all'||el.getAttribute('data-state')===f));});
+    [].forEach.call(document.querySelectorAll('.hx'),function(el){
+      var state=el.getAttribute('data-state');
+      var shown=f==='all'||state===f||(f==='surviving'&&state==='live');
+      el.classList.toggle('hidden',!shown);
+    });
   }
   fWrap.addEventListener('click',function(e){var btn=e.target.closest('button');if(!btn)return;applyFilter(btn.getAttribute('data-f'));});
   renderCards(); // 初期描画（applyFilter('live')を内包）。data.json到着後にhyp_progressを合流して再描画する
@@ -990,11 +1002,6 @@ const DATA = {
   function interp(c,key){if(c<=tiers[0].c)return tiers[0][key];
     for(var i=1;i<tiers.length;i++){if(c<=tiers[i].c){var a=tiers[i-1],b=tiers[i],t=(c-a.c)/(b.c-a.c);return a[key]+(b[key]-a[key])*t;}}
     return tiers[tiers.length-1][key];}
-  function jpyParts(man){ // man = 万円単位の数値 → {n:数字, u:単位}
-    if(man>=10000){var o=man/10000;return {n:(o>=10?o.toFixed(1):o.toFixed(2)).replace(/\.?0+$/,''),u:'億'};}
-    return {n:Math.round(man).toLocaleString(),u:'万'};
-  }
-  function jpyFull(man){var p=jpyParts(man);return p.n+p.u;} // 例: 300万 / 1.36億
   var cap=document.getElementById('cap');
   // hero curve (animated draw)
   var animT=1;
@@ -1021,31 +1028,31 @@ const DATA = {
     var xi=n; ctx.beginPath();ctx.arc(X(xi),Y(m[xi]),5,0,7);ctx.fillStyle=col('--red');ctx.fill();
   }
   // count-up
-  var curBig=300;
-  function renderBig(v){var p=jpyParts(v);document.getElementById('bigV').textContent=p.n;document.getElementById('bigU').textContent=p.u+'円';}
-  function setBig(target,from){
+  var curBig=1;
+  function renderBig(v){document.getElementById('bigV').textContent=v.toFixed(2);document.getElementById('bigU').textContent='倍';}
+  function setBig(target){
     var start=curBig,t0=null,dur=reduce?0:650;
     function step(ts){if(!t0)t0=ts;var p=dur?Math.min(1,(ts-t0)/dur):1;var e=1-Math.pow(1-p,3);
       renderBig(start+(target-start)*e);
       if(p<1)requestAnimationFrame(step);else curBig=target;}
-    document.getElementById('fromV').textContent=jpyFull(from);
+    document.getElementById('fromV').textContent='1.00';
     requestAnimationFrame(step);
   }
   function update(animate){
     var c=+cap.value,y1=interp(c,'y1');
-    var proj=c*(1+y1/100);
-    document.getElementById('capTop').textContent=jpyFull(c)+'円';
-    document.getElementById('capLabel').innerHTML=jpyFull(c)+'<span>円</span>';
+    var proj=1+y1/100;
+    document.getElementById('capTop').textContent='非公開';
+    document.getElementById('capLabel').textContent='正規化点 '+c+'/11';
     document.getElementById('feas').textContent=Math.round(interp(c,'feas'))+'%';
     document.getElementById('corr').textContent=interp(c,'corr').toFixed(2);
     document.getElementById('mMed').textContent='+'+f1(interp(c,'m'))+'%';
     document.getElementById('y1').textContent='+'+f1(y1)+'%';
     document.getElementById('y3').textContent='+'+Math.round(interp(c,'y3'))+'%';
     document.getElementById('y1band').textContent=Math.round(interp(c,'y1p5'))+'〜'+Math.round(interp(c,'y1p95'))+'%';
-    document.getElementById('multV').textContent=(proj/c).toFixed(2)+'×';
+    document.getElementById('multV').textContent=proj.toFixed(2)+'×';
     document.getElementById('multSub').textContent='／ 12ヶ月中央値 +'+f1(y1)+'%';
-    document.getElementById('fromV').textContent=jpyFull(c);
-    if(animate){setBig(proj,c);} else {curBig=proj;renderBig(proj);}
+    document.getElementById('fromV').textContent='1.00';
+    if(animate){setBig(proj);} else {curBig=proj;renderBig(proj);}
     drawHero(1);
   }
   cap.addEventListener('input',function(){update(false)});
@@ -1056,7 +1063,7 @@ const DATA = {
     var t0=null;function anim(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/900);drawHero(p);if(p<1)requestAnimationFrame(anim);}
     requestAnimationFrame(anim);
     // count big from base
-    curBig=+cap.value; update(true);
+    curBig=1; update(true);
   }
 })();
 </script>
