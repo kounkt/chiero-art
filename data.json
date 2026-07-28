@@ -133,21 +133,98 @@
     },
     "weekly_kpi": {
       "birth_count": 207,
+      "new_born_rate": {
+        "numerator": 0,
+        "denominator": 34,
+        "value": 0.0
+      },
       "court_submission_rate": {
-        "numerator": 3,
+        "numerator": 5,
         "denominator": 45,
-        "value": 0.06666666666666667
+        "value": 0.1111111111111111
       },
       "freeze_rate": {
-        "numerator": 1,
-        "denominator": 3,
-        "value": 0.3333333333333333
+        "numerator": 3,
+        "denominator": 5,
+        "value": 0.6
       },
       "test_survival_rate": {
         "numerator": 0,
-        "denominator": 1,
+        "denominator": 3,
         "value": 0.0
       }
+    },
+    "current_funnel": {
+      "born": 45,
+      "court_submitted": 5,
+      "frozen": 3,
+      "one_shot_completed": 3,
+      "one_shot_survived": 0
+    },
+    "dividend_trials": {
+      "submitted_count": 2,
+      "frozen_count": 2,
+      "completed_count": 2,
+      "survived_count": 0,
+      "family_status": "DIED",
+      "launcher_count": 1,
+      "cards": [
+        {
+          "candidate_id": "R22-DIVIDEND-INCREASE-A-WEEK-V1",
+          "cell_id": "A_week",
+          "label": "増配 A_week（1週）",
+          "initial_state": "COURT_SUBMITTED",
+          "current_state": "DIED",
+          "stage_sequence": [
+            "COURT_SUBMITTED",
+            "FROZEN_AND_AUTHORIZED",
+            "TESTED",
+            "DIED"
+          ],
+          "events_n": 232,
+          "mean_net_bp": -44.69683945985667,
+          "raw_p_two_sided": 0.12003006955940869,
+          "by_pass": false,
+          "survived": false
+        },
+        {
+          "candidate_id": "R22-DIVIDEND-INCREASE-B-MONTH-V1",
+          "cell_id": "B_month",
+          "label": "増配 B_month（1か月）",
+          "initial_state": "COURT_SUBMITTED",
+          "current_state": "DIED",
+          "stage_sequence": [
+            "COURT_SUBMITTED",
+            "FROZEN_AND_AUTHORIZED",
+            "TESTED",
+            "DIED"
+          ],
+          "events_n": 232,
+          "mean_net_bp": -105.73966914510437,
+          "raw_p_two_sided": 0.05215091048734109,
+          "by_pass": false,
+          "survived": false
+        }
+      ],
+      "sources": [
+        {
+          "repository": "art-daytrader-research-0723",
+          "path": "governance/rulings147_20260727/r22_hypothesis_board_increment_handoff_v1.json",
+          "sha256": "52adad6f6741dbf1e47397349881362ba4b588830a6691d13c89b6354816d667"
+        },
+        {
+          "repository": "art-daytrader-research-0723",
+          "path": "research/r147_dividend_increase_one_shot_20260727/result/one_shot_receipt.json",
+          "sha256": "833c8ffcd142ed4bee82c15c800bf4d23a6022927b8738568d3116763e333906"
+        },
+        {
+          "repository": "art-daytrader-research-0723",
+          "path": "governance/rulings161_20260727/b_dividend_one_shot_result_recheck_terminal_pass_died_20260727T165612+0900.json",
+          "sha256": "ee92f63817ffb564d8fd7d3aa5fa39a6d8471700ae92c12aaaa82ab3a40bba50"
+        }
+      ],
+      "orders_sent": false,
+      "sendorder_count": 0
     },
     "testa_freeze": {
       "frozen": 1,
@@ -203,6 +280,7 @@
   "defects": {
     "open_count": 20,
     "total_count": 25,
+    "append_event_count": 25,
     "status_counts": {
       "OPEN": 18,
       "BLOCKED": 2,
@@ -211,56 +289,56 @@
     "repository": "art-daytrader-fable-28-53",
     "ledger_path": "governance/DEFECT_LEDGER.md",
     "ledger_sha256": "7460ddd188d51c3bb3717a88cf6a83f4a9b7baccfbe3c0bf72e7a92405bc028d",
-    "measured_at_jst": "2026-07-28T16:28:59+0900",
+    "measured_at_jst": "2026-07-28T16:29:51+0900",
     "orders_sent": false,
     "sendorder_count": 0
   },
   "hyp_progress": {
     "pb1": {
       "n": 0,
-      "target": 40,
-      "label": "前向き実弾",
+      "target": 1,
+      "label": "実証未成立",
       "prev": 0
     },
     "harvester": {
-      "n": 0,
-      "target": 30,
+      "n": 7,
+      "target": 14,
       "label": "前向き解決",
       "prev": 0
     },
     "035": {
-      "n": 0,
-      "target": 30,
+      "n": 3,
+      "target": 14,
       "label": "前向き解決",
       "prev": 0
     },
     "041g7": {
-      "n": 0,
-      "target": 30,
+      "n": 1,
+      "target": 14,
       "label": "前向き解決",
       "prev": 0
     },
     "041g2": {
-      "n": 0,
-      "target": 30,
+      "n": 6,
+      "target": 14,
       "label": "前向き解決",
       "prev": 0
     },
     "039b": {
       "n": 0,
-      "target": 30,
+      "target": 14,
       "label": "前向き解決",
       "prev": 0
     },
     "033": {
       "n": 0,
-      "target": 30,
+      "target": 14,
       "label": "前向き解決",
       "prev": 0
     },
     "052": {
       "n": 0,
-      "target": 30,
+      "target": 14,
       "label": "前向き解決",
       "prev": 0
     }
@@ -296,10 +374,10 @@
     },
     "prev_date": "2026-07-27"
   },
-  "progress_checked_at": "2026-07-28 16:29",
+  "progress_checked_at": "2026-07-28 16:30",
   "active_cards": {
     "schema": "public_active_cards_v2",
-    "state_data_at_jst": "2026-07-28T16:28:59+09:00",
+    "state_data_at_jst": "2026-07-28T16:29:51+09:00",
     "governance_revision": {
       "ruling": "Fable裁定221",
       "source_mode": "canonical_files_direct"
@@ -477,7 +555,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-07-28T16:28:59+09:00",
+        "state_data_at_jst": "2026-07-28T16:29:51+09:00",
         "evidence": [
           {
             "path": "governance/micro_allocation_boundary_v2_20260725.json",
@@ -538,7 +616,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-07-28T16:28:59+09:00",
+        "state_data_at_jst": "2026-07-28T16:29:51+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_033_V6_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T143446+0900.json",
@@ -649,7 +727,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-07-28T16:28:59+09:00",
+        "state_data_at_jst": "2026-07-28T16:29:51+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_PIN_LOTTERY_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T140307+0900.json",
@@ -730,7 +808,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-07-28T16:28:59+09:00",
+        "state_data_at_jst": "2026-07-28T16:29:51+09:00",
         "evidence": [
           {
             "path": "governance/rulings141_20260727/testa_swing5d_result_site_handoff_r141.json",
@@ -791,7 +869,7 @@
         "provisional": false,
         "description_only": true,
         "qualification_evidence": false,
-        "state_data_at_jst": "2026-07-28T16:28:59+09:00",
+        "state_data_at_jst": "2026-07-28T16:29:51+09:00",
         "evidence": [
           {
             "path": "research/r20_residual_audit_v2_20260726/d0v4_033/provisional_result.json",
@@ -842,7 +920,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-07-28T16:28:59+09:00",
+        "state_data_at_jst": "2026-07-28T16:29:51+09:00",
         "evidence": [
           {
             "path": "reports/A3_FABLE_RULING221_052_PUBLIC_DISPLAY_HANDOFF_20260728T153600+0900.json",
@@ -867,7 +945,7 @@
   },
   "storage_refresh": {
     "status": "FAIL_CLOSED",
-    "measured_at_jst": "2026-07-28T16:29:08+0900",
+    "measured_at_jst": "2026-07-28T16:30:00+0900",
     "reason_code": "STORAGE_MANIFEST_SHA_MISMATCH",
     "preserved_last_verified_measurement": true,
     "orders_sent": false,
@@ -876,9 +954,9 @@
   "public_surface_generated_at_jst": "2026-07-28",
   "freshness": {
     "status": "PASS",
-    "checked_at_jst": "2026-07-28T16:29:08+09:00",
-    "state_data_at_jst": "2026-07-28T16:28:59+09:00",
-    "age_seconds": 9.147,
+    "checked_at_jst": "2026-07-28T16:30:00+09:00",
+    "state_data_at_jst": "2026-07-28T16:29:51+09:00",
+    "age_seconds": 9.259,
     "max_age_seconds": 1800,
     "canonical_source_count": 37,
     "canonical_source_set_sha256": "1af4c87da5dd43dea635f7d64d2edd090b4fbf62c935a637eedf5c07b5c105b9",
@@ -886,7 +964,7 @@
     "orders_sent": false,
     "sendorder_count": 0
   },
-  "public_surface_state_at_jst": "2026-07-28T16:29:08+09:00",
+  "public_surface_state_at_jst": "2026-07-28T16:30:00+09:00",
   "operations": {
     "trade_date": "2026-07-27",
     "status": "MONDAY_NO_TRADE_INFRA",
