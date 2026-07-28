@@ -54,9 +54,9 @@
     "docs_total": 174762,
     "gb": 197.028,
     "storage": {
-      "measured_at_jst": "2026-07-25T17:02:52+0900",
-      "receipt_path": "logs/build_evidence/public_site_data_measurement_20260725170252.json",
-      "receipt_sha256": "098b02bbeb4e4aa83c4c36302c7fd82be425e5aa7194c9e2dd0209ca91f191b0",
+      "measured_at_jst": "2026-07-25T08:50:44+0900",
+      "receipt_path": "logs/build_evidence/public_site_data_measurement_20260725085044.json",
+      "receipt_sha256": "ff753cc16a811ecd05166df5ccb26bad415e95dbf0607d0ca5f7aeccf5189042",
       "total_bytes": 211557285888,
       "total_gib": 197.028,
       "categories": [
@@ -133,21 +133,98 @@
     },
     "weekly_kpi": {
       "birth_count": 205,
+      "new_born_rate": {
+        "numerator": 0,
+        "denominator": 32,
+        "value": 0.0
+      },
       "court_submission_rate": {
-        "numerator": 3,
+        "numerator": 5,
         "denominator": 45,
-        "value": 0.06666666666666667
+        "value": 0.1111111111111111
       },
       "freeze_rate": {
-        "numerator": 1,
-        "denominator": 3,
-        "value": 0.3333333333333333
+        "numerator": 3,
+        "denominator": 5,
+        "value": 0.6
       },
       "test_survival_rate": {
         "numerator": 0,
-        "denominator": 1,
+        "denominator": 3,
         "value": 0.0
       }
+    },
+    "current_funnel": {
+      "born": 45,
+      "court_submitted": 5,
+      "frozen": 3,
+      "one_shot_completed": 3,
+      "one_shot_survived": 0
+    },
+    "dividend_trials": {
+      "submitted_count": 2,
+      "frozen_count": 2,
+      "completed_count": 2,
+      "survived_count": 0,
+      "family_status": "DIED",
+      "launcher_count": 1,
+      "cards": [
+        {
+          "candidate_id": "R22-DIVIDEND-INCREASE-A-WEEK-V1",
+          "cell_id": "A_week",
+          "label": "増配 A_week（1週）",
+          "initial_state": "COURT_SUBMITTED",
+          "current_state": "DIED",
+          "stage_sequence": [
+            "COURT_SUBMITTED",
+            "FROZEN_AND_AUTHORIZED",
+            "TESTED",
+            "DIED"
+          ],
+          "events_n": 232,
+          "mean_net_bp": -44.69683945985667,
+          "raw_p_two_sided": 0.12003006955940869,
+          "by_pass": false,
+          "survived": false
+        },
+        {
+          "candidate_id": "R22-DIVIDEND-INCREASE-B-MONTH-V1",
+          "cell_id": "B_month",
+          "label": "増配 B_month（1か月）",
+          "initial_state": "COURT_SUBMITTED",
+          "current_state": "DIED",
+          "stage_sequence": [
+            "COURT_SUBMITTED",
+            "FROZEN_AND_AUTHORIZED",
+            "TESTED",
+            "DIED"
+          ],
+          "events_n": 232,
+          "mean_net_bp": -105.73966914510437,
+          "raw_p_two_sided": 0.05215091048734109,
+          "by_pass": false,
+          "survived": false
+        }
+      ],
+      "sources": [
+        {
+          "repository": "art-daytrader-research-0723",
+          "path": "governance/rulings147_20260727/r22_hypothesis_board_increment_handoff_v1.json",
+          "sha256": "52adad6f6741dbf1e47397349881362ba4b588830a6691d13c89b6354816d667"
+        },
+        {
+          "repository": "art-daytrader-research-0723",
+          "path": "research/r147_dividend_increase_one_shot_20260727/result/one_shot_receipt.json",
+          "sha256": "833c8ffcd142ed4bee82c15c800bf4d23a6022927b8738568d3116763e333906"
+        },
+        {
+          "repository": "art-daytrader-research-0723",
+          "path": "governance/rulings161_20260727/b_dividend_one_shot_result_recheck_terminal_pass_died_20260727T165612+0900.json",
+          "sha256": "ee92f63817ffb564d8fd7d3aa5fa39a6d8471700ae92c12aaaa82ab3a40bba50"
+        }
+      ],
+      "orders_sent": false,
+      "sendorder_count": 0
     },
     "testa_freeze": {
       "frozen": 1,
@@ -203,6 +280,7 @@
   "defects": {
     "open_count": 20,
     "total_count": 25,
+    "append_event_count": 25,
     "status_counts": {
       "OPEN": 18,
       "BLOCKED": 2,
@@ -211,56 +289,57 @@
     "repository": "art-daytrader-fable-28-53",
     "ledger_path": "governance/DEFECT_LEDGER.md",
     "ledger_sha256": "7460ddd188d51c3bb3717a88cf6a83f4a9b7baccfbe3c0bf72e7a92405bc028d",
-    "measured_at_jst": "2026-07-28T15:38:25+0900",
+    "measured_at_jst": "2026-07-28T15:37:25+0900",
     "orders_sent": false,
     "sendorder_count": 0
   },
   "hyp_progress": {
     "pb1": {
       "n": 0,
-      "target": 40,
-      "label": "前向き実弾",
+      "target": 1,
+      "label": "実証未成立",
       "prev": 0
     },
     "harvester": {
-      "n": 0,
-      "target": 30,
+      "n": 4,
+      "target": 14,
       "label": "前向き解決",
       "prev": 0
     },
     "035": {
-      "n": 0,
-      "target": 30,
+      "n": 7,
+      "target": 14,
       "label": "前向き解決",
       "prev": 0
     },
     "041g7": {
-      "n": 0,
-      "target": 30,
+      "n": 2,
+      "target": 14,
       "label": "前向き解決",
       "prev": 0
     },
     "041g2": {
-      "n": 0,
-      "target": 30,
-      "label": "前向き解決",
-      "prev": 0
+      "n": 18,
+      "target": 14,
+      "label": "経済的死亡",
+      "prev": 0,
+      "state": "grave"
     },
     "039b": {
       "n": 0,
-      "target": 30,
+      "target": 14,
       "label": "前向き解決",
       "prev": 0
     },
     "033": {
       "n": 0,
-      "target": 30,
+      "target": 14,
       "label": "前向き解決",
       "prev": 0
     },
     "052": {
       "n": 0,
-      "target": 30,
+      "target": 14,
       "label": "前向き解決",
       "prev": 0
     }
@@ -268,40 +347,40 @@
   "aggregates": {
     "current": {
       "counts": {
-        "live": 3,
-        "paper": 6,
-        "surviving": 7,
-        "grave": 27,
+        "live": 0,
+        "paper": 5,
+        "surviving": 9,
+        "grave": 29,
         "seed": 9
       },
       "total_defs": 107,
-      "dead_defs": 77,
+      "dead_defs": 79,
       "cards": 52,
       "analyst_days": 412,
-      "saved_total": 43780000
+      "saved_total": 44380000
     },
     "prev": {
       "counts": {
         "live": 3,
         "paper": 6,
-        "surviving": 7,
-        "grave": 27,
+        "surviving": 6,
+        "grave": 28,
         "seed": 9
       },
       "total_defs": 107,
-      "dead_defs": 77,
+      "dead_defs": 78,
       "cards": 52,
       "analyst_days": 412,
-      "saved_total": 43780000
+      "saved_total": 44080000
     },
     "prev_date": "2026-07-27"
   },
-  "progress_checked_at": "2026-07-28 15:38",
+  "progress_checked_at": "2026-07-28 15:37",
   "active_cards": {
     "schema": "public_active_cards_v2",
-    "state_data_at_jst": "2026-07-28T15:38:25+09:00",
+    "state_data_at_jst": "2026-07-28T15:37:25+09:00",
     "governance_revision": {
-      "ruling": "Fable裁定139",
+      "ruling": "Fable裁定221",
       "source_mode": "canonical_files_direct"
     },
     "canonical_sources": [
@@ -366,6 +445,51 @@
         "sha256": "92e1a217865a037b8819e5b087d76cc2eabbee2fdcfcdaa852ecab46220ebabb"
       },
       {
+        "repository": "art-daytrader-main-source",
+        "path": "reports/A3_FABLE_RULING214_PUBLIC_CARD_STATE_HANDOFF_20260728T143451+0900.json",
+        "sha256": "a627ab195a0a97e5c4bf9cc40f16f2095b1c4fcf56776c1cdf0bb1165e6de8d0"
+      },
+      {
+        "repository": "art-daytrader-main-source",
+        "path": "reports/A3_FABLE_RULING214_PUBLIC_CARD_STATE_HANDOFF_20260728T143451+0900.json",
+        "sha256": "a627ab195a0a97e5c4bf9cc40f16f2095b1c4fcf56776c1cdf0bb1165e6de8d0"
+      },
+      {
+        "repository": "art-daytrader-main-source",
+        "path": "reports/A3_FABLE_RULING214_PUBLIC_CARD_STATE_HANDOFF_20260728T143451+0900.json",
+        "sha256": "a627ab195a0a97e5c4bf9cc40f16f2095b1c4fcf56776c1cdf0bb1165e6de8d0"
+      },
+      {
+        "repository": "art-daytrader-main-source",
+        "path": "reports/A3_FABLE_RULING221_052_PUBLIC_DISPLAY_HANDOFF_20260728T153600+0900.json",
+        "sha256": "49469666fca412c8926633cc958ab84d07e843524e58ede4b52149249ca05398"
+      },
+      {
+        "repository": "art-daytrader-main-source",
+        "path": "reports/A_FABLE_RULING195_R192_KABU_READ_ONLY_AND_033_PAPER_TWIN_POSTDEPLOY_REGISTERED_20260728.json",
+        "sha256": "d79c953aa1d0230548084b275182f545fcf298095ff9635a55fae39470535262"
+      },
+      {
+        "repository": "art-daytrader-main-source",
+        "path": "reports/B_FABLE_RULING190_PRODUCTION_PROVENANCE_POST_FAIL_CLOSE_CACHE_RECHECK_FRESH_B_PASS_20260728.json",
+        "sha256": "6da54208b26e62da98a4707059828b1b43ede84caf59f37db627f063acc564bc"
+      },
+      {
+        "repository": "art-daytrader-main-source",
+        "path": "reports/B_FABLE_RULING195_R192_REPAIRED_BOOL_REJECTION_FRESH_B_PASS_20260728.json",
+        "sha256": "6572b6db3ae2ed171a4ebf15cb0c04da70aa5a5857fbd09592adb8d7e9eeb254"
+      },
+      {
+        "repository": "art-daytrader-main-source",
+        "path": "reports/B_FABLE_RULING196_033_WEDNESDAY_TASK_FRESH_B_PASS_20260728.json",
+        "sha256": "347c117ee9e2e6aa5f7e67d7b9d50fd4ef0b181d41a1167a7b54e72aafa6a8cd"
+      },
+      {
+        "repository": "art-daytrader-main-source",
+        "path": "reports/FABLE_RULING196_033_WEDNESDAY_FINAL_SEAL_20260728T095831+0900.json",
+        "sha256": "8a42e34e3a150d860a85403cbe585b6d99d132a8221b593af13d6bf05e088005"
+      },
+      {
         "repository": "art-daytrader-research-0723",
         "path": "governance/rulings136_20260726/testa_t3_swing_5d_evaluator_fix_b_audit_decision_v4.json",
         "sha256": "6c89d368cff023ffadadf838d4461497bf4c0789f82dbaaae99bcf78b76576db"
@@ -411,28 +535,28 @@
         "sha256": "20422463273448b33833d7ca54ac5396b0f47559690cf73b5582037b2154ef14"
       }
     ],
-    "canonical_sources_sha256": "2a5c2e0f934498ffa9538127cd39a614a413a46ed496bc59b195c8aafa93d122",
+    "canonical_sources_sha256": "3ecbf470d608ab63afe22057a673c9faf7cf0dde1fc256f28700aaa6e23e0954",
     "cards": [
       {
         "id": "pb1",
-        "state": "live",
-        "name": "PB-1v2 日次停止・実証1発待ち",
+        "state": "surviving",
+        "name": "PB-1v2 日次停止・実証役割移管済み",
         "family": "実弾・夜間持続",
-        "metric": "日次発射停止 · 2026-07-27 14:50の実証1発のみ · 配分v2総枠30万円",
+        "metric": "PROOF_ROLE_TRANSFERRED_TO_033 · 日次発射停止は不変 · 配分額は非公開",
         "progress": {
-          "n": 0,
+          "n": 1,
           "target": 1,
-          "label": "INFRA-PROOF SHOT"
+          "label": "実証役割の移管"
         },
         "arose": "凍結済みチェーンの発注・照合・返済を実市場で一度だけ証明するためのINFRA-PROOF SHOT。約定可能エッジの負値判明後は日次戦略として停止した。",
-        "verification": "裁定20・29により日次発射を停止。月曜14:50の1発だけを実証に限定し、配分v2の総枠30万円と日次停止を同時に拘束する。",
-        "outcome": "2026-07-27はINFRA由来No-Trade。実証1発は発射せず、注文0・実現取引損失0円。火曜00:05門は月曜夜の新sealだけを消費する。",
+        "verification": "裁定20・29により日次発射を停止。直近の実証候補は安全門が閉じてNo-Tradeとなり、配分額を公開せず日次停止を維持する。",
+        "outcome": "実証1発の役割はPROOF_ROLE_TRANSFERRED_TO_033でterminal。PB-1v2の日次停止は変更せず、約定可能エッジが正でないため再開しない。",
         "next_born": "約定可能エッジが正のカードだけを、実証済みチェーンへ接続する。",
         "simulation": "実証1発はcampaign開始や自動増額を意味しない。",
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-07-28T15:38:25+09:00",
+        "state_data_at_jst": "2026-07-28T15:37:25+09:00",
         "evidence": [
           {
             "path": "governance/micro_allocation_boundary_v2_20260725.json",
@@ -458,37 +582,42 @@
             "repository": "art-daytrader-fable-28-53",
             "path": "reports/A_FABLE_RULING141_MONDAY_NO_TRADE_20260727T002637+0900.json",
             "sha256": "3795083551d20df878b1a06b1644f62db83cce3384dee4f34669526a7bb64cef"
+          },
+          {
+            "repository": "art-daytrader-main-source",
+            "path": "reports/A3_FABLE_RULING214_PUBLIC_CARD_STATE_HANDOFF_20260728T143451+0900.json",
+            "sha256": "a627ab195a0a97e5c4bf9cc40f16f2095b1c4fcf56776c1cdf0bb1165e6de8d0"
           }
         ],
         "next_phase": {
-          "id": "tuesday_observation_seal",
-          "label": "月曜の平日自然発火証拠と火曜用final seal",
-          "status": "PENDING_MONDAY_OBSERVATION",
-          "scheduled_at_jst": "2026-07-27T23:55:00+09:00",
-          "scheduled_at_display": "2026-07-27 23:55 JSTまで",
-          "text": "<b>次の門:</b> 月曜の平日自然発火証拠と火曜用final seal （現在 PENDING_MONDAY_OBSERVATION） <b>時刻:</b> 2026-07-27 23:55 JSTまで"
+          "id": "pb1_proof_role_transferred_to_033",
+          "label": "実証1発の役割を033へ移管・PB-1v2日次停止継続",
+          "status": "PROOF_ROLE_TRANSFERRED_TO_033",
+          "scheduled_at_jst": "FABLE_RULING_214",
+          "scheduled_at_display": "裁定214でterminal化",
+          "text": "<b>次の門:</b> 実証1発の役割を033へ移管・PB-1v2日次停止継続 （現在 PROOF_ROLE_TRANSFERRED_TO_033） <b>時刻:</b> 裁定214でterminal化"
         }
       },
       {
         "id": "033",
-        "state": "live",
-        "name": "D0v4-033 ライブ準備",
+        "state": "surviving",
+        "name": "D0v4-033 本番task Ready・未実行",
         "family": "イベントドリフト",
-        "metric": "月曜09:00初弾候補 · 個別檻15万円 · GREEN朝条件が必須",
+        "metric": "2026-07-29 08:57 JST一回性task · 発注瞬間Q1六条件が必須 · 配分額は非公開",
         "progress": {
           "n": 0,
           "target": 10,
           "label": "前向き実測"
         },
         "arose": "自社株買い表明後の20営業日ドリフトを、凍結済みD+1寄り入口のまま前向きに測るため。歴史値を実装都合で14:50へ移植しない。",
-        "verification": "事前登録Bは入口を2026-07-27 09:00寄りへ固定した。配分v2は個別15万円を上限とし、朝のKabuS・返済受入・候補・資金・intentがGREENの時だけ同じ入口を評価する。",
-        "outcome": "2026-07-27は00:05門が全laneを閉じたためINFRA由来No-Trade。注文0・実現取引損失0円。月曜の自然発火証拠を火曜用sealへ固定する。",
+        "verification": "凍結済み入口を実装都合で変更せず、発注瞬間にowner authority、headroom、接続、非pinned実シグナル、出口保証、流動性を実測する。いずれか不明ならNo-Tradeとする。",
+        "outcome": "監査済みreleaseを配備し、一回性taskはState=Ready。本人YESは2026-07-29 08:57 JSTの一回だけに限定済み。自然実行・発注瞬間Q1・注文はいずれも未観測。",
         "next_born": "クリーンな前向き実測10イベントが増額審査を開く。R-20残差監査は増額審査へ別添する。",
-        "simulation": "歴史値は20日ドリフトの記述であり、月曜GREENや注文成功を示さない。",
+        "simulation": "歴史値は20日ドリフトの記述であり、将来のQ1 GREENや注文成功を示さない。",
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-07-28T15:38:25+09:00",
+        "state_data_at_jst": "2026-07-28T15:37:25+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_033_V6_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T143446+0900.json",
@@ -511,6 +640,16 @@
             "repository": "art-daytrader-fable-28-53"
           },
           {
+            "path": "reports/B_FABLE_RULING190_PRODUCTION_PROVENANCE_POST_FAIL_CLOSE_CACHE_RECHECK_FRESH_B_PASS_20260728.json",
+            "sha256": "6da54208b26e62da98a4707059828b1b43ede84caf59f37db627f063acc564bc",
+            "repository": "art-daytrader-fable-28-53"
+          },
+          {
+            "path": "reports/A_FABLE_RULINGS190_192_PAPER_FLEET_KABU_PREP_20260728.json",
+            "sha256": "ec308985d9f11d937932fdf47c35ce9aed16b84900159b5c8fee4705ee918bcb",
+            "repository": "art-daytrader-fable-28-53"
+          },
+          {
             "repository": "art-daytrader-fable-28-53",
             "path": "reports/B_FABLE_RULING131_033_PIN_FRESH_B_PASS_20260726.json",
             "sha256": "95f9f3ad7e33ddf26d04dce9ac96550ca83f33e4c2162b6309e4aa30fe446334"
@@ -529,37 +668,67 @@
             "repository": "art-daytrader-fable-28-53",
             "path": "reports/A_FABLE_RULING141_MONDAY_NO_TRADE_20260727T002637+0900.json",
             "sha256": "3795083551d20df878b1a06b1644f62db83cce3384dee4f34669526a7bb64cef"
+          },
+          {
+            "repository": "art-daytrader-main-source",
+            "path": "reports/B_FABLE_RULING190_PRODUCTION_PROVENANCE_POST_FAIL_CLOSE_CACHE_RECHECK_FRESH_B_PASS_20260728.json",
+            "sha256": "6da54208b26e62da98a4707059828b1b43ede84caf59f37db627f063acc564bc"
+          },
+          {
+            "repository": "art-daytrader-main-source",
+            "path": "reports/FABLE_RULING196_033_WEDNESDAY_FINAL_SEAL_20260728T095831+0900.json",
+            "sha256": "8a42e34e3a150d860a85403cbe585b6d99d132a8221b593af13d6bf05e088005"
+          },
+          {
+            "repository": "art-daytrader-main-source",
+            "path": "reports/B_FABLE_RULING196_033_WEDNESDAY_TASK_FRESH_B_PASS_20260728.json",
+            "sha256": "347c117ee9e2e6aa5f7e67d7b9d50fd4ef0b181d41a1167a7b54e72aafa6a8cd"
+          },
+          {
+            "repository": "art-daytrader-main-source",
+            "path": "reports/B_FABLE_RULING195_R192_REPAIRED_BOOL_REJECTION_FRESH_B_PASS_20260728.json",
+            "sha256": "6572b6db3ae2ed171a4ebf15cb0c04da70aa5a5857fbd09592adb8d7e9eeb254"
+          },
+          {
+            "repository": "art-daytrader-main-source",
+            "path": "reports/A_FABLE_RULING195_R192_KABU_READ_ONLY_AND_033_PAPER_TWIN_POSTDEPLOY_REGISTERED_20260728.json",
+            "sha256": "d79c953aa1d0230548084b275182f545fcf298095ff9635a55fae39470535262"
+          },
+          {
+            "repository": "art-daytrader-main-source",
+            "path": "reports/A3_FABLE_RULING214_PUBLIC_CARD_STATE_HANDOFF_20260728T143451+0900.json",
+            "sha256": "a627ab195a0a97e5c4bf9cc40f16f2095b1c4fcf56776c1cdf0bb1165e6de8d0"
           }
         ],
         "next_phase": {
-          "id": "tuesday_observation_seal",
-          "label": "月曜の平日自然発火証拠と火曜用final seal",
-          "status": "PENDING_MONDAY_OBSERVATION",
-          "scheduled_at_jst": "2026-07-27T23:55:00+09:00",
-          "scheduled_at_display": "2026-07-27 23:55 JSTまで",
-          "text": "<b>次の門:</b> 月曜の平日自然発火証拠と火曜用final seal （現在 PENDING_MONDAY_OBSERVATION） <b>時刻:</b> 2026-07-27 23:55 JSTまで"
+          "id": "ruling210_order_time_q1",
+          "label": "2026-07-29 08:57の発注瞬間Q1六条件",
+          "status": "NOT_YET_OBSERVABLE",
+          "scheduled_at_jst": "2026-07-29T08:57:00+09:00",
+          "scheduled_at_display": "2026-07-29 08:57 JSTまでは未取得",
+          "text": "<b>次の門:</b> 2026-07-29 08:57の発注瞬間Q1六条件 （現在 NOT_YET_OBSERVABLE） <b>時刻:</b> 2026-07-29 08:57 JSTまでは未取得"
         }
       },
       {
         "id": "pin-lottery",
-        "state": "live",
-        "name": "PIN-LOTTERY ライブ準備",
+        "state": "surviving",
+        "name": "PIN-LOTTERY 紙runner新造中",
         "family": "引け値到達・未約定観測",
-        "metric": "月曜14:50初弾候補 · 未約定なら売買コスト0",
+        "metric": "read-only紙runner実装中 · 注文機能なし · 勝ち/不成を記録",
         "progress": {
           "n": 0,
           "target": 10,
           "label": "前向き実測"
         },
         "arose": "引け値到達時だけ成立する稀な機会を、最小単元1銘柄・未約定時コスト0で前向きに測るため。",
-        "verification": "preregと実装の監査済み境界を維持し、14:50初弾では当選率と当選バイアスを記録する。未約定を失敗や費用発生へ読み替えない。",
-        "outcome": "2026-07-27はINFRA由来No-Trade。14:50 runnerは発注権限を持たず、注文0・実現取引損失0円を維持する。",
+        "verification": "preregと実装の監査済み境界は維持するが、broker送信を持たないpaper専用runnerが存在するまでlive runnerで代用しない。",
+        "outcome": "A4が注文機能を持たない紙runnerを新造中。Fresh Bと紙task登録は未成立で、紙runnerは未実行。",
         "next_born": "当選・未約定を分けたクリーンな前向き実測10イベントが増額審査を開く。",
         "simulation": "未約定時の売買コストは0。注文を送れること自体は現在まだ未証明。",
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-07-28T15:38:25+09:00",
+        "state_data_at_jst": "2026-07-28T15:37:25+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_PIN_LOTTERY_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T140307+0900.json",
@@ -582,6 +751,11 @@
             "repository": "art-daytrader-fable-28-53"
           },
           {
+            "path": "reports/A_FABLE_RULINGS190_192_PAPER_FLEET_KABU_PREP_20260728.json",
+            "sha256": "ec308985d9f11d937932fdf47c35ce9aed16b84900159b5c8fee4705ee918bcb",
+            "repository": "art-daytrader-fable-28-53"
+          },
+          {
             "repository": "art-daytrader-fable-28-53",
             "path": "reports/B_FABLE_RULING131_033_PIN_FRESH_B_PASS_20260726.json",
             "sha256": "95f9f3ad7e33ddf26d04dce9ac96550ca83f33e4c2162b6309e4aa30fe446334"
@@ -600,15 +774,20 @@
             "repository": "art-daytrader-fable-28-53",
             "path": "reports/A_FABLE_RULING141_MONDAY_NO_TRADE_20260727T002637+0900.json",
             "sha256": "3795083551d20df878b1a06b1644f62db83cce3384dee4f34669526a7bb64cef"
+          },
+          {
+            "repository": "art-daytrader-main-source",
+            "path": "reports/A3_FABLE_RULING214_PUBLIC_CARD_STATE_HANDOFF_20260728T143451+0900.json",
+            "sha256": "a627ab195a0a97e5c4bf9cc40f16f2095b1c4fcf56776c1cdf0bb1165e6de8d0"
           }
         ],
         "next_phase": {
-          "id": "tuesday_observation_seal",
-          "label": "月曜の平日自然発火証拠と火曜用final seal",
-          "status": "PENDING_MONDAY_OBSERVATION",
-          "scheduled_at_jst": "2026-07-27T23:55:00+09:00",
-          "scheduled_at_display": "2026-07-27 23:55 JSTまで",
-          "text": "<b>次の門:</b> 月曜の平日自然発火証拠と火曜用final seal （現在 PENDING_MONDAY_OBSERVATION） <b>時刻:</b> 2026-07-27 23:55 JSTまで"
+          "id": "pin_paper_runner_implementation",
+          "label": "注文機能を持たない紙runnerの実装",
+          "status": "IN_PROGRESS",
+          "scheduled_at_jst": "FABLE_RULING_214_A4",
+          "scheduled_at_display": "裁定214④によりA4が実装中",
+          "text": "<b>次の門:</b> 注文機能を持たない紙runnerの実装 （現在 IN_PROGRESS） <b>時刻:</b> 裁定214④によりA4が実装中"
         }
       },
       {
@@ -630,7 +809,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-07-28T15:38:25+09:00",
+        "state_data_at_jst": "2026-07-28T15:37:25+09:00",
         "evidence": [
           {
             "path": "governance/rulings141_20260727/testa_swing5d_result_site_handoff_r141.json",
@@ -691,7 +870,7 @@
         "provisional": false,
         "description_only": true,
         "qualification_evidence": false,
-        "state_data_at_jst": "2026-07-28T15:38:25+09:00",
+        "state_data_at_jst": "2026-07-28T15:37:25+09:00",
         "evidence": [
           {
             "path": "research/r20_residual_audit_v2_20260726/d0v4_033/provisional_result.json",
@@ -722,6 +901,42 @@
           "scheduled_at_display": "別裁定・本人承認がある場合のみ",
           "text": "<b>次の門:</b> 資本変更に必要な別Fable裁定と本人承認 （現在 NOT_AUTHORIZED） <b>時刻:</b> 別裁定・本人承認がある場合のみ"
         }
+      },
+      {
+        "id": "052",
+        "state": "paper",
+        "name": "D0v4-052 決算集中日ドリフト・ACTIVE_BLIND",
+        "family": "イベントドリフト",
+        "metric": "ACTIVE_BLIND · σ_day=1002.77bp · +170.8bp/20日 · t=2.96",
+        "progress": {
+          "n": 0,
+          "target": 14,
+          "label": "前向き解決"
+        },
+        "arose": "決算が集中する日は1件あたりの注意が薄まり、正サプライズの織り込みが遅れてドリフトが太るというlimited attention仮説を前向きに測るため。",
+        "verification": "凍結境界は開示件数>79、σ_day=1002.77bp。BとB3が現行overlayとwriterを独立監査し、B3 finding 0でPASSした。",
+        "outcome": "BとB3が独立PASS。2026-07-22開始のACTIVE_BLIND紙時計をリセットせず継続。現在0/14、遡及補完・backfillなし。",
+        "next_born": "前向き解決14件かつ最低10独立取引日を満たした後だけ次の審査へ進む。",
+        "simulation": "20日+170.8bpは凍結済み歴史記述。紙時計の進捗や将来収益を代用しない。",
+        "provisional": false,
+        "description_only": null,
+        "qualification_evidence": null,
+        "state_data_at_jst": "2026-07-28T15:37:25+09:00",
+        "evidence": [
+          {
+            "path": "reports/A3_FABLE_RULING221_052_PUBLIC_DISPLAY_HANDOFF_20260728T153600+0900.json",
+            "sha256": "49469666fca412c8926633cc958ab84d07e843524e58ede4b52149249ca05398",
+            "repository": "art-daytrader-main-source"
+          }
+        ],
+        "next_phase": {
+          "id": "d0v4_052_active_blind_clock",
+          "label": "前向き解決14件かつ最低10独立取引日",
+          "status": "ACTIVE_BLIND",
+          "scheduled_at_jst": "STARTED_2026-07-22",
+          "scheduled_at_display": "2026-07-22開始・時計リセットなし",
+          "text": "<b>次の門:</b> 前向き解決14件かつ最低10独立取引日 （現在 ACTIVE_BLIND） <b>時刻:</b> 2026-07-22開始・時計リセットなし"
+        }
       }
     ],
     "actual_tickers_included": false,
@@ -729,28 +944,28 @@
     "orders_sent": false,
     "sendorder_count": 0
   },
+  "public_surface_generated_at_jst": "2026-07-28",
   "storage_refresh": {
     "status": "FAIL_CLOSED",
-    "measured_at_jst": "2026-07-28T15:38:40+0900",
+    "measured_at_jst": "2026-07-28T15:37:36+0900",
     "reason_code": "STORAGE_MANIFEST_SHA_MISMATCH",
     "preserved_last_verified_measurement": true,
     "orders_sent": false,
     "sendorder_count": 0
   },
-  "public_surface_generated_at_jst": "2026-07-28",
   "freshness": {
     "status": "PASS",
-    "checked_at_jst": "2026-07-28T15:38:40+09:00",
-    "state_data_at_jst": "2026-07-28T15:38:25+09:00",
-    "age_seconds": 15.772,
+    "checked_at_jst": "2026-07-28T15:37:36+09:00",
+    "state_data_at_jst": "2026-07-28T15:37:25+09:00",
+    "age_seconds": 11.835,
     "max_age_seconds": 1800,
-    "canonical_source_count": 28,
-    "canonical_source_set_sha256": "5a0da65a890e44fea3df01b960d5d3ded2dc06171d1b5605bb2905b232e621b3",
-    "card_source_set_sha256": "2a5c2e0f934498ffa9538127cd39a614a413a46ed496bc59b195c8aafa93d122",
+    "canonical_source_count": 37,
+    "canonical_source_set_sha256": "93a78068f1419bf62a9041d4e7d11bdb53deabc24932ac9b5a72259dffc65edd",
+    "card_source_set_sha256": "3ecbf470d608ab63afe22057a673c9faf7cf0dde1fc256f28700aaa6e23e0954",
     "orders_sent": false,
     "sendorder_count": 0
   },
-  "public_surface_state_at_jst": "2026-07-28T15:38:40+09:00",
+  "public_surface_state_at_jst": "2026-07-28T15:37:36+09:00",
   "operations": {
     "trade_date": "2026-07-27",
     "status": "MONDAY_NO_TRADE_INFRA",
