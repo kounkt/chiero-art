@@ -1,6 +1,5 @@
 <meta charset="utf-8">
 <title>AIによる身体知の蒸留器つき複利機械</title>
-<link rel="icon" href="data:,">
 <style>
   :root{
     --red:#E60012; --red-d:#B8000E;
@@ -137,27 +136,6 @@
   .band .bd.z{color:var(--faint);font-weight:400}
   .band .bd.nz{color:var(--red)}
   @media(max-width:640px){.band .cell{flex:1 1 40%;border-bottom:1px solid var(--line)}}
-  .stillborn-signal{margin:18px 0 8px;padding:24px 26px;border:2px solid var(--ink);border-radius:5px;
-    display:grid;grid-template-columns:minmax(120px,.35fr) 1fr;gap:24px;align-items:center;background:var(--ink);color:var(--paper)}
-  .stillborn-signal .n{font-size:clamp(44px,10vw,78px);font-weight:800;line-height:1;color:var(--paper)}
-  .stillborn-signal .l{font-size:12px;letter-spacing:.12em;font-weight:700;color:#FF7A84;margin-top:7px}
-  .stillborn-signal p{margin:0;font-family:var(--m);font-size:16px;line-height:1.85;color:var(--paper)}
-  .stillborn-signal p b{color:#FF7A84}
-  .foundry-volume{margin-top:8px}
-  .trial-heading{margin:30px 0 8px;font-family:var(--m);font-size:18px;font-weight:600}
-  .trial-note{font-size:12px;color:var(--sub);line-height:1.8;margin:0 0 12px}
-  .trial-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:10px}
-  .trial-card{border:1px solid var(--line);border-top:3px solid var(--red);border-radius:5px;padding:20px;background:var(--paper)}
-  .trial-card h4{font-family:var(--m);font-size:17px;margin:0 0 10px}
-  .trial-stage{font-size:11.5px;font-weight:700;line-height:1.8;color:var(--sub);letter-spacing:.01em}
-  .trial-stage .done{color:var(--ink)}
-  .trial-stage .terminal{color:var(--red)}
-  .trial-metric{font-size:12px;color:var(--sub);line-height:1.75;margin:12px 0 0}
-  .trial-metric b{color:var(--ink)}
-  @media(max-width:640px){
-    .stillborn-signal{grid-template-columns:1fr;gap:12px;padding:22px 20px}
-    .trial-grid{grid-template-columns:1fr}
-  }
   /* 圧縮の当日分 */
   .saveddelta{margin:9px 0 0;font-size:13px;line-height:1.7}
   .saveddelta .nz{color:var(--red);font-weight:700}
@@ -258,7 +236,6 @@
     <p class="lede">人間が長い年月をかけて身体で覚える相場の勘を、AIが測定可能な知識へ蒸留する試み。効くものだけを紙の上で選び、効かないものは墓標として地図に残す。赤い点は、詰まりが取れて流れが通った一点。</p>
     <p class="thesis">これは投資の勧誘でも運用実績の広告でもない。ひとつの機械が、何を確かめ、何を捨て、何を残したかの記録である。</p>
   </header>
-  <div class="band tnum" id="operationband" style="display:none"></div>
 
   <h2>将来の予測 — 実験の記述的シミュレーション</h2>
   <p class="note">測定されたエッジが、投下資本の大きさによって複利でどう積み上がるかを描いた実験的な地図。スライダーを動かすと容量の天井まで見える。<span class="red">保証ではなく、過去データに基づく推定である。</span></p>
@@ -287,7 +264,7 @@
   </div>
 
   <h2>仮説の生態</h2>
-  <p class="note">通った流れと、詰まった跡。各行を開くと理由・検証・生死・次の仮説と、<span class="red">次フェーズへ進む条件</span>が読める。<br>昇格ルート: <b>種</b> → 探索一回判定 → Fable審査 → ホールドアウト → <b>各カードの事前登録targetまで紙孵化</b> → 本人YES → <b>本番稼働</b>。</p>
+  <p class="note">通った流れと、詰まった跡。各行を開くと理由・検証・生死・次の仮説と、<span class="red">次フェーズへ進む条件</span>が読める。<br>昇格ルート（不変）: <b>種</b> → 探索一回判定 → Fable審査 → ホールドアウト → <b>紙孵化(n=30)</b> → 本人YES → <b>本番稼働</b>。</p>
   <div class="band tnum" id="band"></div>
   <p class="note defnote" id="defnote" style="padding-left:0;margin-top:12px"></p>
   <p id="progStamp" style="padding-left:0;margin:2px 0 0;font-size:11.5px;color:var(--faint);line-height:1.6"></p>
@@ -328,21 +305,16 @@
   <div class="datatable-wrap"><table class="datatable tnum" id="datatable"></table></div>
   <div class="datatable-wrap"><table class="datatable tnum" id="storagetable"></table></div>
 
-  <h2>Foundry — 量より質</h2>
-  <p class="note">主指標は生成数ではなく、新規BORN率・法廷提出率・凍結率・検定生存率。誕生数は選別機械への入力総量として副次表示する。</p>
+  <h2>Foundryの誕生と法廷</h2>
+  <p class="note">生まれた仮説だけでなく、死産・棚・凍結待ちも同じ面に出す。法廷の区分は重複を含むため合計39にはならない。</p>
   <div class="band tnum" id="foundryband"></div>
-  <div class="stillborn-signal tnum" id="stillbornsignal"></div>
-  <div class="band tnum foundry-volume" id="foundryvolume"></div>
-  <h3 class="trial-heading">増配2セル — 法廷提出から検定終端まで</h3>
-  <p class="trial-note">本番稼働へ最も近づいた2セルの通過履歴。COURT_SUBMITTEDだけで成功とせず、独立B後の終端まで表示する。</p>
-  <div class="trial-grid tnum" id="dividendtrack"></div>
   <div class="band tnum" id="defectband"></div>
   <div class="datatable-wrap"><table class="datatable tnum" id="courttable"></table></div>
   <div class="datatable-wrap"><table class="datatable tnum" id="weeklytable"></table></div>
 
   <div class="disclaimer">
     <p>本ページは、ひとつのAI実験（作品）の状態を記録するものです。<b>特定の金融商品の取得を勧誘するものではなく、運用実績・将来の利益を約束・示唆するものでもありません。</b>掲載する検定結果は過去データに基づく記述であり、将来の成果を保証しません。個別の投資判断はご自身の責任と、必要に応じ専門家の助言のもとで行ってください。</p>
-    <p class="upd">最終更新 <b id="lastUpd">2026-07-28</b> ／ データは原則1日1回更新。実銘柄コード・保有・当日シグナルは掲載していません。</p>
+    <p class="upd">最終更新 <b id="lastUpd">2026-07-26</b> ／ データは原則1日1回更新。実銘柄コード・保有・当日シグナルは掲載していません。</p>
   </div>
 
   <p class="sig"><a href="https://chiero.jp/" target="_blank" rel="noopener">chiero.jp</a></p>
@@ -350,8 +322,8 @@
 
 <script>
 const DATA = {
-  asof:"2026-07-28",
-  state_data_at_jst:"2026-07-28T10:21:03+09:00",
+  asof:"2026-07-26",
+  state_data_at_jst:"2026-07-26T16:42:28+09:00",
   tiers:[
     {c:50, m:0.58, y1p5:1.9,  y1:11.7, y1p95:23.3,  y3:39.5,  feas:9.6,  corr:0.453},
     {c:100,m:1.52, y1p5:11.3, y1:25.0, y1p95:43.0,  y3:96.4,  feas:22.1, corr:0.593},
@@ -366,91 +338,89 @@ const DATA = {
     {c:10000,m:4.48,y1p5:39.7,y1:83.6, y1p95:145.6, y3:529.1, feas:99.1, corr:0.926}
   ],
   hyps:[
-    {id:"pb1",state:"surviving",added:"2026-07-26",state_data_at_jst:"2026-07-28T10:21:03+09:00",
-     name:"PB-1v2 日次停止・実証未成立",fam:"実弾・夜間持続",cells:0,
-     metric:"日次発射停止 · 直近の実証候補はNo-Trade · 配分額は非公開",
-     prog:{n:0,target:1,prev:0,label:"実証未成立"},
+    {id:"pb1",state:"live",added:"2026-07-26",state_data_at_jst:"2026-07-26T16:42:28+09:00",
+     name:"PB-1v2 日次停止・実証1発待ち",fam:"実弾・夜間持続",cells:0,
+     metric:"日次発射停止 · 2026-07-27 14:50の実証1発のみ · 配分v2総枠30万円",
+     prog:{n:0,target:1,prev:0,label:"INFRA-PROOF SHOT"},
      arose:"凍結済みチェーンの発注・照合・返済を実市場で一度だけ証明するためのINFRA-PROOF SHOT。約定可能エッジの負値判明後は日次戦略として停止した。",
-     verif:"裁定20・29により日次発射を停止。直近の実証候補は安全門が閉じてNo-Tradeとなり、配分額を公開せず日次停止を維持する。",
-     outcome:"戦略として停止中。直近候補では注文を送らず、実証済み本番へ昇格していない。REDまたは欠測はSKIPとし、無言で発射しない。",
+     verif:"裁定20・29により日次発射を停止。月曜14:50の1発だけを実証に限定し、配分v2の総枠30万円と日次停止を同時に拘束する。",
+     outcome:"戦略としては停止中。月曜の1発は利益キャンペーンではなく、残存する発注・照合・翌朝返済部品の実証である。REDまたは欠測ならSKIPし、無言で発射しない。",
      next:"約定可能エッジが正のカードだけを、実証済みチェーンへ接続する。",
      sim:"実証1発はcampaign開始や自動増額を意味しない。"},
     {id:"harvester",state:"paper",name:"統合ハーベスタ（旗艦）",fam:"夜間持続",
      metric:"+87.6bp/日（投下資本） · t=17.7 · 11年全年プラス",
-     prog:{n:4,target:14,prev:0,label:"前向き解決"},
+     prog:{n:0,target:30,prev:0,label:"前向き解決"},
      arose:"身体知の移植（公開記録のある個人投資家）(D0v4-030)と教義「上は持続」から。大出来高で強く上げ高値で引ける株は翌朝まで持続する、という仮説。",
      verif:"3定義の和集合（vr≥5&ret≥5%&Va≥1e9 ∪ 引け位置cH≥0.9 ∪ gap≥7%維持）を14:50に判定し引け買い→翌寄り売り。ホールドアウト一発 t=5.49/5.41 両PASS。地合い除去後の超過も+90.8bp(t=17.7)。",
-     outcome:"生存。月次勝率97%・最大DD-24%（投下資本基準）。10年全年プラス。前向き紙時計は4/14。",
+     outcome:"生存。月次勝率97%・最大DD-24%（投下資本基準）。10年全年プラス。実弾昇格は資金300万以上が条件。",
      next:"早乗り(035)・張り付き(041-G7)・ギャップ維持(041-G2)へ分岐。",
      sim:"月次利率の頂点は約2,000万(+5.73%/月)。1億では参加率上限で+4.48%/月に低下。"},
     {id:"035",state:"paper",name:"D0v4-035 早乗り 15:30",fam:"夜間持続",
      metric:"precision 0.958 · 確認検定PASS",
-     prog:{n:7,target:14,prev:0,label:"前向き解決"},
+     prog:{n:0,target:30,prev:0,label:"前向き解決"},
      arose:"ハーベスタの14:50判定を、引け確定を待たずに乗る早乗り版。執行現実性の検証を兼ねる。",
      verif:"14:50フラグの引け確定一致precision=0.958を一発測定。035_036家族でPASS（036は非対称で墓標）。",
      outcome:"生存・ACTIVE_BLIND紙孵化中。precision維持が主指標。",next:"—",
      sim:"ハーベスタと同分布。単独昇格には別途Fable裁定。"},
     {id:"041g7",state:"paper",name:"D0v4-041-G7 張り付き高値引け",fam:"夜間持続",
      metric:"+128.9bp/夜 · t=9.02 · n=2,318",
-     prog:{n:2,target:14,prev:0,label:"前向き解決"},
+     prog:{n:0,target:30,prev:0,label:"前向き解決"},
      arose:"「上げの持続は引けの位置(cH)が支配」の教義精密化。張り付き(cH≥0.9)は飽和ではなく持続、という条件付き仮説。",
      verif:"79セルから分割スクリーニング→8セル確認検定8/8 PASS。カードhashは詳細契約へ更新（経済的内容不変・厳格化のみ）。",
      outcome:"生存・ACTIVE_BLIND。本日の裁定でカード時計が始動可能に。",
      next:"050で「引け位置条件はイベント族に移植不可」と判明→教義の境界を確定。",sim:"高精度セル。単独では稼働率が低い。"},
-    {id:"041g2",state:"grave",name:"D0v4-041-G2 ギャップ維持 墓標",fam:"夜間持続",
-     metric:"経済的死亡 · n=18 · 累積 -4,456.50bp · 3σ下限 -1,896.00bp",
-     prog:{n:18,target:14,prev:18,label:"経済的死亡"},
+    {id:"041g2",state:"paper",name:"D0v4-041-G2 ギャップ維持",fam:"夜間持続",
+     metric:"gap≥7%が14:50まで維持 · 確認検定通過",
+     prog:{n:0,target:30,prev:0,label:"前向き解決"},
      arose:"寄りで大きく飛んだ株が日中維持できれば夜も持続する、という窓埋め回避型の仮説。",
-     verif:"前向き紙時計18件を解決。累積netは-4,456.50bpで、事前登録した3σ下限-1,896.00bpを下回った。",
-     outcome:"DEATH_ECONOMIC_3SIGMA。promotion_eligible=falseとして死亡し、確認検定通過を現在の生存表示へ使わない。",
-     next:"同じカードを昇格・再開しない。別機序は新しい独立事前登録とFable裁定がある場合だけ検定する。",
-     sim:"死亡判定後の成績救済・遡及補完はしない。"},
-    {id:"039b",state:"paper",name:"D0v4-039B 上方修正ドリフト",fam:"イベントドリフト",
+     verif:"041家族の確認検定を通過。ギャップ維持=引け≥寄りで定義。",
+     outcome:"生存・ACTIVE_BLIND。",next:"—",sim:"ハーベスタ和集合の一角。"},
+    {id:"039b",state:"surviving",name:"D0v4-039B 上方修正ドリフト",fam:"イベントドリフト",
      metric:"+132bp/20日 · イベント鉱脈の長兄",
-     prog:{n:0,target:14,prev:0,label:"前向き解決"},
+     prog:{n:0,target:30,prev:0,label:"前向き解決"},
      arose:"業績上方修正の後、機関の緩慢な織り込みでドリフトが続く（PEAD/最頑健イベント）の日本版。",
      verif:"スクリーニング→確認で生存。足型とは無関係＝イベント族は緩慢織り込み＋機械買いが機序。",
      outcome:"生存。20日保有型。033・052と同じイベント鉱脈。",
      next:"033(自社株買い)・052(決算集中)へ機序を横展開。",sim:"20日+132bp。"},
-    {id:"033",state:"surviving",added:"2026-07-26",state_data_at_jst:"2026-07-28T10:21:03+09:00",
-     name:"D0v4-033 本番候補・未実行",fam:"イベントドリフト",
-     metric:"一回性候補 · 発注瞬間Q1六条件が必須 · 配分額は非公開",
-     prog:{n:0,target:14,prev:0,label:"前向き解決"},
+    {id:"033",state:"live",added:"2026-07-26",state_data_at_jst:"2026-07-26T16:42:28+09:00",
+     name:"D0v4-033 ライブ準備",fam:"イベントドリフト",
+     metric:"月曜09:00初弾候補 · 個別檻15万円 · GREEN朝条件が必須",
+     prog:{n:0,target:10,prev:0,label:"前向き実測"},
      arose:"自社株買い表明後の20営業日ドリフトを、凍結済みD+1寄り入口のまま前向きに測るため。歴史値を実装都合で14:50へ移植しない。",
-     verif:"凍結済み入口を実装都合で変更せず、発注瞬間にowner authority、headroom、接続、非pinned実シグナル、出口保証、流動性を実測する。いずれか不明ならNo-Tradeとする。",
-     outcome:"一回性候補のFresh Bは構成PASS。実配備一致とlive task登録は未証明で、2026-07-29 08:57のQ1六条件も未取得。paper twinは配備・登録済みだが未実行で注文経路を持たない。",
+     verif:"事前登録Bは入口を2026-07-27 09:00寄りへ固定した。配分v2は個別15万円を上限とし、朝のKabuS・返済受入・候補・資金・intentがGREENの時だけ同じ入口を評価する。",
+     outcome:"ライブ準備は継続中だが、Phase2 miniの最新独立BはFAIL_CLOSED。配備・タスク登録・月曜注文権限はまだ成立していない。",
      next:"クリーンな前向き実測10イベントが増額審査を開く。R-20残差監査は増額審査へ別添する。",
      sim:"歴史値は20日ドリフトの記述であり、月曜GREENや注文成功を示さない。"},
-    {id:"pin-lottery",state:"surviving",added:"2026-07-26",state_data_at_jst:"2026-07-28T10:21:03+09:00",
-     name:"PIN-LOTTERY 紙経路未成立",fam:"引け値到達・未約定観測",
-     metric:"paper専用runner未検出 · live runner代用禁止",
+    {id:"pin-lottery",state:"live",added:"2026-07-26",state_data_at_jst:"2026-07-26T16:42:28+09:00",
+     name:"PIN-LOTTERY ライブ準備",fam:"引け値到達・未約定観測",
+     metric:"月曜14:50初弾候補 · 未約定なら売買コスト0",
      prog:{n:0,target:10,prev:0,label:"前向き実測"},
      arose:"引け値到達時だけ成立する稀な機会を、最小単元1銘柄・未約定時コスト0で前向きに測るため。",
-     verif:"preregと実装の監査済み境界は維持するが、broker送信を持たないpaper専用runnerが存在するまでlive runnerで代用しない。",
-     outcome:"候補は凍結済みだがpaper専用runner、固定release、paper task定義が未成立。本番・紙のいずれも実行済みとは表示しない。",
+     verif:"preregと実装の監査済み境界を維持し、14:50初弾では当選率と当選バイアスを記録する。未約定を失敗や費用発生へ読み替えない。",
+     outcome:"候補は凍結済みだが、最新postdeploy Bと共通Phase2 mini BはFAIL_CLOSED。月曜14:50のタスク登録・発注権限はまだ成立していない。",
      next:"当選・未約定を分けたクリーンな前向き実測10イベントが増額審査を開く。",
      sim:"未約定時の売買コストは0。注文を送れること自体は現在まだ未証明。"},
-    {id:"testa-5d",state:"grave",added:"2026-07-26",state_data_at_jst:"2026-07-27T01:18:14+09:00",
-     name:"TESTA-5D 墓標",fam:"凍結済み歴史一発",
-     metric:"検定死亡 · 生存率 0/1 · 平均 +42.07bp · p=0.1058 · BY=false",
-     prog:{n:1,target:1,prev:0,label:"凍結一発"},
+    {id:"testa-5d",state:"surviving",added:"2026-07-26",state_data_at_jst:"2026-07-26T16:42:28+09:00",
+     name:"TESTA-5D 一発検定待ち",fam:"凍結済み歴史一発",
+     metric:"一発検定未実行 · 残る門は独立B監査",
+     prog:{n:0,target:1,prev:0,label:"凍結一発"},
      arose:"Testaのイベント条件と5営業日スイングを、pre-2025固定入力で一度だけ検定するため。",
-     verif:"pre-2025固定入力の一発検定490イベントを独立Bが再構築し、結果行と集計を再照合。最大イベント日2024-12-20、最大決済日2024-12-30。",
-     outcome:"独立B判定はPASS_RESULT_RECHECK_DIED。平均は正でも資格判定は死亡。検定生存率0/1、first_passage=falseとして墓標登録済み。",
-     next:"033姉妹カードは作らず裁定12継承審査へ進めない。death seedはR-16のIR構造抽出完了後に別preregと法廷凍結を要する。",
-     sim:"選択式・選択閾値・銘柄は非公開。result handoffと独立B判定の集計値・生死・証拠SHAだけを表示する。"},
+     verif:"入力・prereg・freezeは固定済み。2026-07-26 15:13の独立B再監査は、append-only汚染台帳の全体SHA更新をrequest v2が追随していないためFAIL_CLOSEDとなり、launcherは動いていない。",
+     outcome:"仮説の生死は未判定。一発検定結果は存在せず、B PASSだけがlauncher前に残る門である。",
+     next:"B PASS後だけlauncherが一発検定を消費し、結果独立Bが生死を確定する。",
+     sim:"FAIL_CLOSEDを検定FAILへ読み替えず、結果0件を維持する。"},
     {id:"r20",state:"surviving",added:"2026-07-26",state_data_at_jst:"2026-07-26T16:42:28+09:00",
-     name:"R-20 残差監査",fam:"因子残差・記述監査",
-     metric:"B_month R² 0.191 · 因子調整後 +95.35bp/20日",
-     prog:{n:1,target:1,prev:0,label:"独立B監査"},
+     name:"暫定 R-20 残差監査",fam:"因子残差・記述監査",
+     metric:"暫定: B_month R² 0.191 · 因子調整後 +95.35bp/20日",
+     prog:{n:0,target:1,prev:0,label:"独立B監査"},
      arose:"D0v4-033の歴史平均が既知の市場・幅・モメンタム因子の変装か、固有の残余を持つかを増額審査前に記述測定するため。",
      verif:"pre-2025、決済日cluster OLS、可逆スプレッド3因子で測定。B_monthはR² 0.191392、因子調整後net20 mean +95.35bp、非年率残差Sharpe 0.119。A_weekはR² 0.197585、+36.59bp。",
-     outcome:"独立B v4 PASS。+95.35bp/20日の記述値を033増額審査の記述証拠束へ編入済み。資格証拠ではなく、資本変更を自動承認しない。",
-     next:"資本変更は、この記述証拠とは別のFable裁定と本人承認がある場合だけ審査する。",
-     sim:"description_only=true / qualification_evidence=false / fdr_consumed=false。夜間proxyは入力保持率86.63%が凍結下限95%を下回り未算出のままfail-close。"},
+     outcome:"暫定・B監査待ち。値は記述専用で、B PASS前は資格・増額・本番統治へ編入しない。",
+     next:"B PASS後に限り、分散込みの残差値を033の増額審査証拠束へ添付する。",
+     sim:"夜間proxyは入力保持率86.63%が凍結下限95%を下回り未算出のままfail-close。"},
     {id:"052",state:"paper",name:"D0v4-052 決算集中日ドリフト",fam:"イベントドリフト",
      metric:"+170.8bp/20日 · t=2.96 · 本日生存",
-     prog:{n:0,target:14,prev:0,label:"前向き解決"},
+     prog:{n:0,target:30,prev:0,label:"前向き解決"},
      arose:"決算が集中する日は1件あたりの注意が薄まり織り込みが遅れドリフトが太る（limited attention）。",
      verif:"高集中日(P75超=79件/日)の正サプライズ vs 低密度日の反条件。反条件は日次t=-0.89で符号分離＝『集中は条件である』が成立。",
      outcome:"生存（本日）。前向き専用。高集中日は年約60日で稼働率は低い。",
@@ -525,12 +495,11 @@ const DATA = {
      verif:"固定試行台帳で検定。",outcome:"死亡。事後救済は禁止。新データのみが独立な未来検定を作れる。",next:"—",sim:"—"},
 
     /* ===== 6月末〜の全数（試行台帳 logs/research/d0v4_fixed_trials.jsonl 実測）===== */
-    {id:"041fam",state:"surviving",name:"D0v4-041 家族（G7紙・G2死亡）",fam:"夜間持続",cells:8,
-     metric:"確認検定8/8通過後、前向き紙でG7継続・G2経済的死亡",
+    {id:"041fam",state:"paper",name:"D0v4-041 家族（8セル生存）",fam:"夜間持続",cells:8,
+     metric:"G1×3 / G2×3 / G7 / G8 — 全8セル SURVIVED_BY_FDR",
      arose:"HOT日の持続を出来高倍率×リターン×引け位置×サプライズで8定義に分解し確認検定。",
      verif:"79セルから分割スクリーニング→8セルが確認標本でBY-FDR通過(8/8)。うちG7/G2をカード化。",
-     outcome:"確認検定通過は過去事実。現在はG7が紙2/14、G2はDEATH_ECONOMIC_3SIGMAで、家族全体を現在生存とは扱わない。",
-     next:"G7だけ紙時計を継続し、G2墓標を保持する。",sim:"確認検定と前向き紙の状態を分離表示する。"},
+     outcome:"生存。ハーベスタ和集合の骨格。カード化は稼働率と重複で2枚に絞った。",next:"050で条件移植の限界を確定。",sim:"和集合でハーベスタへ。"},
     {id:"013",state:"surviving",name:"D0v4-013 対照陽性",fam:"探索",cells:1,
      metric:"記述+121bp · CONTROL_POSITIVE · 資格なし",
      arose:"対照群として置いた素朴な順張り定義。",verif:"記述測定で+121bpだが資格判定は通さず(横断のみ)。",
@@ -631,18 +600,18 @@ const DATA = {
 
   // 次フェーズへ進む条件（種→紙孵化→本番稼働）
   var PROMOTE={
-    pb1:"<b>次の門:</b> 日次停止を維持したまま、別裁定で指定された実証候補の全安全門を実測する（現在 NOT_AUTHORIZED） <b>時刻:</b> 別裁定時",
-    harvester:"紙で <b>n=14解決</b>（独立10営業日以上）→ L1〜L4境界照合 → 本人YESが別にある場合だけ審査。現在は4/14。",
-    "035":"紙 n=14 かつ 14:50判定precision≥0.90を維持 → 昇格カード提出 → 本人YESが別にある場合だけ審査。現在は7/14。",
-    "041fam":"041-G7はn=14まで紙時計を継続。041-G2は経済的死亡のため同じカードを再開しない。",
-    "041g7":"n=14解決 → 経済非棄却(L2)・整合(L1) → 本人YESが別にある場合だけ審査。現在は2/14。",
-    "041g2":"<b>次の門:</b> なし。DEATH_ECONOMIC_3SIGMAの墓標を保持し、同じカードを昇格・再開しない。",
-    "033":"<b>次の門:</b> 監査済みreleaseの実配備一致 → live task登録・readback → 対象時刻のQ1六条件実測。paper twinは配備・登録済みだが未実行。",
-    "pin-lottery":"<b>次の門:</b> paper専用runnerを新造するかPIN枠を凍結するFable裁定。live runnerで代用しない。",
-    "testa-5d":"<b>次の門:</b> 全門PASS（現在 PASS） <b>時刻:</b> 墓標・death seed登録済み",
-    "r20":"独立B v4と033記述証拠束への編入は完了。資本変更は別Fable裁定と本人承認がある場合だけ審査する。",
-    "052":"紙時計 n=14 → 境界照合 → 本人YESが別にある場合だけ審査。前向き専用。",
-    "039b":"紙時計 n=14 → 033との同時シグナル競合を紙期間に記録 → 本人YESが別にある場合だけ審査。",
+    pb1:"<b>次の門:</b> 裁定127の12行pass 1 seal（現在 PENDING） <b>時刻:</b> 即時（条件駆動）",
+    harvester:"紙で <b>n=30解決</b>（独立10営業日以上）→ L1〜L4境界クリア → <b>資金300万到達</b> → <b>本人YES</b>で実弾稼働。現在は前向き解決0/30（解決待ち）。",
+    "035":"紙 n=30 かつ 14:50判定precision≥0.90を維持 → 昇格カード提出 → 本人YESの檻へ。",
+    "041fam":"041二カードの時計始動（本日裁定済）→ n=30解決 → 境界クリア → 本人YES。",
+    "041g7":"n=30解決 → 経済非棄却(L2)・整合(L1) → 本人YES。",
+    "041g2":"n=30解決 → 境界クリア → 本人YES。",
+    "033":"<b>次の門:</b> 裁定127の12行pass 1 seal（現在 PENDING） <b>時刻:</b> 即時（条件駆動）",
+    "pin-lottery":"<b>次の門:</b> 裁定127の12行pass 1 seal（現在 PENDING） <b>時刻:</b> 即時（条件駆動）",
+    "testa-5d":"<b>次の門:</b> append-only台帳headへ追随したrequest v2再発行と独立B PASS（現在 FAIL_CLOSED） <b>時刻:</b> 時刻未登録（request v2再発行後）",
+    "r20":"<b>次の門:</b> design v2・評価器・X-only・残差出力の独立B監査（現在 PENDING） <b>時刻:</b> 時刻未登録",
+    "052":"<b>B監査PASS</b>（実装＝036同一の確認＋境界式検算）→ 紙時計開始 → n=30 → 本人YES。前向き専用。",
+    "039b":"前向き紙カード化 → n=30 → 本人YES。033と資本競合を紙期間に実測。",
     "013":"資格検定を通していない対照のため昇格経路になし。デトレンド義務の教材として残置。",
     "015":"観察陽性のみで資格化せず。定義はvr条件として041家族に吸収済み。",
     "012":"B監査PASS → 前向き紙へ。",
@@ -774,38 +743,15 @@ const DATA = {
     if(!v||v.denominator===0||v.value==null)return (v?v.numerator:0)+' / '+(v?v.denominator:0)+'（未観測）';
     return v.numerator+' / '+v.denominator+'（'+(v.value*100).toFixed(1)+'%）';
   }
-  function ratePercent(v){
-    if(!v||v.denominator===0||v.value==null)return "—";
-    return (v.value*100).toFixed(1)+"%";
-  }
   function renderFoundry(f){
-    var l=f.ledger,c=f.first_court,k=f.weekly_kpi,d=f.dividend_trials||{cards:[]};
+    var l=f.ledger,c=f.first_court,k=f.weekly_kpi;
     document.getElementById('foundryband').innerHTML=[
-      {n:ratePercent(k.new_born_rate),l:"新規BORN率",a:1},
-      {n:ratePercent(k.court_submission_rate),l:"法廷提出率"},
-      {n:ratePercent(k.freeze_rate),l:"凍結率"},
-      {n:ratePercent(k.test_survival_rate),l:"検定生存率"}
+      {n:l.today.total,l:"今日生まれた仮説",a:1},
+      {n:l.total,l:"誕生台帳 合計"},
+      {n:l.born,l:"BORN"},
+      {n:l.stillborn,l:"STILLBORN"},
+      {n:c.submitted,l:"法廷提出"}
     ].map(function(b){return '<div class="cell'+(b.a?' accent':'')+'"><b>'+b.n+'</b><i>'+b.l+'</i></div>';}).join('');
-    document.getElementById('stillbornsignal').innerHTML=
-      '<div><div class="n">'+l.stillborn+'</div><div class="l">STILLBORN 累計</div></div>'
-      +'<p><b>量でなく質。</b>死産の多さは、重複を通さない免疫系が働いている証明。これは仮説を増やす作品ではなく、仮説を測定する機械である。</p>';
-    document.getElementById('foundryvolume').innerHTML=[
-      {n:l.today.total,l:"今日の入力数（副次）"},
-      {n:l.total,l:"誕生台帳 合計（副次）"},
-      {n:l.born,l:"BORN 累計"},
-      {n:(f.current_funnel||{}).court_submitted,l:"法廷提出 累計"}
-    ].map(function(b){return '<div class="cell"><b>'+b.n+'</b><i>'+b.l+'</i></div>';}).join('');
-    document.getElementById('dividendtrack').innerHTML=d.cards.map(function(card){
-      var stages=card.stage_sequence.map(function(stage){
-        var cls=stage===card.current_state?'terminal':'done';
-        return '<span class="'+cls+'">'+stage+'</span>';
-      }).join(' → ');
-      return '<article class="trial-card"><h4>'+card.label+'</h4>'
-        +'<div class="trial-stage">'+stages+'</div>'
-        +'<p class="trial-metric"><b>現在 '+card.current_state+'</b> · n='+card.events_n
-        +' · net '+Number(card.mean_net_bp).toFixed(1)+'bp · p='+Number(card.raw_p_two_sided).toFixed(4)
-        +' · BY='+(card.by_pass?'PASS':'false')+'</p></article>';
-    }).join('');
     document.getElementById('courttable').innerHTML=
       '<tr><th>第1回法廷</th><th>状態</th><th style="text-align:right">件数</th></tr>'
       +'<tr><td class="nm">提出</td><td>法廷へ提出済み</td><td class="num">'+c.submitted+'</td></tr>'
@@ -814,12 +760,11 @@ const DATA = {
       +'<tr><td class="nm">部品</td><td>Phase2で選別</td><td class="num">'+c.parked_component+'</td></tr>'
       +'<tr><td class="nm">死産</td><td>非排他的集計 · '+c.overlap_note+'</td><td class="num">'+c.stillborn+'</td></tr>';
     document.getElementById('weeklytable').innerHTML=
-      '<tr><th>質KPIの計算</th><th>分子 / 分母</th><th style="text-align:right">値</th></tr>'
-      +'<tr><td class="nm">新規BORN率</td><td>本日BORN / 本日全入力</td><td class="num">'+rateCell(k.new_born_rate)+'</td></tr>'
+      '<tr><th>週次KPI</th><th>分子 / 分母</th><th style="text-align:right">値</th></tr>'
+      +'<tr><td class="nm">誕生数</td><td>台帳全件</td><td class="num">'+k.birth_count+'</td></tr>'
       +'<tr><td class="nm">法廷提出率</td><td>BORNを分母</td><td class="num">'+rateCell(k.court_submission_rate)+'</td></tr>'
       +'<tr><td class="nm">凍結率</td><td>法廷提出を分母</td><td class="num">'+rateCell(k.freeze_rate)+'</td></tr>'
-      +'<tr><td class="nm">検定生存率</td><td>完了一発を分母</td><td class="num">'+rateCell(k.test_survival_rate)+'</td></tr>'
-      +'<tr><td class="nm">誕生数（副次）</td><td>台帳全件</td><td class="num">'+k.birth_count+'</td></tr>';
+      +'<tr><td class="nm">検定生存率</td><td>完了一発を分母</td><td class="num">'+rateCell(k.test_survival_rate)+'</td></tr>';
   }
   function renderDefects(d){
     if(!d)return;
@@ -828,17 +773,6 @@ const DATA = {
       {n:d.status_counts.BLOCKED,l:"外部・前段待ち"},
       {n:d.status_counts.CLOSED,l:"解除済み"}
     ].map(function(x){return '<div class="stat'+(x.a?' active':'')+'"><div class="n">'+x.n+'</div><div class="l">'+x.l+'</div></div>';}).join('');
-  }
-  function renderOperations(o){
-    var el=document.getElementById('operationband');if(!el||!o)return;
-    el.style.display='';
-    el.innerHTML=[
-      {n:o.label_ja,l:o.trade_date,a:1},
-      {n:o.reason_class,l:"見送り理由"},
-      {n:"¥"+Number(o.realized_trade_loss_jpy).toLocaleString(),l:"実現取引損失"},
-      {n:o.sendorder_count,l:"送信注文数"},
-      {n:"7/28 00:05",l:"次の共通門"}
-    ].map(function(x){return '<div class="cell'+(x.a?' accent':'')+'"><b>'+x.n+'</b><i>'+x.l+'</i></div>';}).join('');
   }
   renderData(EMBEDDED_STATS);
   // 自動更新中インジケータ：ブラウザが2分ごとに再取得している「生きている」ことを可視化。
@@ -859,7 +793,6 @@ const DATA = {
           if(d.data_stats){var s=d.data_stats;s.generated_at_jst=d.public_surface_generated_at_jst||d.generated_at_jst;renderData(s);}
           if(d.foundry){renderFoundry(d.foundry);}
           if(d.defects){renderDefects(d.defects);}
-          if(d.operations){renderOperations(d.operations);}
           if(d.active_cards){
             if(window.__mergeActiveCards)window.__mergeActiveCards(d.active_cards);
             else window.__pendingActiveCards=d.active_cards;
@@ -977,11 +910,7 @@ const DATA = {
     var key=JSON.stringify(hp);
     if(key===__lastProg) return;   // 値が同じなら再描画しない（カードの開閉・フィルタ選択を保持）
     __lastProg=key;
-    DATA.hyps.forEach(function(h){
-      if(!hp[h.id])return;
-      h.prog=Object.assign({},h.prog||{},hp[h.id]);
-      if(hp[h.id].state)h.state=hp[h.id].state;
-    });
+    DATA.hyps.forEach(function(h){ if(hp[h.id]){ h.prog=Object.assign({}, h.prog||{}, hp[h.id]); } });
     renderCards();
   };
 
