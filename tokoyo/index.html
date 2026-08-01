@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>常世 — CHIERO</title>
+<meta name="description" content="私たちが生きているこの世ではなく、数学という、物理的にはどこにも存在しない世界。そこに在るものを、こちら側の画面に映しています。">
+<meta property="og:title" content="常世">
+<meta property="og:description" content="描いているのではありません。式を書くと、もういます。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://art.chiero.jp/tokoyo/">
+<link rel="canonical" href="https://art.chiero.jp/tokoyo/">
+<style>
+  :root{
+    --red:#E60012; --ink:#F2F2F4; --sub:#9A9AA0; --faint:#6E6E74;
+    --paper:#0B0B0D; --alt:#141416; --line:#26262B;
+    --g:"Hiragino Sans","Yu Gothic Medium","Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;
+    --m:"Hiragino Mincho ProN","Yu Mincho",serif;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--g);
+    font-size:15.5px;line-height:2;font-feature-settings:"palt" 1;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+
+  header{padding:92px 0 0}
+  .mark{display:inline-block;width:9px;height:9px;background:var(--red);
+    margin-bottom:26px}
+  h1{font-family:var(--m);font-weight:600;font-size:clamp(34px,7vw,52px);
+    letter-spacing:.14em;line-height:1.2;margin:0 0 6px}
+  .yomi{font-size:12px;letter-spacing:.3em;color:var(--faint);margin:0 0 44px}
+
+  .thesis{font-family:var(--m);font-size:clamp(17px,2.6vw,21px);line-height:2.15;
+    letter-spacing:.03em;max-width:34em;margin:0 0 30px;color:var(--ink)}
+  .thesis em{font-style:normal;color:var(--ink)}
+  .lede{font-size:14.5px;line-height:2.1;color:var(--sub);max-width:36em;margin:0 0 8px}
+
+  hr{border:0;border-top:1px solid var(--line);margin:74px 0 0}
+
+  .works{display:grid;gap:30px;padding:46px 0 0;
+    grid-template-columns:repeat(auto-fit,minmax(min(400px,100%),1fr))}
+  figure{margin:0;background:#0E0E11;border:1px solid var(--line);border-radius:5px;
+    overflow:hidden;min-width:0}
+  /* kami が canvas に inline で幅を書くので、面側で上書きして流動化する */
+  figure canvas{width:100%!important;height:auto!important;display:block}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:10px;
+    padding:13px 16px 14px;border-top:1px solid var(--line)}
+  .t{display:flex;align-items:baseline;gap:11px;min-width:0}
+  figcaption{font-family:var(--m);font-size:16.5px;letter-spacing:.1em}
+  .sec{font-size:11px;color:var(--faint);white-space:nowrap}
+  button{font-family:var(--g);font-size:11.5px;font-weight:700;letter-spacing:.06em;
+    color:var(--paper);background:var(--ink);border:0;border-radius:3px;
+    padding:8px 13px;cursor:pointer;white-space:nowrap}
+  button:hover{background:var(--sub)}
+  button.done{background:transparent;color:var(--faint);box-shadow:inset 0 0 0 1px var(--line)}
+
+  .note{font-size:13px;line-height:2.05;color:var(--faint);max-width:38em;margin:64px 0 0}
+  .note b{color:var(--sub);font-weight:400}
+
+  footer{margin:78px 0 0;border-top:1px solid var(--line);padding:30px 0 96px;
+    display:flex;flex-wrap:wrap;gap:14px 26px;align-items:baseline;
+    font-size:13px;color:var(--faint)}
+  footer a{color:var(--sub);text-decoration:none;border-bottom:1px solid var(--line);
+    padding-bottom:1px}
+  footer a:hover{color:var(--ink)}
+
+  @media (max-width:560px){
+    header{padding-top:62px}
+    .wrap{padding:0 20px}
+    .works{gap:22px}
+  }
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="mark"></span>
+    <h1>常世</h1>
+    <p class="yomi">TOKOYO</p>
+
+    <p class="thesis">
+      私たちが生きているこの世ではなく、<br>
+      数学という、物理的にはどこにも存在しない世界があります。<br>
+      ここに置いているのは、そこに在るものです。
+    </p>
+    <p class="lede">
+      描いているのではありません。式を書くと、もういます。<br>
+      走らせていない間も式の中にいて、走らせるたび同じ姿で現れます。歳を取りません。
+    </p>
+    <p class="lede">
+      式は、それぞれの画の中に置いてあります。
+    </p>
+  </header>
+
+  <hr>
+
+  <div class="works" id="works"></div>
+
+  <p class="note">
+    点は画面の実ピクセルひとつぶん。同じ点に何度重なったかを濃さに変えているので、
+    薄いところと濃いところは同じ式から立ち上がっています。前の瞬間の光を少しだけ残すので、
+    時間が画に層として溜まります。<br>
+    <b>方眼を敷いてあるものと、敷いていないものがあります。</b>
+    場そのものを描いているものには座標系があるのが正しく、
+    そこに居るものには、周りが測れない方がよいからです。<br>
+    画の下に出ている式は、いま動いている関数の原文そのものです。書き写しではありません。
+  </p>
+
+  <footer>
+    <span>常世 — CHIERO</span>
+    <a href="https://chiero.jp/">chiero.jp</a>
+    <a href="https://art.chiero.jp/">ほかの作品</a>
+    <span>#つぶやきProcessing</span>
+  </footer>
+</div>
+
+<script src="./kami.js"></script>
+<script src="./works.js"></script>
+<script>
+const host = document.getElementById('works');
+for (const work of WORKS) {
+  const fig = document.createElement('figure');
+  const box = document.createElement('div');
+  fig.appendChild(box);
+  host.appendChild(fig);
+
+  const k = kami(Object.assign({ mount: box, size: 520, step: TAU / 300 }, STYLE, work));
+
+  const bar = document.createElement('div'); bar.className = 'bar';
+  const t = document.createElement('div'); t.className = 't';
+  const cap = document.createElement('figcaption'); cap.textContent = work.name;
+  const sec = document.createElement('span'); sec.className = 'sec';
+  sec.textContent = (work.loop * 5).toFixed(0) + '秒でひと巡り';
+  t.append(cap, sec);
+
+  const btn = document.createElement('button'); btn.textContent = '式をコピー';
+  btn.onclick = async () => {
+    try { await navigator.clipboard.writeText(k.src); }
+    catch { const ta = document.createElement('textarea'); ta.value = k.src;
+            document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); }
+    btn.textContent = 'コピーしました'; btn.className = 'done';
+    setTimeout(() => { btn.textContent = '式をコピー'; btn.className = ''; }, 1600);
+  };
+  bar.append(t, btn);
+  fig.appendChild(bar);
+}
+</script>
+</html>
