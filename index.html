@@ -839,13 +839,16 @@ const DATA = {
   }
   function renderOperations(o){
     var el=document.getElementById('operationband');if(!el||!o)return;
+    function known(v){return v===null||typeof v==='undefined'?"UNKNOWN":v;}
+    var orderState=o.orders_sent===false?"なし":(o.orders_sent===true?"あり":"UNKNOWN");
     el.style.display='';
     el.innerHTML=[
       {n:o.label_ja,l:o.trade_date,a:1},
       {n:o.reason_class,l:"見送り理由"},
-      {n:"¥"+Number(o.realized_trade_loss_jpy).toLocaleString(),l:"実現取引損失"},
-      {n:o.sendorder_count,l:"送信注文数"},
-      {n:"7/28 00:05",l:"次の共通門"}
+      {n:o.no_trade_class,l:"No-Trade区分"},
+      {n:orderState,l:"注文送信"},
+      {n:known(o.sendorder_count),l:"送信注文数"},
+      {n:known(o.next_gate_ja),l:"次の門"}
     ].map(function(x){return '<div class="cell'+(x.a?' accent':'')+'"><b>'+x.n+'</b><i>'+x.l+'</i></div>';}).join('');
   }
   renderData(EMBEDDED_STATS);
