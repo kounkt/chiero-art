@@ -1,18 +1,17 @@
 {
   "schema": "public_site_data_v1",
   "generated_at_jst": "2026-08-01",
-  "public_surface_generated_at_jst": "2026-08-01",
   "data_stats": {
     "datasets": [
       {
         "nm": "分足バー",
         "desc": "500営業日 · 2024-07〜直近",
-        "rows": 234936073
+        "rows": 232438161
       },
       {
         "nm": "日足バー",
         "desc": "全上場銘柄 · 2016〜（10年）",
-        "rows": 10145071
+        "rows": 10122856
       },
       {
         "nm": "指数（TOPIX等）",
@@ -22,17 +21,17 @@
       {
         "nm": "決算サマリ",
         "desc": "108項目/件 · 単独/連結",
-        "rows": 191111
+        "rows": 190955
       },
       {
         "nm": "TDnet開示索引",
         "desc": "適時開示イベント",
-        "rows": 765121
+        "rows": 765091
       },
       {
         "nm": "XBRL財務文書",
         "desc": "構造化財務（件数）",
-        "rows": 129095
+        "rows": 128710
       },
       {
         "nm": "EDINET本文",
@@ -50,14 +49,14 @@
         "rows": 2993
       }
     ],
-    "rows_total": 246039819,
-    "cells_total": 2550897914,
-    "docs_total": 175147,
+    "rows_total": 243519506,
+    "cells_total": 2525523961,
+    "docs_total": 174762,
     "gb": 197.174,
     "storage": {
-      "measured_at_jst": "2026-08-01T15:11:11+0900",
-      "receipt_path": "logs/build_evidence/public_site_data_measurement_20260801151111.json",
-      "receipt_sha256": "84eab777eaa1ee47154f175850087acfc5cd090598475ab218cea39037abf08d",
+      "measured_at_jst": "2026-08-01T15:22:46+0900",
+      "receipt_path": "logs/build_evidence/public_site_data_measurement_20260801152246.json",
+      "receipt_sha256": "d168dbbe92d822661f2b0f8ab7b2222da43929daa85ff92ad350aa4667b28eae",
       "total_bytes": 211714048000,
       "total_gib": 197.174,
       "categories": [
@@ -96,43 +95,36 @@
       ]
     }
   },
-  "storage_refresh": {
-    "status": "PASS",
-    "measured_at_jst": "2026-08-01T15:11:11+0900",
-    "preserved_last_verified_measurement": false,
-    "orders_sent": false,
-    "sendorder_count": 0
-  },
   "foundry": {
     "ledger": {
-      "total": 47,
-      "born": 43,
-      "stillborn": 4,
+      "total": 254,
+      "born": 46,
+      "stillborn": 208,
       "today": {
         "date_jst": "2026-08-01",
         "total": 0,
         "born": 0,
         "stillborn": 0
       },
-      "latest_generated_at_jst": "2026-07-25T08:00:00+09:00",
+      "latest_generated_at_jst": "2026-07-30T07:00:00+09:00",
       "latest_public_birth_ids": [
-        "DR3-004-LONG-MATCHED-BENCHMARK-PAIR-GATE-V1",
-        "DR3-005-COURT-SHELF-RELEASE-EVIDENCE-GATE-V1",
-        "DR3-006-PHYSICAL-PRE2025-PARTITION-GATE-V1",
-        "BH-20260725T08-01-88ff0e3ee4",
-        "BH-20260725T08-02-cd4b049d56"
+        "BH-20260729T14-01-c09c9c57f6",
+        "BH-20260729T14-02-98d3dca249",
+        "BH-20260729T15-01-84d4baa9a2",
+        "BH-20260729T15-02-a1dccacefd",
+        "BH-20260730T07-01-e4c770eaec"
       ],
       "repository": "art-daytrader-public-runtime",
       "path": "research_hypothesis_foundry/perpetual/births_ledger.jsonl",
-      "sha256": "829c953ef6370dcb8dc02d281e2d4c03acd350e156d5620c64970256b65e5494",
-      "head_sha256": "e5f7693cced85df3fc07caea94aab6eedb282bab7f689a671667063c34d5e943",
+      "sha256": "204e93261656b3235897b47e9886291f7acc2a01623d3097de38e41125a19155",
+      "head_sha256": "92a7576eb71a46797da80ddee3eafdea1b3d58c3d6448f58141447b6dd225d10",
       "snapshot": {
         "mode": "APPEND_ONLY_PREFIX",
-        "captured_at_jst": "2026-08-01T15:11:11+0900",
-        "source_git_commit": "302f1ae36c41c0669d19e2b7363f699955f07e57",
-        "line_count": 47,
-        "prefix_sha256": "829c953ef6370dcb8dc02d281e2d4c03acd350e156d5620c64970256b65e5494",
-        "head_record_sha256": "e5f7693cced85df3fc07caea94aab6eedb282bab7f689a671667063c34d5e943",
+        "captured_at_jst": "2026-08-01T15:22:22+0900",
+        "source_git_commit": "13366af61c5a76f25cb4b3fdac67e9b64a4ad1dd",
+        "line_count": 254,
+        "prefix_sha256": "204e93261656b3235897b47e9886291f7acc2a01623d3097de38e41125a19155",
+        "head_record_sha256": "92a7576eb71a46797da80ddee3eafdea1b3d58c3d6448f58141447b6dd225d10",
         "later_appends_allowed": true,
         "prefix_mutation_allowed": false
       }
@@ -150,7 +142,7 @@
       "source_sha256": "c52f1ae060db6c9052505ff4aeb6852bf454ed59516911190178fbc7b86b79cd"
     },
     "weekly_kpi": {
-      "birth_count": 47,
+      "birth_count": 254,
       "new_born_rate": {
         "numerator": 0,
         "denominator": 0,
@@ -158,8 +150,8 @@
       },
       "court_submission_rate": {
         "numerator": 5,
-        "denominator": 43,
-        "value": 0.11627906976744186
+        "denominator": 46,
+        "value": 0.10869565217391304
       },
       "freeze_rate": {
         "numerator": 3,
@@ -173,7 +165,7 @@
       }
     },
     "current_funnel": {
-      "born": 43,
+      "born": 46,
       "court_submitted": 5,
       "frozen": 3,
       "one_shot_completed": 3,
@@ -307,13 +299,109 @@
     "repository": "art-daytrader-fable-28-53",
     "ledger_path": "governance/DEFECT_LEDGER.md",
     "ledger_sha256": "7460ddd188d51c3bb3717a88cf6a83f4a9b7baccfbe3c0bf72e7a92405bc028d",
-    "measured_at_jst": "2026-08-01T15:11:11+0900",
+    "measured_at_jst": "2026-08-01T15:22:22+0900",
     "orders_sent": false,
     "sendorder_count": 0
   },
+  "hyp_progress": {
+    "pb1": {
+      "n": 0,
+      "target": 1,
+      "label": "実証未成立",
+      "prev": 0
+    },
+    "harvester": {
+      "n": 7,
+      "target": 14,
+      "label": "前向き解決",
+      "prev": 7
+    },
+    "035": {
+      "n": 3,
+      "target": 14,
+      "label": "前向き解決",
+      "prev": 3
+    },
+    "041g7": {
+      "n": 1,
+      "target": 14,
+      "label": "前向き解決",
+      "prev": 1
+    },
+    "041g2": {
+      "n": 6,
+      "target": 14,
+      "label": "前向き解決",
+      "prev": 6
+    },
+    "039b": {
+      "n": 0,
+      "target": 14,
+      "label": "前向き解決",
+      "prev": 0
+    },
+    "033": {
+      "n": 0,
+      "target": 14,
+      "label": "前向き解決",
+      "prev": 0
+    },
+    "052": {
+      "n": 0,
+      "target": 14,
+      "label": "前向き解決",
+      "prev": 0
+    }
+  },
+  "aggregates": {
+    "current": {
+      "counts": {
+        "live": 1,
+        "paper": 6,
+        "surviving": 8,
+        "grave": 29,
+        "seed": 9
+      },
+      "exclusive_counts": {
+        "live": 1,
+        "paper": 6,
+        "surviving": 7,
+        "grave": 29,
+        "seed": 9
+      },
+      "total_defs": 107,
+      "dead_defs": 79,
+      "cards": 52,
+      "analyst_days": 412,
+      "saved_total": 44380000
+    },
+    "prev": {
+      "counts": {
+        "live": 1,
+        "paper": 6,
+        "surviving": 8,
+        "grave": 29,
+        "seed": 9
+      },
+      "exclusive_counts": {
+        "live": 1,
+        "paper": 6,
+        "surviving": 7,
+        "grave": 29,
+        "seed": 9
+      },
+      "total_defs": 107,
+      "dead_defs": 79,
+      "cards": 52,
+      "analyst_days": 412,
+      "saved_total": 44380000
+    },
+    "prev_date": "2026-07-31"
+  },
+  "progress_checked_at": "2026-08-01 15:22",
   "active_cards": {
     "schema": "public_active_cards_v2",
-    "state_data_at_jst": "2026-08-01T15:11:11+09:00",
+    "state_data_at_jst": "2026-08-01T15:22:22+09:00",
     "governance_revision": {
       "ruling": "Fable裁定231(a)",
       "source_mode": "canonical_files_direct"
@@ -501,7 +589,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-01T15:11:11+09:00",
+        "state_data_at_jst": "2026-08-01T15:22:22+09:00",
         "evidence": [
           {
             "path": "governance/micro_allocation_boundary_v2_20260725.json",
@@ -562,7 +650,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-01T15:11:11+09:00",
+        "state_data_at_jst": "2026-08-01T15:22:22+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_033_V6_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T143446+0900.json",
@@ -678,7 +766,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-01T15:11:11+09:00",
+        "state_data_at_jst": "2026-08-01T15:22:22+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_PIN_LOTTERY_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T140307+0900.json",
@@ -764,7 +852,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-01T15:11:11+09:00",
+        "state_data_at_jst": "2026-08-01T15:22:22+09:00",
         "evidence": [
           {
             "path": "governance/rulings141_20260727/testa_swing5d_result_site_handoff_r141.json",
@@ -825,7 +913,7 @@
         "provisional": false,
         "description_only": true,
         "qualification_evidence": false,
-        "state_data_at_jst": "2026-08-01T15:11:11+09:00",
+        "state_data_at_jst": "2026-08-01T15:22:22+09:00",
         "evidence": [
           {
             "path": "research/r20_residual_audit_v2_20260726/d0v4_033/provisional_result.json",
@@ -876,7 +964,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-01T15:11:11+09:00",
+        "state_data_at_jst": "2026-08-01T15:22:22+09:00",
         "evidence": [
           {
             "path": "reports/A3_FABLE_RULING221_052_PUBLIC_DISPLAY_HANDOFF_20260728T153600+0900.json",
@@ -899,6 +987,25 @@
     "orders_sent": false,
     "sendorder_count": 0
   },
+  "storage_refresh": {
+    "status": "PASS",
+    "measured_at_jst": "2026-08-01T15:22:46+0900",
+    "preserved_last_verified_measurement": false
+  },
+  "public_surface_generated_at_jst": "2026-08-01",
+  "freshness": {
+    "status": "PASS",
+    "checked_at_jst": "2026-08-01T15:22:46+09:00",
+    "state_data_at_jst": "2026-08-01T15:22:22+09:00",
+    "age_seconds": 24.929,
+    "max_age_seconds": 1800,
+    "canonical_source_count": 39,
+    "canonical_source_set_sha256": "9bd9c27bab843df986e564344a899983a21dc98d171b0213a0413d998e811b29",
+    "card_source_set_sha256": "969350b4de68933687be8f0f960bf432e79118d58a0c2f17f42197af292ed5cf",
+    "orders_sent": false,
+    "sendorder_count": 0
+  },
+  "public_surface_state_at_jst": "2026-08-01T15:22:46+09:00",
   "operations": {
     "trade_date": "2026-08-01",
     "status": "MARKET_CLOSED",
@@ -1036,115 +1143,5 @@
         ]
       }
     ]
-  },
-  "hyp_progress": {
-    "pb1": {
-      "n": 0,
-      "target": 1,
-      "label": "実証未成立",
-      "prev": 0
-    },
-    "harvester": {
-      "n": 4,
-      "target": 14,
-      "label": "前向き解決",
-      "prev": 4
-    },
-    "035": {
-      "n": 7,
-      "target": 14,
-      "label": "前向き解決",
-      "prev": 7
-    },
-    "041g7": {
-      "n": 2,
-      "target": 14,
-      "label": "前向き解決",
-      "prev": 2
-    },
-    "041g2": {
-      "n": 18,
-      "target": 14,
-      "label": "経済的死亡",
-      "prev": 18,
-      "state": "grave"
-    },
-    "039b": {
-      "n": 0,
-      "target": 14,
-      "label": "前向き解決",
-      "prev": 0
-    },
-    "033": {
-      "n": 0,
-      "target": 14,
-      "label": "前向き解決",
-      "prev": 0
-    },
-    "052": {
-      "n": 0,
-      "target": 14,
-      "label": "前向き解決",
-      "prev": 0
-    }
-  },
-  "aggregates": {
-    "current": {
-      "counts": {
-        "live": 1,
-        "paper": 6,
-        "surviving": 8,
-        "grave": 29,
-        "seed": 9
-      },
-      "exclusive_counts": {
-        "live": 1,
-        "paper": 6,
-        "surviving": 7,
-        "grave": 29,
-        "seed": 9
-      },
-      "total_defs": 107,
-      "dead_defs": 79,
-      "cards": 52,
-      "analyst_days": 412,
-      "saved_total": 44380000
-    },
-    "prev": {
-      "counts": {
-        "live": 1,
-        "paper": 6,
-        "surviving": 8,
-        "grave": 29,
-        "seed": 9
-      },
-      "exclusive_counts": {
-        "live": 1,
-        "paper": 6,
-        "surviving": 7,
-        "grave": 29,
-        "seed": 9
-      },
-      "total_defs": 107,
-      "dead_defs": 79,
-      "cards": 52,
-      "analyst_days": 412,
-      "saved_total": 44380000
-    },
-    "prev_date": "2026-07-28"
-  },
-  "freshness": {
-    "status": "PASS",
-    "checked_at_jst": "2026-08-01T15:11:11+09:00",
-    "state_data_at_jst": "2026-08-01T15:11:11+09:00",
-    "age_seconds": 0.752,
-    "max_age_seconds": 1800,
-    "canonical_source_count": 39,
-    "canonical_source_set_sha256": "0676856563855b8794ff2958a536c04f4c7468a6b2189be03a29c5723447ed05",
-    "card_source_set_sha256": "969350b4de68933687be8f0f960bf432e79118d58a0c2f17f42197af292ed5cf",
-    "orders_sent": false,
-    "sendorder_count": 0
-  },
-  "public_surface_state_at_jst": "2026-08-01T15:11:11+09:00",
-  "progress_checked_at": "2026-08-01 15:11"
+  }
 }
