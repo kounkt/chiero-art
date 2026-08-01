@@ -127,7 +127,7 @@
   .note b{color:var(--sub);font-weight:600}
 
   .band{display:flex;flex-wrap:wrap;gap:0;margin:26px 0 8px;border:1px solid var(--line);border-radius:5px;overflow:hidden}
-  .band .cell{flex:1 1 0;min-width:120px;padding:18px 16px;border-right:1px solid var(--line)}
+  .band .cell{flex:1 1 0;min-width:120px;padding:18px 16px;border-right:1px solid var(--line);overflow-wrap:anywhere}
   .band .cell:last-child{border-right:none}
   .band b{display:block;font-family:var(--g);font-size:30px;font-weight:700;line-height:1.1;letter-spacing:-.01em}
   .band i{display:block;font-style:normal;font-size:11.5px;color:var(--faint);margin-top:5px;letter-spacing:.02em}
@@ -840,16 +840,33 @@ const DATA = {
   function renderOperations(o){
     var el=document.getElementById('operationband');if(!el||!o)return;
     function known(v){return v===null||typeof v==='undefined'?"UNKNOWN":v;}
+    function rawAttr(v){return String(known(v)).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+    function operationReasonLabel(v){
+      var labels={MARKET_CLOSED:"市場休",NO_ELIGIBLE_CANDIDATE:"候補なし",INFRA:"インフラ停止",DAILY_OPERATION_TERMINAL_RECEIPT_MISSING:"記録欠測",UNKNOWN:"不明"};
+      return Object.prototype.hasOwnProperty.call(labels,v)?labels[v]:"不明";
+    }
+    function noTradeClassLabel(v){
+      var labels={NOT_APPLICABLE:"該当なし",NORMAL_NO_TRADE:"正常",CAGE_INCIDENT_NO_TRADE:"檻事故",UNKNOWN:"不明"};
+      return Object.prototype.hasOwnProperty.call(labels,v)?labels[v]:"不明";
+    }
+    function shortNextGate(v){
+      if(v===null||typeof v==='undefined')return "不明";
+      var text=String(v),date=text.match(/^(\d{4})-(\d{2})-(\d{2})/);
+      if(date)return Number(date[2])+"/"+Number(date[3])+" 朝";
+      if(text.indexOf("次の営業日")===0)return "次の営業日";
+      if(text.indexOf("欠測")===0)return "記録待ち";
+      return text.length<=8?text:"詳細あり";
+    }
     var orderState=o.orders_sent===false?"なし":(o.orders_sent===true?"あり":"UNKNOWN");
     el.style.display='';
     el.innerHTML=[
-      {n:o.label_ja,l:o.trade_date,a:1},
-      {n:o.reason_class,l:"見送り理由"},
-      {n:o.no_trade_class,l:"No-Trade区分"},
-      {n:orderState,l:"注文送信"},
-      {n:known(o.sendorder_count),l:"送信注文数"},
-      {n:known(o.next_gate_ja),l:"次の門"}
-    ].map(function(x){return '<div class="cell'+(x.a?' accent':'')+'"><b>'+x.n+'</b><i>'+x.l+'</i></div>';}).join('');
+      {n:o.label_ja,l:o.trade_date,a:1,raw:o.status},
+      {n:operationReasonLabel(o.reason_class),l:"見送り理由",raw:o.reason_class},
+      {n:noTradeClassLabel(o.no_trade_class),l:"No-Trade区分",raw:o.no_trade_class},
+      {n:orderState,l:"注文送信",raw:o.orders_sent},
+      {n:known(o.sendorder_count),l:"送信注文数",raw:o.sendorder_count},
+      {n:shortNextGate(o.next_gate_ja),l:"次の門",raw:o.next_gate_ja}
+    ].map(function(x){var raw=rawAttr(x.raw);return '<div class="cell'+(x.a?' accent':'')+'"><b title="'+raw+'" data-raw="'+raw+'">'+x.n+'</b><i>'+x.l+'</i></div>';}).join('');
   }
   renderData(EMBEDDED_STATS);
   // 自動更新中インジケータ：ブラウザが2分ごとに再取得している「生きている」ことを可視化。
