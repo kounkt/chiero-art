@@ -1,17 +1,18 @@
 {
   "schema": "public_site_data_v1",
   "generated_at_jst": "2026-08-04",
+  "public_surface_generated_at_jst": "2026-08-04",
   "data_stats": {
     "datasets": [
       {
         "nm": "分足バー",
         "desc": "500営業日 · 2024-07〜直近",
-        "rows": 232438161
+        "rows": 234936073
       },
       {
         "nm": "日足バー",
         "desc": "全上場銘柄 · 2016〜（10年）",
-        "rows": 10122856
+        "rows": 10145071
       },
       {
         "nm": "指数（TOPIX等）",
@@ -21,17 +22,17 @@
       {
         "nm": "決算サマリ",
         "desc": "108項目/件 · 単独/連結",
-        "rows": 190955
+        "rows": 191111
       },
       {
         "nm": "TDnet開示索引",
         "desc": "適時開示イベント",
-        "rows": 765091
+        "rows": 765121
       },
       {
         "nm": "XBRL財務文書",
         "desc": "構造化財務（件数）",
-        "rows": 128710
+        "rows": 129095
       },
       {
         "nm": "EDINET本文",
@@ -49,14 +50,14 @@
         "rows": 2993
       }
     ],
-    "rows_total": 243519506,
-    "cells_total": 2525523961,
-    "docs_total": 174762,
+    "rows_total": 246039819,
+    "cells_total": 2550897914,
+    "docs_total": 175147,
     "gb": 197.27,
     "storage": {
-      "measured_at_jst": "2026-08-04T01:52:59+0900",
-      "receipt_path": "logs/build_evidence/public_site_data_measurement_20260804015259.json",
-      "receipt_sha256": "75cdaf51fda40b02e02594e1145d673959e8a49f44d13b090ad20fb6ffaa159e",
+      "measured_at_jst": "2026-08-04T02:26:36+0900",
+      "receipt_path": "logs/build_evidence/public_site_data_measurement_20260804022636.json",
+      "receipt_sha256": "b0b128b0e80cd6e7652301287580c70673ee7af8042f96a3d579f81ce55bda1c",
       "total_bytes": 211817332736,
       "total_gib": 197.27,
       "categories": [
@@ -95,6 +96,11 @@
       ]
     }
   },
+  "storage_refresh": {
+    "status": "PASS",
+    "measured_at_jst": "2026-08-04T02:26:36+0900",
+    "preserved_last_verified_measurement": false
+  },
   "foundry": {
     "ledger": {
       "total": 254,
@@ -120,7 +126,7 @@
       "head_sha256": "92a7576eb71a46797da80ddee3eafdea1b3d58c3d6448f58141447b6dd225d10",
       "snapshot": {
         "mode": "APPEND_ONLY_PREFIX",
-        "captured_at_jst": "2026-08-04T02:23:28+0900",
+        "captured_at_jst": "2026-08-04T02:26:27+0900",
         "source_git_commit": "13366af61c5a76f25cb4b3fdac67e9b64a4ad1dd",
         "line_count": 254,
         "prefix_sha256": "204e93261656b3235897b47e9886291f7acc2a01623d3097de38e41125a19155",
@@ -299,109 +305,13 @@
     "repository": "art-daytrader-fable-28-53",
     "ledger_path": "governance/DEFECT_LEDGER.md",
     "ledger_sha256": "7460ddd188d51c3bb3717a88cf6a83f4a9b7baccfbe3c0bf72e7a92405bc028d",
-    "measured_at_jst": "2026-08-04T02:23:28+0900",
+    "measured_at_jst": "2026-08-04T02:26:28+0900",
     "orders_sent": false,
     "sendorder_count": 0
   },
-  "hyp_progress": {
-    "pb1": {
-      "n": 0,
-      "target": 1,
-      "label": "実証未成立",
-      "prev": 0
-    },
-    "harvester": {
-      "n": 7,
-      "target": 14,
-      "label": "前向き解決",
-      "prev": 7
-    },
-    "035": {
-      "n": 3,
-      "target": 14,
-      "label": "前向き解決",
-      "prev": 3
-    },
-    "041g7": {
-      "n": 1,
-      "target": 14,
-      "label": "前向き解決",
-      "prev": 1
-    },
-    "041g2": {
-      "n": 6,
-      "target": 14,
-      "label": "前向き解決",
-      "prev": 6
-    },
-    "039b": {
-      "n": 0,
-      "target": 14,
-      "label": "前向き解決",
-      "prev": 0
-    },
-    "033": {
-      "n": 0,
-      "target": 14,
-      "label": "前向き解決",
-      "prev": 0
-    },
-    "052": {
-      "n": 0,
-      "target": 14,
-      "label": "前向き解決",
-      "prev": 0
-    }
-  },
-  "aggregates": {
-    "current": {
-      "counts": {
-        "live": 1,
-        "paper": 6,
-        "surviving": 8,
-        "grave": 29,
-        "seed": 9
-      },
-      "exclusive_counts": {
-        "live": 1,
-        "paper": 6,
-        "surviving": 7,
-        "grave": 29,
-        "seed": 9
-      },
-      "total_defs": 107,
-      "dead_defs": 79,
-      "cards": 52,
-      "analyst_days": 412,
-      "saved_total": 44380000
-    },
-    "prev": {
-      "counts": {
-        "live": 1,
-        "paper": 6,
-        "surviving": 8,
-        "grave": 29,
-        "seed": 9
-      },
-      "exclusive_counts": {
-        "live": 1,
-        "paper": 6,
-        "surviving": 7,
-        "grave": 29,
-        "seed": 9
-      },
-      "total_defs": 107,
-      "dead_defs": 79,
-      "cards": 52,
-      "analyst_days": 412,
-      "saved_total": 44380000
-    },
-    "prev_date": "2026-08-03"
-  },
-  "progress_checked_at": "2026-08-04 02:23",
   "active_cards": {
     "schema": "public_active_cards_v2",
-    "state_data_at_jst": "2026-08-04T02:23:28+09:00",
+    "state_data_at_jst": "2026-08-04T02:26:28+09:00",
     "governance_revision": {
       "ruling": "Fable裁定231(a)",
       "source_mode": "canonical_files_direct"
@@ -589,7 +499,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-04T02:23:28+09:00",
+        "state_data_at_jst": "2026-08-04T02:26:28+09:00",
         "evidence": [
           {
             "path": "governance/micro_allocation_boundary_v2_20260725.json",
@@ -650,7 +560,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-04T02:23:28+09:00",
+        "state_data_at_jst": "2026-08-04T02:26:28+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_033_V6_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T143446+0900.json",
@@ -766,7 +676,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-04T02:23:28+09:00",
+        "state_data_at_jst": "2026-08-04T02:26:28+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_PIN_LOTTERY_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T140307+0900.json",
@@ -852,7 +762,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-04T02:23:28+09:00",
+        "state_data_at_jst": "2026-08-04T02:26:28+09:00",
         "evidence": [
           {
             "path": "governance/rulings141_20260727/testa_swing5d_result_site_handoff_r141.json",
@@ -913,7 +823,7 @@
         "provisional": false,
         "description_only": true,
         "qualification_evidence": false,
-        "state_data_at_jst": "2026-08-04T02:23:28+09:00",
+        "state_data_at_jst": "2026-08-04T02:26:28+09:00",
         "evidence": [
           {
             "path": "research/r20_residual_audit_v2_20260726/d0v4_033/provisional_result.json",
@@ -964,7 +874,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-04T02:23:28+09:00",
+        "state_data_at_jst": "2026-08-04T02:26:28+09:00",
         "evidence": [
           {
             "path": "reports/A3_FABLE_RULING221_052_PUBLIC_DISPLAY_HANDOFF_20260728T153600+0900.json",
@@ -987,25 +897,6 @@
     "orders_sent": false,
     "sendorder_count": 0
   },
-  "storage_refresh": {
-    "status": "NOT_DUE",
-    "measured_at_jst": "2026-08-04T02:23:29+0900",
-    "preserved_last_verified_measurement": true
-  },
-  "public_surface_generated_at_jst": "2026-08-04",
-  "freshness": {
-    "status": "PASS",
-    "checked_at_jst": "2026-08-04T02:23:29+09:00",
-    "state_data_at_jst": "2026-08-04T02:23:28+09:00",
-    "age_seconds": 1.277,
-    "max_age_seconds": 1800,
-    "canonical_source_count": 39,
-    "canonical_source_set_sha256": "9bd9c27bab843df986e564344a899983a21dc98d171b0213a0413d998e811b29",
-    "card_source_set_sha256": "969350b4de68933687be8f0f960bf432e79118d58a0c2f17f42197af292ed5cf",
-    "orders_sent": false,
-    "sendorder_count": 0
-  },
-  "public_surface_state_at_jst": "2026-08-04T02:23:29+09:00",
   "operations": {
     "trade_date": "2026-08-04",
     "status": "UNKNOWN",
@@ -1185,5 +1076,188 @@
         ]
       }
     ]
+  },
+  "hyp_progress": {
+    "pb1": {
+      "n": 0,
+      "target": 1,
+      "label": "実証未成立",
+      "prev": 0
+    },
+    "harvester": {
+      "n": 4,
+      "target": 14,
+      "label": "前向き解決",
+      "prev": 4
+    },
+    "035": {
+      "n": 7,
+      "target": 14,
+      "label": "前向き解決",
+      "prev": 7
+    },
+    "041g7": {
+      "n": 2,
+      "target": 14,
+      "label": "前向き解決",
+      "prev": 2
+    },
+    "041g2": {
+      "n": 18,
+      "target": 14,
+      "label": "経済的死亡",
+      "prev": 18,
+      "state": "grave"
+    },
+    "039b": {
+      "n": 0,
+      "target": 14,
+      "label": "前向き解決",
+      "prev": 0
+    },
+    "033": {
+      "n": 0,
+      "target": 14,
+      "label": "前向き解決",
+      "prev": 0
+    },
+    "052": {
+      "n": 0,
+      "target": 14,
+      "label": "前向き解決",
+      "prev": 0
+    }
+  },
+  "aggregates": {
+    "current": {
+      "counts": {
+        "live": 1,
+        "paper": 6,
+        "surviving": 8,
+        "grave": 29,
+        "seed": 9
+      },
+      "exclusive_counts": {
+        "live": 1,
+        "paper": 6,
+        "surviving": 7,
+        "grave": 29,
+        "seed": 9
+      },
+      "total_defs": 107,
+      "dead_defs": 79,
+      "cards": 52,
+      "analyst_days": 412,
+      "saved_total": 44380000
+    },
+    "prev": {
+      "counts": {
+        "live": 1,
+        "paper": 6,
+        "surviving": 8,
+        "grave": 29,
+        "seed": 9
+      },
+      "exclusive_counts": {
+        "live": 1,
+        "paper": 6,
+        "surviving": 7,
+        "grave": 29,
+        "seed": 9
+      },
+      "total_defs": 107,
+      "dead_defs": 79,
+      "cards": 52,
+      "analyst_days": 412,
+      "saved_total": 44380000
+    },
+    "prev_date": "2026-08-03"
+  },
+  "freshness": {
+    "status": "PASS",
+    "checked_at_jst": "2026-08-04T02:26:36+09:00",
+    "state_data_at_jst": "2026-08-04T02:26:28+09:00",
+    "age_seconds": 8.341,
+    "max_age_seconds": 1800,
+    "canonical_source_count": 39,
+    "canonical_source_set_sha256": "9bd9c27bab843df986e564344a899983a21dc98d171b0213a0413d998e811b29",
+    "card_source_set_sha256": "969350b4de68933687be8f0f960bf432e79118d58a0c2f17f42197af292ed5cf",
+    "orders_sent": false,
+    "sendorder_count": 0
+  },
+  "public_surface_state_at_jst": "2026-08-04T02:26:36+09:00",
+  "progress_checked_at": "2026-08-04 02:26",
+  "operational_readiness": {
+    "schema": "public_operational_readiness_v1",
+    "observed_at_jst": "2026-08-04T02:26:10+09:00",
+    "overall_status": "ATTENTION_REQUIRED",
+    "login_api": {
+      "status": "PASS",
+      "application_running": true,
+      "api_listening": true,
+      "autologin_task_state": "Ready",
+      "last_result": 0
+    },
+    "account": {
+      "status": "PASS",
+      "wallet_observed": true,
+      "owner_capital_reflected": true
+    },
+    "candidate": {
+      "status": "EVENING_STAGED_PENDING_RECHECK",
+      "count_for_today": 1,
+      "within_configured_cap": true,
+      "wallet_sufficient": true,
+      "symbol_disclosed": false
+    },
+    "morning_tasks": {
+      "candidate_0710": {
+        "name": "D0v4-033-eligible-morning-0710",
+        "state": "Ready",
+        "last_result": 2,
+        "last_run": "2026-08-03T07:10:00+09:00",
+        "next_run": "2026-08-04T07:10:00+09:00"
+      },
+      "seal_0845": {
+        "name": "D0v4-033-daily-seal-supervisor-0845",
+        "state": "Ready",
+        "last_result": 0,
+        "last_run": "2026-08-03T08:45:00+09:00",
+        "next_run": "2026-08-04T08:45:00+09:00"
+      },
+      "entry_0857": {
+        "name": "D0v4-033-v6-entry-20260730",
+        "state": "Ready",
+        "last_result": 0,
+        "last_run": "2026-08-03T08:57:00+09:00",
+        "next_run": "2026-08-04T08:57:00+09:00"
+      }
+    },
+    "foundry_hourly": {
+      "status": "AUTO_PAUSED_AFTER_3_CONSECUTIVE_STILLBORN",
+      "last_hour_jst": null,
+      "birth_rows": 0,
+      "next_natural_fire_jst": "2026-08-04T03:07:00+09:00",
+      "orders_sent": false
+    },
+    "bottlenecks": [
+      {
+        "reason_code": "MORNING_CANDIDATE_RECHECK_PENDING",
+        "class": "EXPECTED_MARKET_GATE",
+        "release_condition": "07:10の当日銘柄再検査がPASSし、当日候補が発行されること"
+      },
+      {
+        "reason_code": "PREVIOUS_0710_TASK_NONZERO",
+        "class": "INFRASTRUCTURE",
+        "release_condition": "本日07:10の自然実行が終了コード0と当日終端記録を残すこと"
+      },
+      {
+        "reason_code": "AUTO_PAUSED_AFTER_3_CONSECUTIVE_STILLBORN",
+        "class": "RESEARCH_INFRASTRUCTURE",
+        "release_condition": "監査済みR16源泉対応版の配備後、毎時07分の自然実行で新源泉を評価すること"
+      }
+    ],
+    "orders_sent": false,
+    "sendorder_count": 0
   }
 }

@@ -260,6 +260,11 @@
   </header>
   <div class="band tnum" id="operationband" style="display:none"></div>
 
+  <h2>本日の自動稼働</h2>
+  <p class="note">口座額・銘柄・注文内容は公開せず、ログイン、資金反映、候補の件数、時刻タスク、研究生成の停止理由と解除条件だけを約15分ごとに再測定する。</p>
+  <div class="band tnum" id="readinessband"></div>
+  <div class="datatable-wrap"><table class="datatable tnum" id="bottlenecktable"></table></div>
+
   <h2>将来の予測 — 実験の記述的シミュレーション</h2>
   <p class="note">測定されたエッジが、非公開の正規化容量点によって複利でどう積み上がるかを描いた実験的な地図。スライダーを動かすと容量による変化が見える。<span class="red">口座・資本・配分額は公開しない。保証ではなく、過去データに基づく推定である。</span></p>
   <div class="proj">
@@ -868,6 +873,24 @@ const DATA = {
       {n:shortNextGate(o.next_gate_ja),l:"次の門",raw:o.next_gate_ja}
     ].map(function(x){var raw=rawAttr(x.raw);return '<div class="cell'+(x.a?' accent':'')+'"><b title="'+raw+'" data-raw="'+raw+'">'+x.n+'</b><i>'+x.l+'</i></div>';}).join('');
   }
+  function renderOperationalReadiness(r){
+    if(!r)return;
+    function esc(v){return String(v===null||typeof v==='undefined'?"UNKNOWN":v).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+    function ok(v){return v===true?"PASS":(v===false?"STOP":"UNKNOWN");}
+    var login=r.login_api||{},account=r.account||{},candidate=r.candidate||{},foundry=r.foundry_hourly||{};
+    document.getElementById('readinessband').innerHTML=[
+      {n:esc(r.overall_status),l:"全体",a:r.overall_status!=="PASS_PREMARKET"},
+      {n:esc(login.status),l:"ログイン / API"},
+      {n:esc(account.status),l:"資金のAPI反映"},
+      {n:esc(candidate.count_for_today),l:"本日候補（銘柄非公開）"},
+      {n:ok(candidate.within_configured_cap),l:"設定上限内"},
+      {n:esc(foundry.status),l:"毎時の新戦略生成",a:foundry.status!=="PASS"}
+    ].map(function(x){return '<div class="cell'+(x.a?' accent':'')+'"><b>'+x.n+'</b><i>'+x.l+'</i></div>';}).join('');
+    var rows=r.bottlenecks||[];
+    document.getElementById('bottlenecktable').innerHTML=
+      '<tr><th>停止・待機理由</th><th>分類</th><th>解除条件</th></tr>'+
+      (rows.length?rows.map(function(x){return '<tr><td class="nm">'+esc(x.reason_code)+'</td><td>'+esc(x.class)+'</td><td>'+esc(x.release_condition)+'</td></tr>';}).join(''):'<tr><td class="nm">NONE</td><td>—</td><td>次の自然実行を待機</td></tr>');
+  }
   renderData(EMBEDDED_STATS);
   // 自動更新中インジケータ：ブラウザが2分ごとに再取得している「生きている」ことを可視化。
   // 最終確認＝この画面が最後にデータを取りに行った時刻（閲覧者の時計）。状態データ＝サーバ側の最終確認(JST)。
@@ -888,6 +911,7 @@ const DATA = {
           if(d.foundry){renderFoundry(d.foundry);}
           if(d.defects){renderDefects(d.defects);}
           if(d.operations){renderOperations(d.operations);}
+          if(d.operational_readiness){renderOperationalReadiness(d.operational_readiness);}
           if(d.active_cards){
             if(window.__mergeActiveCards)window.__mergeActiveCards(d.active_cards);
             else window.__pendingActiveCards=d.active_cards;
