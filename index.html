@@ -877,14 +877,15 @@ const DATA = {
     if(!r)return;
     function esc(v){return String(v===null||typeof v==='undefined'?"UNKNOWN":v).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
     function ok(v){return v===true?"PASS":(v===false?"STOP":"UNKNOWN");}
-    var login=r.login_api||{},account=r.account||{},candidate=r.candidate||{},foundry=r.foundry_hourly||{};
+    var login=r.login_api||{},account=r.account||{},candidate=r.candidate||{},foundry=r.foundry_hourly||{},entry=r.entry_outcome||{};
     document.getElementById('readinessband').innerHTML=[
       {n:esc(r.overall_status),l:"全体",a:r.overall_status!=="PASS_PREMARKET"},
       {n:esc(login.status),l:"ログイン / API"},
       {n:esc(account.status),l:"資金のAPI反映"},
       {n:esc(candidate.count_for_today),l:"本日候補（銘柄非公開）"},
       {n:ok(candidate.within_configured_cap),l:"設定上限内"},
-      {n:esc(foundry.status),l:"毎時の新戦略生成",a:foundry.status!=="PASS"}
+      {n:esc(entry.status||"NOT_YET_OBSERVED"),l:"08:57発注判断"},
+      {n:esc(foundry.status),l:"毎時の新戦略生成",a:["PASS","SOURCE_UPDATE_AUTO_RESUME"].indexOf(foundry.status)<0}
     ].map(function(x){return '<div class="cell'+(x.a?' accent':'')+'"><b>'+x.n+'</b><i>'+x.l+'</i></div>';}).join('');
     var rows=r.bottlenecks||[];
     document.getElementById('bottlenecktable').innerHTML=

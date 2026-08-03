@@ -55,9 +55,9 @@
     "docs_total": 175147,
     "gb": 197.27,
     "storage": {
-      "measured_at_jst": "2026-08-04T02:26:36+0900",
-      "receipt_path": "logs/build_evidence/public_site_data_measurement_20260804022636.json",
-      "receipt_sha256": "b0b128b0e80cd6e7652301287580c70673ee7af8042f96a3d579f81ce55bda1c",
+      "measured_at_jst": "2026-08-04T03:17:17+0900",
+      "receipt_path": "logs/build_evidence/public_site_data_measurement_20260804031717.json",
+      "receipt_sha256": "0229d7d8f13209fb03a6e2fdc4eb715b4cf4b7dc53fff101e04067089fe9bba5",
       "total_bytes": 211817332736,
       "total_gib": 197.27,
       "categories": [
@@ -97,9 +97,9 @@
     }
   },
   "storage_refresh": {
-    "status": "NOT_DUE",
-    "measured_at_jst": "2026-08-04T03:10:08+0900",
-    "preserved_last_verified_measurement": true
+    "status": "PASS",
+    "measured_at_jst": "2026-08-04T03:17:17+0900",
+    "preserved_last_verified_measurement": false
   },
   "foundry": {
     "ledger": {
@@ -126,7 +126,7 @@
       "head_sha256": "92a7576eb71a46797da80ddee3eafdea1b3d58c3d6448f58141447b6dd225d10",
       "snapshot": {
         "mode": "APPEND_ONLY_PREFIX",
-        "captured_at_jst": "2026-08-04T03:10:07+0900",
+        "captured_at_jst": "2026-08-04T03:17:04+0900",
         "source_git_commit": "13366af61c5a76f25cb4b3fdac67e9b64a4ad1dd",
         "line_count": 254,
         "prefix_sha256": "204e93261656b3235897b47e9886291f7acc2a01623d3097de38e41125a19155",
@@ -305,13 +305,13 @@
     "repository": "art-daytrader-fable-28-53",
     "ledger_path": "governance/DEFECT_LEDGER.md",
     "ledger_sha256": "7460ddd188d51c3bb3717a88cf6a83f4a9b7baccfbe3c0bf72e7a92405bc028d",
-    "measured_at_jst": "2026-08-04T03:10:08+0900",
+    "measured_at_jst": "2026-08-04T03:17:04+0900",
     "orders_sent": false,
     "sendorder_count": 0
   },
   "active_cards": {
     "schema": "public_active_cards_v2",
-    "state_data_at_jst": "2026-08-04T03:10:08+09:00",
+    "state_data_at_jst": "2026-08-04T03:16:41+09:00",
     "governance_revision": {
       "ruling": "Fable裁定231(a)",
       "source_mode": "canonical_files_direct"
@@ -499,7 +499,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-04T03:10:08+09:00",
+        "state_data_at_jst": "2026-08-04T03:17:04+09:00",
         "evidence": [
           {
             "path": "governance/micro_allocation_boundary_v2_20260725.json",
@@ -544,23 +544,23 @@
       {
         "id": "033",
         "state": "live",
-        "name": "D0v4-033 本番task Ready・未実行",
+        "name": "D0v4-033 平日08:57常設・本日判定待ち",
         "family": "イベントドリフト",
-        "metric": "2026-07-29 08:57 JST一回性task · 発注瞬間Q1六条件が必須 · 配分額は非公開",
+        "metric": "平日08:57常設task · 発注瞬間7条件が必須 · 配分額は非公開",
         "progress": {
           "n": 0,
           "target": 10,
           "label": "前向き実測"
         },
         "arose": "自社株買い表明後の20営業日ドリフトを、凍結済みD+1寄り入口のまま前向きに測るため。歴史値を実装都合で14:50へ移植しない。",
-        "verification": "凍結済み入口を実装都合で変更せず、発注瞬間にowner authority、headroom、接続、非pinned実シグナル、出口保証、流動性を実測する。いずれか不明ならNo-Tradeとする。",
-        "outcome": "監査済みreleaseを配備し、一回性taskはState=Ready。本人YESは2026-07-29 08:57 JSTの一回だけに限定済み。自然実行・発注瞬間Q1・注文はいずれも未観測。",
-        "next_born": "クリーンな前向き実測10イベントが増額審査を開く。R-20残差監査は増額審査へ別添する。",
+        "verification": "07:10の当日候補再検査、08:45の当日封印、08:57直前の建玉・未約定注文・資金・API・本人承認・非pinned板・D+21出口を順に再測定し、不明は発注しない。",
+        "outcome": "ログイン/API=PASS、本日候補=1件。08:57の自然実行結果は未観測。",
+        "next_born": "07:10の当日銘柄再検査がPASSし、当日候補が発行されること",
         "simulation": "歴史値は20日ドリフトの記述であり、将来のQ1 GREENや注文成功を示さない。",
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-04T03:10:08+09:00",
+        "state_data_at_jst": "2026-08-04T03:16:41+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_033_V6_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T143446+0900.json",
@@ -649,12 +649,12 @@
           }
         ],
         "next_phase": {
-          "id": "ruling210_order_time_q1",
-          "label": "2026-07-29 08:57の発注瞬間Q1六条件",
-          "status": "NOT_YET_OBSERVABLE",
-          "scheduled_at_jst": "2026-07-29T08:57:00+09:00",
-          "scheduled_at_display": "2026-07-29 08:57 JSTまでは未取得",
-          "text": "<b>次の門:</b> 2026-07-29 08:57の発注瞬間Q1六条件 （現在 NOT_YET_OBSERVABLE） <b>時刻:</b> 2026-07-29 08:57 JSTまでは未取得"
+          "id": "current_operational_readiness",
+          "label": "本日の自然実行と発注瞬間7条件",
+          "status": "MORNING_CANDIDATE_RECHECK_PENDING",
+          "scheduled_at_jst": "2026-08-04T08:57:00+09:00",
+          "scheduled_at_display": "07:10の当日銘柄再検査がPASSし、当日候補が発行されること",
+          "text": "<b>次の門:</b> 07:10の当日銘柄再検査がPASSし、当日候補が発行されること"
         }
       },
       {
@@ -676,7 +676,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-04T03:10:08+09:00",
+        "state_data_at_jst": "2026-08-04T03:17:04+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_PIN_LOTTERY_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T140307+0900.json",
@@ -762,7 +762,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-04T03:10:08+09:00",
+        "state_data_at_jst": "2026-08-04T03:17:04+09:00",
         "evidence": [
           {
             "path": "governance/rulings141_20260727/testa_swing5d_result_site_handoff_r141.json",
@@ -823,7 +823,7 @@
         "provisional": false,
         "description_only": true,
         "qualification_evidence": false,
-        "state_data_at_jst": "2026-08-04T03:10:08+09:00",
+        "state_data_at_jst": "2026-08-04T03:17:04+09:00",
         "evidence": [
           {
             "path": "research/r20_residual_audit_v2_20260726/d0v4_033/provisional_result.json",
@@ -874,7 +874,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-04T03:10:08+09:00",
+        "state_data_at_jst": "2026-08-04T03:17:04+09:00",
         "evidence": [
           {
             "path": "reports/A3_FABLE_RULING221_052_PUBLIC_DISPLAY_HANDOFF_20260728T153600+0900.json",
@@ -1175,9 +1175,9 @@
   },
   "freshness": {
     "status": "PASS",
-    "checked_at_jst": "2026-08-04T03:10:08+09:00",
-    "state_data_at_jst": "2026-08-04T03:10:08+09:00",
-    "age_seconds": 0.844,
+    "checked_at_jst": "2026-08-04T03:17:17+09:00",
+    "state_data_at_jst": "2026-08-04T03:16:41+09:00",
+    "age_seconds": 36.614,
     "max_age_seconds": 1800,
     "canonical_source_count": 39,
     "canonical_source_set_sha256": "9bd9c27bab843df986e564344a899983a21dc98d171b0213a0413d998e811b29",
@@ -1185,11 +1185,11 @@
     "orders_sent": false,
     "sendorder_count": 0
   },
-  "public_surface_state_at_jst": "2026-08-04T03:10:08+09:00",
-  "progress_checked_at": "2026-08-04 03:10",
+  "public_surface_state_at_jst": "2026-08-04T03:17:17+09:00",
+  "progress_checked_at": "2026-08-04 03:17",
   "operational_readiness": {
     "schema": "public_operational_readiness_v1",
-    "observed_at_jst": "2026-08-04T03:09:46+09:00",
+    "observed_at_jst": "2026-08-04T03:16:41+09:00",
     "overall_status": "ATTENTION_REQUIRED",
     "login_api": {
       "status": "PASS",
@@ -1233,9 +1233,15 @@
         "next_run": "2026-08-04T08:57:00+09:00"
       }
     },
+    "entry_outcome": {
+      "status": "NOT_YET_OBSERVED",
+      "terminal_observed": false,
+      "orders_sent": false,
+      "sendorder_count": 0
+    },
     "foundry_hourly": {
       "status": "SOURCE_UPDATE_AUTO_RESUME",
-      "last_hour_jst": null,
+      "last_hour_jst": "2026-08-04T03:00:00+09:00",
       "birth_rows": 1,
       "next_natural_fire_jst": "2026-08-04T04:07:00+09:00",
       "orders_sent": false
@@ -1250,11 +1256,6 @@
         "reason_code": "PREVIOUS_0710_TASK_NONZERO",
         "class": "INFRASTRUCTURE",
         "release_condition": "本日07:10の自然実行が終了コード0と当日終端記録を残すこと"
-      },
-      {
-        "reason_code": "SOURCE_UPDATE_AUTO_RESUME",
-        "class": "RESEARCH_INFRASTRUCTURE",
-        "release_condition": "監査済みR16源泉対応版の配備後、毎時07分の自然実行で新源泉を評価すること"
       }
     ],
     "orders_sent": false,
