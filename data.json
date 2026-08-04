@@ -98,7 +98,7 @@
   },
   "storage_refresh": {
     "status": "NOT_DUE",
-    "measured_at_jst": "2026-08-04T10:29:27+0900",
+    "measured_at_jst": "2026-08-04T10:34:28+0900",
     "preserved_last_verified_measurement": true
   },
   "foundry": {
@@ -126,7 +126,7 @@
       "head_sha256": "6a2c4b70e00eff93b22e24cc17ccf1b8799e9d055ab45c8b94354f390e9a4bf4",
       "snapshot": {
         "mode": "APPEND_ONLY_PREFIX",
-        "captured_at_jst": "2026-08-04T10:29:26+0900",
+        "captured_at_jst": "2026-08-04T10:34:28+0900",
         "source_git_commit": "a07f69705ab69f1a8fa5e9e96f458b9dafe789c3",
         "line_count": 263,
         "prefix_sha256": "c758d3dc381a5811f1917eb49aa594c8065c82286d70d10238bc601888ba7891",
@@ -305,13 +305,13 @@
     "repository": "art-daytrader-fable-28-53",
     "ledger_path": "governance/DEFECT_LEDGER.md",
     "ledger_sha256": "7460ddd188d51c3bb3717a88cf6a83f4a9b7baccfbe3c0bf72e7a92405bc028d",
-    "measured_at_jst": "2026-08-04T10:29:26+0900",
+    "measured_at_jst": "2026-08-04T10:34:28+0900",
     "orders_sent": false,
     "sendorder_count": 0
   },
   "active_cards": {
     "schema": "public_active_cards_v2",
-    "state_data_at_jst": "2026-08-04T10:28:52+09:00",
+    "state_data_at_jst": "2026-08-04T10:34:27+09:00",
     "governance_revision": {
       "ruling": "Fable裁定231(a)",
       "source_mode": "canonical_files_direct"
@@ -499,7 +499,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-04T10:29:26+09:00",
+        "state_data_at_jst": "2026-08-04T10:34:28+09:00",
         "evidence": [
           {
             "path": "governance/micro_allocation_boundary_v2_20260725.json",
@@ -544,7 +544,7 @@
       {
         "id": "033",
         "state": "live",
-        "name": "D0v4-033 本日08:57自然実行済み",
+        "name": "D0v4-033 平日08:57常設・本日判定待ち",
         "family": "イベントドリフト",
         "metric": "平日08:57常設task · 発注瞬間7条件が必須 · 配分額は非公開",
         "progress": {
@@ -554,13 +554,13 @@
         },
         "arose": "自社株買い表明後の20営業日ドリフトを、凍結済みD+1寄り入口のまま前向きに測るため。歴史値を実装都合で14:50へ移植しない。",
         "verification": "07:10の当日候補再検査、08:45の当日封印、08:57直前の建玉・未約定注文・資金・API・本人承認・非pinned板・D+21出口を順に再測定し、不明は発注しない。",
-        "outcome": "ログイン/API=PASS、本日候補=15件。08:57終端=STOP_INFRASTRUCTURE_OR_AUTHORITY_FAILURE、orders_sent=false。",
-        "next_born": "現在の反復task名と当日実行時刻へ合わせた修正は独立B監査PASS後に2026-08-04 10:27 JST配備済み。次回07:30自然実行でPASSを確認すること",
+        "outcome": "ログイン/API=UNKNOWN、本日候補=UNKNOWN件。08:57の自然実行結果は未観測。",
+        "next_born": "次回15分収集でVPSと公開状態を再読取すること",
         "simulation": "歴史値は20日ドリフトの記述であり、将来のQ1 GREENや注文成功を示さない。",
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-04T10:28:52+09:00",
+        "state_data_at_jst": "2026-08-04T10:34:27+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_033_V6_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T143446+0900.json",
@@ -651,10 +651,10 @@
         "next_phase": {
           "id": "current_operational_readiness",
           "label": "本日の自然実行と発注瞬間7条件",
-          "status": "PREFLIGHT_0730_MONITOR_NOT_PASS",
-          "scheduled_at_jst": "2026-08-05T08:57:00+09:00",
-          "scheduled_at_display": "現在の反復task名と当日実行時刻へ合わせた修正は独立B監査PASS後に2026-08-04 10:27 JST配備済み。次回07:30自然実行でPASSを確認すること",
-          "text": "<b>次の門:</b> 現在の反復task名と当日実行時刻へ合わせた修正は独立B監査PASS後に2026-08-04 10:27 JST配備済み。次回07:30自然実行でPASSを確認すること"
+          "status": "READINESS_COLLECTOR_FAILED",
+          "scheduled_at_jst": null,
+          "scheduled_at_display": "次回15分収集でVPSと公開状態を再読取すること",
+          "text": "<b>次の門:</b> 次回15分収集でVPSと公開状態を再読取すること"
         }
       },
       {
@@ -676,7 +676,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-04T10:29:26+09:00",
+        "state_data_at_jst": "2026-08-04T10:34:28+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_PIN_LOTTERY_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T140307+0900.json",
@@ -762,7 +762,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-04T10:29:26+09:00",
+        "state_data_at_jst": "2026-08-04T10:34:28+09:00",
         "evidence": [
           {
             "path": "governance/rulings141_20260727/testa_swing5d_result_site_handoff_r141.json",
@@ -823,7 +823,7 @@
         "provisional": false,
         "description_only": true,
         "qualification_evidence": false,
-        "state_data_at_jst": "2026-08-04T10:29:26+09:00",
+        "state_data_at_jst": "2026-08-04T10:34:28+09:00",
         "evidence": [
           {
             "path": "research/r20_residual_audit_v2_20260726/d0v4_033/provisional_result.json",
@@ -874,7 +874,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-04T10:29:26+09:00",
+        "state_data_at_jst": "2026-08-04T10:34:28+09:00",
         "evidence": [
           {
             "path": "reports/A3_FABLE_RULING221_052_PUBLIC_DISPLAY_HANDOFF_20260728T153600+0900.json",
@@ -1175,9 +1175,9 @@
   },
   "freshness": {
     "status": "PASS",
-    "checked_at_jst": "2026-08-04T10:29:27+09:00",
-    "state_data_at_jst": "2026-08-04T10:28:52+09:00",
-    "age_seconds": 35.132,
+    "checked_at_jst": "2026-08-04T10:34:28+09:00",
+    "state_data_at_jst": "2026-08-04T10:34:27+09:00",
+    "age_seconds": 1.562,
     "max_age_seconds": 1800,
     "canonical_source_count": 39,
     "canonical_source_set_sha256": "be051bdc7c06ffa678af59ef04d00ff9154a9524a6f2af218afa02413a1dab28",
@@ -1185,97 +1185,18 @@
     "orders_sent": false,
     "sendorder_count": 0
   },
-  "public_surface_state_at_jst": "2026-08-04T10:29:27+09:00",
-  "progress_checked_at": "2026-08-04 10:29",
+  "public_surface_state_at_jst": "2026-08-04T10:34:28+09:00",
+  "progress_checked_at": "2026-08-04 10:34",
   "operational_readiness": {
     "schema": "public_operational_readiness_v1",
-    "observed_at_jst": "2026-08-04T10:28:52+09:00",
-    "overall_status": "ATTENTION_REQUIRED",
-    "login_api": {
-      "status": "PASS",
-      "application_running": true,
-      "api_listening": true,
-      "autologin_task_state": "Ready",
-      "last_result": 0,
-      "otp_mail_oauth": {
-        "status": "PASS_READ_ONLY",
-        "reason": "REFRESH_AND_GMAIL_PROFILE_READ_PASS",
-        "failed_stage": "",
-        "checked_at_jst": "2026-08-04T09:34:22+09:00",
-        "credential_value_logged": false,
-        "orders_sent": false
-      }
-    },
-    "account": {
-      "status": "PASS",
-      "wallet_observed": true,
-      "owner_capital_reflected": true
-    },
-    "candidate": {
-      "status": "MORNING_PUBLISHED",
-      "count_for_today": 15,
-      "within_configured_cap": null,
-      "wallet_sufficient": null,
-      "symbol_disclosed": false
-    },
-    "morning_tasks": {
-      "candidate_0710": {
-        "name": "D0v4-033-eligible-morning-0710",
-        "state": "Ready",
-        "last_result": 0,
-        "last_run": "2026-08-04T07:10:00+09:00",
-        "next_run": "2026-08-05T07:10:00+09:00"
-      },
-      "seal_0845": {
-        "name": "D0v4-033-daily-seal-supervisor-0845",
-        "state": "Ready",
-        "last_result": 0,
-        "last_run": "2026-08-04T08:45:00+09:00",
-        "next_run": "2026-08-05T08:45:00+09:00"
-      },
-      "entry_0857": {
-        "name": "D0v4-033-v6-entry-20260730",
-        "state": "Ready",
-        "last_result": 0,
-        "last_run": "2026-08-04T08:57:00+09:00",
-        "next_run": "2026-08-05T08:57:00+09:00"
-      }
-    },
-    "entry_outcome": {
-      "status": "STOP_INFRASTRUCTURE_OR_AUTHORITY_FAILURE",
-      "outcome": "INFRASTRUCTURE_OR_AUTHORITY_FAILURE",
-      "reason_code": "ORDER_TIME_Q1_SIGNAL_BOARD_INVALID",
-      "terminal_observed": true,
-      "orders_sent": false,
-      "sendorder_count": 0
-    },
-    "foundry_hourly": {
-      "status": "NO_NEW_MATERIAL_GENERATION_SKIPPED",
-      "last_hour_jst": "2026-08-04T10:00:00+09:00",
-      "missing_expected_hour_jst": null,
-      "birth_rows": 0,
-      "next_natural_fire_jst": "2026-08-04T11:07:00+09:00",
-      "orders_sent": false
-    },
+    "observed_at_jst": "2026-08-04T10:34:27+09:00",
+    "overall_status": "UNKNOWN",
+    "reason_code": "TimeoutExpired",
     "bottlenecks": [
       {
-        "reason_code": "PREFLIGHT_0730_MONITOR_NOT_PASS",
-        "class": "OBSERVABILITY_INFRASTRUCTURE",
-        "observed_status": "INFRA_RED",
-        "failed_checks": [
-          "kabu_auto_reconnect",
-          "current_production_tasks",
-          "approved_release_b_receipt"
-        ],
-        "checked_at_jst": "2026-08-04T07:30:05+09:00",
-        "order_gate_role": "MONITORING_CONFIDENCE_ONLY",
-        "release_condition": "現在の反復task名と当日実行時刻へ合わせた修正は独立B監査PASS後に2026-08-04 10:27 JST配備済み。次回07:30自然実行でPASSを確認すること"
-      },
-      {
-        "reason_code": "ORDER_TIME_Q1_SIGNAL_BOARD_INVALID",
+        "reason_code": "READINESS_COLLECTOR_FAILED",
         "class": "INFRASTRUCTURE",
-        "observed_status": "STOP_INFRASTRUCTURE_OR_AUTHORITY_FAILURE",
-        "release_condition": "寄前板と銘柄情報を併用する注文時Q1修正が独立B監査PASSとなり、配備後の次営業日08:57自然実行でterminal receiptを確認すること"
+        "release_condition": "次回15分収集でVPSと公開状態を再読取すること"
       }
     ],
     "orders_sent": false,
