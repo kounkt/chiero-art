@@ -55,9 +55,9 @@
     "docs_total": 175147,
     "gb": 197.27,
     "storage": {
-      "measured_at_jst": "2026-08-04T14:01:41+0900",
-      "receipt_path": "logs/build_evidence/public_site_data_measurement_20260804140141.json",
-      "receipt_sha256": "aae059664c84e5ca6de68650f30d5a07334a04674dd1486cd78bf69923f7087e",
+      "measured_at_jst": "2026-08-04T15:13:20+0900",
+      "receipt_path": "logs/build_evidence/public_site_data_measurement_20260804151320.json",
+      "receipt_sha256": "dffc620e390535b2eeb64265872f94dc5cfc034bcaf0eaab2e0c3527c362fa14",
       "total_bytes": 211817332736,
       "total_gib": 197.27,
       "categories": [
@@ -97,9 +97,9 @@
     }
   },
   "storage_refresh": {
-    "status": "NOT_DUE",
-    "measured_at_jst": "2026-08-04T14:49:53+0900",
-    "preserved_last_verified_measurement": true
+    "status": "PASS",
+    "measured_at_jst": "2026-08-04T15:13:20+0900",
+    "preserved_last_verified_measurement": false
   },
   "foundry": {
     "ledger": {
@@ -126,7 +126,7 @@
       "head_sha256": "6a2c4b70e00eff93b22e24cc17ccf1b8799e9d055ab45c8b94354f390e9a4bf4",
       "snapshot": {
         "mode": "APPEND_ONLY_PREFIX",
-        "captured_at_jst": "2026-08-04T14:49:52+0900",
+        "captured_at_jst": "2026-08-04T15:07:05+0900",
         "source_git_commit": "a07f69705ab69f1a8fa5e9e96f458b9dafe789c3",
         "line_count": 263,
         "prefix_sha256": "c758d3dc381a5811f1917eb49aa594c8065c82286d70d10238bc601888ba7891",
@@ -305,13 +305,13 @@
     "repository": "art-daytrader-fable-28-53",
     "ledger_path": "governance/DEFECT_LEDGER.md",
     "ledger_sha256": "7460ddd188d51c3bb3717a88cf6a83f4a9b7baccfbe3c0bf72e7a92405bc028d",
-    "measured_at_jst": "2026-08-04T14:49:52+0900",
+    "measured_at_jst": "2026-08-04T15:07:20+0900",
     "orders_sent": false,
     "sendorder_count": 0
   },
   "active_cards": {
     "schema": "public_active_cards_v2",
-    "state_data_at_jst": "2026-08-04T14:49:25+09:00",
+    "state_data_at_jst": "2026-08-04T15:05:31+09:00",
     "governance_revision": {
       "ruling": "Fable裁定231(a)",
       "source_mode": "canonical_files_direct"
@@ -499,7 +499,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-04T14:49:52+09:00",
+        "state_data_at_jst": "2026-08-04T15:07:20+09:00",
         "evidence": [
           {
             "path": "governance/micro_allocation_boundary_v2_20260725.json",
@@ -560,7 +560,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-04T14:49:25+09:00",
+        "state_data_at_jst": "2026-08-04T15:05:31+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_033_V6_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T143446+0900.json",
@@ -676,7 +676,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-04T14:49:52+09:00",
+        "state_data_at_jst": "2026-08-04T15:07:20+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_PIN_LOTTERY_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T140307+0900.json",
@@ -738,7 +738,7 @@
           "id": "pin_readonly_alphanumeric_repair",
           "label": "PIN紙read-only銘柄identity修正",
           "status": "AWAITING_FRESH_B_AND_NATURAL_FIRE",
-          "scheduled_at_jst": "2026-08-04T14:50:00+09:00",
+          "scheduled_at_jst": "2026-08-05T14:50:00+09:00",
           "scheduled_at_display": "英数字4文字の東証コードをGETだけに許す修正が独立B PASS後に配備され、次の14:50自然実行が紙terminal receiptを残すこと",
           "text": "<b>次の門:</b> 英数字4文字の東証コードをGETだけに許す修正が独立B PASS後に配備され、次の14:50自然実行が紙terminal receiptを残すこと"
         }
@@ -762,7 +762,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-04T14:49:52+09:00",
+        "state_data_at_jst": "2026-08-04T15:07:20+09:00",
         "evidence": [
           {
             "path": "governance/rulings141_20260727/testa_swing5d_result_site_handoff_r141.json",
@@ -823,7 +823,7 @@
         "provisional": false,
         "description_only": true,
         "qualification_evidence": false,
-        "state_data_at_jst": "2026-08-04T14:49:52+09:00",
+        "state_data_at_jst": "2026-08-04T15:07:20+09:00",
         "evidence": [
           {
             "path": "research/r20_residual_audit_v2_20260726/d0v4_033/provisional_result.json",
@@ -874,7 +874,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-04T14:49:52+09:00",
+        "state_data_at_jst": "2026-08-04T15:07:20+09:00",
         "evidence": [
           {
             "path": "reports/A3_FABLE_RULING221_052_PUBLIC_DISPLAY_HANDOFF_20260728T153600+0900.json",
@@ -915,7 +915,7 @@
       {
         "repository": "art-daytrader-public-runtime",
         "path": "living_artwork/site/operational_readiness_public.json",
-        "sha256": "dbd89b8e13681360952bb6d3150f79cbebc6cf88b6a373a31a7faa6e502fb91e"
+        "sha256": "3d6b31685b48fbc5cefe4353f92dfda270fca1ca8367c1033f8c5e36af20982d"
       }
     ],
     "schema": "public_daily_operation_state_v1",
@@ -1071,7 +1071,7 @@
           {
             "repository": "art-daytrader-public-runtime",
             "path": "living_artwork/site/operational_readiness_public.json",
-            "sha256": "dbd89b8e13681360952bb6d3150f79cbebc6cf88b6a373a31a7faa6e502fb91e"
+            "sha256": "3d6b31685b48fbc5cefe4353f92dfda270fca1ca8367c1033f8c5e36af20982d"
           }
         ]
       }
@@ -1183,21 +1183,21 @@
   },
   "freshness": {
     "status": "PASS",
-    "checked_at_jst": "2026-08-04T14:49:53+09:00",
-    "state_data_at_jst": "2026-08-04T14:49:25+09:00",
-    "age_seconds": 28.575,
+    "checked_at_jst": "2026-08-04T15:13:20+09:00",
+    "state_data_at_jst": "2026-08-04T15:05:31+09:00",
+    "age_seconds": 469.11,
     "max_age_seconds": 1800,
     "canonical_source_count": 39,
-    "canonical_source_set_sha256": "aff48f65a5df8d8a4117a0796e4c3355545fd26d07f2ed8eb5dc9ac8321e27c6",
+    "canonical_source_set_sha256": "b458a76fb3f22f0ba2225f14645533f1914a17ef1e29f2d530c3a133898b3c75",
     "card_source_set_sha256": "969350b4de68933687be8f0f960bf432e79118d58a0c2f17f42197af292ed5cf",
     "orders_sent": false,
     "sendorder_count": 0
   },
-  "public_surface_state_at_jst": "2026-08-04T14:49:53+09:00",
-  "progress_checked_at": "2026-08-04 14:49",
+  "public_surface_state_at_jst": "2026-08-04T15:13:20+09:00",
+  "progress_checked_at": "2026-08-04 15:13",
   "operational_readiness": {
     "schema": "public_operational_readiness_v1",
-    "observed_at_jst": "2026-08-04T14:49:25+09:00",
+    "observed_at_jst": "2026-08-04T15:05:31+09:00",
     "overall_status": "ATTENTION_REQUIRED",
     "login_api": {
       "status": "PASS",
@@ -1272,13 +1272,13 @@
         "name": "PIN-LOTTERY-readonly-paper-20260730",
         "state": "Ready",
         "last_result": 3,
-        "last_run": "2026-08-03T14:50:00+09:00",
-        "next_run": "2026-08-04T14:50:00+09:00"
+        "last_run": "2026-08-04T14:50:00+09:00",
+        "next_run": "2026-08-05T14:50:00+09:00"
       },
       "receipt": {
         "status": "FAIL_CLOSED_NO_PAPER_RESULT",
         "reason_class": "READONLY_ALPHANUMERIC_SECURITY_CODE_REJECTED",
-        "observed_file_date": "20260803",
+        "observed_file_date": "20260804",
         "orders_sent": false
       }
     },
