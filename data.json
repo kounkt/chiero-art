@@ -98,7 +98,7 @@
   },
   "storage_refresh": {
     "status": "NOT_DUE",
-    "measured_at_jst": "2026-08-04T13:49:15+0900",
+    "measured_at_jst": "2026-08-04T13:55:18+0900",
     "preserved_last_verified_measurement": true
   },
   "foundry": {
@@ -126,7 +126,7 @@
       "head_sha256": "6a2c4b70e00eff93b22e24cc17ccf1b8799e9d055ab45c8b94354f390e9a4bf4",
       "snapshot": {
         "mode": "APPEND_ONLY_PREFIX",
-        "captured_at_jst": "2026-08-04T13:49:14+0900",
+        "captured_at_jst": "2026-08-04T13:55:17+0900",
         "source_git_commit": "a07f69705ab69f1a8fa5e9e96f458b9dafe789c3",
         "line_count": 263,
         "prefix_sha256": "c758d3dc381a5811f1917eb49aa594c8065c82286d70d10238bc601888ba7891",
@@ -305,7 +305,7 @@
     "repository": "art-daytrader-fable-28-53",
     "ledger_path": "governance/DEFECT_LEDGER.md",
     "ledger_sha256": "7460ddd188d51c3bb3717a88cf6a83f4a9b7baccfbe3c0bf72e7a92405bc028d",
-    "measured_at_jst": "2026-08-04T13:49:14+0900",
+    "measured_at_jst": "2026-08-04T13:55:17+0900",
     "orders_sent": false,
     "sendorder_count": 0
   },
@@ -499,7 +499,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-04T13:49:14+09:00",
+        "state_data_at_jst": "2026-08-04T13:55:17+09:00",
         "evidence": [
           {
             "path": "governance/micro_allocation_boundary_v2_20260725.json",
@@ -676,7 +676,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-04T13:49:14+09:00",
+        "state_data_at_jst": "2026-08-04T13:55:17+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_PIN_LOTTERY_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T140307+0900.json",
@@ -762,7 +762,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-04T13:49:14+09:00",
+        "state_data_at_jst": "2026-08-04T13:55:17+09:00",
         "evidence": [
           {
             "path": "governance/rulings141_20260727/testa_swing5d_result_site_handoff_r141.json",
@@ -823,7 +823,7 @@
         "provisional": false,
         "description_only": true,
         "qualification_evidence": false,
-        "state_data_at_jst": "2026-08-04T13:49:14+09:00",
+        "state_data_at_jst": "2026-08-04T13:55:17+09:00",
         "evidence": [
           {
             "path": "research/r20_residual_audit_v2_20260726/d0v4_033/provisional_result.json",
@@ -874,7 +874,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-04T13:49:14+09:00",
+        "state_data_at_jst": "2026-08-04T13:55:17+09:00",
         "evidence": [
           {
             "path": "reports/A3_FABLE_RULING221_052_PUBLIC_DISPLAY_HANDOFF_20260728T153600+0900.json",
@@ -915,7 +915,7 @@
       {
         "repository": "art-daytrader-public-runtime",
         "path": "living_artwork/site/operational_readiness_public.json",
-        "sha256": "261a5bd22582707f020556188d672d47a73636dee536ca3b7f52156703872cee"
+        "sha256": "4f478d72fa7c825cfd3e2a5e32eeb6842f0b0c602eb593cfc04f29b8e51350ea"
       }
     ],
     "schema": "public_daily_operation_state_v1",
@@ -1071,7 +1071,7 @@
           {
             "repository": "art-daytrader-public-runtime",
             "path": "living_artwork/site/operational_readiness_public.json",
-            "sha256": "261a5bd22582707f020556188d672d47a73636dee536ca3b7f52156703872cee"
+            "sha256": "4f478d72fa7c825cfd3e2a5e32eeb6842f0b0c602eb593cfc04f29b8e51350ea"
           }
         ]
       }
@@ -1183,18 +1183,18 @@
   },
   "freshness": {
     "status": "PASS",
-    "checked_at_jst": "2026-08-04T13:49:15+09:00",
+    "checked_at_jst": "2026-08-04T13:55:18+09:00",
     "state_data_at_jst": "2026-08-04T13:48:45+09:00",
-    "age_seconds": 30.051,
+    "age_seconds": 393.871,
     "max_age_seconds": 1800,
     "canonical_source_count": 39,
-    "canonical_source_set_sha256": "8cb859d56f7eee3082f75250fad78e74186bfc6ed4201ab87679e2b37a92ffbf",
+    "canonical_source_set_sha256": "deb04269f6c22de7f16958af7918a0430838a1ccaf4cb8f9524a5424776082e0",
     "card_source_set_sha256": "969350b4de68933687be8f0f960bf432e79118d58a0c2f17f42197af292ed5cf",
     "orders_sent": false,
     "sendorder_count": 0
   },
-  "public_surface_state_at_jst": "2026-08-04T13:49:15+09:00",
-  "progress_checked_at": "2026-08-04 13:49",
+  "public_surface_state_at_jst": "2026-08-04T13:55:18+09:00",
+  "progress_checked_at": "2026-08-04 13:55",
   "operational_readiness": {
     "schema": "public_operational_readiness_v1",
     "observed_at_jst": "2026-08-04T13:48:45+09:00",
@@ -1286,9 +1286,19 @@
         "class": "INFRASTRUCTURE",
         "observed_status": "STOP_INFRASTRUCTURE_OR_AUTHORITY_FAILURE",
         "release_condition": "寄前板と銘柄情報を併用し両応答Symbolを必須化した注文時Q1修正は独立B監査PASS後に2026-08-04 11:08 JST配備済み。次営業日08:57自然実行でterminal receiptを確認すること"
+      },
+      {
+        "reason_code": "READINESS_COLLECTION_FAILED_STALE_LAST_GOOD",
+        "class": "OBSERVABILITY_INFRASTRUCTURE",
+        "release_condition": "次回15分収集でVPSと公開状態を再読取すること"
       }
     ],
     "orders_sent": false,
-    "sendorder_count": 0
+    "sendorder_count": 0,
+    "collector_status": {
+      "status": "STALE_LAST_GOOD",
+      "failed_at_jst": "2026-08-04T13:55:17+09:00",
+      "error_class": "RuntimeError"
+    }
   }
 }
