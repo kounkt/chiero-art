@@ -1,7 +1,7 @@
 {
   "schema": "public_site_data_v1",
-  "generated_at_jst": "2026-08-04",
-  "public_surface_generated_at_jst": "2026-08-04",
+  "generated_at_jst": "2026-08-05",
+  "public_surface_generated_at_jst": "2026-08-05",
   "data_stats": {
     "datasets": [
       {
@@ -98,7 +98,7 @@
   },
   "storage_refresh": {
     "status": "NOT_DUE",
-    "measured_at_jst": "2026-08-04T23:56:17+0900",
+    "measured_at_jst": "2026-08-05T00:11:54+0900",
     "preserved_last_verified_measurement": true
   },
   "foundry": {
@@ -107,9 +107,9 @@
       "born": 52,
       "stillborn": 211,
       "today": {
-        "date_jst": "2026-08-04",
-        "total": 1,
-        "born": 1,
+        "date_jst": "2026-08-05",
+        "total": 0,
+        "born": 0,
         "stillborn": 0
       },
       "latest_generated_at_jst": "2026-08-04T03:00:00+09:00",
@@ -126,7 +126,7 @@
       "head_sha256": "6a2c4b70e00eff93b22e24cc17ccf1b8799e9d055ab45c8b94354f390e9a4bf4",
       "snapshot": {
         "mode": "APPEND_ONLY_PREFIX",
-        "captured_at_jst": "2026-08-04T23:56:16+0900",
+        "captured_at_jst": "2026-08-05T00:11:52+0900",
         "source_git_commit": "a07f69705ab69f1a8fa5e9e96f458b9dafe789c3",
         "line_count": 263,
         "prefix_sha256": "c758d3dc381a5811f1917eb49aa594c8065c82286d70d10238bc601888ba7891",
@@ -150,9 +150,9 @@
     "weekly_kpi": {
       "birth_count": 263,
       "new_born_rate": {
-        "numerator": 1,
-        "denominator": 1,
-        "value": 1.0
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
       },
       "court_submission_rate": {
         "numerator": 5,
@@ -305,13 +305,13 @@
     "repository": "art-daytrader-fable-28-53",
     "ledger_path": "governance/DEFECT_LEDGER.md",
     "ledger_sha256": "7460ddd188d51c3bb3717a88cf6a83f4a9b7baccfbe3c0bf72e7a92405bc028d",
-    "measured_at_jst": "2026-08-04T23:56:16+0900",
+    "measured_at_jst": "2026-08-05T00:11:53+0900",
     "orders_sent": false,
     "sendorder_count": 0
   },
   "active_cards": {
     "schema": "public_active_cards_v2",
-    "state_data_at_jst": "2026-08-04T23:55:38+09:00",
+    "state_data_at_jst": "2026-08-05T00:11:22+09:00",
     "governance_revision": {
       "ruling": "Fable裁定231(a)",
       "source_mode": "canonical_files_direct"
@@ -499,7 +499,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-04T23:56:16+09:00",
+        "state_data_at_jst": "2026-08-05T00:11:53+09:00",
         "evidence": [
           {
             "path": "governance/micro_allocation_boundary_v2_20260725.json",
@@ -544,7 +544,7 @@
       {
         "id": "033",
         "state": "live",
-        "name": "D0v4-033 本日08:57自然実行済み",
+        "name": "D0v4-033 平日08:57常設・本日判定待ち",
         "family": "イベントドリフト",
         "metric": "平日08:57常設task · 発注瞬間7条件が必須 · 配分額は非公開",
         "progress": {
@@ -554,13 +554,13 @@
         },
         "arose": "自社株買い表明後の20営業日ドリフトを、凍結済みD+1寄り入口のまま前向きに測るため。歴史値を実装都合で14:50へ移植しない。",
         "verification": "07:10の当日候補再検査、08:45の当日封印、08:57直前の建玉・未約定注文・資金・API・本人承認・非pinned板・D+21出口を順に再測定し、不明は発注しない。",
-        "outcome": "ログイン/API=PASS、本日候補=15件。08:57終端=STOP_INFRASTRUCTURE_OR_AUTHORITY_FAILURE、orders_sent=false。",
+        "outcome": "ログイン/API=PASS、本日候補=4件。08:57の自然実行結果は未観測。",
         "next_born": "現在の反復task名と当日実行時刻へ合わせた修正は独立B監査PASS後に2026-08-04 10:27 JST配備済み。次回07:30自然実行でPASSを確認すること",
         "simulation": "歴史値は20日ドリフトの記述であり、将来のQ1 GREENや注文成功を示さない。",
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-04T23:55:38+09:00",
+        "state_data_at_jst": "2026-08-05T00:11:22+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_033_V6_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T143446+0900.json",
@@ -676,7 +676,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-04T23:56:16+09:00",
+        "state_data_at_jst": "2026-08-05T00:11:53+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_PIN_LOTTERY_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T140307+0900.json",
@@ -762,7 +762,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-04T23:56:16+09:00",
+        "state_data_at_jst": "2026-08-05T00:11:53+09:00",
         "evidence": [
           {
             "path": "governance/rulings141_20260727/testa_swing5d_result_site_handoff_r141.json",
@@ -823,7 +823,7 @@
         "provisional": false,
         "description_only": true,
         "qualification_evidence": false,
-        "state_data_at_jst": "2026-08-04T23:56:16+09:00",
+        "state_data_at_jst": "2026-08-05T00:11:53+09:00",
         "evidence": [
           {
             "path": "research/r20_residual_audit_v2_20260726/d0v4_033/provisional_result.json",
@@ -874,7 +874,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-04T23:56:16+09:00",
+        "state_data_at_jst": "2026-08-05T00:11:53+09:00",
         "evidence": [
           {
             "path": "reports/A3_FABLE_RULING221_052_PUBLIC_DISPLAY_HANDOFF_20260728T153600+0900.json",
@@ -898,50 +898,28 @@
     "sendorder_count": 0
   },
   "operations": {
-    "trade_date": "2026-08-04",
-    "status": "NO_TRADE",
-    "label_ja": "インフラ起因No-Trade",
-    "description_ja": "08:57の当日終端はインフラまたは権限失敗で停止し、注文送信0件を記録した。",
-    "reason_class": "INFRA",
+    "trade_date": "2026-08-05",
+    "status": "UNKNOWN",
+    "label_ja": "UNKNOWN",
+    "description_ja": "当日のterminal receiptまたは注文台帳を正本から確認できないため、注文有無とNo-Trade区分は未確定。",
+    "reason_class": "DAILY_OPERATION_TERMINAL_RECEIPT_MISSING",
     "reason_codes": [
-      "ORDER_TIME_Q1_SIGNAL_BOARD_INVALID"
+      "DAILY_OPERATION_TERMINAL_RECEIPT_MISSING"
     ],
-    "no_trade_class": "CAGE_INCIDENT_NO_TRADE",
-    "realized_trade_loss_jpy": 0,
-    "orders_sent": false,
-    "sendorder_count": 0,
-    "next_gate_ja": "修正配備後の次営業日08:57自然実行",
+    "no_trade_class": "UNKNOWN",
+    "realized_trade_loss_jpy": null,
+    "orders_sent": null,
+    "sendorder_count": null,
+    "next_gate_ja": "当日terminal receiptの生成または欠測理由の記録",
     "sources": [
       {
-        "repository": "art-daytrader-public-runtime",
-        "path": "living_artwork/site/operational_readiness_public.json",
-        "sha256": "706987f944bddbc07f921596127fd163ba37f0b29fe213667b34e295c31590a8"
+        "repository": "art-daytrader-main-source",
+        "path": "artdaytrader/report/event_clock.py",
+        "sha256": "7ae43bc6c9edc184b09c0c1d36491b19039bb532de7edd051fc9778a30d80f91"
       }
     ],
     "schema": "public_daily_operation_state_v1",
     "history": [
-      {
-        "trade_date": "2026-07-29",
-        "status": "UNKNOWN",
-        "label_ja": "UNKNOWN",
-        "description_ja": "当日の全注文経路を閉じるterminal receiptまたは注文台帳を正本から確認できないため、注文有無とNo-Trade区分は未確定。",
-        "reason_class": "DAILY_OPERATION_TERMINAL_RECEIPT_MISSING",
-        "reason_codes": [
-          "DAILY_OPERATION_TERMINAL_RECEIPT_MISSING"
-        ],
-        "no_trade_class": "UNKNOWN",
-        "realized_trade_loss_jpy": null,
-        "orders_sent": null,
-        "sendorder_count": null,
-        "next_gate_ja": "欠測を置換できる当日terminal receiptまたは注文台帳",
-        "sources": [
-          {
-            "repository": "art-daytrader-main-source",
-            "path": "reports/queue/ops_s_artifacts/operations_backfill_20260728_20260731.json",
-            "sha256": "79a81f57282d30e612383102467068e9401dc40ba9b96dcc37c8b58dd02d9214"
-          }
-        ]
-      },
       {
         "trade_date": "2026-07-30",
         "status": "UNKNOWN",
@@ -1055,23 +1033,45 @@
       },
       {
         "trade_date": "2026-08-04",
-        "status": "NO_TRADE",
-        "label_ja": "インフラ起因No-Trade",
-        "description_ja": "08:57の当日終端はインフラまたは権限失敗で停止し、注文送信0件を記録した。",
-        "reason_class": "INFRA",
+        "status": "UNKNOWN",
+        "label_ja": "UNKNOWN",
+        "description_ja": "当日のterminal receiptまたは注文台帳を正本から確認できないため、注文有無とNo-Trade区分は未確定。",
+        "reason_class": "DAILY_OPERATION_TERMINAL_RECEIPT_MISSING",
         "reason_codes": [
-          "ORDER_TIME_Q1_SIGNAL_BOARD_INVALID"
+          "DAILY_OPERATION_TERMINAL_RECEIPT_MISSING"
         ],
-        "no_trade_class": "CAGE_INCIDENT_NO_TRADE",
-        "realized_trade_loss_jpy": 0,
-        "orders_sent": false,
-        "sendorder_count": 0,
-        "next_gate_ja": "修正配備後の次営業日08:57自然実行",
+        "no_trade_class": "UNKNOWN",
+        "realized_trade_loss_jpy": null,
+        "orders_sent": null,
+        "sendorder_count": null,
+        "next_gate_ja": "当日terminal receiptの生成または欠測理由の記録",
         "sources": [
           {
-            "repository": "art-daytrader-public-runtime",
-            "path": "living_artwork/site/operational_readiness_public.json",
-            "sha256": "706987f944bddbc07f921596127fd163ba37f0b29fe213667b34e295c31590a8"
+            "repository": "art-daytrader-main-source",
+            "path": "artdaytrader/report/event_clock.py",
+            "sha256": "7ae43bc6c9edc184b09c0c1d36491b19039bb532de7edd051fc9778a30d80f91"
+          }
+        ]
+      },
+      {
+        "trade_date": "2026-08-05",
+        "status": "UNKNOWN",
+        "label_ja": "UNKNOWN",
+        "description_ja": "当日のterminal receiptまたは注文台帳を正本から確認できないため、注文有無とNo-Trade区分は未確定。",
+        "reason_class": "DAILY_OPERATION_TERMINAL_RECEIPT_MISSING",
+        "reason_codes": [
+          "DAILY_OPERATION_TERMINAL_RECEIPT_MISSING"
+        ],
+        "no_trade_class": "UNKNOWN",
+        "realized_trade_loss_jpy": null,
+        "orders_sent": null,
+        "sendorder_count": null,
+        "next_gate_ja": "当日terminal receiptの生成または欠測理由の記録",
+        "sources": [
+          {
+            "repository": "art-daytrader-main-source",
+            "path": "artdaytrader/report/event_clock.py",
+            "sha256": "7ae43bc6c9edc184b09c0c1d36491b19039bb532de7edd051fc9778a30d80f91"
           }
         ]
       }
@@ -1082,58 +1082,58 @@
       "n": 0,
       "target": 1,
       "label": "実証未成立",
-      "prev": null,
-      "comparison_state": "BASELINE"
+      "prev": 0,
+      "comparison_state": "COMPARABLE"
     },
     "harvester": {
       "n": 9,
       "target": 14,
       "label": "前向き解決",
-      "prev": null,
-      "comparison_state": "BASELINE"
+      "prev": 9,
+      "comparison_state": "COMPARABLE"
     },
     "035": {
       "n": 29,
       "target": 14,
       "label": "前向き解決",
-      "prev": null,
-      "comparison_state": "BASELINE"
+      "prev": 29,
+      "comparison_state": "COMPARABLE"
     },
     "041g7": {
       "n": 7,
       "target": 14,
       "label": "前向き解決",
-      "prev": null,
-      "comparison_state": "BASELINE"
+      "prev": 7,
+      "comparison_state": "COMPARABLE"
     },
     "041g2": {
       "n": 95,
       "target": 14,
       "label": "経済的死亡",
-      "prev": null,
-      "comparison_state": "BASELINE",
+      "prev": 95,
+      "comparison_state": "COMPARABLE",
       "state": "grave"
     },
     "039b": {
       "n": 0,
       "target": 14,
       "label": "前向き解決",
-      "prev": null,
-      "comparison_state": "BASELINE"
+      "prev": 0,
+      "comparison_state": "COMPARABLE"
     },
     "033": {
       "n": 0,
       "target": 14,
       "label": "前向き解決",
-      "prev": null,
-      "comparison_state": "BASELINE"
+      "prev": 0,
+      "comparison_state": "COMPARABLE"
     },
     "052": {
       "n": 0,
       "target": 14,
       "label": "前向き解決",
-      "prev": null,
-      "comparison_state": "BASELINE"
+      "prev": 0,
+      "comparison_state": "COMPARABLE"
     }
   },
   "aggregates": {
@@ -1179,26 +1179,26 @@
       "analyst_days": 412,
       "saved_total": 44380000
     },
-    "prev_date": "2026-08-03"
+    "prev_date": "2026-08-04"
   },
   "freshness": {
     "status": "PASS",
-    "checked_at_jst": "2026-08-04T23:56:17+09:00",
-    "state_data_at_jst": "2026-08-04T23:55:38+09:00",
-    "age_seconds": 39.556,
+    "checked_at_jst": "2026-08-05T00:11:54+09:00",
+    "state_data_at_jst": "2026-08-05T00:11:22+09:00",
+    "age_seconds": 32.207,
     "max_age_seconds": 1800,
     "canonical_source_count": 39,
-    "canonical_source_set_sha256": "29666f10a4ce70ec359cd2b711b2681070cba1a9a3f9bfac1c5345644f0cdab1",
+    "canonical_source_set_sha256": "be051bdc7c06ffa678af59ef04d00ff9154a9524a6f2af218afa02413a1dab28",
     "card_source_set_sha256": "969350b4de68933687be8f0f960bf432e79118d58a0c2f17f42197af292ed5cf",
     "orders_sent": false,
     "sendorder_count": 0
   },
-  "public_surface_state_at_jst": "2026-08-04T23:56:17+09:00",
-  "progress_checked_at": "2026-08-04 23:56",
+  "public_surface_state_at_jst": "2026-08-05T00:11:54+09:00",
+  "progress_checked_at": "2026-08-05 00:11",
   "operational_readiness": {
     "schema": "public_operational_readiness_v1",
-    "observed_at_jst": "2026-08-04T23:55:38+09:00",
-    "overall_status": "ATTENTION_REQUIRED",
+    "observed_at_jst": "2026-08-05T00:11:22+09:00",
+    "overall_status": "PASS_PREMARKET",
     "login_api": {
       "status": "PASS",
       "application_running": true,
@@ -1220,12 +1220,12 @@
       "owner_capital_reflected": true
     },
     "candidate": {
-      "status": "MORNING_PUBLISHED",
-      "count_for_today": 15,
-      "within_configured_cap": true,
-      "count_within_configured_cap": 13,
-      "wallet_sufficient": true,
-      "count_wallet_sufficient": 13,
+      "status": "MISSING",
+      "count_for_today": 4,
+      "within_configured_cap": null,
+      "count_within_configured_cap": null,
+      "wallet_sufficient": null,
+      "count_wallet_sufficient": null,
       "symbol_disclosed": false
     },
     "morning_tasks": {
@@ -1252,19 +1252,19 @@
       }
     },
     "entry_outcome": {
-      "status": "STOP_INFRASTRUCTURE_OR_AUTHORITY_FAILURE",
-      "outcome": "INFRASTRUCTURE_OR_AUTHORITY_FAILURE",
-      "reason_code": "ORDER_TIME_Q1_SIGNAL_BOARD_INVALID",
-      "terminal_observed": true,
+      "status": "NOT_YET_OBSERVED",
+      "outcome": null,
+      "reason_code": null,
+      "terminal_observed": false,
       "orders_sent": false,
       "sendorder_count": 0
     },
     "foundry_hourly": {
       "status": "NO_NEW_MATERIAL_GENERATION_SKIPPED",
-      "last_hour_jst": "2026-08-04T23:00:00+09:00",
+      "last_hour_jst": "2026-08-05T00:00:00+09:00",
       "missing_expected_hour_jst": null,
       "birth_rows": 0,
-      "next_natural_fire_jst": "2026-08-05T00:07:00+09:00",
+      "next_natural_fire_jst": "2026-08-05T01:07:00+09:00",
       "orders_sent": false
     },
     "pin_lottery": {
@@ -1295,12 +1295,6 @@
         "checked_at_jst": "2026-08-04T07:30:05+09:00",
         "order_gate_role": "MONITORING_CONFIDENCE_ONLY",
         "release_condition": "現在の反復task名と当日実行時刻へ合わせた修正は独立B監査PASS後に2026-08-04 10:27 JST配備済み。次回07:30自然実行でPASSを確認すること"
-      },
-      {
-        "reason_code": "ORDER_TIME_Q1_SIGNAL_BOARD_INVALID",
-        "class": "INFRASTRUCTURE",
-        "observed_status": "STOP_INFRASTRUCTURE_OR_AUTHORITY_FAILURE",
-        "release_condition": "寄前板と銘柄情報を併用し両応答Symbolを必須化した注文時Q1修正は2026-08-04 11:08 JST配備済み。共有登録一覧の応答喪失復元もfresh独立B監査PASS後に2026-08-04 14:12 JST配備済み。次営業日08:57自然実行でterminal receiptを確認すること"
       }
     ],
     "orders_sent": false,
