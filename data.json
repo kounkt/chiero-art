@@ -55,9 +55,9 @@
     "docs_total": 175147,
     "gb": 197.27,
     "storage": {
-      "measured_at_jst": "2026-08-04T11:47:30+0900",
-      "receipt_path": "logs/build_evidence/public_site_data_measurement_20260804114730.json",
-      "receipt_sha256": "65d3b207da60002bc3e40474f31e90db1e466bcb1aa1271101782f8893a5a550",
+      "measured_at_jst": "2026-08-04T12:59:24+0900",
+      "receipt_path": "logs/build_evidence/public_site_data_measurement_20260804125924.json",
+      "receipt_sha256": "b6224194ed7717800d4f5266150e5abae1078fe2855bff698aa86450e5e76c15",
       "total_bytes": 211817332736,
       "total_gib": 197.27,
       "categories": [
@@ -97,9 +97,9 @@
     }
   },
   "storage_refresh": {
-    "status": "NOT_DUE",
-    "measured_at_jst": "2026-08-04T12:39:36+0900",
-    "preserved_last_verified_measurement": true
+    "status": "PASS",
+    "measured_at_jst": "2026-08-04T12:59:24+0900",
+    "preserved_last_verified_measurement": false
   },
   "foundry": {
     "ledger": {
@@ -126,7 +126,7 @@
       "head_sha256": "6a2c4b70e00eff93b22e24cc17ccf1b8799e9d055ab45c8b94354f390e9a4bf4",
       "snapshot": {
         "mode": "APPEND_ONLY_PREFIX",
-        "captured_at_jst": "2026-08-04T12:35:27+0900",
+        "captured_at_jst": "2026-08-04T12:58:25+0900",
         "source_git_commit": "a07f69705ab69f1a8fa5e9e96f458b9dafe789c3",
         "line_count": 263,
         "prefix_sha256": "c758d3dc381a5811f1917eb49aa594c8065c82286d70d10238bc601888ba7891",
@@ -305,13 +305,13 @@
     "repository": "art-daytrader-fable-28-53",
     "ledger_path": "governance/DEFECT_LEDGER.md",
     "ledger_sha256": "7460ddd188d51c3bb3717a88cf6a83f4a9b7baccfbe3c0bf72e7a92405bc028d",
-    "measured_at_jst": "2026-08-04T12:36:15+0900",
+    "measured_at_jst": "2026-08-04T12:58:26+0900",
     "orders_sent": false,
     "sendorder_count": 0
   },
   "active_cards": {
     "schema": "public_active_cards_v2",
-    "state_data_at_jst": "2026-08-04T12:34:13+09:00",
+    "state_data_at_jst": "2026-08-04T12:57:59+09:00",
     "governance_revision": {
       "ruling": "Fable裁定231(a)",
       "source_mode": "canonical_files_direct"
@@ -499,7 +499,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-04T12:36:16+09:00",
+        "state_data_at_jst": "2026-08-04T12:58:26+09:00",
         "evidence": [
           {
             "path": "governance/micro_allocation_boundary_v2_20260725.json",
@@ -560,7 +560,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-04T12:34:13+09:00",
+        "state_data_at_jst": "2026-08-04T12:57:59+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_033_V6_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T143446+0900.json",
@@ -676,7 +676,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-04T12:36:16+09:00",
+        "state_data_at_jst": "2026-08-04T12:58:26+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_PIN_LOTTERY_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T140307+0900.json",
@@ -762,7 +762,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-04T12:36:16+09:00",
+        "state_data_at_jst": "2026-08-04T12:58:26+09:00",
         "evidence": [
           {
             "path": "governance/rulings141_20260727/testa_swing5d_result_site_handoff_r141.json",
@@ -823,7 +823,7 @@
         "provisional": false,
         "description_only": true,
         "qualification_evidence": false,
-        "state_data_at_jst": "2026-08-04T12:36:16+09:00",
+        "state_data_at_jst": "2026-08-04T12:58:26+09:00",
         "evidence": [
           {
             "path": "research/r20_residual_audit_v2_20260726/d0v4_033/provisional_result.json",
@@ -874,7 +874,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-04T12:36:16+09:00",
+        "state_data_at_jst": "2026-08-04T12:58:26+09:00",
         "evidence": [
           {
             "path": "reports/A3_FABLE_RULING221_052_PUBLIC_DISPLAY_HANDOFF_20260728T153600+0900.json",
@@ -915,7 +915,7 @@
       {
         "repository": "art-daytrader-public-runtime",
         "path": "living_artwork/site/operational_readiness_public.json",
-        "sha256": "1f862cbb1458938f473d797765f97b29cc5a62b2ebf7f72ae00ca912481910fc"
+        "sha256": "607fe642e30a10bbd82c8e3597c344baf99c84f413cbeb722b0af9734ce5d64b"
       }
     ],
     "schema": "public_daily_operation_state_v1",
@@ -1071,7 +1071,7 @@
           {
             "repository": "art-daytrader-public-runtime",
             "path": "living_artwork/site/operational_readiness_public.json",
-            "sha256": "1f862cbb1458938f473d797765f97b29cc5a62b2ebf7f72ae00ca912481910fc"
+            "sha256": "607fe642e30a10bbd82c8e3597c344baf99c84f413cbeb722b0af9734ce5d64b"
           }
         ]
       }
@@ -1175,21 +1175,21 @@
   },
   "freshness": {
     "status": "PASS",
-    "checked_at_jst": "2026-08-04T12:39:36+09:00",
-    "state_data_at_jst": "2026-08-04T12:34:13+09:00",
-    "age_seconds": 323.305,
+    "checked_at_jst": "2026-08-04T12:59:24+09:00",
+    "state_data_at_jst": "2026-08-04T12:57:59+09:00",
+    "age_seconds": 85.549,
     "max_age_seconds": 1800,
     "canonical_source_count": 39,
-    "canonical_source_set_sha256": "f9d409d6fe810e83eddd2c49e13099a1d45de61b9602880107d764de831193fb",
+    "canonical_source_set_sha256": "42531b44422d1bc7cd4755aeeb3dd8dad4618de4430f75d3d1c3d12fda78ab50",
     "card_source_set_sha256": "969350b4de68933687be8f0f960bf432e79118d58a0c2f17f42197af292ed5cf",
     "orders_sent": false,
     "sendorder_count": 0
   },
-  "public_surface_state_at_jst": "2026-08-04T12:39:36+09:00",
-  "progress_checked_at": "2026-08-04 12:39",
+  "public_surface_state_at_jst": "2026-08-04T12:59:24+09:00",
+  "progress_checked_at": "2026-08-04 12:59",
   "operational_readiness": {
     "schema": "public_operational_readiness_v1",
-    "observed_at_jst": "2026-08-04T12:34:13+09:00",
+    "observed_at_jst": "2026-08-04T12:57:59+09:00",
     "overall_status": "ATTENTION_REQUIRED",
     "login_api": {
       "status": "PASS",
