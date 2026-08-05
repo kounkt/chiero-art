@@ -265,6 +265,14 @@
   <div class="band tnum" id="readinessband"></div>
   <div class="datatable-wrap"><table class="datatable tnum" id="bottlenecktable"></table></div>
 
+  <h2>暗号資産のデータ取得と作品化</h2>
+  <p class="note">公開市場データの自然取得、既存履歴の3区分、独立B、紙、本番の位置を同じ順序で表示する。秘密値・銘柄・注文内容は公開せず、未確認値はUNKNOWNとする。</p>
+  <div class="band tnum" id="cryptoband"></div>
+  <div class="datatable-wrap"><table class="datatable tnum" id="cryptoobservertable"></table></div>
+  <div class="datatable-wrap"><table class="datatable tnum" id="cryptopartitiontable"></table></div>
+  <div class="datatable-wrap"><table class="datatable tnum" id="cryptobottlenecktable"></table></div>
+  <p class="note tnum" id="cryptonextstep"></p>
+
   <h2>将来の予測 — 実験の記述的シミュレーション</h2>
   <p class="note">測定されたエッジが、非公開の正規化容量点によって複利でどう積み上がるかを描いた実験的な地図。スライダーを動かすと容量による変化が見える。<span class="red">口座・資本・配分額は公開しない。保証ではなく、過去データに基づく推定である。</span></p>
   <div class="proj">
@@ -338,9 +346,6 @@
   <div class="band tnum" id="foundryband"></div>
   <div class="stillborn-signal tnum" id="stillbornsignal"></div>
   <div class="band tnum foundry-volume" id="foundryvolume"></div>
-  <h3 class="trial-heading">増配2セル — 法廷提出から検定終端まで</h3>
-  <p class="trial-note">本番稼働へ最も近づいた2セルの通過履歴。COURT_SUBMITTEDだけで成功とせず、独立B後の終端まで表示する。</p>
-  <div class="trial-grid tnum" id="dividendtrack"></div>
   <div class="band tnum" id="defectband"></div>
   <div class="datatable-wrap"><table class="datatable tnum" id="courttable"></table></div>
   <div class="datatable-wrap"><table class="datatable tnum" id="weeklytable"></table></div>
@@ -385,7 +390,7 @@ const DATA = {
      prog:{n:4,target:14,prev:0,label:"前向き解決"},
      arose:"身体知の移植（公開記録のある個人投資家）(D0v4-030)と教義「上は持続」から。大出来高で強く上げ高値で引ける株は翌朝まで持続する、という仮説。",
      verif:"3定義の和集合（vr≥5&ret≥5%&Va≥1e9 ∪ 引け位置cH≥0.9 ∪ gap≥7%維持）を14:50に判定し引け買い→翌寄り売り。ホールドアウト一発 t=5.49/5.41 両PASS。地合い除去後の超過も+90.8bp(t=17.7)。",
-     outcome:"生存。月次勝率97%・最大DD-24%（投下資本基準）。10年全年プラス。現在値は上の前向き紙時計を正本とする。",
+     outcome:"生存。月次勝率97%・最大DD-24%（投下資本基準）。10年全年プラス。前向き紙時計は4/14。",
      next:"早乗り(035)・張り付き(041-G7)・ギャップ維持(041-G2)へ分岐。",
      sim:"正規化容量曲線には月次利率の頂点があり、高容量側では参加率上限によって低下。資本額・口座額・配分額は非公開。"},
     {id:"035",state:"paper",name:"D0v4-035 早乗り 15:30",fam:"夜間持続",
@@ -446,10 +451,10 @@ const DATA = {
      sim:"選択式・選択閾値・銘柄は非公開。result handoffと独立B判定の集計値・生死・証拠SHAだけを表示する。"},
     {id:"r20",state:"surviving",added:"2026-07-26",state_data_at_jst:"2026-07-26T16:42:28+09:00",
      name:"R-20 残差監査",fam:"因子残差・記述監査",
-     metric:"B_month R² 0.191 · 因子調整後 +95.35bp/20日",
+     metric:"因子残差の記述監査PASS · 資本変更の資格証拠ではない",
      prog:{n:1,target:1,prev:0,label:"独立B監査"},
      arose:"D0v4-033の歴史平均が既知の市場・幅・モメンタム因子の変装か、固有の残余を持つかを増額審査前に記述測定するため。",
-     verif:"pre-2025、決済日cluster OLS、可逆スプレッド3因子で測定。B_monthはR² 0.191392、因子調整後net20 mean +95.35bp、非年率残差Sharpe 0.119。A_weekはR² 0.197585、+36.59bp。",
+     verif:"pre-2025、決済日cluster OLS、可逆スプレッド3因子で測定。増配2セルの個別値は死亡確定後の一般公開対象から除外し、集計への寄与と原本SHAだけを保持。",
      outcome:"独立B v4 PASS。+95.35bp/20日の記述値を033増額審査の記述証拠束へ編入済み。資格証拠ではなく、資本変更を自動承認しない。",
      next:"資本変更は、この記述証拠とは別のFable裁定と本人承認がある場合だけ審査する。",
      sim:"description_only=true / qualification_evidence=false / fdr_consumed=false。夜間proxyは入力保持率86.63%が凍結下限95%を下回り未算出のままfail-close。"},
@@ -458,7 +463,7 @@ const DATA = {
      prog:{n:0,target:14,prev:0,label:"前向き解決"},
      arose:"決算が集中する日は1件あたりの注意が薄まり織り込みが遅れドリフトが太る（limited attention）。",
      verif:"凍結境界は開示件数>79、σ_day=1002.77bp。BとB3が現行overlayとwriterを独立監査し、B3 finding 0でPASSした。",
-     outcome:"BとB3が独立PASS。2026-07-22開始のACTIVE_BLIND紙時計をリセットせず継続。現在値は上の前向き紙時計を正本とし、遡及補完・backfillなし。",
+     outcome:"BとB3が独立PASS。2026-07-22開始のACTIVE_BLIND紙時計をリセットせず継続。現在0/14、遡及補完・backfillなし。",
      next:"前向き解決14件かつ最低10独立取引日を満たした後だけ次の審査へ進む。",sim:"20日+170.8bpは凍結済み歴史記述。紙時計の進捗や将来収益を代用しない。"},
     {id:"051",state:"grave",name:"D0v4-051 TOB発表後ドリフト",fam:"イベントドリフト",
      metric:"+22.5bp t=0.55 / +70.0bp t=1.46 — 有意性なし",
@@ -637,10 +642,10 @@ const DATA = {
   // 次フェーズへ進む条件（種→紙孵化→本番稼働）
   var PROMOTE={
     pb1:"<b>次の門:</b> 日次停止を維持したまま、別裁定で指定された実証候補の全安全門を実測する（現在 NOT_AUTHORIZED） <b>時刻:</b> 別裁定時",
-    harvester:"紙で <b>n=14解決</b>（独立10営業日以上）→ L1〜L4境界照合 → 本人YESが別にある場合だけ審査。現在nは上の紙時計を正本とする。",
-    "035":"紙 n=14・独立10営業日以上・14:50判定precision≥0.90を維持 → 全件再計算 → 昇格カード提出 → 本人YESが別にある場合だけ審査。現在nは上の紙時計を正本とする。",
+    harvester:"紙で <b>n=14解決</b>（独立10営業日以上）→ L1〜L4境界照合 → 本人YESが別にある場合だけ審査。現在は4/14。",
+    "035":"紙 n=14 かつ 14:50判定precision≥0.90を維持 → 昇格カード提出 → 本人YESが別にある場合だけ審査。現在は7/14。",
     "041fam":"041-G7はn=14まで紙時計を継続。041-G2は経済的死亡のため同じカードを再開しない。",
-    "041g7":"n=14解決 → 経済非棄却(L2)・整合(L1) → 本人YESが別にある場合だけ審査。現在nは上の紙時計を正本とする。",
+    "041g7":"n=14解決 → 経済非棄却(L2)・整合(L1) → 本人YESが別にある場合だけ審査。現在は2/14。",
     "041g2":"<b>次の門:</b> なし。DEATH_ECONOMIC_3SIGMAの墓標を保持し、同じカードを昇格・再開しない。",
     "033":"<b>次の門:</b> 監査済みreleaseの実配備一致 → live task登録・readback → 対象時刻のQ1六条件実測。paper twinは配備・登録済みだが未実行。",
     "pin-lottery":"<b>次の門:</b> PIN紙runnerの初回自然実行（現在 NOT_YET_OBSERVABLE） <b>時刻:</b> 2026-07-29 14:50 JST。注文機能なし。",
@@ -792,7 +797,7 @@ const DATA = {
     return (v.value*100).toFixed(1)+"%";
   }
   function renderFoundry(f){
-    var l=f.ledger,c=f.first_court,k=f.weekly_kpi,d=f.dividend_trials||{cards:[]};
+    var l=f.ledger,c=f.first_court,k=f.weekly_kpi;
     document.getElementById('foundryband').innerHTML=[
       {n:ratePercent(k.new_born_rate),l:"新規BORN率",a:1},
       {n:ratePercent(k.court_submission_rate),l:"法廷提出率"},
@@ -808,17 +813,6 @@ const DATA = {
       {n:l.born,l:"BORN 累計"},
       {n:(f.current_funnel||{}).court_submitted,l:"法廷提出 累計"}
     ].map(function(b){return '<div class="cell"><b>'+b.n+'</b><i>'+b.l+'</i></div>';}).join('');
-    document.getElementById('dividendtrack').innerHTML=d.cards.map(function(card){
-      var stages=card.stage_sequence.map(function(stage){
-        var cls=stage===card.current_state?'terminal':'done';
-        return '<span class="'+cls+'">'+stage+'</span>';
-      }).join(' → ');
-      return '<article class="trial-card"><h4>'+card.label+'</h4>'
-        +'<div class="trial-stage">'+stages+'</div>'
-        +'<p class="trial-metric"><b>現在 '+card.current_state+'</b> · n='+card.events_n
-        +' · net '+Number(card.mean_net_bp).toFixed(1)+'bp · p='+Number(card.raw_p_two_sided).toFixed(4)
-        +' · BY='+(card.by_pass?'PASS':'false')+'</p></article>';
-    }).join('');
     document.getElementById('courttable').innerHTML=
       '<tr><th>第1回法廷</th><th>状態</th><th style="text-align:right">件数</th></tr>'
       +'<tr><td class="nm">提出</td><td>法廷へ提出済み</td><td class="num">'+c.submitted+'</td></tr>'
@@ -887,10 +881,40 @@ const DATA = {
       {n:esc(entry.status||"NOT_YET_OBSERVED"),l:"08:57発注判断"},
       {n:esc(foundry.status),l:"毎時の新戦略生成",a:["PASS","SOURCE_UPDATE_AUTO_RESUME"].indexOf(foundry.status)<0}
     ].map(function(x){return '<div class="cell'+(x.a?' accent':'')+'"><b>'+x.n+'</b><i>'+x.l+'</i></div>';}).join('');
+    document.getElementById('cryptoobservertable').innerHTML=
+      '<tr><th>公開データ取得</th><th>状態</th><th>最終記録</th><th>task結果</th></tr>'+[
+        ['Bybit',bybit],['GMO',gmo]
+      ].map(function(row){return '<tr><td class="nm">'+row[0]+'</td><td>'+esc(row[1].status)+'</td><td>'+esc(row[1].last_record_at_jst)+'</td><td>'+esc(row[1].last_task_result)+'</td></tr>';}).join('');
     var rows=r.bottlenecks||[];
     document.getElementById('bottlenecktable').innerHTML=
       '<tr><th>停止・待機理由</th><th>分類</th><th>解除条件</th></tr>'+
       (rows.length?rows.map(function(x){return '<tr><td class="nm">'+esc(x.reason_code)+'</td><td>'+esc(x.class)+'</td><td>'+esc(x.release_condition)+'</td></tr>';}).join(''):'<tr><td class="nm">NONE</td><td>—</td><td>次の自然実行を待機</td></tr>');
+    if(r.crypto)renderCrypto(r.crypto);
+  }
+  function renderCrypto(c){
+    if(!c)return;
+    function esc(v){return String(v===null||typeof v==='undefined'?"UNKNOWN":v).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+    var observers=c.observers||{},bybit=observers.bybit||{},gmo=observers.gmo||{},history=c.historical_data||{},research=c.research||{};
+    document.getElementById('cryptoband').innerHTML=[
+      {n:esc(bybit.status),l:"Bybit公開データ",a:bybit.status!=="RUNNING"},
+      {n:esc(gmo.status),l:"GMO公開データ",a:gmo.status!=="RUNNING"},
+      {n:esc(history.archive_count),l:"履歴archive"},
+      {n:esc(history.total_gib),l:"履歴GiB"},
+      {n:esc(research.stage),l:"検証段階",a:research.stage!=="READY_FOR_DEVELOPMENT"},
+      {n:esc(research.paper_strategy_count),l:"紙戦略"},
+      {n:esc(research.live_strategy_count),l:"本番戦略"}
+    ].map(function(x){return '<div class="cell'+(x.a?' accent':'')+'"><b>'+x.n+'</b><i>'+x.l+'</i></div>';}).join('');
+    var labels={development:"探索用",candidate_selection:"候補選択用",final_locked:"最終未開封"},parts=history.partitions||{};
+    document.getElementById('cryptopartitiontable').innerHTML=
+      '<tr><th>履歴データ区分</th><th>archive</th><th>GiB</th><th>市場値開封</th></tr>'+[
+        'development','candidate_selection','final_locked'
+      ].map(function(key){var x=parts[key]||{};return '<tr><td class="nm">'+labels[key]+'</td><td>'+esc(x.archive_count)+'</td><td>'+esc(x.gib)+'</td><td>'+(x.market_rows_opened===false?'未開封':'UNKNOWN')+'</td></tr>';}).join('');
+    var rows=c.bottlenecks||[];
+    document.getElementById('cryptobottlenecktable').innerHTML=
+      '<tr><th>暗号資産の停止・待機理由</th><th>分類</th><th>解除条件</th></tr>'+(
+        rows.length?rows.map(function(x){return '<tr><td class="nm">'+esc(x.reason_code)+'</td><td>'+esc(x.class)+'</td><td>'+esc(x.release_condition)+'</td></tr>';}).join(''):'<tr><td class="nm">NONE</td><td>—</td><td>次の自然実行を待機</td></tr>'
+      );
+    document.getElementById('cryptonextstep').innerHTML='<b>現在地:</b> '+esc(research.stage)+' ／ <b>次:</b> '+esc(research.release_condition)+' ／ 状態データ '+esc(c.observed_at_jst);
   }
   renderData(EMBEDDED_STATS);
   // 自動更新中インジケータ：ブラウザが2分ごとに再取得している「生きている」ことを可視化。

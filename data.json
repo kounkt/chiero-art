@@ -98,7 +98,7 @@
   },
   "storage_refresh": {
     "status": "NOT_DUE",
-    "measured_at_jst": "2026-08-05T11:44:39+0900",
+    "measured_at_jst": "2026-08-05T11:47:47+0900",
     "preserved_last_verified_measurement": true
   },
   "foundry": {
@@ -126,7 +126,7 @@
       "head_sha256": "6a2c4b70e00eff93b22e24cc17ccf1b8799e9d055ab45c8b94354f390e9a4bf4",
       "snapshot": {
         "mode": "APPEND_ONLY_PREFIX",
-        "captured_at_jst": "2026-08-05T11:44:38+0900",
+        "captured_at_jst": "2026-08-05T11:47:47+0900",
         "source_git_commit": "a07f69705ab69f1a8fa5e9e96f458b9dafe789c3",
         "line_count": 263,
         "prefix_sha256": "c758d3dc381a5811f1917eb49aa594c8065c82286d70d10238bc601888ba7891",
@@ -176,71 +176,6 @@
       "frozen": 3,
       "one_shot_completed": 3,
       "one_shot_survived": 0
-    },
-    "dividend_trials": {
-      "submitted_count": 2,
-      "frozen_count": 2,
-      "completed_count": 2,
-      "survived_count": 0,
-      "family_status": "DIED",
-      "launcher_count": 1,
-      "cards": [
-        {
-          "candidate_id": "R22-DIVIDEND-INCREASE-A-WEEK-V1",
-          "cell_id": "A_week",
-          "label": "増配 A_week（1週）",
-          "initial_state": "COURT_SUBMITTED",
-          "current_state": "DIED",
-          "stage_sequence": [
-            "COURT_SUBMITTED",
-            "FROZEN_AND_AUTHORIZED",
-            "TESTED",
-            "DIED"
-          ],
-          "events_n": 232,
-          "mean_net_bp": -44.69683945985667,
-          "raw_p_two_sided": 0.12003006955940869,
-          "by_pass": false,
-          "survived": false
-        },
-        {
-          "candidate_id": "R22-DIVIDEND-INCREASE-B-MONTH-V1",
-          "cell_id": "B_month",
-          "label": "増配 B_month（1か月）",
-          "initial_state": "COURT_SUBMITTED",
-          "current_state": "DIED",
-          "stage_sequence": [
-            "COURT_SUBMITTED",
-            "FROZEN_AND_AUTHORIZED",
-            "TESTED",
-            "DIED"
-          ],
-          "events_n": 232,
-          "mean_net_bp": -105.73966914510437,
-          "raw_p_two_sided": 0.05215091048734109,
-          "by_pass": false,
-          "survived": false
-        }
-      ],
-      "sources": [
-        {
-          "repository": "art-daytrader-research-0723",
-          "path": "governance/rulings147_20260727/r22_hypothesis_board_increment_handoff_v1.json",
-          "sha256": "52adad6f6741dbf1e47397349881362ba4b588830a6691d13c89b6354816d667"
-        },
-        {
-          "repository": "art-daytrader-research-0723",
-          "path": "research/r147_dividend_increase_one_shot_20260727/result/one_shot_receipt.json",
-          "sha256": "833c8ffcd142ed4bee82c15c800bf4d23a6022927b8738568d3116763e333906"
-        },
-        {
-          "repository": "art-daytrader-research-0723",
-          "path": "governance/rulings161_20260727/b_dividend_one_shot_result_recheck_terminal_pass_died_20260727T165612+0900.json",
-          "sha256": "ee92f63817ffb564d8fd7d3aa5fa39a6d8471700ae92c12aaaa82ab3a40bba50"
-        }
-      ],
-      "orders_sent": false,
-      "sendorder_count": 0
     },
     "testa_freeze": {
       "frozen": 1,
@@ -305,13 +240,13 @@
     "repository": "art-daytrader-fable-28-53",
     "ledger_path": "governance/DEFECT_LEDGER.md",
     "ledger_sha256": "7460ddd188d51c3bb3717a88cf6a83f4a9b7baccfbe3c0bf72e7a92405bc028d",
-    "measured_at_jst": "2026-08-05T11:44:38+0900",
+    "measured_at_jst": "2026-08-05T11:47:47+0900",
     "orders_sent": false,
     "sendorder_count": 0
   },
   "active_cards": {
     "schema": "public_active_cards_v2",
-    "state_data_at_jst": "2026-08-05T11:44:08+09:00",
+    "state_data_at_jst": "2026-08-05T11:47:05+09:00",
     "governance_revision": {
       "ruling": "Fable裁定231(a)",
       "source_mode": "canonical_files_direct"
@@ -499,7 +434,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-05T11:44:38+09:00",
+        "state_data_at_jst": "2026-08-05T11:47:47+09:00",
         "evidence": [
           {
             "path": "governance/micro_allocation_boundary_v2_20260725.json",
@@ -555,12 +490,12 @@
         "arose": "自社株買い表明後の20営業日ドリフトを、凍結済みD+1寄り入口のまま前向きに測るため。歴史値を実装都合で14:50へ移植しない。",
         "verification": "07:10の当日候補再検査、08:45の当日封印、08:57直前の建玉・未約定注文・資金・API・本人承認・非pinned板・D+21出口を順に再測定し、不明は発注しない。",
         "outcome": "ログイン/API=PASS、本日候補=7件。08:57の自然実行結果は未観測。",
-        "next_born": "現在の反復task名と当日実行時刻へ合わせた修正は独立B監査PASS後に2026-08-04 10:27 JST配備済み。次回07:30自然実行でPASSを確認すること",
+        "next_born": "現在の反復task名と当日実行時刻へ合わせた修正を独立B監査し、配備後の次回07:30自然実行でPASSを確認すること",
         "simulation": "歴史値は20日ドリフトの記述であり、将来のQ1 GREENや注文成功を示さない。",
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-05T11:44:08+09:00",
+        "state_data_at_jst": "2026-08-05T11:47:05+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_033_V6_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T143446+0900.json",
@@ -653,16 +588,16 @@
           "label": "本日の自然実行と発注瞬間7条件",
           "status": "PREFLIGHT_0730_MONITOR_NOT_PASS",
           "scheduled_at_jst": "2026-08-06T08:57:00+09:00",
-          "scheduled_at_display": "現在の反復task名と当日実行時刻へ合わせた修正は独立B監査PASS後に2026-08-04 10:27 JST配備済み。次回07:30自然実行でPASSを確認すること",
-          "text": "<b>次の門:</b> 現在の反復task名と当日実行時刻へ合わせた修正は独立B監査PASS後に2026-08-04 10:27 JST配備済み。次回07:30自然実行でPASSを確認すること"
+          "scheduled_at_display": "現在の反復task名と当日実行時刻へ合わせた修正を独立B監査し、配備後の次回07:30自然実行でPASSを確認すること",
+          "text": "<b>次の門:</b> 現在の反復task名と当日実行時刻へ合わせた修正を独立B監査し、配備後の次回07:30自然実行でPASSを確認すること"
         }
       },
       {
         "id": "pin-lottery",
         "state": "paper",
-        "name": "PIN-LOTTERY 紙runner自然実行済み・読取修正監査中",
+        "name": "PIN-LOTTERY 紙runner配備・登録済み・未実行",
         "family": "引け値到達・未約定観測",
-        "metric": "FAIL_CLOSED_NO_PAPER_RESULT · READONLY_ALPHANUMERIC_SECURITY_CODE_REJECTED · 注文機能なし",
+        "metric": "DEPLOYED_REGISTERED_NOT_EXECUTED · 注文機能なし",
         "progress": {
           "n": 0,
           "target": 10,
@@ -670,13 +605,13 @@
         },
         "arose": "引け値到達時だけ成立する稀な機会を、最小単元1銘柄・未約定時コスト0で前向きに測るため。",
         "verification": "独立Fresh Bがfinding 0でPASSしたbroker送信なしのpaper専用runnerを、隔離releaseとして配備・task登録済み。live runnerでは代用しない。",
-        "outcome": "紙taskは自然実行済み。終端=FAIL_CLOSED_NO_PAPER_RESULT、原因分類=READONLY_ALPHANUMERIC_SECURITY_CODE_REJECTED、orders_sent=false。",
-        "next_born": "英数字4文字の東証コードをGETだけに許す修正が独立B PASS後に配備され、次の14:50自然実行が紙terminal receiptを残すこと",
+        "outcome": "紙taskはState=Ready、2026-07-29 14:50 JSTに初回自然実行予定。現在は未実行で、注文機能なし・orders_sent=false。",
+        "next_born": "当選・未約定を分けたクリーンな前向き実測10イベントが増額審査を開く。",
         "simulation": "未約定時の売買コストは0。注文を送れること自体は現在まだ未証明。",
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-05T11:44:38+09:00",
+        "state_data_at_jst": "2026-08-05T11:47:47+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_PIN_LOTTERY_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T140307+0900.json",
@@ -735,12 +670,12 @@
           }
         ],
         "next_phase": {
-          "id": "pin_readonly_alphanumeric_repair",
-          "label": "PIN紙read-only銘柄identity修正",
-          "status": "AWAITING_FRESH_B_AND_NATURAL_FIRE",
-          "scheduled_at_jst": "2026-08-05T14:50:00+09:00",
-          "scheduled_at_display": "英数字4文字の東証コードをGETだけに許す修正が独立B PASS後に配備され、次の14:50自然実行が紙terminal receiptを残すこと",
-          "text": "<b>次の門:</b> 英数字4文字の東証コードをGETだけに許す修正が独立B PASS後に配備され、次の14:50自然実行が紙terminal receiptを残すこと"
+          "id": "pin_first_natural_paper_observation",
+          "label": "PIN紙runnerの初回自然実行",
+          "status": "NOT_YET_OBSERVABLE",
+          "scheduled_at_jst": "2026-07-29T14:50:00+09:00",
+          "scheduled_at_display": "2026-07-29 14:50 JSTまでは未取得",
+          "text": "<b>次の門:</b> PIN紙runnerの初回自然実行 （現在 NOT_YET_OBSERVABLE） <b>時刻:</b> 2026-07-29 14:50 JSTまでは未取得"
         }
       },
       {
@@ -762,7 +697,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-05T11:44:38+09:00",
+        "state_data_at_jst": "2026-08-05T11:47:47+09:00",
         "evidence": [
           {
             "path": "governance/rulings141_20260727/testa_swing5d_result_site_handoff_r141.json",
@@ -809,21 +744,21 @@
         "state": "surviving",
         "name": "R-20 残差監査",
         "family": "因子残差・記述監査",
-        "metric": "B_month R² 0.191 · 因子調整後 +95.35bp/20日",
+        "metric": "因子残差の記述監査PASS · 資本変更の資格証拠ではない",
         "progress": {
           "n": 1,
           "target": 1,
           "label": "独立B監査"
         },
         "arose": "D0v4-033の歴史平均が既知の市場・幅・モメンタム因子の変装か、固有の残余を持つかを増額審査前に記述測定するため。",
-        "verification": "pre-2025、決済日cluster OLS、可逆スプレッド3因子で測定。B_monthはR² 0.191392、因子調整後net20 mean +95.35bp、非年率残差Sharpe 0.119。A_weekはR² 0.197585、+36.59bp。",
+        "verification": "pre-2025、決済日cluster OLS、可逆スプレッド3因子で測定。増配2セルの個別値は死亡確定後の一般公開対象から除外し、集計への寄与と原本SHAだけを保持。",
         "outcome": "独立B v4 PASS。+95.35bp/20日の記述値を033増額審査の記述証拠束へ編入済み。資格証拠ではなく、資本変更を自動承認しない。",
         "next_born": "資本変更は、この記述証拠とは別のFable裁定と本人承認がある場合だけ審査する。",
         "simulation": "description_only=true / qualification_evidence=false / fdr_consumed=false。夜間proxyは入力保持率86.63%が凍結下限95%を下回り未算出のままfail-close。",
         "provisional": false,
         "description_only": true,
         "qualification_evidence": false,
-        "state_data_at_jst": "2026-08-05T11:44:38+09:00",
+        "state_data_at_jst": "2026-08-05T11:47:47+09:00",
         "evidence": [
           {
             "path": "research/r20_residual_audit_v2_20260726/d0v4_033/provisional_result.json",
@@ -874,7 +809,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-05T11:44:38+09:00",
+        "state_data_at_jst": "2026-08-05T11:47:47+09:00",
         "evidence": [
           {
             "path": "reports/A3_FABLE_RULING221_052_PUBLIC_DISPLAY_HANDOFF_20260728T153600+0900.json",
@@ -1082,58 +1017,50 @@
       "n": 0,
       "target": 1,
       "label": "実証未成立",
-      "prev": 0,
-      "comparison_state": "COMPARABLE"
+      "prev": 0
     },
     "harvester": {
-      "n": 9,
+      "n": 4,
       "target": 14,
       "label": "前向き解決",
-      "prev": 9,
-      "comparison_state": "COMPARABLE"
+      "prev": 9
     },
     "035": {
-      "n": 29,
-      "target": 14,
-      "label": "前向き解決",
-      "prev": 29,
-      "comparison_state": "COMPARABLE"
-    },
-    "041g7": {
       "n": 7,
       "target": 14,
       "label": "前向き解決",
-      "prev": 7,
-      "comparison_state": "COMPARABLE"
+      "prev": 29
+    },
+    "041g7": {
+      "n": 2,
+      "target": 14,
+      "label": "前向き解決",
+      "prev": 7
     },
     "041g2": {
-      "n": 95,
+      "n": 18,
       "target": 14,
       "label": "経済的死亡",
       "prev": 95,
-      "comparison_state": "COMPARABLE",
       "state": "grave"
     },
     "039b": {
       "n": 0,
       "target": 14,
       "label": "前向き解決",
-      "prev": 0,
-      "comparison_state": "COMPARABLE"
+      "prev": 0
     },
     "033": {
       "n": 0,
       "target": 14,
       "label": "前向き解決",
-      "prev": 0,
-      "comparison_state": "COMPARABLE"
+      "prev": 0
     },
     "052": {
       "n": 0,
       "target": 14,
       "label": "前向き解決",
-      "prev": 0,
-      "comparison_state": "COMPARABLE"
+      "prev": 0
     }
   },
   "aggregates": {
@@ -1183,9 +1110,9 @@
   },
   "freshness": {
     "status": "PASS",
-    "checked_at_jst": "2026-08-05T11:44:39+09:00",
-    "state_data_at_jst": "2026-08-05T11:44:08+09:00",
-    "age_seconds": 31.924,
+    "checked_at_jst": "2026-08-05T11:47:47+09:00",
+    "state_data_at_jst": "2026-08-05T11:47:05+09:00",
+    "age_seconds": 42.887,
     "max_age_seconds": 1800,
     "canonical_source_count": 39,
     "canonical_source_set_sha256": "be051bdc7c06ffa678af59ef04d00ff9154a9524a6f2af218afa02413a1dab28",
@@ -1193,11 +1120,11 @@
     "orders_sent": false,
     "sendorder_count": 0
   },
-  "public_surface_state_at_jst": "2026-08-05T11:44:39+09:00",
-  "progress_checked_at": "2026-08-05 11:44",
+  "public_surface_state_at_jst": "2026-08-05T11:47:47+09:00",
+  "progress_checked_at": "2026-08-05 11:47",
   "operational_readiness": {
     "schema": "public_operational_readiness_v1",
-    "observed_at_jst": "2026-08-05T11:44:08+09:00",
+    "observed_at_jst": "2026-08-05T11:47:05+09:00",
     "overall_status": "PASS_PREMARKET",
     "login_api": {
       "status": "PASS",
@@ -1223,9 +1150,7 @@
       "status": "MORNING_PUBLISHED",
       "count_for_today": 7,
       "within_configured_cap": true,
-      "count_within_configured_cap": 7,
       "wallet_sufficient": true,
-      "count_wallet_sufficient": 7,
       "symbol_disclosed": false
     },
     "morning_tasks": {
@@ -1253,8 +1178,6 @@
     },
     "entry_outcome": {
       "status": "NOT_YET_OBSERVED",
-      "outcome": null,
-      "reason_code": null,
       "terminal_observed": false,
       "orders_sent": false,
       "sendorder_count": 0
@@ -1267,20 +1190,83 @@
       "next_natural_fire_jst": "2026-08-05T12:07:00+09:00",
       "orders_sent": false
     },
-    "pin_lottery": {
-      "task": {
-        "name": "PIN-LOTTERY-readonly-paper-20260730",
-        "state": "Ready",
-        "last_result": 3,
-        "last_run": "2026-08-04T14:50:00+09:00",
-        "next_run": "2026-08-05T14:50:00+09:00"
+    "crypto": {
+      "schema": "public_crypto_status_v1",
+      "observed_at_jst": "2026-08-05T11:47:05+09:00",
+      "observers": {
+        "bybit": {
+          "status": "RUNNING",
+          "task_state": "RUNNING",
+          "last_task_result": 267009,
+          "last_record_at_jst": "2026-08-05T11:47:42+09:00",
+          "record_count": null,
+          "orders_forbidden": true
+        },
+        "gmo": {
+          "status": "RUNNING",
+          "task_state": "RUNNING",
+          "last_task_result": 267009,
+          "last_record_at_jst": "2026-08-05T11:47:46+09:00",
+          "record_count": 188755,
+          "orders_forbidden": true
+        }
       },
-      "receipt": {
-        "status": "FAIL_CLOSED_NO_PAPER_RESULT",
-        "reason_class": "READONLY_ALPHANUMERIC_SECURITY_CODE_REJECTED",
-        "observed_file_date": "20260804",
-        "orders_sent": false
-      }
+      "historical_data": {
+        "status": "PASS_LOCAL_MANIFEST_REMEASURED",
+        "archive_count": 774,
+        "total_gib": 90.729698,
+        "partitions": {
+          "development": {
+            "archive_count": 374,
+            "gib": 35.200235,
+            "market_rows_opened": false
+          },
+          "candidate_selection": {
+            "archive_count": 202,
+            "gib": 28.651959,
+            "market_rows_opened": false
+          },
+          "final_locked": {
+            "archive_count": 198,
+            "gib": 26.877504,
+            "market_rows_opened": false
+          }
+        },
+        "entries_sha_matches_frozen": true,
+        "market_values_read": false
+      },
+      "research": {
+        "stage": "INDEPENDENT_B_NOT_PASS",
+        "queue_id": "baud/20260805-007",
+        "paper_strategy_count": 0,
+        "live_strategy_count": 0,
+        "market_values_opened": false,
+        "release_condition": "Queue 007の終端事実を保持し、指摘を直した新candidateをfresh独立Bへ提出すること"
+      },
+      "bottlenecks": [
+        {
+          "reason_code": "BAUD-007-01",
+          "class": "RESEARCH_QUALITY_GATE",
+          "release_condition": "required PASS名・SSD再実測・旧N1失効記録の3条件を正しい順序で固定すること"
+        },
+        {
+          "reason_code": "BAUD-007-02",
+          "class": "RESEARCH_QUALITY_GATE",
+          "release_condition": "重複・size mismatch・総bytes mismatchを1条件ずつ検知する負例fixtureを追加すること"
+        },
+        {
+          "reason_code": "BAUD-007-03",
+          "class": "RESEARCH_QUALITY_GATE",
+          "release_condition": "2023年5月archiveの5月16日以前を読まない境界fixtureを追加すること"
+        },
+        {
+          "reason_code": "BAUD-007-04",
+          "class": "RESEARCH_QUALITY_GATE",
+          "release_condition": "SSD root外の絶対pathと上位directory参照を拒否すること"
+        }
+      ],
+      "orders_sent": false,
+      "sendorder_count": 0
     },
     "bottlenecks": [
       {
@@ -1295,7 +1281,7 @@
         ],
         "checked_at_jst": "2026-08-05T07:30:05+09:00",
         "order_gate_role": "MONITORING_CONFIDENCE_ONLY",
-        "release_condition": "現在の反復task名と当日実行時刻へ合わせた修正は独立B監査PASS後に2026-08-04 10:27 JST配備済み。次回07:30自然実行でPASSを確認すること"
+        "release_condition": "現在の反復task名と当日実行時刻へ合わせた修正を独立B監査し、配備後の次回07:30自然実行でPASSを確認すること"
       }
     ],
     "orders_sent": false,
