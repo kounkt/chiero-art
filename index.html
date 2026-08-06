@@ -881,10 +881,6 @@ const DATA = {
       {n:esc(entry.status||"NOT_YET_OBSERVED"),l:"08:57発注判断"},
       {n:esc(foundry.status),l:"毎時の新戦略生成",a:["PASS","SOURCE_UPDATE_AUTO_RESUME"].indexOf(foundry.status)<0}
     ].map(function(x){return '<div class="cell'+(x.a?' accent':'')+'"><b>'+x.n+'</b><i>'+x.l+'</i></div>';}).join('');
-    document.getElementById('cryptoobservertable').innerHTML=
-      '<tr><th>公開データ取得</th><th>状態</th><th>最終記録</th><th>task結果</th></tr>'+[
-        ['Bybit',bybit],['GMO',gmo]
-      ].map(function(row){return '<tr><td class="nm">'+row[0]+'</td><td>'+esc(row[1].status)+'</td><td>'+esc(row[1].last_record_at_jst)+'</td><td>'+esc(row[1].last_task_result)+'</td></tr>';}).join('');
     var rows=r.bottlenecks||[];
     document.getElementById('bottlenecktable').innerHTML=
       '<tr><th>停止・待機理由</th><th>分類</th><th>解除条件</th></tr>'+
@@ -895,6 +891,10 @@ const DATA = {
     if(!c)return;
     function esc(v){return String(v===null||typeof v==='undefined'?"UNKNOWN":v).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
     var observers=c.observers||{},bybit=observers.bybit||{},gmo=observers.gmo||{},history=c.historical_data||{},research=c.research||{};
+    document.getElementById('cryptoobservertable').innerHTML=
+      '<tr><th>公開データ取得</th><th>状態</th><th>最終記録</th><th>task結果</th></tr>'+[
+        ['Bybit',bybit],['GMO',gmo]
+      ].map(function(row){return '<tr><td class="nm">'+row[0]+'</td><td>'+esc(row[1].status)+'</td><td>'+esc(row[1].last_record_at_jst)+'</td><td>'+esc(row[1].last_task_result)+'</td></tr>';}).join('');
     document.getElementById('cryptoband').innerHTML=[
       {n:esc(bybit.status),l:"Bybit公開データ",a:bybit.status!=="RUNNING"},
       {n:esc(gmo.status),l:"GMO公開データ",a:gmo.status!=="RUNNING"},
@@ -908,7 +908,7 @@ const DATA = {
     document.getElementById('cryptopartitiontable').innerHTML=
       '<tr><th>履歴データ区分</th><th>archive</th><th>GiB</th><th>市場値開封</th></tr>'+[
         'development','candidate_selection','final_locked'
-      ].map(function(key){var x=parts[key]||{};return '<tr><td class="nm">'+labels[key]+'</td><td>'+esc(x.archive_count)+'</td><td>'+esc(x.gib)+'</td><td>'+(x.market_rows_opened===false?'未開封':'UNKNOWN')+'</td></tr>';}).join('');
+      ].map(function(key){var x=parts[key]||{},opened=x.market_rows_opened===true?'開封済み':(x.market_rows_opened===false?'未開封':'UNKNOWN');return '<tr><td class="nm">'+labels[key]+'</td><td>'+esc(x.archive_count)+'</td><td>'+esc(x.gib)+'</td><td>'+opened+'</td></tr>';}).join('');
     var rows=c.bottlenecks||[];
     document.getElementById('cryptobottlenecktable').innerHTML=
       '<tr><th>暗号資産の停止・待機理由</th><th>分類</th><th>解除条件</th></tr>'+(
@@ -1062,6 +1062,7 @@ const DATA = {
       if(!hp[h.id])return;
       h.prog=Object.assign({},h.prog||{},hp[h.id]);
       if(hp[h.id].state)h.state=hp[h.id].state;
+      if(hp[h.id].state_data_at_jst)h.state_data_at_jst=hp[h.id].state_data_at_jst;
     });
     renderCards();
   };
