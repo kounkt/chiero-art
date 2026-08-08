@@ -131,12 +131,18 @@
   .band .cell:last-child{border-right:none}
   .band b{display:block;font-family:var(--g);font-size:30px;font-weight:700;line-height:1.1;letter-spacing:-.01em}
   .band i{display:block;font-style:normal;font-size:11.5px;color:var(--faint);margin-top:5px;letter-spacing:.02em}
+  .band .cell.wide{flex:2.2 1 280px}
+  .band .cell.wide b{font-size:23px;line-height:1.2}
+  .band .cell.observer{flex:1.2 1 140px}
+  .band .cell.observer b{font-size:22px}
   .band .cell.accent b{color:var(--red)}
+  .band .cell.missing b,.datatable td.missing{color:var(--red)}
+  .missing-reason{display:block;margin-top:4px;color:var(--red);font-size:10.5px;line-height:1.55;font-weight:400}
   /* バンドの前日比（毎日の変化を検知） */
   .band .bd{display:block;font-family:var(--g);font-size:11.5px;font-weight:700;margin-top:5px;letter-spacing:.02em}
   .band .bd.z{color:var(--faint);font-weight:400}
   .band .bd.nz{color:var(--red)}
-  @media(max-width:640px){.band .cell{flex:1 1 40%;border-bottom:1px solid var(--line)}}
+  @media(max-width:640px){.band .cell{flex:1 1 40%;border-bottom:1px solid var(--line)}.band .cell.wide{flex:1 1 100%}}
   .stillborn-signal{margin:18px 0 8px;padding:24px 26px;border:2px solid var(--ink);border-radius:5px;
     display:grid;grid-template-columns:minmax(120px,.35fr) 1fr;gap:24px;align-items:center;background:var(--ink);color:var(--paper)}
   .stillborn-signal .n{font-size:clamp(44px,10vw,78px);font-weight:800;line-height:1;color:var(--paper)}
@@ -260,18 +266,12 @@
   </header>
   <div class="band tnum" id="operationband" style="display:none"></div>
 
-  <h2>本日の自動稼働</h2>
-  <p class="note">口座額・銘柄・注文内容は公開せず、ログイン、資金反映、候補の件数、時刻タスク、研究生成の停止理由と解除条件だけを約15分ごとに再測定する。</p>
-  <div class="band tnum" id="readinessband"></div>
-  <div class="datatable-wrap"><table class="datatable tnum" id="bottlenecktable"></table></div>
-
-  <h2>暗号資産のデータ取得と作品化</h2>
-  <p class="note">公開市場データの自然取得、既存履歴の3区分、独立B、紙、本番の位置を同じ順序で表示する。秘密値・銘柄・注文内容は公開せず、未確認値はUNKNOWNとする。</p>
+  <h2>暗号資産の現在地</h2>
+  <p class="note">公開済みの観測値だけを約15分ごとの状態データから表示する。秘密値・口座・資金額・注文情報は表示せず、確認できない値は理由つきの欠測として示す。</p>
   <div class="band tnum" id="cryptoband"></div>
   <div class="datatable-wrap"><table class="datatable tnum" id="cryptoobservertable"></table></div>
-  <div class="datatable-wrap"><table class="datatable tnum" id="cryptopartitiontable"></table></div>
   <div class="datatable-wrap"><table class="datatable tnum" id="cryptobottlenecktable"></table></div>
-  <p class="note tnum" id="cryptonextstep"></p>
+  <p class="note tnum" id="cryptostamp"></p>
 
   <h2>将来の予測 — 実験の記述的シミュレーション</h2>
   <p class="note">測定されたエッジが、非公開の正規化容量点によって複利でどう積み上がるかを描いた実験的な地図。スライダーを動かすと容量による変化が見える。<span class="red">口座・資本・配分額は公開しない。保証ではなく、過去データに基づく推定である。</span></p>
@@ -346,6 +346,9 @@
   <div class="band tnum" id="foundryband"></div>
   <div class="stillborn-signal tnum" id="stillbornsignal"></div>
   <div class="band tnum foundry-volume" id="foundryvolume"></div>
+  <h3 class="trial-heading">増配2セル — 法廷提出から検定終端まで</h3>
+  <p class="trial-note">本番稼働へ最も近づいた2セルの通過履歴。COURT_SUBMITTEDだけで成功とせず、独立B後の終端まで表示する。</p>
+  <div class="trial-grid tnum" id="dividendtrack"></div>
   <div class="band tnum" id="defectband"></div>
   <div class="datatable-wrap"><table class="datatable tnum" id="courttable"></table></div>
   <div class="datatable-wrap"><table class="datatable tnum" id="weeklytable"></table></div>
@@ -386,7 +389,7 @@ const DATA = {
      next:"約定可能エッジが正のカードだけを、実証済みチェーンへ接続する。",
      sim:"実証役割の移管はPB-1v2の再開・campaign開始・自動増額を意味しない。"},
     {id:"harvester",state:"paper",name:"統合ハーベスタ（旗艦）",fam:"夜間持続",
-     metric:"歴史検定: +87.6bp/日（投下資本） · t=17.7 · 11年全年プラス",
+     metric:"+87.6bp/日（投下資本） · t=17.7 · 11年全年プラス",
      prog:{n:4,target:14,prev:0,label:"前向き解決"},
      arose:"身体知の移植（公開記録のある個人投資家）(D0v4-030)と教義「上は持続」から。大出来高で強く上げ高値で引ける株は翌朝まで持続する、という仮説。",
      verif:"3定義の和集合（vr≥5&ret≥5%&Va≥1e9 ∪ 引け位置cH≥0.9 ∪ gap≥7%維持）を14:50に判定し引け買い→翌寄り売り。ホールドアウト一発 t=5.49/5.41 両PASS。地合い除去後の超過も+90.8bp(t=17.7)。",
@@ -401,7 +404,7 @@ const DATA = {
      outcome:"生存・ACTIVE_BLIND紙孵化中。precision維持が主指標。",next:"—",
      sim:"ハーベスタと同分布。単独昇格には別途Fable裁定。"},
     {id:"041g7",state:"paper",name:"D0v4-041-G7 張り付き高値引け",fam:"夜間持続",
-     metric:"歴史検定: +128.9bp/夜 · t=9.02 · n=2,318",
+     metric:"+128.9bp/夜 · t=9.02 · n=2,318",
      prog:{n:2,target:14,prev:0,label:"前向き解決"},
      arose:"「上げの持続は引けの位置(cH)が支配」の教義精密化。張り付き(cH≥0.9)は飽和ではなく持続、という条件付き仮説。",
      verif:"79セルから分割スクリーニング→8セル確認検定8/8 PASS。カードhashは詳細契約へ更新（経済的内容不変・厳格化のみ）。",
@@ -416,7 +419,7 @@ const DATA = {
      next:"同じカードを昇格・再開しない。別機序は新しい独立事前登録とFable裁定がある場合だけ検定する。",
      sim:"死亡判定後の成績救済・遡及補完はしない。"},
     {id:"039b",state:"paper",name:"D0v4-039B 上方修正ドリフト",fam:"イベントドリフト",
-     metric:"歴史検定: +132bp/20日 · イベント鉱脈の長兄",
+     metric:"+132bp/20日 · イベント鉱脈の長兄",
      prog:{n:0,target:14,prev:0,label:"前向き解決"},
      arose:"業績上方修正の後、機関の緩慢な織り込みでドリフトが続く（PEAD/最頑健イベント）の日本版。",
      verif:"スクリーニング→確認で生存。足型とは無関係＝イベント族は緩慢織り込み＋機械買いが機序。",
@@ -431,14 +434,14 @@ const DATA = {
      outcome:"監査済みreleaseを配備し、一回性taskはState=Ready。本人YESは2026-07-29 08:57 JSTの一回だけに限定済み。自然実行・発注瞬間Q1・注文はいずれも未観測。",
      next:"クリーンな前向き実測10イベントが増額審査を開く。R-20残差監査は増額審査へ別添する。",
      sim:"歴史値は20日ドリフトの記述であり、月曜GREENや注文成功を示さない。"},
-    {id:"pin-lottery",state:"paper",added:"2026-07-26",state_data_at_jst:"2026-08-06T14:50:01+09:00",
-     name:"PIN-LOTTERY 紙runner配備・自然実行観測中",fam:"引け値到達・未約定観測",
-     metric:"NATURAL_EXECUTION_OBSERVED · Queue069監査待ち · 注文機能なし",
+    {id:"pin-lottery",state:"paper",added:"2026-07-26",state_data_at_jst:"2026-07-28T17:50:00+09:00",
+     name:"PIN-LOTTERY 紙runner配備・登録済み・未実行",fam:"引け値到達・未約定観測",
+     metric:"DEPLOYED_REGISTERED_NOT_EXECUTED · 注文機能なし",
      prog:{n:0,target:10,prev:0,label:"前向き実測"},
      arose:"引け値到達時だけ成立する稀な機会を、最小単元1銘柄・未約定時コスト0で前向きに測るため。",
-     verif:"broker送信なしのpaper専用runnerは自然実行済み。2026-08-06は6098のread-only board取得HTTP 400で残り銘柄を読む前にfail-closeした。注文機能はない。",
-     outcome:"task自然発火は実証済み。銘柄単位HTTP 400隔離候補は79/79 testsを通過し、Queue069 fresh独立B待ち。orders_sent=false。",
-     next:"Queue069 PASS後だけ監査済みbytesを配備し、次の14:50自然実行で候補選択または候補なしのterminal receiptを確認する。",
+     verif:"独立Fresh Bがfinding 0でPASSしたbroker送信なしのpaper専用runnerを、隔離releaseとして配備・task登録済み。live runnerでは代用しない。",
+     outcome:"紙taskはState=Ready、2026-07-29 14:50 JSTに初回自然実行予定。現在は未実行で、注文機能なし・orders_sent=false。",
+     next:"当選・未約定を分けたクリーンな前向き実測10イベントが増額審査を開く。",
      sim:"未約定時の売買コストは0。注文を送れること自体は現在まだ未証明。"},
     {id:"testa-5d",state:"grave",added:"2026-07-26",state_data_at_jst:"2026-07-27T01:18:14+09:00",
      name:"TESTA-5D 墓標",fam:"凍結済み歴史一発",
@@ -451,15 +454,15 @@ const DATA = {
      sim:"選択式・選択閾値・銘柄は非公開。result handoffと独立B判定の集計値・生死・証拠SHAだけを表示する。"},
     {id:"r20",state:"surviving",added:"2026-07-26",state_data_at_jst:"2026-07-26T16:42:28+09:00",
      name:"R-20 残差監査",fam:"因子残差・記述監査",
-     metric:"因子残差の記述監査PASS · 資本変更の資格証拠ではない",
+     metric:"B_month R² 0.191 · 因子調整後 +95.35bp/20日",
      prog:{n:1,target:1,prev:0,label:"独立B監査"},
      arose:"D0v4-033の歴史平均が既知の市場・幅・モメンタム因子の変装か、固有の残余を持つかを増額審査前に記述測定するため。",
-     verif:"pre-2025、決済日cluster OLS、可逆スプレッド3因子で測定。増配2セルの個別値は死亡確定後の一般公開対象から除外し、集計への寄与と原本SHAだけを保持。",
+     verif:"pre-2025、決済日cluster OLS、可逆スプレッド3因子で測定。B_monthはR² 0.191392、因子調整後net20 mean +95.35bp、非年率残差Sharpe 0.119。A_weekはR² 0.197585、+36.59bp。",
      outcome:"独立B v4 PASS。+95.35bp/20日の記述値を033増額審査の記述証拠束へ編入済み。資格証拠ではなく、資本変更を自動承認しない。",
      next:"資本変更は、この記述証拠とは別のFable裁定と本人承認がある場合だけ審査する。",
      sim:"description_only=true / qualification_evidence=false / fdr_consumed=false。夜間proxyは入力保持率86.63%が凍結下限95%を下回り未算出のままfail-close。"},
     {id:"052",state:"paper",name:"D0v4-052 決算集中日ドリフト・ACTIVE_BLIND",fam:"イベントドリフト",
-     metric:"ACTIVE_BLIND · 歴史検定: σ_day=1002.77bp · +170.8bp/20日 · t=2.96",
+     metric:"ACTIVE_BLIND · σ_day=1002.77bp · +170.8bp/20日 · t=2.96",
      prog:{n:0,target:14,prev:0,label:"前向き解決"},
      arose:"決算が集中する日は1件あたりの注意が薄まり織り込みが遅れドリフトが太る（limited attention）。",
      verif:"凍結境界は開示件数>79、σ_day=1002.77bp。BとB3が現行overlayとwriterを独立監査し、B3 finding 0でPASSした。",
@@ -797,7 +800,7 @@ const DATA = {
     return (v.value*100).toFixed(1)+"%";
   }
   function renderFoundry(f){
-    var l=f.ledger,c=f.first_court,k=f.weekly_kpi;
+    var l=f.ledger,c=f.first_court,k=f.weekly_kpi,d=f.dividend_trials||{cards:[]};
     document.getElementById('foundryband').innerHTML=[
       {n:ratePercent(k.new_born_rate),l:"新規BORN率",a:1},
       {n:ratePercent(k.court_submission_rate),l:"法廷提出率"},
@@ -813,6 +816,17 @@ const DATA = {
       {n:l.born,l:"BORN 累計"},
       {n:(f.current_funnel||{}).court_submitted,l:"法廷提出 累計"}
     ].map(function(b){return '<div class="cell"><b>'+b.n+'</b><i>'+b.l+'</i></div>';}).join('');
+    document.getElementById('dividendtrack').innerHTML=d.cards.map(function(card){
+      var stages=card.stage_sequence.map(function(stage){
+        var cls=stage===card.current_state?'terminal':'done';
+        return '<span class="'+cls+'">'+stage+'</span>';
+      }).join(' → ');
+      return '<article class="trial-card"><h4>'+card.label+'</h4>'
+        +'<div class="trial-stage">'+stages+'</div>'
+        +'<p class="trial-metric"><b>現在 '+card.current_state+'</b> · n='+card.events_n
+        +' · net '+Number(card.mean_net_bp).toFixed(1)+'bp · p='+Number(card.raw_p_two_sided).toFixed(4)
+        +' · BY='+(card.by_pass?'PASS':'false')+'</p></article>';
+    }).join('');
     document.getElementById('courttable').innerHTML=
       '<tr><th>第1回法廷</th><th>状態</th><th style="text-align:right">件数</th></tr>'
       +'<tr><td class="nm">提出</td><td>法廷へ提出済み</td><td class="num">'+c.submitted+'</td></tr>'
@@ -838,86 +852,82 @@ const DATA = {
   }
   function renderOperations(o){
     var el=document.getElementById('operationband');if(!el||!o)return;
-    function known(v){return v===null||typeof v==='undefined'?"UNKNOWN":v;}
-    function rawAttr(v){return String(known(v)).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
-    function operationReasonLabel(v){
-      var labels={MARKET_CLOSED:"市場休",NO_ELIGIBLE_CANDIDATE:"候補なし",INFRA:"インフラ停止",DAILY_OPERATION_TERMINAL_RECEIPT_MISSING:"記録欠測",UNKNOWN:"不明"};
-      return Object.prototype.hasOwnProperty.call(labels,v)?labels[v]:"不明";
-    }
-    function noTradeClassLabel(v){
-      var labels={NOT_APPLICABLE:"該当なし",NORMAL_NO_TRADE:"正常",CAGE_INCIDENT_NO_TRADE:"檻事故",UNKNOWN:"不明"};
-      return Object.prototype.hasOwnProperty.call(labels,v)?labels[v]:"不明";
-    }
-    function shortNextGate(v){
-      if(v===null||typeof v==='undefined')return "不明";
-      var text=String(v),date=text.match(/^(\d{4})-(\d{2})-(\d{2})/);
-      if(date)return Number(date[2])+"/"+Number(date[3])+" 朝";
-      if(text.indexOf("次の営業日")===0)return "次の営業日";
-      if(text.indexOf("欠測")===0)return "記録待ち";
-      return text.length<=8?text:"詳細あり";
-    }
-    var orderState=o.orders_sent===false?"なし":(o.orders_sent===true?"あり":"UNKNOWN");
     el.style.display='';
     el.innerHTML=[
-      {n:o.label_ja,l:o.trade_date,a:1,raw:o.status},
-      {n:operationReasonLabel(o.reason_class),l:"見送り理由",raw:o.reason_class},
-      {n:noTradeClassLabel(o.no_trade_class),l:"No-Trade区分",raw:o.no_trade_class},
-      {n:orderState,l:"注文送信",raw:o.orders_sent},
-      {n:known(o.sendorder_count),l:"送信注文数",raw:o.sendorder_count},
-      {n:shortNextGate(o.next_gate_ja),l:"次の門",raw:o.next_gate_ja}
-    ].map(function(x){var raw=rawAttr(x.raw);return '<div class="cell'+(x.a?' accent':'')+'"><b title="'+raw+'" data-raw="'+raw+'">'+x.n+'</b><i>'+x.l+'</i></div>';}).join('');
-  }
-  function renderOperationalReadiness(r){
-    if(!r)return;
-    function esc(v){return String(v===null||typeof v==='undefined'?"UNKNOWN":v).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
-    function ok(v){return v===true?"PASS":(v===false?"STOP":"UNKNOWN");}
-    var login=r.login_api||{},account=r.account||{},candidate=r.candidate||{},foundry=r.foundry_hourly||{},entry=r.entry_outcome||{};
-    document.getElementById('readinessband').innerHTML=[
-      {n:esc(r.overall_status),l:"全体",a:r.overall_status!=="PASS_PREMARKET"},
-      {n:esc(login.status),l:"ログイン / API"},
-      {n:esc(account.status),l:"資金のAPI反映"},
-      {n:esc(candidate.count_for_today),l:"本日候補（銘柄非公開）"},
-      {n:ok(candidate.within_configured_cap),l:"設定上限内"},
-      {n:esc(entry.status||"NOT_YET_OBSERVED"),l:"08:57発注判断"},
-      {n:esc(foundry.status),l:"毎時の新戦略生成",a:["PASS","SOURCE_UPDATE_AUTO_RESUME"].indexOf(foundry.status)<0}
+      {n:o.label_ja,l:o.trade_date,a:1},
+      {n:o.reason_class,l:"見送り理由"},
+      {n:"¥"+Number(o.realized_trade_loss_jpy).toLocaleString(),l:"実現取引損失"},
+      {n:o.sendorder_count,l:"送信注文数"},
+      {n:"7/28 00:05",l:"次の共通門"}
     ].map(function(x){return '<div class="cell'+(x.a?' accent':'')+'"><b>'+x.n+'</b><i>'+x.l+'</i></div>';}).join('');
-    var rows=r.bottlenecks||[];
-    document.getElementById('bottlenecktable').innerHTML=
-      '<tr><th>停止・待機理由</th><th>分類</th><th>解除条件</th></tr>'+
-      (rows.length?rows.map(function(x){return '<tr><td class="nm">'+esc(x.reason_code)+'</td><td>'+esc(x.class)+'</td><td>'+esc(x.release_condition)+'</td></tr>';}).join(''):'<tr><td class="nm">NONE</td><td>—</td><td>次の自然実行を待機</td></tr>');
-    if(r.crypto)renderCrypto(r.crypto);
   }
   function renderCrypto(c){
-    if(!c)return;
-    function esc(v){return String(v===null||typeof v==='undefined'?"UNKNOWN":v).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
-    var observers=c.observers||{},bybit=observers.bybit||{},gmo=observers.gmo||{},history=c.historical_data||{},research=c.research||{},capital=c.capital||{};
-    document.getElementById('cryptoobservertable').innerHTML=
-      '<tr><th>公開データ取得</th><th>状態</th><th>最終記録</th><th>task結果</th></tr>'+[
-        ['Bybit',bybit],['GMO',gmo]
-      ].map(function(row){return '<tr><td class="nm">'+row[0]+'</td><td>'+esc(row[1].status)+'</td><td>'+esc(row[1].last_record_at_jst)+'</td><td>'+esc(row[1].last_task_result)+'</td></tr>';}).join('');
+    function esc(v){return String(v).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+    function field(parent,key,fieldPath){
+      var isObject=parent!==null&&typeof parent==='object';
+      var exists=isObject&&Object.prototype.hasOwnProperty.call(parent,key);
+      var value=exists?parent[key]:undefined;
+      if(value!==null&&typeof value!=='undefined'&&value!=='')return {text:esc(value),reason:""};
+      var ending=exists?(value===null?' が null':' が空文字'):' がありません';
+      return {text:'欠測',reason:'理由: data.json の '+esc(fieldPath)+ending};
+    }
+    function tableValue(value){
+      return '<span>'+value.text+'</span>'+(value.reason?'<small class="missing-reason">'+value.reason+'</small>':'');
+    }
+    function tableCell(value,className){
+      return '<td class="'+(className||'')+(value.reason?' missing':'')+'">'+tableValue(value)+'</td>';
+    }
+    function bandCell(value,label,className){
+      return '<div class="cell '+(className||'')+(value.reason?' missing':'')+'"><b>'+value.text+'</b><i>'+label+(value.reason?'<small class="missing-reason">'+value.reason+'</small>':'')+'</i></div>';
+    }
+    var crypto=c!==null&&typeof c==='object'?c:{};
+    var observers=crypto.observers!==null&&typeof crypto.observers==='object'?crypto.observers:{};
+    var bybit=observers.bybit!==null&&typeof observers.bybit==='object'?observers.bybit:{};
+    var gmo=observers.gmo!==null&&typeof observers.gmo==='object'?observers.gmo:{};
+    var research=crypto.research!==null&&typeof crypto.research==='object'?crypto.research:{};
+    var bybitStatus=field(bybit,'status','operational_readiness.crypto.observers.bybit.status');
+    var gmoStatus=field(gmo,'status','operational_readiness.crypto.observers.gmo.status');
+    var stage=field(research,'stage','operational_readiness.crypto.research.stage');
+    var paperCount=field(research,'paper_strategy_count','operational_readiness.crypto.research.paper_strategy_count');
+    var liveCount=field(research,'live_strategy_count','operational_readiness.crypto.research.live_strategy_count');
     document.getElementById('cryptoband').innerHTML=[
-      {n:esc(bybit.status),l:"Bybit公開データ",a:bybit.status!=="RUNNING"},
-      {n:esc(gmo.status),l:"GMO公開データ",a:gmo.status!=="RUNNING"},
-      {n:esc(history.archive_count),l:"履歴archive"},
-      {n:esc(history.total_gib),l:"履歴GiB"},
-      {n:esc(research.stage),l:"検証段階",a:research.stage!=="READY_FOR_DEVELOPMENT"},
-      {n:esc(research.paper_strategy_count),l:"紙戦略"},
-      {n:esc(research.live_strategy_count),l:"本番戦略"},
-      {n:esc(capital.current_stage_required_jpy),l:"現段階の追加必要円"},
-      {n:esc(capital.production_capital_status),l:"本番必要資金"}
-    ].map(function(x){return '<div class="cell'+(x.a?' accent':'')+'"><b>'+x.n+'</b><i>'+x.l+'</i></div>';}).join('');
-    var labels={development:"探索用",candidate_selection:"候補選択用",final_locked:"最終未開封"},parts=history.partitions||{};
-    document.getElementById('cryptopartitiontable').innerHTML=
-      '<tr><th>履歴データ区分</th><th>archive</th><th>GiB</th><th>市場値開封</th></tr>'+[
-        'development','candidate_selection','final_locked'
-      ].map(function(key){var x=parts[key]||{},opened=x.market_rows_opened===true?'開封済み':(x.market_rows_opened===false?'未開封':'UNKNOWN');return '<tr><td class="nm">'+labels[key]+'</td><td>'+esc(x.archive_count)+'</td><td>'+esc(x.gib)+'</td><td>'+opened+'</td></tr>';}).join('');
-    var rows=c.bottlenecks||[];
+      bandCell(bybitStatus,'Bybit observer状態','observer'),
+      bandCell(gmoStatus,'GMO observer状態','observer'),
+      bandCell(stage,'研究stage','wide'),
+      bandCell(paperCount,'紙strategy数'),
+      bandCell(liveCount,'本番strategy数')
+    ].join('');
+    document.getElementById('cryptoobservertable').innerHTML=
+      '<tr><th>observer</th><th>状態</th><th>最終記録時刻</th><th style="text-align:right">record数</th></tr>'+[
+        ['Bybit',bybit,'bybit'],['GMO',gmo,'gmo']
+      ].map(function(row){
+        var status=field(row[1],'status','operational_readiness.crypto.observers.'+row[2]+'.status');
+        var lastRecord=field(row[1],'last_record_at_jst','operational_readiness.crypto.observers.'+row[2]+'.last_record_at_jst');
+        var count=field(row[1],'record_count','operational_readiness.crypto.observers.'+row[2]+'.record_count');
+        return '<tr><td class="nm">'+row[0]+'</td>'+tableCell(status,'')+tableCell(lastRecord,'')+tableCell(count,'num')+'</tr>';
+      }).join('');
+    var bottlenecks=crypto.bottlenecks;
+    var bottleneckRows;
+    if(!Array.isArray(bottlenecks)){
+      bottleneckRows='<tr><td class="nm missing">欠測</td><td class="missing">欠測</td><td class="missing"><small class="missing-reason">理由: data.json の operational_readiness.crypto.bottlenecks がありません</small></td></tr>';
+    }else if(bottlenecks.length===0){
+      bottleneckRows='<tr><td class="nm">NONE</td><td>—</td><td>公開状態に停止・待機理由の記録なし</td></tr>';
+    }else{
+      bottleneckRows=bottlenecks.map(function(row,index){
+        var source=row!==null&&typeof row==='object'?row:{};
+        var basePath='operational_readiness.crypto.bottlenecks['+index+']';
+        var reason=field(source,'reason_code',basePath+'.reason_code');
+        var classification=field(source,'class',basePath+'.class');
+        var release=field(source,'release_condition',basePath+'.release_condition');
+        return '<tr>'+tableCell(reason,'nm')+tableCell(classification,'')+tableCell(release,'')+'</tr>';
+      }).join('');
+    }
     document.getElementById('cryptobottlenecktable').innerHTML=
-      '<tr><th>暗号資産の停止・待機理由</th><th>分類</th><th>解除条件</th></tr>'+(
-        rows.length?rows.map(function(x){return '<tr><td class="nm">'+esc(x.reason_code)+'</td><td>'+esc(x.class)+'</td><td>'+esc(x.release_condition)+'</td></tr>';}).join(''):'<tr><td class="nm">NONE</td><td>—</td><td>次の自然実行を待機</td></tr>'
-      );
-    document.getElementById('cryptonextstep').innerHTML='<b>現在地:</b> '+esc(research.stage)+' ／ <b>次:</b> '+esc(research.release_condition)+' ／ <b>本番必要資金の確定条件:</b> '+esc(capital.production_capital_release_condition)+' ／ 状態データ '+esc(c.observed_at_jst);
+      '<tr><th>bottleneck</th><th>分類</th><th>解除条件</th></tr>'+bottleneckRows;
+    var observed=field(crypto,'observed_at_jst','operational_readiness.crypto.observed_at_jst');
+    document.getElementById('cryptostamp').innerHTML='<b>状態データ:</b> '+tableValue(observed);
   }
+  renderCrypto(null);
   renderData(EMBEDDED_STATS);
   // 自動更新中インジケータ：ブラウザが2分ごとに再取得している「生きている」ことを可視化。
   // 最終確認＝この画面が最後にデータを取りに行った時刻（閲覧者の時計）。状態データ＝サーバ側の最終確認(JST)。
@@ -938,7 +948,7 @@ const DATA = {
           if(d.foundry){renderFoundry(d.foundry);}
           if(d.defects){renderDefects(d.defects);}
           if(d.operations){renderOperations(d.operations);}
-          if(d.operational_readiness){renderOperationalReadiness(d.operational_readiness);}
+          renderCrypto((d.operational_readiness||{}).crypto);
           if(d.active_cards){
             if(window.__mergeActiveCards)window.__mergeActiveCards(d.active_cards);
             else window.__pendingActiveCards=d.active_cards;
@@ -989,8 +999,7 @@ const DATA = {
   }
   function stateDataLine(h){
     var stamp=h.state_data_at_jst||DATA.state_data_at_jst;
-    var runtime=(h.prog&&h.prog.runtime_status)?' · 自然実行 '+h.prog.runtime_status:'';
-    return '<span class="state-data">状態データ '+stamp+' 時点'+runtime+'</span>';
+    return '<span class="state-data">状態データ '+stamp+' 時点</span>';
   }
   function card(h){
     var s=STT[h.state],dl='';
@@ -1065,7 +1074,6 @@ const DATA = {
       if(!hp[h.id])return;
       h.prog=Object.assign({},h.prog||{},hp[h.id]);
       if(hp[h.id].state)h.state=hp[h.id].state;
-      if(hp[h.id].state_data_at_jst)h.state_data_at_jst=hp[h.id].state_data_at_jst;
     });
     renderCards();
   };
