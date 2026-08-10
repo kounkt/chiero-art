@@ -55,9 +55,9 @@
     "docs_total": 175147,
     "gb": 197.766,
     "storage": {
-      "measured_at_jst": "2026-08-11T05:58:41+0900",
-      "receipt_path": "logs/build_evidence/public_site_data_measurement_20260811055841.json",
-      "receipt_sha256": "62ab023e5cacac5798f9e372bad089f11f92a512ba34d6ac52fec42398d2978c",
+      "measured_at_jst": "2026-08-11T07:02:53+0900",
+      "receipt_path": "logs/build_evidence/public_site_data_measurement_20260811070253.json",
+      "receipt_sha256": "de380bdf00481149fbb8bc8855b237eaae5e72f6e1bf4bcc8a6ffd04341043e5",
       "total_bytes": 212349747200,
       "total_gib": 197.766,
       "categories": [
@@ -97,9 +97,9 @@
     }
   },
   "storage_refresh": {
-    "status": "NOT_DUE",
-    "measured_at_jst": "2026-08-11T06:46:44+0900",
-    "preserved_last_verified_measurement": true
+    "status": "PASS",
+    "measured_at_jst": "2026-08-11T07:02:53+0900",
+    "preserved_last_verified_measurement": false
   },
   "foundry": {
     "ledger": {
@@ -126,7 +126,7 @@
       "head_sha256": "a05b34c6fa580d8a6cb7a00dbccfe13c8cbc87b0b7d36a51bdd14c39ecb4f65e",
       "snapshot": {
         "mode": "APPEND_ONLY_PREFIX",
-        "captured_at_jst": "2026-08-11T06:46:42+0900",
+        "captured_at_jst": "2026-08-11T07:02:27+0900",
         "source_git_commit": "e53d8dbab11881d3bb9c113de0109967fca2d080",
         "line_count": 305,
         "prefix_sha256": "31791745c8aae0f2ea619f2c39b64763d09c441ecc16ac142622967355a85476",
@@ -240,13 +240,13 @@
     "repository": "art-daytrader-fable-28-53",
     "ledger_path": "governance/DEFECT_LEDGER.md",
     "ledger_sha256": "7460ddd188d51c3bb3717a88cf6a83f4a9b7baccfbe3c0bf72e7a92405bc028d",
-    "measured_at_jst": "2026-08-11T06:46:42+0900",
+    "measured_at_jst": "2026-08-11T07:02:27+0900",
     "orders_sent": false,
     "sendorder_count": 0
   },
   "active_cards": {
     "schema": "public_active_cards_v2",
-    "state_data_at_jst": "2026-08-11T06:46:13+09:00",
+    "state_data_at_jst": "2026-08-11T07:02:00+09:00",
     "governance_revision": {
       "ruling": "Fable裁定231(a)",
       "source_mode": "canonical_files_direct"
@@ -434,7 +434,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-11T06:46:42+09:00",
+        "state_data_at_jst": "2026-08-11T07:02:27+09:00",
         "evidence": [
           {
             "path": "governance/micro_allocation_boundary_v2_20260725.json",
@@ -495,7 +495,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-11T06:46:13+09:00",
+        "state_data_at_jst": "2026-08-11T07:02:00+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_033_V6_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T143446+0900.json",
@@ -611,7 +611,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-11T06:46:42+09:00",
+        "state_data_at_jst": "2026-08-11T07:02:27+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_PIN_LOTTERY_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T140307+0900.json",
@@ -697,7 +697,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-11T06:46:42+09:00",
+        "state_data_at_jst": "2026-08-11T07:02:27+09:00",
         "evidence": [
           {
             "path": "governance/rulings141_20260727/testa_swing5d_result_site_handoff_r141.json",
@@ -758,7 +758,7 @@
         "provisional": false,
         "description_only": true,
         "qualification_evidence": false,
-        "state_data_at_jst": "2026-08-11T06:46:42+09:00",
+        "state_data_at_jst": "2026-08-11T07:02:27+09:00",
         "evidence": [
           {
             "path": "research/r20_residual_audit_v2_20260726/d0v4_033/provisional_result.json",
@@ -809,7 +809,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-11T06:46:42+09:00",
+        "state_data_at_jst": "2026-08-11T07:02:27+09:00",
         "evidence": [
           {
             "path": "reports/A3_FABLE_RULING221_052_PUBLIC_DISPLAY_HANDOFF_20260728T153600+0900.json",
@@ -1143,9 +1143,9 @@
   },
   "freshness": {
     "status": "PASS",
-    "checked_at_jst": "2026-08-11T06:46:50+09:00",
-    "state_data_at_jst": "2026-08-11T06:46:13+09:00",
-    "age_seconds": 37.584,
+    "checked_at_jst": "2026-08-11T07:02:56+09:00",
+    "state_data_at_jst": "2026-08-11T07:02:00+09:00",
+    "age_seconds": 56.492,
     "max_age_seconds": 1800,
     "canonical_source_count": 39,
     "canonical_source_set_sha256": "54de44f73dc6d83c6a25e710c0f4f92f5e2e69697ed23e25414784b1551c7f8c",
@@ -1153,11 +1153,11 @@
     "orders_sent": false,
     "sendorder_count": 0
   },
-  "public_surface_state_at_jst": "2026-08-11T06:46:50+09:00",
-  "progress_checked_at": "2026-08-11 06:46",
+  "public_surface_state_at_jst": "2026-08-11T07:02:56+09:00",
+  "progress_checked_at": "2026-08-11 07:02",
   "operational_readiness": {
     "schema": "public_operational_readiness_v1",
-    "observed_at_jst": "2026-08-11T06:46:13+09:00",
+    "observed_at_jst": "2026-08-11T07:02:00+09:00",
     "overall_status": "PASS_PREMARKET",
     "login_api": {
       "status": "PASS",
@@ -1225,13 +1225,13 @@
     },
     "crypto": {
       "schema": "public_crypto_status_v1",
-      "observed_at_jst": "2026-08-11T06:46:13+09:00",
+      "observed_at_jst": "2026-08-11T07:02:00+09:00",
       "observers": {
         "bybit": {
           "status": "RUNNING",
           "task_state": "RUNNING",
           "last_task_result": 267009,
-          "last_record_at_jst": "2026-08-11T06:46:32+09:00",
+          "last_record_at_jst": "2026-08-11T07:02:21+09:00",
           "record_count": null,
           "orders_forbidden": true
         },
@@ -1239,8 +1239,8 @@
           "status": "RUNNING",
           "task_state": "RUNNING",
           "last_task_result": 267009,
-          "last_record_at_jst": "2026-08-11T06:46:38+09:00",
-          "record_count": 7986,
+          "last_record_at_jst": "2026-08-11T07:02:24+09:00",
+          "record_count": 17104,
           "orders_forbidden": true
         }
       },
@@ -1321,7 +1321,7 @@
     "sendorder_count": 0
   },
   "ops_heartbeat": {
-    "generated_at_jst": "2026-08-11T06:46:44+0900",
+    "generated_at_jst": "2026-08-11T07:02:53+0900",
     "ledger_rulings_today": 24,
     "queues_delivered_today": 10,
     "receipts_today": 23,
