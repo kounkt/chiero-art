@@ -299,8 +299,8 @@
     <p class="srcnote">旗艦戦略「夜間持続ハーベスタ」の10年イベント台帳（19,658イベント / 2,054営業日）× 単元株約定モデル（参加率上限0.3%込み）。<b>正規化容量曲線には頂点があり、以降は参加率上限で低下する。</b>資本額・口座額・配分額は非公開。測定点を線形補間・ブートストラップ10,000試行。<b>これは実験の記述的シミュレーションであり、将来の成果を保証するものではない。</b></p>
   </div>
 
-  <h2>仮説の生態</h2>
-  <p class="note">通った流れと、詰まった跡。各行を開くと理由・検証・生死・次の仮説と、<span class="red">次フェーズへ進む条件</span>が読める。<br>昇格ルート: <b>種</b> → 探索一回判定 → Fable審査 → ホールドアウト → <b>各カードの事前登録targetまで紙孵化</b> → 本人YES → <b>本番稼働</b>。</p>
+  <h2>登録済み戦略カードの生態</h2>
+  <p class="note">ここは毎時生成数ではなく、台帳へ登録された戦略カードの現在状態を示す。各行を開くと理由・検証・生死・次の仮説と、<span class="red">次フェーズへ進む条件</span>が読める。毎時生成された仮説と死産理由は下のFoundry一覧に表示する。<br>昇格ルート: <b>種</b> → 探索一回判定 → Fable審査 → ホールドアウト → <b>各カードの事前登録targetまで紙孵化</b> → 本人YES → <b>本番稼働</b>。</p>
   <div class="band tnum" id="band"></div>
   <p class="note defnote" id="defnote" style="padding-left:0;margin-top:12px"></p>
   <p id="progStamp" style="padding-left:0;margin:2px 0 0;font-size:11.5px;color:var(--faint);line-height:1.6"></p>
@@ -346,6 +346,9 @@
   <div class="band tnum" id="foundryband"></div>
   <div class="stillborn-signal tnum" id="stillbornsignal"></div>
   <div class="band tnum foundry-volume" id="foundryvolume"></div>
+  <h3 class="trial-heading">Foundryの直近生成 — 生存判定と理由</h3>
+  <p class="trial-note">公開JSONが供給する直近50件を表示する。個別銘柄・当日signal・非公開条件は含めない。</p>
+  <div class="datatable-wrap"><table class="datatable tnum" id="foundrylatesttable"></table></div>
   <h3 class="trial-heading">増配2セル — 法廷提出から検定終端まで</h3>
   <p class="trial-note">本番稼働へ最も近づいた2セルの通過履歴。COURT_SUBMITTEDだけで成功とせず、独立B後の終端まで表示する。</p>
   <div class="trial-grid tnum" id="dividendtrack"></div>
@@ -355,7 +358,7 @@
 
   <div class="disclaimer">
     <p>本ページは、ひとつのAI実験（作品）の状態を記録するものです。<b>特定の金融商品の取得を勧誘するものではなく、運用実績・将来の利益を約束・示唆するものでもありません。</b>掲載する検定結果は過去データに基づく記述であり、将来の成果を保証しません。個別の投資判断はご自身の責任と、必要に応じ専門家の助言のもとで行ってください。</p>
-    <p class="upd">最終更新 <b id="lastUpd">2026-07-28</b> ／ データは原則1日1回更新。実銘柄コード・保有・当日シグナルは掲載していません。</p>
+    <p class="upd">最終更新 <b id="lastUpd">取得中</b> ／ 状態データは約15分ごとに更新。実銘柄コード・保有・当日シグナルは掲載していません。</p>
   </div>
 
   <p class="sig"><a href="https://chiero.jp/" target="_blank" rel="noopener">chiero.jp</a></p>
@@ -799,6 +802,9 @@ const DATA = {
     if(!v||v.denominator===0||v.value==null)return "—";
     return (v.value*100).toFixed(1)+"%";
   }
+  function escapeHtml(v){
+    return String(v).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+  }
   function renderFoundry(f){
     var l=f.ledger,c=f.first_court,k=f.weekly_kpi,d=f.dividend_trials||{cards:[]};
     document.getElementById('foundryband').innerHTML=[
@@ -816,6 +822,15 @@ const DATA = {
       {n:l.born,l:"BORN 累計"},
       {n:(f.current_funnel||{}).court_submitted,l:"法廷提出 累計"}
     ].map(function(b){return '<div class="cell"><b>'+b.n+'</b><i>'+b.l+'</i></div>';}).join('');
+    var recent=Array.isArray(l.recent_entries)?l.recent_entries:[];
+    var latestTable=document.getElementById('foundrylatesttable');
+    if(latestTable){
+      latestTable.innerHTML='<tr><th>生成時刻</th><th>仮説ID</th><th>機序family</th><th>判定</th><th>判定理由</th></tr>'+
+        (recent.length?recent.slice().reverse().map(function(row){
+          var reasons=Array.isArray(row.reason_codes)&&row.reason_codes.length?row.reason_codes.join(' / '):'理由code未供給';
+          return '<tr><td>'+escapeHtml(row.generated_at_jst||'UNKNOWN')+'</td><td class="nm">'+escapeHtml(row.id||'UNKNOWN')+'</td><td>'+escapeHtml(row.mechanism_family||'UNKNOWN')+'</td><td>'+escapeHtml(row.state||'UNKNOWN')+'</td><td>'+escapeHtml(reasons)+'</td></tr>';
+        }).join(''):'<tr><td colspan="5">公開JSONに直近生成の詳細がありません</td></tr>');
+    }
     document.getElementById('dividendtrack').innerHTML=d.cards.map(function(card){
       var stages=card.stage_sequence.map(function(stage){
         var cls=stage===card.current_state?'terminal':'done';
@@ -852,13 +867,14 @@ const DATA = {
   }
   function renderOperations(o){
     var el=document.getElementById('operationband');if(!el||!o)return;
+    var nextGate=typeof o.next_gate_ja==="string"&&o.next_gate_ja.trim()?o.next_gate_ja.trim():"UNKNOWN";
     el.style.display='';
     el.innerHTML=[
       {n:o.label_ja,l:o.trade_date,a:1},
       {n:o.reason_class,l:"見送り理由"},
       {n:"¥"+Number(o.realized_trade_loss_jpy).toLocaleString(),l:"実現取引損失"},
       {n:o.sendorder_count,l:"送信注文数"},
-      {n:"7/28 00:05",l:"次の共通門"}
+      {n:nextGate,l:"次の共通門"}
     ].map(function(x){return '<div class="cell'+(x.a?' accent':'')+'"><b>'+x.n+'</b><i>'+x.l+'</i></div>';}).join('');
   }
   function renderCrypto(c){
@@ -880,6 +896,29 @@ const DATA = {
     function bandCell(value,label,className){
       return '<div class="cell '+(className||'')+(value.reason?' missing':'')+'"><b>'+value.text+'</b><i>'+label+(value.reason?'<small class="missing-reason">'+value.reason+'</small>':'')+'</i></div>';
     }
+    function observerStatus(value){
+      if(value&&value.reason)return value;
+      var labels={RUNNING:'データ収集中',STALE:'更新停止',STOPPED:'停止',STOPPED_DISK_FLOOR:'容量門で停止',UNKNOWN:'不明'};
+      var raw=value&&value.text?value.text:'UNKNOWN';
+      return {text:labels[raw]||'不明',reason:raw==='UNKNOWN'?'状態を確認できません':''};
+    }
+    function researchStage(value){
+      if(value&&value.reason)return value;
+      var labels={
+        UTC_BOUNDARY_NO_SURVIVOR_NEXT_PIVOT_REQUIRED:'生存戦略なし・次の仮説設計待ち',
+        UTC_BOUNDARY_DEVELOPMENT_RUN_RUNNING:'開発データで検証中',
+        UTC_BOUNDARY_DEVELOPMENT_RUN_PENDING:'検証開始待ち',
+        UTC_BOUNDARY_CANDIDATE_PENDING_FRESH_B:'候補を独立監査へ提出待ち',
+        UTC_BOUNDARY_INDEPENDENT_B_PENDING:'独立監査待ち',
+        UTC_BOUNDARY_RECOVERY_B_PENDING:'是正後の独立監査待ち',
+        UTC_BOUNDARY_RECOVERY_B_NOT_PASS:'是正候補の作成待ち',
+        DEVELOPMENT_CANDIDATE_PENDING_FRESH_B:'候補を独立監査へ提出待ち',
+        DEVELOPMENT_SHORT_HORIZON_RUNNING:'短時間保有仮説を検証中',
+        DEVELOPMENT_EXPLORATION_ACTIVE:'開発データで仮説探索中'
+      };
+      var raw=value&&value.text?value.text:'UNKNOWN';
+      return {text:labels[raw]||'状態を日本語化できません',reason:labels[raw]?'':'研究状態code: '+raw};
+    }
     var crypto=c!==null&&typeof c==='object'?c:{};
     var observers=crypto.observers!==null&&typeof crypto.observers==='object'?crypto.observers:{};
     var bybit=observers.bybit!==null&&typeof observers.bybit==='object'?observers.bybit:{};
@@ -891,17 +930,18 @@ const DATA = {
     var paperCount=field(research,'paper_strategy_count','operational_readiness.crypto.research.paper_strategy_count');
     var liveCount=field(research,'live_strategy_count','operational_readiness.crypto.research.live_strategy_count');
     document.getElementById('cryptoband').innerHTML=[
-      bandCell(bybitStatus,'Bybit observer状態','observer'),
-      bandCell(gmoStatus,'GMO observer状態','observer'),
-      bandCell(stage,'研究stage','wide'),
+      bandCell(observerStatus(bybitStatus),'Bybitデータ観測','observer'),
+      bandCell(observerStatus(gmoStatus),'GMOデータ観測','observer'),
+      bandCell(researchStage(stage),'研究の現在地','wide'),
       bandCell(paperCount,'紙strategy数'),
-      bandCell(liveCount,'本番strategy数')
+      bandCell(liveCount,'本番strategy数'),
+      bandCell({text:Number(liveCount.text)>0?'本番稼働中':(Number(paperCount.text)>0?'紙検証中':'稼働戦略なし'),reason:''},'strategy稼働状態','wide')
     ].join('');
     document.getElementById('cryptoobservertable').innerHTML=
       '<tr><th>observer</th><th>状態</th><th>最終記録時刻</th><th style="text-align:right">record数</th></tr>'+[
         ['Bybit',bybit,'bybit'],['GMO',gmo,'gmo']
       ].map(function(row){
-        var status=field(row[1],'status','operational_readiness.crypto.observers.'+row[2]+'.status');
+        var status=observerStatus(field(row[1],'status','operational_readiness.crypto.observers.'+row[2]+'.status'));
         var lastRecord=field(row[1],'last_record_at_jst','operational_readiness.crypto.observers.'+row[2]+'.last_record_at_jst');
         var count=field(row[1],'record_count','operational_readiness.crypto.observers.'+row[2]+'.record_count');
         return '<tr><td class="nm">'+row[0]+'</td>'+tableCell(status,'')+tableCell(lastRecord,'')+tableCell(count,'num')+'</tr>';
@@ -955,6 +995,8 @@ const DATA = {
           }
           if(d.hyp_progress&&window.__mergeHypProgress)window.__mergeHypProgress(d.hyp_progress);
           if(d.aggregates){window.__AGG=d.aggregates;renderBand();updateSavedDelta();}
+          var publicStamp=d.public_surface_state_at_jst||d.public_surface_generated_at_jst;
+          if(publicStamp){var last=document.getElementById('lastUpd');if(last)last.textContent=publicStamp;}
           window.__srvStamp=d.progress_checked_at||window.__srvStamp;
         }updateLiveStamp();})
         .catch(function(){});
