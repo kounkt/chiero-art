@@ -98,7 +98,7 @@
   },
   "storage_refresh": {
     "status": "FAIL_CLOSED",
-    "measured_at_jst": "2026-08-12T06:29:45+0900",
+    "measured_at_jst": "2026-08-12T06:45:40+0900",
     "reason_code": "'sha256'",
     "preserved_last_verified_measurement": true,
     "orders_sent": false,
@@ -106,508 +106,487 @@
   },
   "foundry": {
     "ledger": {
-      "total": 254,
-      "born": 46,
-      "stillborn": 208,
+      "total": 344,
+      "born": 52,
+      "stillborn": 292,
       "today": {
         "date_jst": "2026-08-12",
-        "total": 0,
+        "total": 13,
         "born": 0,
-        "stillborn": 0
+        "stillborn": 13
       },
-      "latest_generated_at_jst": "2026-07-30T07:00:00+09:00",
+      "latest_generated_at_jst": "2026-08-12T06:00:00+09:00",
       "latest_public_birth_ids": [
-        "BH-20260729T14-01-c09c9c57f6",
-        "BH-20260729T14-02-98d3dca249",
-        "BH-20260729T15-01-84d4baa9a2",
-        "BH-20260729T15-02-a1dccacefd",
-        "BH-20260730T07-01-e4c770eaec"
+        "BH-20260812T04-lunch-disclosure-overnight",
+        "BH-20260812T05-ipo-independent-day-capacity-gate",
+        "BH-20260812T05-ipo-vc-thinboard-nextclose",
+        "BH-20260812T06-weekly-margin-rebound",
+        "BH-20260812T06-monthly-panic-turnover-recovery"
       ],
       "recent_entries": [
         {
-          "id": "BH-20260728T15-02-2af74bad17",
-          "generated_at_jst": "2026-07-28T15:00:00+09:00",
+          "id": "BH-20260810T20-ipo-selloff-stabilization",
+          "generated_at_jst": "2026-08-10T20:00:00+09:00",
           "state": "STILLBORN",
-          "mechanism_family": "MARKET_REGIME",
+          "mechanism_family": "PIT_BAD_NEWS_FORCED_SELLING_EXHAUSTION",
           "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE"
-          ]
-        },
-        {
-          "id": "BH-20260728T16-01-b340bff1d4",
-          "generated_at_jst": "2026-07-28T16:00:00+09:00",
-          "state": "STILLBORN",
-          "mechanism_family": "MARKET_REGIME",
-          "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE"
-          ]
-        },
-        {
-          "id": "BH-20260728T16-02-ad7c335584",
-          "generated_at_jst": "2026-07-28T16:00:00+09:00",
-          "state": "STILLBORN",
-          "mechanism_family": "EXECUTION_PATH",
-          "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE",
             "DATA_EXISTENCE_CHECK_FAILED"
           ]
         },
         {
-          "id": "BH-20260728T17-01-baa554549b",
-          "generated_at_jst": "2026-07-28T17:00:00+09:00",
+          "id": "BH-20260810T21-close-confirmed-auction-demand",
+          "generated_at_jst": "2026-08-10T21:00:00+09:00",
           "state": "STILLBORN",
-          "mechanism_family": "MARKET_REGIME",
+          "mechanism_family": "OPEN_AUCTION_DEMAND_POST_CONFIRMATION",
           "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE",
             "DATA_EXISTENCE_CHECK_FAILED"
           ]
         },
         {
-          "id": "BH-20260728T17-02-104a1beffb",
-          "generated_at_jst": "2026-07-28T17:00:00+09:00",
+          "id": "BH-20260810T22-ipo-float-turnover-boundary",
+          "generated_at_jst": "2026-08-10T22:00:00+09:00",
           "state": "STILLBORN",
-          "mechanism_family": "EVENT_DRIFT",
+          "mechanism_family": "IPO_FLOAT_ABSORPTION_BOUNDARY",
           "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE"
-          ]
-        },
-        {
-          "id": "BH-20260728T18-01-1ae4499182",
-          "generated_at_jst": "2026-07-28T18:00:00+09:00",
-          "state": "STILLBORN",
-          "mechanism_family": "OPENING_INTRADAY",
-          "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE"
-          ]
-        },
-        {
-          "id": "BH-20260728T18-02-56d4a6d384",
-          "generated_at_jst": "2026-07-28T18:00:00+09:00",
-          "state": "STILLBORN",
-          "mechanism_family": "MARKET_REGIME",
-          "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE",
             "DATA_EXISTENCE_CHECK_FAILED"
           ]
         },
         {
-          "id": "BH-20260728T19-01-5ba29e4bb5",
-          "generated_at_jst": "2026-07-28T19:00:00+09:00",
+          "id": "BH-20260810T23-no-buy-kehai-short",
+          "generated_at_jst": "2026-08-10T23:00:00+09:00",
           "state": "STILLBORN",
-          "mechanism_family": "MARKET_REGIME",
+          "mechanism_family": "INDEX_PASSIVE_REBALANCE_X_PREOPEN_DEMAND",
           "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE",
             "DATA_EXISTENCE_CHECK_FAILED"
           ]
         },
         {
-          "id": "BH-20260728T19-02-849ffc88b8",
-          "generated_at_jst": "2026-07-28T19:00:00+09:00",
+          "id": "BH-20260810T23-buy-kehai-veto",
+          "generated_at_jst": "2026-08-10T23:00:00+09:00",
           "state": "STILLBORN",
-          "mechanism_family": "EVENT_DRIFT",
+          "mechanism_family": "INDEX_PASSIVE_REBALANCE_X_PREOPEN_DEMAND_VETO",
           "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE"
-          ]
-        },
-        {
-          "id": "BH-20260728T20-01-9665a45232",
-          "generated_at_jst": "2026-07-28T20:00:00+09:00",
-          "state": "STILLBORN",
-          "mechanism_family": "EVENT_DRIFT",
-          "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE"
-          ]
-        },
-        {
-          "id": "BH-20260728T20-02-620c05c682",
-          "generated_at_jst": "2026-07-28T20:00:00+09:00",
-          "state": "STILLBORN",
-          "mechanism_family": "EXECUTION_PATH",
-          "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE",
             "DATA_EXISTENCE_CHECK_FAILED"
           ]
         },
         {
-          "id": "BH-20260728T21-01-b04c23cb18",
-          "generated_at_jst": "2026-07-28T21:00:00+09:00",
+          "id": "BH-20260811T01-kehai-snapshot-persistence",
+          "generated_at_jst": "2026-08-11T01:00:00+09:00",
           "state": "STILLBORN",
-          "mechanism_family": "EXECUTION_PATH",
+          "mechanism_family": "PREOPEN_ORDER_PERSISTENCE",
           "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE",
             "DATA_EXISTENCE_CHECK_FAILED"
           ]
         },
         {
-          "id": "BH-20260728T21-02-850508f952",
-          "generated_at_jst": "2026-07-28T21:00:00+09:00",
+          "id": "BH-20260811T01-kehai-withdrawal-exclusion",
+          "generated_at_jst": "2026-08-11T01:00:00+09:00",
           "state": "STILLBORN",
-          "mechanism_family": "OPENING_INTRADAY",
+          "mechanism_family": "PREOPEN_ORDER_WITHDRAWAL_VETO",
           "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE"
-          ]
-        },
-        {
-          "id": "BH-20260728T22-01-b14157c5c3",
-          "generated_at_jst": "2026-07-28T22:00:00+09:00",
-          "state": "STILLBORN",
-          "mechanism_family": "MARKET_REGIME",
-          "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE"
-          ]
-        },
-        {
-          "id": "BH-20260728T22-02-0d50e7c881",
-          "generated_at_jst": "2026-07-28T22:00:00+09:00",
-          "state": "STILLBORN",
-          "mechanism_family": "EXECUTION_PATH",
-          "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE",
             "DATA_EXISTENCE_CHECK_FAILED"
           ]
         },
         {
-          "id": "BH-20260728T23-01-d2ab3facdc",
-          "generated_at_jst": "2026-07-28T23:00:00+09:00",
+          "id": "BH-20260811T05-margin-breakout-hold",
+          "generated_at_jst": "2026-08-11T05:00:00+09:00",
           "state": "STILLBORN",
-          "mechanism_family": "MARKET_REGIME",
+          "mechanism_family": "REGULATORY_SHORT_CONSTRAINT_X_BREAKOUT_RESILIENCE",
           "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE",
             "DATA_EXISTENCE_CHECK_FAILED"
           ]
         },
         {
-          "id": "BH-20260728T23-02-c67480067d",
-          "generated_at_jst": "2026-07-28T23:00:00+09:00",
+          "id": "BH-20260811T05-afternoon-failure-exclusion",
+          "generated_at_jst": "2026-08-11T05:00:00+09:00",
           "state": "STILLBORN",
-          "mechanism_family": "EVENT_DRIFT",
+          "mechanism_family": "INSTITUTIONAL_FLOW_CONFIRMATION_X_BREAKOUT_FAILURE",
           "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE"
-          ]
-        },
-        {
-          "id": "BH-20260729T00-01-601ab8011c",
-          "generated_at_jst": "2026-07-29T00:00:00+09:00",
-          "state": "STILLBORN",
-          "mechanism_family": "EXECUTION_PATH",
-          "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE",
             "DATA_EXISTENCE_CHECK_FAILED"
           ]
         },
         {
-          "id": "BH-20260729T00-02-f0b42aace5",
-          "generated_at_jst": "2026-07-29T00:00:00+09:00",
+          "id": "BH-20260811T06-prestage-hardflag-short",
+          "generated_at_jst": "2026-08-11T06:00:00+09:00",
           "state": "STILLBORN",
-          "mechanism_family": "OPENING_INTRADAY",
+          "mechanism_family": "INDEX_PASSIVE_REBALANCE_WITH_HARDFLAG_STATE",
           "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE"
-          ]
-        },
-        {
-          "id": "BH-20260729T01-01-56095652ab",
-          "generated_at_jst": "2026-07-29T01:00:00+09:00",
-          "state": "STILLBORN",
-          "mechanism_family": "OPENING_INTRADAY",
-          "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE"
-          ]
-        },
-        {
-          "id": "BH-20260729T01-02-ebac69ee4c",
-          "generated_at_jst": "2026-07-29T01:00:00+09:00",
-          "state": "STILLBORN",
-          "mechanism_family": "MARKET_REGIME",
-          "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE",
             "DATA_EXISTENCE_CHECK_FAILED"
           ]
         },
         {
-          "id": "BH-20260729T02-01-746ed83477",
-          "generated_at_jst": "2026-07-29T02:00:00+09:00",
+          "id": "BH-20260811T06-poststage-release-long",
+          "generated_at_jst": "2026-08-11T06:00:00+09:00",
           "state": "STILLBORN",
-          "mechanism_family": "MARKET_REGIME",
+          "mechanism_family": "POST_INDEX_FORCED_SELL_RELEASE_WITH_HARDFLAG_STATE",
           "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE",
             "DATA_EXISTENCE_CHECK_FAILED"
           ]
         },
         {
-          "id": "BH-20260729T02-02-ce1874957f",
-          "generated_at_jst": "2026-07-29T02:00:00+09:00",
+          "id": "BH-20260811T07-vc-lockup-boundary",
+          "generated_at_jst": "2026-08-11T07:00:00+09:00",
           "state": "STILLBORN",
-          "mechanism_family": "EVENT_DRIFT",
+          "mechanism_family": "IPO_LOCKUP_SUPPLY_CONSTRAINT_OVERNIGHT",
           "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE"
-          ]
-        },
-        {
-          "id": "BH-20260729T03-01-0b6d4ac315",
-          "generated_at_jst": "2026-07-29T03:00:00+09:00",
-          "state": "STILLBORN",
-          "mechanism_family": "EXECUTION_PATH",
-          "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE",
             "DATA_EXISTENCE_CHECK_FAILED"
           ]
         },
         {
-          "id": "BH-20260729T03-02-960a83268b",
-          "generated_at_jst": "2026-07-29T03:00:00+09:00",
+          "id": "BH-20260811T08-auction-sell-absorption",
+          "generated_at_jst": "2026-08-11T08:00:00+09:00",
           "state": "STILLBORN",
-          "mechanism_family": "OPENING_INTRADAY",
+          "mechanism_family": "OPEN_AUCTION_FORCED_SELL_ABSORPTION",
           "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE"
-          ]
-        },
-        {
-          "id": "BH-20260729T04-01-bc1899a9d0",
-          "generated_at_jst": "2026-07-29T04:00:00+09:00",
-          "state": "STILLBORN",
-          "mechanism_family": "OPENING_INTRADAY",
-          "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE"
-          ]
-        },
-        {
-          "id": "BH-20260729T04-02-e12d8a5612",
-          "generated_at_jst": "2026-07-29T04:00:00+09:00",
-          "state": "STILLBORN",
-          "mechanism_family": "MARKET_REGIME",
-          "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE",
             "DATA_EXISTENCE_CHECK_FAILED"
           ]
         },
         {
-          "id": "BH-20260729T05-01-0555cf8661",
-          "generated_at_jst": "2026-07-29T05:00:00+09:00",
+          "id": "BH-20260811T08-prior-low-stop-release",
+          "generated_at_jst": "2026-08-11T08:00:00+09:00",
           "state": "STILLBORN",
-          "mechanism_family": "MARKET_REGIME",
+          "mechanism_family": "PRIOR_LOW_STOP_FLOW_RELEASE",
           "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE",
             "DATA_EXISTENCE_CHECK_FAILED"
           ]
         },
         {
-          "id": "BH-20260729T05-02-3b87c2bfd9",
-          "generated_at_jst": "2026-07-29T05:00:00+09:00",
+          "id": "BH-20260811T09-persistent-kehai-first5m",
+          "generated_at_jst": "2026-08-11T09:00:00+09:00",
           "state": "STILLBORN",
-          "mechanism_family": "MARKET_REGIME",
+          "mechanism_family": "PREOPEN_ORDER_INTENT_PERSISTENCE",
           "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE"
-          ]
-        },
-        {
-          "id": "BH-20260729T06-01-9dc66f46fc",
-          "generated_at_jst": "2026-07-29T06:00:00+09:00",
-          "state": "STILLBORN",
-          "mechanism_family": "EXECUTION_PATH",
-          "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE",
             "DATA_EXISTENCE_CHECK_FAILED"
           ]
         },
         {
-          "id": "BH-20260729T06-02-f958e74132",
-          "generated_at_jst": "2026-07-29T06:00:00+09:00",
+          "id": "BH-20260811T09-withdrawn-kehai-exclusion",
+          "generated_at_jst": "2026-08-11T09:00:00+09:00",
           "state": "STILLBORN",
-          "mechanism_family": "OPENING_INTRADAY",
+          "mechanism_family": "PREOPEN_ORDER_WITHDRAWAL_FILTER",
           "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE"
-          ]
-        },
-        {
-          "id": "BH-20260729T07-01-e6c36e90bd",
-          "generated_at_jst": "2026-07-29T07:00:00+09:00",
-          "state": "STILLBORN",
-          "mechanism_family": "OPENING_INTRADAY",
-          "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE"
-          ]
-        },
-        {
-          "id": "BH-20260729T07-02-505c90f7f4",
-          "generated_at_jst": "2026-07-29T07:00:00+09:00",
-          "state": "STILLBORN",
-          "mechanism_family": "MARKET_REGIME",
-          "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE",
             "DATA_EXISTENCE_CHECK_FAILED"
           ]
         },
         {
-          "id": "BH-20260729T08-01-23a7965028",
-          "generated_at_jst": "2026-07-29T08:00:00+09:00",
+          "id": "BH-20260811T11-board-withdrawal-close-recovery",
+          "generated_at_jst": "2026-08-11T11:00:00+09:00",
           "state": "STILLBORN",
-          "mechanism_family": "MARKET_REGIME",
+          "mechanism_family": "TEMPORARY_DISPLAYED_LIQUIDITY_WITHDRAWAL_AND_MULTISESSION_RECOVERY",
           "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE",
             "DATA_EXISTENCE_CHECK_FAILED"
           ]
         },
         {
-          "id": "BH-20260729T08-02-4a68f56e32",
-          "generated_at_jst": "2026-07-29T08:00:00+09:00",
+          "id": "BH-20260811T12-factorcut-holdout-short",
+          "generated_at_jst": "2026-08-11T12:00:00+09:00",
           "state": "STILLBORN",
-          "mechanism_family": "MARKET_REGIME",
+          "mechanism_family": "INDEX_PASSIVE_REBALANCE_X_CHRONOLOGICAL_HOLDOUT",
           "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE"
-          ]
-        },
-        {
-          "id": "BH-20260729T09-01-f440c87c0a",
-          "generated_at_jst": "2026-07-29T09:00:00+09:00",
-          "state": "STILLBORN",
-          "mechanism_family": "EXECUTION_PATH",
-          "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE",
             "DATA_EXISTENCE_CHECK_FAILED"
           ]
         },
         {
-          "id": "BH-20260729T09-02-3ccd32daf2",
-          "generated_at_jst": "2026-07-29T09:00:00+09:00",
+          "id": "BH-20260811T12-flowrelease-holdout-long",
+          "generated_at_jst": "2026-08-11T12:00:00+09:00",
           "state": "STILLBORN",
-          "mechanism_family": "OPENING_INTRADAY",
+          "mechanism_family": "INDEX_FORCED_SELL_EXHAUSTION_X_CHRONOLOGICAL_HOLDOUT",
           "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE"
-          ]
-        },
-        {
-          "id": "BH-20260729T10-01-7c8b4a7ac4",
-          "generated_at_jst": "2026-07-29T10:00:00+09:00",
-          "state": "STILLBORN",
-          "mechanism_family": "OPENING_INTRADAY",
-          "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE"
-          ]
-        },
-        {
-          "id": "BH-20260729T10-02-322b669f48",
-          "generated_at_jst": "2026-07-29T10:00:00+09:00",
-          "state": "STILLBORN",
-          "mechanism_family": "MARKET_REGIME",
-          "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE",
             "DATA_EXISTENCE_CHECK_FAILED"
           ]
         },
         {
-          "id": "BH-20260729T11-01-e0a0da7e5f",
-          "generated_at_jst": "2026-07-29T11:00:00+09:00",
+          "id": "BH-20260811T13-tob-expiry-spread",
+          "generated_at_jst": "2026-08-11T13:00:00+09:00",
           "state": "STILLBORN",
-          "mechanism_family": "EVENT_DRIFT",
+          "mechanism_family": "TENDER_OFFER_DEADLINE_CONVERGENCE",
           "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE"
-          ]
-        },
-        {
-          "id": "BH-20260729T11-02-d099d8d322",
-          "generated_at_jst": "2026-07-29T11:00:00+09:00",
-          "state": "STILLBORN",
-          "mechanism_family": "EXECUTION_PATH",
-          "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE",
             "DATA_EXISTENCE_CHECK_FAILED"
           ]
         },
         {
-          "id": "BH-20260729T12-01-7126984a8f",
-          "generated_at_jst": "2026-07-29T12:00:00+09:00",
+          "id": "BH-20260811T13-tob-extension-boundary",
+          "generated_at_jst": "2026-08-11T13:00:00+09:00",
           "state": "STILLBORN",
-          "mechanism_family": "MARKET_REGIME",
+          "mechanism_family": "TENDER_OFFER_DEADLINE_EXTENSION_BOUNDARY",
           "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE",
             "DATA_EXISTENCE_CHECK_FAILED"
           ]
         },
         {
-          "id": "BH-20260729T12-02-5989f1c968",
-          "generated_at_jst": "2026-07-29T12:00:00+09:00",
+          "id": "BH-20260811T14-positive-drift-earnings-gap-rebound",
+          "generated_at_jst": "2026-08-11T14:00:00+09:00",
           "state": "STILLBORN",
-          "mechanism_family": "EVENT_DRIFT",
+          "mechanism_family": "POST_EARNINGS_FORCED_SELL_REVERSAL",
           "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE"
-          ]
-        },
-        {
-          "id": "BH-20260729T13-01-f4d09a0596",
-          "generated_at_jst": "2026-07-29T13:00:00+09:00",
-          "state": "STILLBORN",
-          "mechanism_family": "MARKET_REGIME",
-          "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE",
             "DATA_EXISTENCE_CHECK_FAILED"
           ]
         },
         {
-          "id": "BH-20260729T13-02-5009cd233a",
-          "generated_at_jst": "2026-07-29T13:00:00+09:00",
+          "id": "BH-20260811T14-nondrift-gap-exclusion-boundary",
+          "generated_at_jst": "2026-08-11T14:00:00+09:00",
           "state": "STILLBORN",
-          "mechanism_family": "MARKET_REGIME",
+          "mechanism_family": "POST_EARNINGS_FORCED_SELL_REVERSAL_BOUNDARY",
           "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE"
-          ]
-        },
-        {
-          "id": "BH-20260729T14-01-c09c9c57f6",
-          "generated_at_jst": "2026-07-29T14:00:00+09:00",
-          "state": "STILLBORN",
-          "mechanism_family": "MARKET_REGIME",
-          "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE",
             "DATA_EXISTENCE_CHECK_FAILED"
           ]
         },
         {
-          "id": "BH-20260729T14-02-98d3dca249",
-          "generated_at_jst": "2026-07-29T14:00:00+09:00",
+          "id": "BH-20260811T15-hardflag-margin-release",
+          "generated_at_jst": "2026-08-11T15:00:00+09:00",
           "state": "STILLBORN",
-          "mechanism_family": "MARKET_REGIME",
+          "mechanism_family": "HARDFLAG_FORCED_POSITION_RELEASE",
           "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE"
-          ]
-        },
-        {
-          "id": "BH-20260729T15-01-84d4baa9a2",
-          "generated_at_jst": "2026-07-29T15:00:00+09:00",
-          "state": "STILLBORN",
-          "mechanism_family": "OPENING_INTRADAY",
-          "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE"
-          ]
-        },
-        {
-          "id": "BH-20260729T15-02-a1dccacefd",
-          "generated_at_jst": "2026-07-29T15:00:00+09:00",
-          "state": "STILLBORN",
-          "mechanism_family": "MARKET_REGIME",
-          "reason_codes": [
-            "EXISTING_ASSET_SIX_ELEMENTS_DUPLICATE",
             "DATA_EXISTENCE_CHECK_FAILED"
           ]
         },
         {
-          "id": "BH-20260730T07-01-e4c770eaec",
-          "generated_at_jst": "2026-07-30T07:00:00+09:00",
-          "state": "BORN",
-          "mechanism_family": "INDEX_PASSIVE_REBALANCE",
-          "reason_codes": []
+          "id": "BH-20260811T16-regime-overnight-capacity",
+          "generated_at_jst": "2026-08-11T16:00:00+09:00",
+          "state": "STILLBORN",
+          "mechanism_family": "REGIME_CONDITIONED_OVERNIGHT_CAPACITY",
+          "reason_codes": [
+            "DATA_EXISTENCE_CHECK_FAILED"
+          ]
+        },
+        {
+          "id": "BH-20260811T16-regime-weekly-size-veto",
+          "generated_at_jst": "2026-08-11T16:00:00+09:00",
+          "state": "STILLBORN",
+          "mechanism_family": "REGIME_ADDRESS_CAPACITY_EXCLUSION",
+          "reason_codes": [
+            "DATA_EXISTENCE_CHECK_FAILED"
+          ]
+        },
+        {
+          "id": "BH-20260811T17-hardflag-volume-arrival-rebound",
+          "generated_at_jst": "2026-08-11T17:00:00+09:00",
+          "state": "STILLBORN",
+          "mechanism_family": "HARDFLAG_FORCED_FLOW_VOLUME_RELEASE",
+          "reason_codes": [
+            "DATA_EXISTENCE_CHECK_FAILED"
+          ]
+        },
+        {
+          "id": "BH-20260811T17-hardflag-lowvolume-exclusion",
+          "generated_at_jst": "2026-08-11T17:00:00+09:00",
+          "state": "STILLBORN",
+          "mechanism_family": "HARDFLAG_LOW_VOLUME_ADVERSE_SELECTION",
+          "reason_codes": [
+            "DATA_EXISTENCE_CHECK_FAILED"
+          ]
+        },
+        {
+          "id": "BH-20260811T18-displayed-bid-exhaustion-rebound",
+          "generated_at_jst": "2026-08-11T18:00:00+09:00",
+          "state": "STILLBORN",
+          "mechanism_family": "FORCED_SELL_FLOW_X_DISPLAYED_LIQUIDITY_EXHAUSTION",
+          "reason_codes": [
+            "DATA_EXISTENCE_CHECK_FAILED"
+          ]
+        },
+        {
+          "id": "BH-20260811T18-depth-overrun-capacity-exclusion",
+          "generated_at_jst": "2026-08-11T18:00:00+09:00",
+          "state": "STILLBORN",
+          "mechanism_family": "DISPLAYED_LIQUIDITY_CAPACITY_X_ONE_BAR_DECAY",
+          "reason_codes": [
+            "DATA_EXISTENCE_CHECK_FAILED"
+          ]
+        },
+        {
+          "id": "BH-20260811T19-quarterly-capacity-long",
+          "generated_at_jst": "2026-08-11T19:00:00+09:00",
+          "state": "STILLBORN",
+          "mechanism_family": "LIQUIDITY_CAPACITY_SCALING",
+          "reason_codes": [
+            "DATA_EXISTENCE_CHECK_FAILED"
+          ]
+        },
+        {
+          "id": "BH-20260811T20-up-attention-overnight",
+          "generated_at_jst": "2026-08-11T20:00:00+09:00",
+          "state": "STILLBORN",
+          "mechanism_family": "OFFICIAL_ATTENTION_OVERNIGHT_PERSISTENCE",
+          "reason_codes": [
+            "DATA_EXISTENCE_CHECK_FAILED"
+          ]
+        },
+        {
+          "id": "BH-20260811T20-down-throw-overnight-rebound",
+          "generated_at_jst": "2026-08-11T20:00:00+09:00",
+          "state": "STILLBORN",
+          "mechanism_family": "OFFICIAL_NEGATIVE_ATTENTION_OVERNIGHT_REVERSAL",
+          "reason_codes": [
+            "DATA_EXISTENCE_CHECK_FAILED"
+          ]
+        },
+        {
+          "id": "BH-20260811T22-short-restriction-release",
+          "generated_at_jst": "2026-08-11T22:00:00+09:00",
+          "state": "STILLBORN",
+          "mechanism_family": "REGULATORY_SHORT_CONSTRAINT_RELEASE",
+          "reason_codes": [
+            "DATA_EXISTENCE_CHECK_FAILED"
+          ]
+        },
+        {
+          "id": "BH-20260811T22-vote-defeat-boundary",
+          "generated_at_jst": "2026-08-11T22:00:00+09:00",
+          "state": "STILLBORN",
+          "mechanism_family": "SHAREHOLDER_VOTE_CONTROL_CONTEST",
+          "reason_codes": [
+            "DATA_EXISTENCE_CHECK_FAILED"
+          ]
+        },
+        {
+          "id": "BH-20260811T23-volume-arrival-rebound",
+          "generated_at_jst": "2026-08-11T23:00:00+09:00",
+          "state": "STILLBORN",
+          "mechanism_family": "FORCED_SELLING_EXHAUSTION_WITH_VOLUME_ARRIVAL",
+          "reason_codes": [
+            "DATA_EXISTENCE_CHECK_FAILED"
+          ]
+        },
+        {
+          "id": "BH-20260811T23-sparse-volume-veto",
+          "generated_at_jst": "2026-08-11T23:00:00+09:00",
+          "state": "STILLBORN",
+          "mechanism_family": "SAMPLE_SUPPLY_GATE_FOR_VOLUME_TIMING",
+          "reason_codes": [
+            "DATA_EXISTENCE_CHECK_FAILED"
+          ]
+        },
+        {
+          "id": "BH-20260812T00-hardflag-gap-boundary-long",
+          "generated_at_jst": "2026-08-12T00:00:00+09:00",
+          "state": "STILLBORN",
+          "mechanism_family": "HARDFLAG_EVENT_DRIFT_WITH_OPENING_GAP_BOUNDARY",
+          "reason_codes": [
+            "DATA_EXISTENCE_CHECK_FAILED"
+          ]
+        },
+        {
+          "id": "BH-20260812T00-gap-reversal-exclusion",
+          "generated_at_jst": "2026-08-12T00:00:00+09:00",
+          "state": "STILLBORN",
+          "mechanism_family": "ORACLE_EDGE_INVALIDATION_BY_OPENING_REVERSAL",
+          "reason_codes": [
+            "DATA_EXISTENCE_CHECK_FAILED"
+          ]
+        },
+        {
+          "id": "BH-20260812T01-guidance-lowturnover-overnight",
+          "generated_at_jst": "2026-08-12T01:00:00+09:00",
+          "state": "STILLBORN",
+          "mechanism_family": "PIT_GUIDANCE_UNDERREACTION_X_LOW_PARTICIPATION",
+          "reason_codes": [
+            "DATA_EXISTENCE_CHECK_FAILED"
+          ]
+        },
+        {
+          "id": "BH-20260812T01-guidance-volume-arrival-veto",
+          "generated_at_jst": "2026-08-12T01:00:00+09:00",
+          "state": "STILLBORN",
+          "mechanism_family": "PIT_GUIDANCE_UNDERREACTION_X_LATE_VOLUME_ARRIVAL_VETO",
+          "reason_codes": [
+            "DATA_EXISTENCE_CHECK_FAILED"
+          ]
+        },
+        {
+          "id": "BH-20260812T02-pit-close-confirmed-overnight",
+          "generated_at_jst": "2026-08-12T02:00:00+09:00",
+          "state": "STILLBORN",
+          "mechanism_family": "SAME_DAY_PIT_ATTENTION_OVERNIGHT_PERSISTENCE",
+          "reason_codes": [
+            "DATA_EXISTENCE_CHECK_FAILED"
+          ]
+        },
+        {
+          "id": "BH-20260812T02-pit-buying-failure-exclusion",
+          "generated_at_jst": "2026-08-12T02:00:00+09:00",
+          "state": "STILLBORN",
+          "mechanism_family": "SAME_DAY_PIT_ATTENTION_FAILURE_BOUNDARY",
+          "reason_codes": [
+            "DATA_EXISTENCE_CHECK_FAILED"
+          ]
+        },
+        {
+          "id": "BH-20260812T03-factorcut-profit-add",
+          "generated_at_jst": "2026-08-12T03:00:00+09:00",
+          "state": "STILLBORN",
+          "mechanism_family": "INDEX_PASSIVE_REBALANCE_PATH_DEPENDENT_SCALING",
+          "reason_codes": [
+            "DATA_EXISTENCE_CHECK_FAILED"
+          ]
+        },
+        {
+          "id": "BH-20260812T03-factorcut-loser-veto",
+          "generated_at_jst": "2026-08-12T03:00:00+09:00",
+          "state": "STILLBORN",
+          "mechanism_family": "INDEX_PASSIVE_REBALANCE_PATH_DEPENDENT_VETO",
+          "reason_codes": [
+            "DATA_EXISTENCE_CHECK_FAILED"
+          ]
+        },
+        {
+          "id": "BH-20260812T04-lunch-disclosure-overnight",
+          "generated_at_jst": "2026-08-12T04:00:00+09:00",
+          "state": "STILLBORN",
+          "mechanism_family": "TIMED_ISSUER_DISCLOSURE_REPRICING",
+          "reason_codes": [
+            "DATA_EXISTENCE_CHECK_FAILED"
+          ]
+        },
+        {
+          "id": "BH-20260812T05-ipo-independent-day-capacity-gate",
+          "generated_at_jst": "2026-08-12T05:00:00+09:00",
+          "state": "STILLBORN",
+          "mechanism_family": "IPO_LIQUIDITY_CAPACITY_PREFLIGHT",
+          "reason_codes": [
+            "DATA_EXISTENCE_CHECK_FAILED"
+          ]
+        },
+        {
+          "id": "BH-20260812T05-ipo-vc-thinboard-nextclose",
+          "generated_at_jst": "2026-08-12T05:00:00+09:00",
+          "state": "STILLBORN",
+          "mechanism_family": "IPO_VC_SUPPLY_LIQUIDITY_INTERACTION",
+          "reason_codes": [
+            "DATA_EXISTENCE_CHECK_FAILED"
+          ]
+        },
+        {
+          "id": "BH-20260812T06-weekly-margin-rebound",
+          "generated_at_jst": "2026-08-12T06:00:00+09:00",
+          "state": "STILLBORN",
+          "mechanism_family": "WEEKLY_FORCED_DELEVERAGING_RELEASE",
+          "reason_codes": [
+            "DATA_EXISTENCE_CHECK_FAILED"
+          ]
+        },
+        {
+          "id": "BH-20260812T06-monthly-panic-turnover-recovery",
+          "generated_at_jst": "2026-08-12T06:00:00+09:00",
+          "state": "STILLBORN",
+          "mechanism_family": "MONTHLY_PANIC_TURNOVER_EXHAUSTION",
+          "reason_codes": [
+            "DATA_EXISTENCE_CHECK_FAILED"
+          ]
         }
       ],
       "repository": "art-daytrader-public-runtime",
+      "source_role": "active-foundry-runtime",
       "path": "research_hypothesis_foundry/perpetual/births_ledger.jsonl",
-      "sha256": "204e93261656b3235897b47e9886291f7acc2a01623d3097de38e41125a19155",
-      "head_sha256": "92a7576eb71a46797da80ddee3eafdea1b3d58c3d6448f58141447b6dd225d10",
+      "sha256": "019bf7596a8390d191243d18cb8585f19458376aff78af8f23fee07dbfbf905d",
+      "head_sha256": "d3af1e63adc6b3bea2adb7208280cc8138045c4cbf7ea18218bbdf54261a3723",
       "snapshot": {
         "mode": "APPEND_ONLY_PREFIX",
-        "captured_at_jst": "2026-08-12T06:29:32+0900",
-        "source_git_commit": "13366af61c5a76f25cb4b3fdac67e9b64a4ad1dd",
-        "line_count": 254,
-        "prefix_sha256": "204e93261656b3235897b47e9886291f7acc2a01623d3097de38e41125a19155",
-        "head_record_sha256": "92a7576eb71a46797da80ddee3eafdea1b3d58c3d6448f58141447b6dd225d10",
+        "captured_at_jst": "2026-08-12T06:45:24+0900",
+        "source_git_commit": "e53d8dbab11881d3bb9c113de0109967fca2d080",
+        "line_count": 344,
+        "prefix_sha256": "019bf7596a8390d191243d18cb8585f19458376aff78af8f23fee07dbfbf905d",
+        "head_record_sha256": "d3af1e63adc6b3bea2adb7208280cc8138045c4cbf7ea18218bbdf54261a3723",
         "later_appends_allowed": true,
         "prefix_mutation_allowed": false
       }
@@ -625,16 +604,16 @@
       "source_sha256": "c52f1ae060db6c9052505ff4aeb6852bf454ed59516911190178fbc7b86b79cd"
     },
     "weekly_kpi": {
-      "birth_count": 254,
+      "birth_count": 344,
       "new_born_rate": {
         "numerator": 0,
-        "denominator": 0,
-        "value": null
+        "denominator": 13,
+        "value": 0.0
       },
       "court_submission_rate": {
         "numerator": 5,
-        "denominator": 46,
-        "value": 0.10869565217391304
+        "denominator": 52,
+        "value": 0.09615384615384616
       },
       "freeze_rate": {
         "numerator": 3,
@@ -648,7 +627,7 @@
       }
     },
     "current_funnel": {
-      "born": 46,
+      "born": 52,
       "court_submitted": 5,
       "frozen": 3,
       "one_shot_completed": 3,
@@ -782,13 +761,13 @@
     "repository": "art-daytrader-fable-28-53",
     "ledger_path": "governance/DEFECT_LEDGER.md",
     "ledger_sha256": "7460ddd188d51c3bb3717a88cf6a83f4a9b7baccfbe3c0bf72e7a92405bc028d",
-    "measured_at_jst": "2026-08-12T06:29:32+0900",
+    "measured_at_jst": "2026-08-12T06:45:24+0900",
     "orders_sent": false,
     "sendorder_count": 0
   },
   "active_cards": {
     "schema": "public_active_cards_v2",
-    "state_data_at_jst": "2026-08-12T06:29:32+09:00",
+    "state_data_at_jst": "2026-08-12T06:45:24+09:00",
     "governance_revision": {
       "ruling": "Fable裁定231(a)",
       "source_mode": "canonical_files_direct"
@@ -976,7 +955,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-12T06:29:32+09:00",
+        "state_data_at_jst": "2026-08-12T06:45:24+09:00",
         "evidence": [
           {
             "path": "governance/micro_allocation_boundary_v2_20260725.json",
@@ -1037,7 +1016,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-12T06:29:32+09:00",
+        "state_data_at_jst": "2026-08-12T06:45:24+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_033_V6_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T143446+0900.json",
@@ -1153,7 +1132,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-12T06:29:32+09:00",
+        "state_data_at_jst": "2026-08-12T06:45:24+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_PIN_LOTTERY_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T140307+0900.json",
@@ -1239,7 +1218,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-12T06:29:32+09:00",
+        "state_data_at_jst": "2026-08-12T06:45:24+09:00",
         "evidence": [
           {
             "path": "governance/rulings141_20260727/testa_swing5d_result_site_handoff_r141.json",
@@ -1300,7 +1279,7 @@
         "provisional": false,
         "description_only": true,
         "qualification_evidence": false,
-        "state_data_at_jst": "2026-08-12T06:29:32+09:00",
+        "state_data_at_jst": "2026-08-12T06:45:24+09:00",
         "evidence": [
           {
             "path": "research/r20_residual_audit_v2_20260726/d0v4_033/provisional_result.json",
@@ -1351,7 +1330,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-12T06:29:32+09:00",
+        "state_data_at_jst": "2026-08-12T06:45:24+09:00",
         "evidence": [
           {
             "path": "reports/A3_FABLE_RULING221_052_PUBLIC_DISPLAY_HANDOFF_20260728T153600+0900.json",
@@ -1390,7 +1369,12 @@
         "path": "reports/A_FABLE_RULING141_MONDAY_NO_TRADE_20260727T002637+0900.json",
         "sha256": "3795083551d20df878b1a06b1644f62db83cce3384dee4f34669526a7bb64cef"
       }
-    ]
+    ],
+    "current_status_ja": "本番前の検証門",
+    "current_status_date_jst": "2026-08-12",
+    "current_reason_class_ja": "検証・稼働門",
+    "next_gate_ja": "新しいaccepted live captureで独立日10/10へ到達し、増額審査へ進む",
+    "state_data_date_jst": "2026-08-11"
   },
   "hyp_progress": {
     "pb1": {
@@ -1400,16 +1384,29 @@
       "prev": 0
     },
     "harvester": {
-      "n": 4,
+      "n": 137,
       "target": 14,
-      "label": "前向き解決",
-      "prev": 137
+      "label": "解決event",
+      "prev": 137,
+      "independent_days": 14,
+      "target_independent_days": 10,
+      "next_gate_ja": "同一保有構造のSHA拘束済みnon-holdout aggregate benchmarkでeconomic non-refutationを判定する",
+      "measurement_status": "PASS",
+      "state_data_date_jst": "2026-08-11",
+      "signal_days": 14,
+      "target_signal_days": 14,
+      "economic_non_refutation": "INDETERMINATE"
     },
     "035": {
-      "n": 7,
+      "n": 29,
       "target": 14,
-      "label": "前向き解決",
-      "prev": 29
+      "label": "accepted/live economic event",
+      "prev": 29,
+      "independent_days": 9,
+      "target_independent_days": 10,
+      "next_gate_ja": "新しいaccepted live captureで独立日10/10へ到達し、増額審査へ進む",
+      "measurement_status": "PASS",
+      "state_data_date_jst": "2026-08-11"
     },
     "041g7": {
       "n": 2,
@@ -1490,18 +1487,37 @@
   },
   "freshness": {
     "status": "PASS",
-    "checked_at_jst": "2026-08-12T06:29:45+09:00",
-    "state_data_at_jst": "2026-08-12T06:29:32+09:00",
-    "age_seconds": 13.95,
+    "checked_at_jst": "2026-08-12T06:45:40+09:00",
+    "state_data_at_jst": "2026-08-12T06:45:24+09:00",
+    "age_seconds": 16.271,
     "max_age_seconds": 1800,
-    "canonical_source_count": 39,
-    "canonical_source_set_sha256": "04d77e70f92798021625ba18be13de8d2341137b48d64449dc319251e38c7c9d",
+    "canonical_source_count": 42,
+    "canonical_source_set_sha256": "96fd1efe0ee0b573b8ffa190b5e58f3802b37d1ee5c50216c571b91cbef26284",
     "card_source_set_sha256": "969350b4de68933687be8f0f960bf432e79118d58a0c2f17f42197af292ed5cf",
     "orders_sent": false,
-    "sendorder_count": 0
+    "sendorder_count": 0,
+    "live_aggregate_sources": {
+      "foundry": {
+        "status": "PASS",
+        "line_count": 344,
+        "sha256": "019bf7596a8390d191243d18cb8585f19458376aff78af8f23fee07dbfbf905d"
+      },
+      "035": {
+        "status": "PASS",
+        "sha256": "cccc38b0a61e6ef24a62b822b4d9975e55fa096d025f6e229fc4dcba22d1574d",
+        "resolved_events": 29,
+        "independent_days": 9
+      },
+      "harvester": {
+        "status": "PASS",
+        "sha256": "d111059521a81e772c8c4846f00a56fca57adf26d151b7b71d3324923f4f6793",
+        "resolved_events": 137,
+        "independent_days": 14
+      }
+    }
   },
-  "public_surface_state_at_jst": "2026-08-12T06:29:45+09:00",
-  "progress_checked_at": "2026-08-12 06:29",
+  "public_surface_state_at_jst": "2026-08-12T06:45:40+09:00",
+  "progress_checked_at": "2026-08-12 06:45",
   "operational_readiness": {
     "schema": "public_operational_readiness_v1",
     "observed_at_jst": "2026-08-12T05:25:36+09:00",
