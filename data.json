@@ -98,39 +98,39 @@
   },
   "storage_refresh": {
     "status": "NOT_DUE",
-    "measured_at_jst": "2026-08-11T14:54:46+0900",
+    "measured_at_jst": "2026-08-11T15:10:26+0900",
     "preserved_last_verified_measurement": true
   },
   "foundry": {
     "ledger": {
-      "total": 317,
+      "total": 318,
       "born": 52,
-      "stillborn": 265,
+      "stillborn": 266,
       "today": {
         "date_jst": "2026-08-11",
-        "total": 18,
+        "total": 19,
         "born": 0,
-        "stillborn": 18
+        "stillborn": 19
       },
-      "latest_generated_at_jst": "2026-08-11T14:00:00+09:00",
+      "latest_generated_at_jst": "2026-08-11T15:00:00+09:00",
       "latest_public_birth_ids": [
-        "BH-20260811T12-flowrelease-holdout-long",
         "BH-20260811T13-tob-expiry-spread",
         "BH-20260811T13-tob-extension-boundary",
         "BH-20260811T14-positive-drift-earnings-gap-rebound",
-        "BH-20260811T14-nondrift-gap-exclusion-boundary"
+        "BH-20260811T14-nondrift-gap-exclusion-boundary",
+        "BH-20260811T15-hardflag-margin-release"
       ],
       "repository": "art-daytrader-foundry-runtime",
       "path": "research_hypothesis_foundry/perpetual/births_ledger.jsonl",
-      "sha256": "e34eef625ed007f1d1f0c12bc7a991d7a69a7ed3bb656e42c25598c5abbc7a56",
-      "head_sha256": "c8f468aaf8376885f42ed1616e2af33a970e58d1e8d7c7cb0d9e113bdb8b64b2",
+      "sha256": "8e7eb1046c0e276273b92a9142703beb4d64c90316917ec113b9cd12f841a088",
+      "head_sha256": "e9b69bf381fa6b6a508b0078b472c4c344124245a35d90cd72b0545dbd80973c",
       "snapshot": {
         "mode": "APPEND_ONLY_PREFIX",
-        "captured_at_jst": "2026-08-11T14:54:44+0900",
+        "captured_at_jst": "2026-08-11T15:10:25+0900",
         "source_git_commit": "e53d8dbab11881d3bb9c113de0109967fca2d080",
-        "line_count": 317,
-        "prefix_sha256": "e34eef625ed007f1d1f0c12bc7a991d7a69a7ed3bb656e42c25598c5abbc7a56",
-        "head_record_sha256": "c8f468aaf8376885f42ed1616e2af33a970e58d1e8d7c7cb0d9e113bdb8b64b2",
+        "line_count": 318,
+        "prefix_sha256": "8e7eb1046c0e276273b92a9142703beb4d64c90316917ec113b9cd12f841a088",
+        "head_record_sha256": "e9b69bf381fa6b6a508b0078b472c4c344124245a35d90cd72b0545dbd80973c",
         "later_appends_allowed": true,
         "prefix_mutation_allowed": false
       }
@@ -148,10 +148,10 @@
       "source_sha256": "c52f1ae060db6c9052505ff4aeb6852bf454ed59516911190178fbc7b86b79cd"
     },
     "weekly_kpi": {
-      "birth_count": 317,
+      "birth_count": 318,
       "new_born_rate": {
         "numerator": 0,
-        "denominator": 18,
+        "denominator": 19,
         "value": 0.0
       },
       "court_submission_rate": {
@@ -240,13 +240,13 @@
     "repository": "art-daytrader-fable-28-53",
     "ledger_path": "governance/DEFECT_LEDGER.md",
     "ledger_sha256": "7460ddd188d51c3bb3717a88cf6a83f4a9b7baccfbe3c0bf72e7a92405bc028d",
-    "measured_at_jst": "2026-08-11T14:54:45+0900",
+    "measured_at_jst": "2026-08-11T15:10:25+0900",
     "orders_sent": false,
     "sendorder_count": 0
   },
   "active_cards": {
     "schema": "public_active_cards_v2",
-    "state_data_at_jst": "2026-08-11T14:54:15+09:00",
+    "state_data_at_jst": "2026-08-11T15:09:54+09:00",
     "governance_revision": {
       "ruling": "Fable裁定231(a)",
       "source_mode": "canonical_files_direct"
@@ -434,7 +434,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-11T14:54:45+09:00",
+        "state_data_at_jst": "2026-08-11T15:10:25+09:00",
         "evidence": [
           {
             "path": "governance/micro_allocation_boundary_v2_20260725.json",
@@ -495,7 +495,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-11T14:54:15+09:00",
+        "state_data_at_jst": "2026-08-11T15:09:54+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_033_V6_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T143446+0900.json",
@@ -611,7 +611,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-11T14:54:45+09:00",
+        "state_data_at_jst": "2026-08-11T15:10:25+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_PIN_LOTTERY_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T140307+0900.json",
@@ -697,7 +697,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-11T14:54:45+09:00",
+        "state_data_at_jst": "2026-08-11T15:10:25+09:00",
         "evidence": [
           {
             "path": "governance/rulings141_20260727/testa_swing5d_result_site_handoff_r141.json",
@@ -758,7 +758,7 @@
         "provisional": false,
         "description_only": true,
         "qualification_evidence": false,
-        "state_data_at_jst": "2026-08-11T14:54:45+09:00",
+        "state_data_at_jst": "2026-08-11T15:10:25+09:00",
         "evidence": [
           {
             "path": "research/r20_residual_audit_v2_20260726/d0v4_033/provisional_result.json",
@@ -809,7 +809,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-11T14:54:45+09:00",
+        "state_data_at_jst": "2026-08-11T15:10:25+09:00",
         "evidence": [
           {
             "path": "reports/A3_FABLE_RULING221_052_PUBLIC_DISPLAY_HANDOFF_20260728T153600+0900.json",
@@ -1143,21 +1143,21 @@
   },
   "freshness": {
     "status": "PASS",
-    "checked_at_jst": "2026-08-11T14:54:49+09:00",
-    "state_data_at_jst": "2026-08-11T14:54:15+09:00",
-    "age_seconds": 34.384,
+    "checked_at_jst": "2026-08-11T15:10:30+09:00",
+    "state_data_at_jst": "2026-08-11T15:09:54+09:00",
+    "age_seconds": 36.518,
     "max_age_seconds": 1800,
     "canonical_source_count": 39,
-    "canonical_source_set_sha256": "b94805b216987b3530ef3cfb2f222b8747fd871e1c21c23825010a70656ee3ee",
+    "canonical_source_set_sha256": "e61b3026a024c1f261305d1bdada91c804ac5ab48aacf1d685162a755a084b4c",
     "card_source_set_sha256": "969350b4de68933687be8f0f960bf432e79118d58a0c2f17f42197af292ed5cf",
     "orders_sent": false,
     "sendorder_count": 0
   },
-  "public_surface_state_at_jst": "2026-08-11T14:54:49+09:00",
-  "progress_checked_at": "2026-08-11 14:54",
+  "public_surface_state_at_jst": "2026-08-11T15:10:30+09:00",
+  "progress_checked_at": "2026-08-11 15:10",
   "operational_readiness": {
     "schema": "public_operational_readiness_v1",
-    "observed_at_jst": "2026-08-11T14:54:15+09:00",
+    "observed_at_jst": "2026-08-11T15:09:54+09:00",
     "overall_status": "ATTENTION_REQUIRED",
     "login_api": {
       "status": "PASS",
@@ -1217,21 +1217,21 @@
     },
     "foundry_hourly": {
       "status": "SOURCE_UPDATE_AUTO_RESUME",
-      "last_hour_jst": "2026-08-11T14:00:00+09:00",
+      "last_hour_jst": "2026-08-11T15:00:00+09:00",
       "missing_expected_hour_jst": null,
-      "birth_rows": 2,
-      "next_natural_fire_jst": "2026-08-11T15:07:00+09:00",
+      "birth_rows": 1,
+      "next_natural_fire_jst": "2026-08-11T16:07:00+09:00",
       "orders_sent": false
     },
     "crypto": {
       "schema": "public_crypto_status_v1",
-      "observed_at_jst": "2026-08-11T14:54:15+09:00",
+      "observed_at_jst": "2026-08-11T15:09:54+09:00",
       "observers": {
         "bybit": {
           "status": "RUNNING",
           "task_state": "RUNNING",
           "last_task_result": 267009,
-          "last_record_at_jst": "2026-08-11T14:54:40+09:00",
+          "last_record_at_jst": "2026-08-11T15:10:18+09:00",
           "record_count": null,
           "orders_forbidden": true
         },
@@ -1239,8 +1239,8 @@
           "status": "RUNNING",
           "task_state": "RUNNING",
           "last_task_result": 267009,
-          "last_record_at_jst": "2026-08-11T14:54:43+09:00",
-          "record_count": 270605,
+          "last_record_at_jst": "2026-08-11T15:10:23+09:00",
+          "record_count": 272164,
           "orders_forbidden": true
         }
       },
@@ -1326,7 +1326,7 @@
     "sendorder_count": 0
   },
   "ops_heartbeat": {
-    "generated_at_jst": "2026-08-11T14:54:46+0900",
+    "generated_at_jst": "2026-08-11T15:10:26+0900",
     "ledger_rulings_today": 33,
     "queues_delivered_today": 16,
     "receipts_today": 27,
