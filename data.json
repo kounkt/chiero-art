@@ -98,7 +98,7 @@
   },
   "storage_refresh": {
     "status": "FAIL_CLOSED",
-    "measured_at_jst": "2026-08-12T08:52:43+0900",
+    "measured_at_jst": "2026-08-12T09:24:14+0900",
     "reason_code": "'sha256'",
     "preserved_last_verified_measurement": true,
     "orders_sent": false,
@@ -106,42 +106,24 @@
   },
   "foundry": {
     "ledger": {
-      "total": 347,
+      "total": 349,
       "born": 52,
-      "stillborn": 295,
+      "stillborn": 297,
       "today": {
         "date_jst": "2026-08-12",
-        "total": 16,
+        "total": 18,
         "born": 0,
-        "stillborn": 16
+        "stillborn": 18
       },
-      "latest_generated_at_jst": "2026-08-12T08:00:00+09:00",
+      "latest_generated_at_jst": "2026-08-12T09:00:00+09:00",
       "latest_public_birth_ids": [
-        "BH-20260812T06-weekly-margin-rebound",
-        "BH-20260812T06-monthly-panic-turnover-recovery",
         "BH-20260812T07-ipo-vc-capacity-filter",
         "BH-20260812T07-ipo-close-capacity-veto",
-        "BH-20260812T08-open-sell-close-recovery"
+        "BH-20260812T08-open-sell-close-recovery",
+        "BH-20260812T09-close-auction-demand-overnight",
+        "BH-20260812T09-close-auction-supply-rebound"
       ],
       "recent_entries": [
-        {
-          "id": "BH-20260810T23-no-buy-kehai-short",
-          "generated_at_jst": "2026-08-10T23:00:00+09:00",
-          "state": "STILLBORN",
-          "mechanism_family": "INDEX_PASSIVE_REBALANCE_X_PREOPEN_DEMAND",
-          "reason_codes": [
-            "DATA_EXISTENCE_CHECK_FAILED"
-          ]
-        },
-        {
-          "id": "BH-20260810T23-buy-kehai-veto",
-          "generated_at_jst": "2026-08-10T23:00:00+09:00",
-          "state": "STILLBORN",
-          "mechanism_family": "INDEX_PASSIVE_REBALANCE_X_PREOPEN_DEMAND_VETO",
-          "reason_codes": [
-            "DATA_EXISTENCE_CHECK_FAILED"
-          ]
-        },
         {
           "id": "BH-20260811T01-kehai-snapshot-persistence",
           "generated_at_jst": "2026-08-11T01:00:00+09:00",
@@ -573,20 +555,38 @@
           "reason_codes": [
             "DATA_EXISTENCE_CHECK_FAILED"
           ]
+        },
+        {
+          "id": "BH-20260812T09-close-auction-demand-overnight",
+          "generated_at_jst": "2026-08-12T09:00:00+09:00",
+          "state": "STILLBORN",
+          "mechanism_family": "CLOSE_AUCTION_FORCED_DEMAND_OVERNIGHT",
+          "reason_codes": [
+            "DATA_EXISTENCE_CHECK_FAILED"
+          ]
+        },
+        {
+          "id": "BH-20260812T09-close-auction-supply-rebound",
+          "generated_at_jst": "2026-08-12T09:00:00+09:00",
+          "state": "STILLBORN",
+          "mechanism_family": "CLOSE_AUCTION_FORCED_SUPPLY_RELEASE",
+          "reason_codes": [
+            "DATA_EXISTENCE_CHECK_FAILED"
+          ]
         }
       ],
       "repository": "art-daytrader-public-runtime",
       "source_role": "active-foundry-runtime",
       "path": "research_hypothesis_foundry/perpetual/births_ledger.jsonl",
-      "sha256": "7d55a0c026406d72b1c81561460a4c3c144a95f6a9fbd246c7ff8468dd1487fb",
-      "head_sha256": "e12c6801f85d880c2be3ddad4c0edbc98e9ec99304d9a5f944cc8e46cf74142a",
+      "sha256": "48fe10346fc3cb69bded338143cd1ffdd73e2f25c371aad6423e9fd5c7c1e3bd",
+      "head_sha256": "cb3bc05f5c670efa79befe6c3a04eb27ec7c5b2b46f7113c13b3bfd21656c205",
       "snapshot": {
         "mode": "APPEND_ONLY_PREFIX",
-        "captured_at_jst": "2026-08-12T08:52:31+0900",
+        "captured_at_jst": "2026-08-12T09:24:02+0900",
         "source_git_commit": "e53d8dbab11881d3bb9c113de0109967fca2d080",
-        "line_count": 347,
-        "prefix_sha256": "7d55a0c026406d72b1c81561460a4c3c144a95f6a9fbd246c7ff8468dd1487fb",
-        "head_record_sha256": "e12c6801f85d880c2be3ddad4c0edbc98e9ec99304d9a5f944cc8e46cf74142a",
+        "line_count": 349,
+        "prefix_sha256": "48fe10346fc3cb69bded338143cd1ffdd73e2f25c371aad6423e9fd5c7c1e3bd",
+        "head_record_sha256": "cb3bc05f5c670efa79befe6c3a04eb27ec7c5b2b46f7113c13b3bfd21656c205",
         "later_appends_allowed": true,
         "prefix_mutation_allowed": false
       }
@@ -604,10 +604,10 @@
       "source_sha256": "c52f1ae060db6c9052505ff4aeb6852bf454ed59516911190178fbc7b86b79cd"
     },
     "weekly_kpi": {
-      "birth_count": 347,
+      "birth_count": 349,
       "new_born_rate": {
         "numerator": 0,
-        "denominator": 16,
+        "denominator": 18,
         "value": 0.0
       },
       "court_submission_rate": {
@@ -761,13 +761,13 @@
     "repository": "art-daytrader-fable-28-53",
     "ledger_path": "governance/DEFECT_LEDGER.md",
     "ledger_sha256": "7460ddd188d51c3bb3717a88cf6a83f4a9b7baccfbe3c0bf72e7a92405bc028d",
-    "measured_at_jst": "2026-08-12T08:52:31+0900",
+    "measured_at_jst": "2026-08-12T09:24:02+0900",
     "orders_sent": false,
     "sendorder_count": 0
   },
   "active_cards": {
     "schema": "public_active_cards_v2",
-    "state_data_at_jst": "2026-08-12T08:52:31+09:00",
+    "state_data_at_jst": "2026-08-12T09:24:02+09:00",
     "governance_revision": {
       "ruling": "Fable裁定231(a)",
       "source_mode": "canonical_files_direct"
@@ -955,7 +955,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-12T08:52:31+09:00",
+        "state_data_at_jst": "2026-08-12T09:24:02+09:00",
         "evidence": [
           {
             "path": "governance/micro_allocation_boundary_v2_20260725.json",
@@ -1016,7 +1016,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-12T08:52:31+09:00",
+        "state_data_at_jst": "2026-08-12T09:24:02+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_033_V6_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T143446+0900.json",
@@ -1132,7 +1132,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-12T08:52:31+09:00",
+        "state_data_at_jst": "2026-08-12T09:24:02+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_PIN_LOTTERY_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T140307+0900.json",
@@ -1218,7 +1218,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-12T08:52:31+09:00",
+        "state_data_at_jst": "2026-08-12T09:24:02+09:00",
         "evidence": [
           {
             "path": "governance/rulings141_20260727/testa_swing5d_result_site_handoff_r141.json",
@@ -1279,7 +1279,7 @@
         "provisional": false,
         "description_only": true,
         "qualification_evidence": false,
-        "state_data_at_jst": "2026-08-12T08:52:31+09:00",
+        "state_data_at_jst": "2026-08-12T09:24:02+09:00",
         "evidence": [
           {
             "path": "research/r20_residual_audit_v2_20260726/d0v4_033/provisional_result.json",
@@ -1330,7 +1330,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-12T08:52:31+09:00",
+        "state_data_at_jst": "2026-08-12T09:24:02+09:00",
         "evidence": [
           {
             "path": "reports/A3_FABLE_RULING221_052_PUBLIC_DISPLAY_HANDOFF_20260728T153600+0900.json",
@@ -1487,20 +1487,20 @@
   },
   "freshness": {
     "status": "PASS",
-    "checked_at_jst": "2026-08-12T08:52:43+09:00",
-    "state_data_at_jst": "2026-08-12T08:52:31+09:00",
-    "age_seconds": 12.719,
+    "checked_at_jst": "2026-08-12T09:24:14+09:00",
+    "state_data_at_jst": "2026-08-12T09:24:02+09:00",
+    "age_seconds": 12.973,
     "max_age_seconds": 1800,
     "canonical_source_count": 42,
-    "canonical_source_set_sha256": "324de32868121c156123e5296ef3dd38f195bd2c31c904198d0bf5b8dd8d455a",
+    "canonical_source_set_sha256": "1174342281a7b45d1fd1ed4a3b1a64c6bf3682849ac88c30e6dcb39b7647183e",
     "card_source_set_sha256": "969350b4de68933687be8f0f960bf432e79118d58a0c2f17f42197af292ed5cf",
     "orders_sent": false,
     "sendorder_count": 0,
     "live_aggregate_sources": {
       "foundry": {
         "status": "PASS",
-        "line_count": 347,
-        "sha256": "7d55a0c026406d72b1c81561460a4c3c144a95f6a9fbd246c7ff8468dd1487fb"
+        "line_count": 349,
+        "sha256": "48fe10346fc3cb69bded338143cd1ffdd73e2f25c371aad6423e9fd5c7c1e3bd"
       },
       "035": {
         "status": "PASS",
@@ -1516,8 +1516,8 @@
       }
     }
   },
-  "public_surface_state_at_jst": "2026-08-12T08:52:43+09:00",
-  "progress_checked_at": "2026-08-12 08:52",
+  "public_surface_state_at_jst": "2026-08-12T09:24:14+09:00",
+  "progress_checked_at": "2026-08-12 09:24",
   "operational_readiness": {
     "schema": "public_operational_readiness_v1",
     "observed_at_jst": "2026-08-12T05:25:36+09:00",
