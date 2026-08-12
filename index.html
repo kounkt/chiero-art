@@ -868,10 +868,13 @@ const DATA = {
   function renderOperations(o){
     var el=document.getElementById('operationband');if(!el||!o)return;
     var nextGate=typeof o.next_gate_ja==="string"&&o.next_gate_ja.trim()?o.next_gate_ja.trim():"UNKNOWN";
+    var currentStatus=o.current_status_ja||o.label_ja;
+    var currentDate=o.current_status_date_jst||o.trade_date;
+    var currentReason=o.current_reason_class_ja||o.reason_class;
     el.style.display='';
     el.innerHTML=[
-      {n:o.label_ja,l:o.trade_date,a:1},
-      {n:o.reason_class,l:"見送り理由"},
+      {n:currentStatus,l:currentDate,a:1},
+      {n:currentReason,l:"現在の門"},
       {n:"¥"+Number(o.realized_trade_loss_jpy).toLocaleString(),l:"実現取引損失"},
       {n:o.sendorder_count,l:"送信注文数"},
       {n:nextGate,l:"次の共通門"}
@@ -1037,7 +1040,9 @@ const DATA = {
     else if(delta>0) dtxt='<span class="dup">前日比 +'+delta+'</span>';
     else if(delta<0) dtxt='<span class="ddn">前日比 '+delta+'</span>';
     else dtxt='<span class="dz">前日比 ±0（変化なし）</span>';
-    return '<span class="prog">'+lab+' <b>'+p.n+'/'+p.target+'</b> · '+dtxt+'</span>';
+    var independent=(typeof p.independent_days==='number'&&typeof p.target_independent_days==='number')
+      ?' · 独立日 <b>'+p.independent_days+'/'+p.target_independent_days+'</b>':'';
+    return '<span class="prog">'+lab+' <b>'+p.n+'/'+p.target+'</b>'+independent+' · '+dtxt+'</span>';
   }
   function stateDataLine(h){
     var stamp=h.state_data_at_jst||DATA.state_data_at_jst;
@@ -1116,6 +1121,7 @@ const DATA = {
       if(!hp[h.id])return;
       h.prog=Object.assign({},h.prog||{},hp[h.id]);
       if(hp[h.id].state)h.state=hp[h.id].state;
+      if(hp[h.id].next_gate_ja)PROMOTE[h.id]='<b>次の門:</b> '+hp[h.id].next_gate_ja;
     });
     renderCards();
   };
