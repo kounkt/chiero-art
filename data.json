@@ -98,7 +98,7 @@
   },
   "storage_refresh": {
     "status": "FAIL_CLOSED",
-    "measured_at_jst": "2026-08-12T22:55:54+0900",
+    "measured_at_jst": "2026-08-12T23:11:11+0900",
     "reason_code": "'sha256'",
     "preserved_last_verified_measurement": true,
     "orders_sent": false,
@@ -582,7 +582,7 @@
       "head_sha256": "7f964f62fbb00f0b94c3501f5d8a9fc2cd9f78d04afae82ab1f3af59cf606b9a",
       "snapshot": {
         "mode": "APPEND_ONLY_PREFIX",
-        "captured_at_jst": "2026-08-12T22:55:31+0900",
+        "captured_at_jst": "2026-08-12T23:10:59+0900",
         "source_git_commit": "e53d8dbab11881d3bb9c113de0109967fca2d080",
         "line_count": 351,
         "prefix_sha256": "7d1f5e58b1c9fa86913241259535d28a9fe41978b060b8f1a306e822d98aae88",
@@ -761,13 +761,13 @@
     "repository": "art-daytrader-fable-28-53",
     "ledger_path": "governance/DEFECT_LEDGER.md",
     "ledger_sha256": "7460ddd188d51c3bb3717a88cf6a83f4a9b7baccfbe3c0bf72e7a92405bc028d",
-    "measured_at_jst": "2026-08-12T22:55:31+0900",
+    "measured_at_jst": "2026-08-12T23:10:59+0900",
     "orders_sent": false,
     "sendorder_count": 0
   },
   "active_cards": {
     "schema": "public_active_cards_v2",
-    "state_data_at_jst": "2026-08-12T22:55:31+09:00",
+    "state_data_at_jst": "2026-08-12T23:10:59+09:00",
     "governance_revision": {
       "ruling": "Fable裁定231(a)",
       "source_mode": "canonical_files_direct"
@@ -955,7 +955,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-12T22:55:31+09:00",
+        "state_data_at_jst": "2026-08-12T23:10:59+09:00",
         "evidence": [
           {
             "path": "governance/micro_allocation_boundary_v2_20260725.json",
@@ -1016,7 +1016,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-12T22:55:31+09:00",
+        "state_data_at_jst": "2026-08-12T23:10:59+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_033_V6_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T143446+0900.json",
@@ -1132,7 +1132,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-12T22:55:31+09:00",
+        "state_data_at_jst": "2026-08-12T23:10:59+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_PIN_LOTTERY_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T140307+0900.json",
@@ -1218,7 +1218,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-12T22:55:31+09:00",
+        "state_data_at_jst": "2026-08-12T23:10:59+09:00",
         "evidence": [
           {
             "path": "governance/rulings141_20260727/testa_swing5d_result_site_handoff_r141.json",
@@ -1279,7 +1279,7 @@
         "provisional": false,
         "description_only": true,
         "qualification_evidence": false,
-        "state_data_at_jst": "2026-08-12T22:55:31+09:00",
+        "state_data_at_jst": "2026-08-12T23:10:59+09:00",
         "evidence": [
           {
             "path": "research/r20_residual_audit_v2_20260726/d0v4_033/provisional_result.json",
@@ -1330,7 +1330,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-12T22:55:31+09:00",
+        "state_data_at_jst": "2026-08-12T23:10:59+09:00",
         "evidence": [
           {
             "path": "reports/A3_FABLE_RULING221_052_PUBLIC_DISPLAY_HANDOFF_20260728T153600+0900.json",
@@ -1487,9 +1487,9 @@
   },
   "freshness": {
     "status": "PASS",
-    "checked_at_jst": "2026-08-12T22:55:54+09:00",
-    "state_data_at_jst": "2026-08-12T22:55:31+09:00",
-    "age_seconds": 23.717,
+    "checked_at_jst": "2026-08-12T23:11:11+09:00",
+    "state_data_at_jst": "2026-08-12T23:10:59+09:00",
+    "age_seconds": 12.31,
     "max_age_seconds": 1800,
     "canonical_source_count": 42,
     "canonical_source_set_sha256": "76bfea2f01436b972fd31d0d3ad9f5377cc977d66b526576ec55a42b68cd1a5a",
@@ -1516,8 +1516,8 @@
       }
     }
   },
-  "public_surface_state_at_jst": "2026-08-12T22:55:54+09:00",
-  "progress_checked_at": "2026-08-12 22:55",
+  "public_surface_state_at_jst": "2026-08-12T23:11:11+09:00",
+  "progress_checked_at": "2026-08-12 23:11",
   "operational_readiness": {
     "schema": "public_operational_readiness_v1",
     "observed_at_jst": "2026-08-12T05:25:36+09:00",
