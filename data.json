@@ -98,7 +98,7 @@
   },
   "storage_refresh": {
     "status": "FAIL_CLOSED",
-    "measured_at_jst": "2026-08-19T12:18:31+0900",
+    "measured_at_jst": "2026-08-19T12:21:53+0900",
     "reason_code": "'sha256'",
     "preserved_last_verified_measurement": true,
     "orders_sent": false,
@@ -582,7 +582,7 @@
       "head_sha256": "7f964f62fbb00f0b94c3501f5d8a9fc2cd9f78d04afae82ab1f3af59cf606b9a",
       "snapshot": {
         "mode": "APPEND_ONLY_PREFIX",
-        "captured_at_jst": "2026-08-19T12:18:06+0900",
+        "captured_at_jst": "2026-08-19T12:21:36+0900",
         "source_git_commit": "e53d8dbab11881d3bb9c113de0109967fca2d080",
         "line_count": 351,
         "prefix_sha256": "7d1f5e58b1c9fa86913241259535d28a9fe41978b060b8f1a306e822d98aae88",
@@ -761,13 +761,13 @@
     "repository": "art-daytrader-fable-28-53",
     "ledger_path": "governance/DEFECT_LEDGER.md",
     "ledger_sha256": "7460ddd188d51c3bb3717a88cf6a83f4a9b7baccfbe3c0bf72e7a92405bc028d",
-    "measured_at_jst": "2026-08-19T12:18:06+0900",
+    "measured_at_jst": "2026-08-19T12:21:36+0900",
     "orders_sent": false,
     "sendorder_count": 0
   },
   "active_cards": {
     "schema": "public_active_cards_v2",
-    "state_data_at_jst": "2026-08-19T12:18:06+09:00",
+    "state_data_at_jst": "2026-08-19T12:21:36+09:00",
     "governance_revision": {
       "ruling": "Fable裁定231(a)",
       "source_mode": "canonical_files_direct"
@@ -889,6 +889,11 @@
         "sha256": "8a42e34e3a150d860a85403cbe585b6d99d132a8221b593af13d6bf05e088005"
       },
       {
+        "repository": "art-daytrader-public-runtime",
+        "path": "living_artwork/site/d0v4_033_live_public.json",
+        "sha256": "5bf76b6216ccad88d97dfbc1361bcf621eb8a92a5da94696c6a3a25ce9a1d3b7"
+      },
+      {
         "repository": "art-daytrader-research-0723",
         "path": "governance/rulings136_20260726/testa_t3_swing_5d_evaluator_fix_b_audit_decision_v4.json",
         "sha256": "6c89d368cff023ffadadf838d4461497bf4c0789f82dbaaae99bcf78b76576db"
@@ -934,7 +939,7 @@
         "sha256": "20422463273448b33833d7ca54ac5396b0f47559690cf73b5582037b2154ef14"
       }
     ],
-    "canonical_sources_sha256": "969350b4de68933687be8f0f960bf432e79118d58a0c2f17f42197af292ed5cf",
+    "canonical_sources_sha256": "e249a6598fc9375290aa7fe5b8d895fc3f811ca4dc13d6d20b3244c210024098",
     "cards": [
       {
         "id": "pb1",
@@ -955,7 +960,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-19T12:18:06+09:00",
+        "state_data_at_jst": "2026-08-19T12:21:36+09:00",
         "evidence": [
           {
             "path": "governance/micro_allocation_boundary_v2_20260725.json",
@@ -1002,21 +1007,21 @@
         "state": "live",
         "name": "D0v4-033 本番task Ready・未実行",
         "family": "イベントドリフト",
-        "metric": "2026-07-29 08:57 JST一回性task · 発注瞬間Q1六条件が必須 · 配分額は非公開",
+        "metric": "本番稼働 · 前向き実測3/10 entry · 配分額・銘柄・数量は非公開",
         "progress": {
-          "n": 0,
+          "n": 3,
           "target": 10,
-          "label": "前向き実測"
+          "label": "前向き実測（entry事象）"
         },
         "arose": "自社株買い表明後の20営業日ドリフトを、凍結済みD+1寄り入口のまま前向きに測るため。歴史値を実装都合で14:50へ移植しない。",
         "verification": "凍結済み入口を実装都合で変更せず、発注瞬間にowner authority、headroom、接続、非pinned実シグナル、出口保証、流動性を実測する。いずれか不明ならNo-Tradeとする。",
-        "outcome": "監査済みreleaseを配備し、一回性taskはState=Ready。本人YESは2026-07-29 08:57 JSTの一回だけに限定済み。自然実行・発注瞬間Q1・注文はいずれも未観測。",
+        "outcome": "自然実行で entry 3件（2026-08-06・2026-08-07・2026-08-14）を観測。本日 2026-08-19 は適格イベントなし・No-Entry（注文0）。保有3件はD+21満期（2026-09-04・2026-09-07・2026-09-11）で自然クローズ予定。銘柄・数量・配分額は非公開。",
         "next_born": "クリーンな前向き実測10イベントが増額審査を開く。R-20残差監査は増額審査へ別添する。",
         "simulation": "歴史値は20日ドリフトの記述であり、将来のQ1 GREENや注文成功を示さない。",
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-19T12:18:06+09:00",
+        "state_data_at_jst": "2026-08-19T12:21:26+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_033_V6_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T143446+0900.json",
@@ -1102,15 +1107,64 @@
             "repository": "art-daytrader-main-source",
             "path": "reports/A3_FABLE_RULING214_PUBLIC_CARD_STATE_HANDOFF_20260728T143451+0900.json",
             "sha256": "a627ab195a0a97e5c4bf9cc40f16f2095b1c4fcf56776c1cdf0bb1165e6de8d0"
+          },
+          {
+            "repository": "art-daytrader-public-runtime",
+            "path": "living_artwork/site/d0v4_033_live_public.json",
+            "sha256": "5bf76b6216ccad88d97dfbc1361bcf621eb8a92a5da94696c6a3a25ce9a1d3b7"
           }
         ],
         "next_phase": {
-          "id": "ruling210_order_time_q1",
-          "label": "2026-07-29 08:57の発注瞬間Q1六条件",
-          "status": "NOT_YET_OBSERVABLE",
-          "scheduled_at_jst": "2026-07-29T08:57:00+09:00",
-          "scheduled_at_display": "2026-07-29 08:57 JSTまでは未取得",
-          "text": "<b>次の門:</b> 2026-07-29 08:57の発注瞬間Q1六条件 （現在 NOT_YET_OBSERVABLE） <b>時刻:</b> 2026-07-29 08:57 JSTまでは未取得"
+          "id": "live_daily_terminal",
+          "label": "毎営業日08:57の自然実行と当日終端receipt",
+          "status": "PASS",
+          "scheduled_at_jst": "2026-08-19T08:57:05+09:00",
+          "scheduled_at_display": "2026-08-19 適格イベントなし・No-Entry（注文0）",
+          "text": "<b>次の門:</b> 次の自然満期 2026-09-04（D+21返済） <b>状態:</b> 適格イベントなし・No-Entry（注文0）"
+        },
+        "live_readback_status": "PASS",
+        "live_readback": {
+          "trade_date": "2026-08-19",
+          "today_terminal": {
+            "kind": "NO_ENTRY",
+            "status": "STOP_NO_ELIGIBLE_CANDIDATE",
+            "outcome_class": "NO_ELIGIBLE_CANDIDATE",
+            "no_entry_reason": "STRATEGY_RED_NO_033_ELIGIBLE_EVENT",
+            "recorded_at_jst": "2026-08-19T08:57:05+09:00",
+            "orders_sent": false,
+            "sendorder_count": 0
+          },
+          "open_position_count": 3,
+          "positions": [
+            {
+              "entry_trade_date": "2026-08-06",
+              "exit_trade_date": "2026-09-04",
+              "status": "OPEN"
+            },
+            {
+              "entry_trade_date": "2026-08-07",
+              "exit_trade_date": "2026-09-07",
+              "status": "OPEN"
+            },
+            {
+              "entry_trade_date": "2026-08-14",
+              "exit_trade_date": "2026-09-11",
+              "status": "OPEN"
+            }
+          ],
+          "next_exit_trade_date": "2026-09-04",
+          "final_exit_trade_date": "2026-09-11",
+          "phase": "LIVE_HOLDING",
+          "source_receipts": [
+            {
+              "path": "logs/build_evidence/d0v4_033/live/d0v4_033_component_no_entry_20260819.json",
+              "sha256": "9464728ee72c378ef29871d6ab5dc1ee5da1c86dcb565596982074410ae8176b"
+            },
+            {
+              "path": "logs/build_evidence/d0v4_033/live/d0v4_033_holdings_v6.jsonl",
+              "sha256": "e31b4a730fa284c9543693748ea84a935e31bb06c06dcca8e40099cb081e5c46"
+            }
+          ]
         }
       },
       {
@@ -1132,7 +1186,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-19T12:18:06+09:00",
+        "state_data_at_jst": "2026-08-19T12:21:36+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_PIN_LOTTERY_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T140307+0900.json",
@@ -1218,7 +1272,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-19T12:18:06+09:00",
+        "state_data_at_jst": "2026-08-19T12:21:36+09:00",
         "evidence": [
           {
             "path": "governance/rulings141_20260727/testa_swing5d_result_site_handoff_r141.json",
@@ -1279,7 +1333,7 @@
         "provisional": false,
         "description_only": true,
         "qualification_evidence": false,
-        "state_data_at_jst": "2026-08-19T12:18:06+09:00",
+        "state_data_at_jst": "2026-08-19T12:21:36+09:00",
         "evidence": [
           {
             "path": "research/r20_residual_audit_v2_20260726/d0v4_033/provisional_result.json",
@@ -1330,7 +1384,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-19T12:18:06+09:00",
+        "state_data_at_jst": "2026-08-19T12:21:36+09:00",
         "evidence": [
           {
             "path": "reports/A3_FABLE_RULING221_052_PUBLIC_DISPLAY_HANDOFF_20260728T153600+0900.json",
@@ -1354,27 +1408,42 @@
     "sendorder_count": 0
   },
   "operations": {
-    "trade_date": "2026-07-27",
-    "status": "MONDAY_NO_TRADE_INFRA",
-    "label_ja": "月曜No-Trade（INFRA由来）",
-    "description_ja": "安全門が全レーンを閉じたため、2026-07-27は注文を送らず観測日にする。",
-    "reason_class": "INFRA",
+    "trade_date": "2026-08-19",
+    "status": "STOP_NO_ELIGIBLE_CANDIDATE",
+    "label_ja": "D0v4-033 適格イベントなし・No-Entry（注文0）",
+    "description_ja": "2026-08-19のD0v4-033自然実行は適格イベントなし・No-Entry（注文0）。保有3件・次の自然満期 2026-09-04。",
+    "reason_class": "STRATEGY_GATE",
     "realized_trade_loss_jpy": 0,
     "orders_sent": false,
     "sendorder_count": 0,
-    "next_gate_at_jst": "2026-07-28T00:05:00+09:00",
+    "next_gate_at_jst": "2026-09-04T09:00:00+09:00",
     "sources": [
       {
         "repository": "art-daytrader-fable-28-53",
         "path": "reports/A_FABLE_RULING141_MONDAY_NO_TRADE_20260727T002637+0900.json",
         "sha256": "3795083551d20df878b1a06b1644f62db83cce3384dee4f34669526a7bb64cef"
+      },
+      {
+        "repository": "art-daytrader-public-runtime",
+        "path": "living_artwork/site/d0v4_033_live_public.json",
+        "sha256": "5bf76b6216ccad88d97dfbc1361bcf621eb8a92a5da94696c6a3a25ce9a1d3b7"
       }
     ],
     "current_status_ja": "本番前の検証門",
     "current_status_date_jst": "2026-08-19",
     "current_reason_class_ja": "検証・稼働門",
     "next_gate_ja": "新しいaccepted live captureで独立日10/10へ到達し、増額審査へ進む",
-    "state_data_date_jst": "2026-08-18"
+    "state_data_date_jst": "2026-08-19",
+    "open_position_count": 3,
+    "entries_accepted_total": 3,
+    "latest_entry_trade_dates": [
+      "2026-08-06",
+      "2026-08-07",
+      "2026-08-14"
+    ],
+    "next_exit_trade_date": "2026-09-04",
+    "final_exit_trade_date": "2026-09-11",
+    "d0v4_033_phase": "LIVE_HOLDING"
   },
   "hyp_progress": {
     "pb1": {
@@ -1487,13 +1556,13 @@
   },
   "freshness": {
     "status": "PASS",
-    "checked_at_jst": "2026-08-19T12:18:31+09:00",
-    "state_data_at_jst": "2026-08-19T12:18:06+09:00",
-    "age_seconds": 25.285,
+    "checked_at_jst": "2026-08-19T12:21:53+09:00",
+    "state_data_at_jst": "2026-08-19T12:21:36+09:00",
+    "age_seconds": 17.191,
     "max_age_seconds": 1800,
-    "canonical_source_count": 42,
-    "canonical_source_set_sha256": "057903a5e3a31d18ae069c95c96a66195e16da4a9032893e5e20d5b0c480e709",
-    "card_source_set_sha256": "969350b4de68933687be8f0f960bf432e79118d58a0c2f17f42197af292ed5cf",
+    "canonical_source_count": 44,
+    "canonical_source_set_sha256": "bb7352949d0b34db6f361ffba3ce1782f97d5ac5328806b9f5496adbc4ef8353",
+    "card_source_set_sha256": "e249a6598fc9375290aa7fe5b8d895fc3f811ca4dc13d6d20b3244c210024098",
     "orders_sent": false,
     "sendorder_count": 0,
     "live_aggregate_sources": {
@@ -1516,12 +1585,12 @@
       }
     }
   },
-  "public_surface_state_at_jst": "2026-08-19T12:18:31+09:00",
-  "progress_checked_at": "2026-08-19 12:18",
+  "public_surface_state_at_jst": "2026-08-19T12:21:53+09:00",
+  "progress_checked_at": "2026-08-19 12:21",
   "operational_readiness": {
     "schema": "public_operational_readiness_v1",
-    "observed_at_jst": "2026-08-12T05:25:36+09:00",
-    "overall_status": "ATTENTION_REQUIRED",
+    "observed_at_jst": "2026-08-19T12:19:47+09:00",
+    "overall_status": "PASS_PREMARKET",
     "login_api": {
       "status": "PASS",
       "application_running": true,
@@ -1532,19 +1601,19 @@
         "status": "PASS_READ_ONLY",
         "reason": "REFRESH_AND_GMAIL_PROFILE_READ_PASS",
         "failed_stage": "",
-        "checked_at_jst": "2026-08-11T23:30:03+09:00",
+        "checked_at_jst": "2026-08-18T23:30:02+09:00",
         "credential_value_logged": false,
         "orders_sent": false
       }
     },
     "account": {
       "status": "UNKNOWN",
-      "wallet_observed": false,
+      "wallet_observed": true,
       "owner_capital_reflected": false
     },
     "candidate": {
-      "status": "EVENING_STAGED_PENDING_RECHECK",
-      "count_for_today": 11,
+      "status": "MORNING_PUBLISHED",
+      "count_for_today": 0,
       "within_configured_cap": null,
       "wallet_sufficient": null,
       "symbol_disclosed": false
@@ -1553,57 +1622,57 @@
       "candidate_0710": {
         "name": "D0v4-033-eligible-morning-0710",
         "state": "Ready",
-        "last_result": 2,
-        "last_run": "2026-08-11T07:22:26+09:00",
-        "next_run": "2026-08-12T07:10:00+09:00"
+        "last_result": 0,
+        "last_run": "2026-08-19T07:10:00+09:00",
+        "next_run": "2026-08-20T07:10:00+09:00"
       },
       "seal_0845": {
         "name": "D0v4-033-daily-seal-supervisor-0845",
         "state": "Ready",
         "last_result": 0,
-        "last_run": "2026-08-11T08:45:00+09:00",
-        "next_run": "2026-08-12T08:45:00+09:00"
+        "last_run": "2026-08-19T08:45:00+09:00",
+        "next_run": "2026-08-20T08:45:00+09:00"
       },
       "entry_0857": {
         "name": "D0v4-033-v6-entry-20260730",
         "state": "Ready",
         "last_result": 0,
-        "last_run": "2026-08-11T08:57:00+09:00",
-        "next_run": "2026-08-12T08:57:00+09:00"
+        "last_run": "2026-08-19T08:57:00+09:00",
+        "next_run": "2026-08-20T08:57:00+09:00"
       }
     },
     "entry_outcome": {
-      "status": "NOT_YET_OBSERVED",
-      "terminal_observed": false,
+      "status": "STOP_NO_ELIGIBLE_CANDIDATE",
+      "terminal_observed": true,
       "orders_sent": false,
       "sendorder_count": 0
     },
     "foundry_hourly": {
       "status": "SOURCE_UPDATE_AUTO_RESUME",
-      "last_hour_jst": "2026-08-12T05:00:00+09:00",
+      "last_hour_jst": "2026-08-19T12:00:00+09:00",
       "missing_expected_hour_jst": null,
-      "birth_rows": 2,
-      "next_natural_fire_jst": "2026-08-12T06:07:00+09:00",
+      "birth_rows": 0,
+      "next_natural_fire_jst": "2026-08-19T13:07:00+09:00",
       "orders_sent": false
     },
     "crypto": {
       "schema": "public_crypto_status_v1",
-      "observed_at_jst": "2026-08-12T05:25:36+09:00",
+      "observed_at_jst": "2026-08-19T12:19:47+09:00",
       "observers": {
         "bybit": {
-          "status": "RUNNING",
-          "task_state": "RUNNING",
-          "last_task_result": 267009,
-          "last_record_at_jst": "2026-08-12T05:25:57+09:00",
+          "status": "STOPPED_DISK_FLOOR",
+          "task_state": "READY",
+          "last_task_result": 3,
+          "last_record_at_jst": "2026-08-13T14:36:52+09:00",
           "record_count": null,
           "orders_forbidden": true
         },
         "gmo": {
-          "status": "RUNNING",
-          "task_state": "RUNNING",
-          "last_task_result": 267009,
-          "last_record_at_jst": "2026-08-12T05:26:01+09:00",
-          "record_count": 389348,
+          "status": "STOPPED_DISK_FLOOR",
+          "task_state": "READY",
+          "last_task_result": 3,
+          "last_record_at_jst": "2026-08-13T14:36:53+09:00",
+          "record_count": 283954,
           "orders_forbidden": true
         }
       },
@@ -1655,6 +1724,16 @@
       },
       "bottlenecks": [
         {
+          "reason_code": "BYBIT_FORWARD_OBSERVER_NOT_RUNNING",
+          "class": "DATA_INFRASTRUCTURE",
+          "release_condition": "空き容量門を満たし、次の自然起動後に公開市場データの最終記録時刻が進むこと"
+        },
+        {
+          "reason_code": "GMO_FORWARD_OBSERVER_NOT_RUNNING",
+          "class": "DATA_INFRASTRUCTURE",
+          "release_condition": "空き容量門を満たし、次の自然起動後に公開市場データの最終記録時刻が進むこと"
+        },
+        {
           "reason_code": "CRYPTO_UTC_BOUNDARY_NO_SURVIVOR",
           "class": "RESEARCH_QUALITY_GATE",
           "release_condition": "spot-perpetual basis収束を事前固定し、開発374件だけで次の直交検定を実行すること"
@@ -1665,39 +1744,32 @@
     },
     "bottlenecks": [
       {
-        "reason_code": "MORNING_CANDIDATE_RECHECK_PENDING",
-        "class": "EXPECTED_MARKET_GATE",
-        "release_condition": "07:10の当日銘柄再検査がPASSし、当日候補が発行されること"
-      },
-      {
-        "reason_code": "PREVIOUS_0710_TASK_NONZERO",
-        "class": "INFRASTRUCTURE",
-        "release_condition": "本日07:10の自然実行が終了コード0と当日終端記録を残すこと"
-      },
-      {
         "reason_code": "PREFLIGHT_0730_MONITOR_NOT_PASS",
         "class": "OBSERVABILITY_INFRASTRUCTURE",
         "observed_status": "INFRA_RED",
         "failed_checks": [
           "kabu_auto_reconnect",
+          "vps_floor",
           "scheduled_tasks_13",
           "all_critical_tasks",
           "approved_release_b_receipt",
           "mac_ssd_input"
         ],
-        "checked_at_jst": "2026-08-11T07:30:04+09:00",
+        "checked_at_jst": "2026-08-19T07:30:04+09:00",
         "order_gate_role": "MONITORING_CONFIDENCE_ONLY",
         "release_condition": "現在の反復task名と当日実行時刻へ合わせた修正を独立B監査し、配備後の次回07:30自然実行でPASSを確認すること"
       }
     ],
     "orders_sent": false,
-    "sendorder_count": 0
+    "sendorder_count": 0,
+    "freshness_age_seconds": 111,
+    "freshness_status": "FRESH"
   },
   "ops_heartbeat": {
-    "generated_at_jst": "2026-08-12T05:26:04+0900",
-    "ledger_rulings_today": 26,
-    "queues_delivered_today": 33,
-    "receipts_today": 39,
-    "last_ledger_append_at_jst": "2026-08-12T05:08:38+09:00"
+    "generated_at_jst": "2026-08-19T12:21:37+0900",
+    "ledger_rulings_today": 10,
+    "queues_delivered_today": 0,
+    "receipts_today": 0,
+    "last_ledger_append_at_jst": "2026-08-19T11:03:03+09:00"
   }
 }
