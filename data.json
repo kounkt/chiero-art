@@ -98,7 +98,7 @@
   },
   "storage_refresh": {
     "status": "FAIL_CLOSED",
-    "measured_at_jst": "2026-08-20T17:59:09+0900",
+    "measured_at_jst": "2026-08-20T18:14:33+0900",
     "reason_code": "'sha256'",
     "preserved_last_verified_measurement": true,
     "orders_sent": false,
@@ -582,7 +582,7 @@
       "head_sha256": "7f964f62fbb00f0b94c3501f5d8a9fc2cd9f78d04afae82ab1f3af59cf606b9a",
       "snapshot": {
         "mode": "APPEND_ONLY_PREFIX",
-        "captured_at_jst": "2026-08-20T17:58:51+0900",
+        "captured_at_jst": "2026-08-20T18:14:15+0900",
         "source_git_commit": "e53d8dbab11881d3bb9c113de0109967fca2d080",
         "line_count": 351,
         "prefix_sha256": "7d1f5e58b1c9fa86913241259535d28a9fe41978b060b8f1a306e822d98aae88",
@@ -761,13 +761,13 @@
     "repository": "art-daytrader-fable-28-53",
     "ledger_path": "governance/DEFECT_LEDGER.md",
     "ledger_sha256": "7460ddd188d51c3bb3717a88cf6a83f4a9b7baccfbe3c0bf72e7a92405bc028d",
-    "measured_at_jst": "2026-08-20T17:58:52+0900",
+    "measured_at_jst": "2026-08-20T18:14:15+0900",
     "orders_sent": false,
     "sendorder_count": 0
   },
   "active_cards": {
     "schema": "public_active_cards_v2",
-    "state_data_at_jst": "2026-08-20T17:58:52+09:00",
+    "state_data_at_jst": "2026-08-20T18:14:15+09:00",
     "governance_revision": {
       "ruling": "Fable裁定231(a)",
       "source_mode": "canonical_files_direct"
@@ -960,7 +960,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-20T17:58:52+09:00",
+        "state_data_at_jst": "2026-08-20T18:14:15+09:00",
         "evidence": [
           {
             "path": "governance/micro_allocation_boundary_v2_20260725.json",
@@ -1186,7 +1186,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-20T17:58:52+09:00",
+        "state_data_at_jst": "2026-08-20T18:14:15+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_PIN_LOTTERY_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T140307+0900.json",
@@ -1272,7 +1272,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-20T17:58:52+09:00",
+        "state_data_at_jst": "2026-08-20T18:14:15+09:00",
         "evidence": [
           {
             "path": "governance/rulings141_20260727/testa_swing5d_result_site_handoff_r141.json",
@@ -1333,7 +1333,7 @@
         "provisional": false,
         "description_only": true,
         "qualification_evidence": false,
-        "state_data_at_jst": "2026-08-20T17:58:52+09:00",
+        "state_data_at_jst": "2026-08-20T18:14:15+09:00",
         "evidence": [
           {
             "path": "research/r20_residual_audit_v2_20260726/d0v4_033/provisional_result.json",
@@ -1384,7 +1384,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-20T17:58:52+09:00",
+        "state_data_at_jst": "2026-08-20T18:14:15+09:00",
         "evidence": [
           {
             "path": "reports/A3_FABLE_RULING221_052_PUBLIC_DISPLAY_HANDOFF_20260728T153600+0900.json",
@@ -1453,29 +1453,29 @@
       "prev": 0
     },
     "harvester": {
-      "n": 45,
+      "n": 47,
       "target": 14,
       "label": "解決event",
       "prev": 45,
-      "independent_days": 3,
+      "independent_days": 4,
       "target_independent_days": 10,
       "next_gate_ja": "同一保有構造のSHA拘束済みnon-holdout aggregate benchmarkでeconomic non-refutationを判定する",
       "measurement_status": "PASS",
-      "state_data_date_jst": "2026-08-19",
-      "signal_days": 3,
+      "state_data_date_jst": "2026-08-20",
+      "signal_days": 4,
       "target_signal_days": 14,
       "economic_non_refutation": "INDETERMINATE"
     },
     "035": {
-      "n": 19,
+      "n": 21,
       "target": 14,
       "label": "accepted/live economic event",
       "prev": 19,
-      "independent_days": 3,
+      "independent_days": 4,
       "target_independent_days": 10,
       "next_gate_ja": "新しいaccepted live captureで独立日10/10へ到達し、増額審査へ進む",
       "measurement_status": "PASS",
-      "state_data_date_jst": "2026-08-19"
+      "state_data_date_jst": "2026-08-20"
     },
     "041g7": {
       "n": 2,
@@ -1556,12 +1556,12 @@
   },
   "freshness": {
     "status": "PASS",
-    "checked_at_jst": "2026-08-20T17:59:09+09:00",
-    "state_data_at_jst": "2026-08-20T17:58:52+09:00",
-    "age_seconds": 17.746,
+    "checked_at_jst": "2026-08-20T18:14:33+09:00",
+    "state_data_at_jst": "2026-08-20T18:14:15+09:00",
+    "age_seconds": 18.755,
     "max_age_seconds": 1800,
     "canonical_source_count": 44,
-    "canonical_source_set_sha256": "2f9968b11fd715b5987711deb5a80072cd491a04e54e0e00cf4e9c8c60743b89",
+    "canonical_source_set_sha256": "a96c19eb8f2bbf0ef809ecb59dd2eeffb2d0ec13361fafc6d001fd53e2118aee",
     "card_source_set_sha256": "d81ed931643e617672c5256b8e9b8b4839b3084a6ad907cb6f80f27c73ae04b7",
     "orders_sent": false,
     "sendorder_count": 0,
@@ -1573,20 +1573,20 @@
       },
       "035": {
         "status": "PASS",
-        "sha256": "5aec046a943ed63e9c568f23ed82571754048206900745329cd47efe3442d46d",
-        "resolved_events": 19,
-        "independent_days": 3
+        "sha256": "90a232ed2d23c5eafcbd973b3442aa4ddfd5072f329edf8bb9590c9f194f2c18",
+        "resolved_events": 21,
+        "independent_days": 4
       },
       "harvester": {
         "status": "PASS",
-        "sha256": "a7760fbbfbc0e9589f6a7aa52cacf3e70b681a3c171399317d3c874eaf50fbc7",
-        "resolved_events": 45,
-        "independent_days": 3
+        "sha256": "4bd1b7b2bce44736ee36df0fa0fad2f93eeaac6ba6b68253225a432dd170117a",
+        "resolved_events": 47,
+        "independent_days": 4
       }
     }
   },
-  "public_surface_state_at_jst": "2026-08-20T17:59:09+09:00",
-  "progress_checked_at": "2026-08-20 17:59",
+  "public_surface_state_at_jst": "2026-08-20T18:14:33+09:00",
+  "progress_checked_at": "2026-08-20 18:14",
   "operational_readiness": {
     "schema": "public_operational_readiness_v1",
     "observed_at_jst": "2026-08-20T17:41:44+09:00",
@@ -1608,15 +1608,15 @@
     ],
     "orders_sent": false,
     "sendorder_count": 0,
-    "freshness_age_seconds": 1029,
+    "freshness_age_seconds": 1952,
     "freshness_status": "FRESH"
   },
   "ops_heartbeat": {
-    "generated_at_jst": "2026-08-20T17:58:53+0900",
-    "ledger_rulings_today": 10,
+    "generated_at_jst": "2026-08-20T18:14:16+0900",
+    "ledger_rulings_today": 11,
     "queues_delivered_today": 0,
     "receipts_today": 0,
-    "last_ledger_append_at_jst": "2026-08-20T17:46:00+09:00"
+    "last_ledger_append_at_jst": "2026-08-20T18:13:50+09:00"
   },
   "operation": {
     "sessions": {
