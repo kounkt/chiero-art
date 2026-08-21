@@ -98,7 +98,7 @@
   },
   "storage_refresh": {
     "status": "FAIL_CLOSED",
-    "measured_at_jst": "2026-08-21T09:18:09+0900",
+    "measured_at_jst": "2026-08-21T09:33:34+0900",
     "reason_code": "'sha256'",
     "preserved_last_verified_measurement": true,
     "orders_sent": false,
@@ -582,7 +582,7 @@
       "head_sha256": "7f964f62fbb00f0b94c3501f5d8a9fc2cd9f78d04afae82ab1f3af59cf606b9a",
       "snapshot": {
         "mode": "APPEND_ONLY_PREFIX",
-        "captured_at_jst": "2026-08-21T09:17:53+0900",
+        "captured_at_jst": "2026-08-21T09:33:15+0900",
         "source_git_commit": "e53d8dbab11881d3bb9c113de0109967fca2d080",
         "line_count": 351,
         "prefix_sha256": "7d1f5e58b1c9fa86913241259535d28a9fe41978b060b8f1a306e822d98aae88",
@@ -761,13 +761,13 @@
     "repository": "art-daytrader-fable-28-53",
     "ledger_path": "governance/DEFECT_LEDGER.md",
     "ledger_sha256": "7460ddd188d51c3bb3717a88cf6a83f4a9b7baccfbe3c0bf72e7a92405bc028d",
-    "measured_at_jst": "2026-08-21T09:17:53+0900",
+    "measured_at_jst": "2026-08-21T09:33:15+0900",
     "orders_sent": false,
     "sendorder_count": 0
   },
   "active_cards": {
     "schema": "public_active_cards_v2",
-    "state_data_at_jst": "2026-08-21T09:17:53+09:00",
+    "state_data_at_jst": "2026-08-21T09:33:15+09:00",
     "governance_revision": {
       "ruling": "Fable裁定231(a)",
       "source_mode": "canonical_files_direct"
@@ -891,7 +891,7 @@
       {
         "repository": "art-daytrader-public-runtime",
         "path": "living_artwork/site/d0v4_033_live_public.json",
-        "sha256": "b2a2619edc8d5f43ed323e7239fdb4f236adfa84308e4511d7b664e8a21ca318"
+        "sha256": "2c18dc34e0162967c0b8c9ad5ed7eb7c46c70257c45fcf9edce8bae9cc844a1d"
       },
       {
         "repository": "art-daytrader-research-0723",
@@ -939,7 +939,7 @@
         "sha256": "20422463273448b33833d7ca54ac5396b0f47559690cf73b5582037b2154ef14"
       }
     ],
-    "canonical_sources_sha256": "c706615404c0a4c294319705cf7e62748d2db8d3d89073c51c7d717590e26a75",
+    "canonical_sources_sha256": "e8ba23d06e1f9d9a106fa76386c0da6199df8d265faefe681132b35cc64805ef",
     "cards": [
       {
         "id": "pb1",
@@ -960,7 +960,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-21T09:17:53+09:00",
+        "state_data_at_jst": "2026-08-21T09:33:15+09:00",
         "evidence": [
           {
             "path": "governance/micro_allocation_boundary_v2_20260725.json",
@@ -1015,13 +1015,13 @@
         },
         "arose": "自社株買い表明後の20営業日ドリフトを、凍結済みD+1寄り入口のまま前向きに測るため。歴史値を実装都合で14:50へ移植しない。",
         "verification": "凍結済み入口を実装都合で変更せず、発注瞬間にowner authority、headroom、接続、非pinned実シグナル、出口保証、流動性を実測する。いずれか不明ならNo-Tradeとする。",
-        "outcome": "自然実行で entry 3件（2026-08-06・2026-08-07・2026-08-14）を観測。本日 2026-08-19 は適格イベントなし・No-Entry（注文0）。保有3件はD+21満期（2026-09-04・2026-09-07・2026-09-11）で自然クローズ予定。銘柄・数量・配分額は非公開。",
+        "outcome": "自然実行で entry 3件（2026-08-06・2026-08-07・2026-08-14）を観測。本日 2026-08-21 は適格イベントなし・No-Entry（注文0）。保有3件はD+21満期（2026-09-04・2026-09-07・2026-09-11）で自然クローズ予定。銘柄・数量・配分額は非公開。",
         "next_born": "クリーンな前向き実測10イベントが増額審査を開く。R-20残差監査は増額審査へ別添する。",
         "simulation": "歴史値は20日ドリフトの記述であり、将来のQ1 GREENや注文成功を示さない。",
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-20T23:25:09+09:00",
+        "state_data_at_jst": "2026-08-21T09:25:05+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_033_V6_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T143446+0900.json",
@@ -1111,26 +1111,26 @@
           {
             "repository": "art-daytrader-public-runtime",
             "path": "living_artwork/site/d0v4_033_live_public.json",
-            "sha256": "b2a2619edc8d5f43ed323e7239fdb4f236adfa84308e4511d7b664e8a21ca318"
+            "sha256": "2c18dc34e0162967c0b8c9ad5ed7eb7c46c70257c45fcf9edce8bae9cc844a1d"
           }
         ],
         "next_phase": {
           "id": "live_daily_terminal",
           "label": "毎営業日08:57の自然実行と当日終端receipt",
           "status": "PASS",
-          "scheduled_at_jst": "2026-08-19T08:57:05+09:00",
-          "scheduled_at_display": "2026-08-19 適格イベントなし・No-Entry（注文0）",
+          "scheduled_at_jst": "2026-08-21T08:57:06+09:00",
+          "scheduled_at_display": "2026-08-21 適格イベントなし・No-Entry（注文0）",
           "text": "<b>次の門:</b> 次の自然満期 2026-09-04（D+21返済） <b>状態:</b> 適格イベントなし・No-Entry（注文0）"
         },
         "live_readback_status": "PASS",
         "live_readback": {
-          "trade_date": "2026-08-19",
+          "trade_date": "2026-08-21",
           "today_terminal": {
             "kind": "NO_ENTRY",
             "status": "STOP_NO_ELIGIBLE_CANDIDATE",
             "outcome_class": "NO_ELIGIBLE_CANDIDATE",
             "no_entry_reason": "STRATEGY_RED_NO_033_ELIGIBLE_EVENT",
-            "recorded_at_jst": "2026-08-19T08:57:05+09:00",
+            "recorded_at_jst": "2026-08-21T08:57:06+09:00",
             "orders_sent": false,
             "sendorder_count": 0
           },
@@ -1157,8 +1157,8 @@
           "phase": "LIVE_HOLDING",
           "source_receipts": [
             {
-              "path": "logs/build_evidence/d0v4_033/live/d0v4_033_component_no_entry_20260819.json",
-              "sha256": "9464728ee72c378ef29871d6ab5dc1ee5da1c86dcb565596982074410ae8176b"
+              "path": "logs/build_evidence/d0v4_033/live/d0v4_033_component_no_entry_20260821.json",
+              "sha256": "69ea6c8f31ef4fca68ad8be5d28f552b4704e141483606f5a376c7c83462906a"
             },
             {
               "path": "logs/build_evidence/d0v4_033/live/d0v4_033_holdings_v6.jsonl",
@@ -1186,7 +1186,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-21T09:17:53+09:00",
+        "state_data_at_jst": "2026-08-21T09:33:15+09:00",
         "evidence": [
           {
             "path": "reports/B_FABLE_PIN_LOTTERY_POSTDEPLOY_B_AUDIT_FAIL_CLOSED_20260726T140307+0900.json",
@@ -1272,7 +1272,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-21T09:17:53+09:00",
+        "state_data_at_jst": "2026-08-21T09:33:15+09:00",
         "evidence": [
           {
             "path": "governance/rulings141_20260727/testa_swing5d_result_site_handoff_r141.json",
@@ -1333,7 +1333,7 @@
         "provisional": false,
         "description_only": true,
         "qualification_evidence": false,
-        "state_data_at_jst": "2026-08-21T09:17:53+09:00",
+        "state_data_at_jst": "2026-08-21T09:33:15+09:00",
         "evidence": [
           {
             "path": "research/r20_residual_audit_v2_20260726/d0v4_033/provisional_result.json",
@@ -1384,7 +1384,7 @@
         "provisional": false,
         "description_only": null,
         "qualification_evidence": null,
-        "state_data_at_jst": "2026-08-21T09:17:53+09:00",
+        "state_data_at_jst": "2026-08-21T09:33:15+09:00",
         "evidence": [
           {
             "path": "reports/A3_FABLE_RULING221_052_PUBLIC_DISPLAY_HANDOFF_20260728T153600+0900.json",
@@ -1408,10 +1408,10 @@
     "sendorder_count": 0
   },
   "operations": {
-    "trade_date": "2026-08-19",
+    "trade_date": "2026-08-21",
     "status": "STOP_NO_ELIGIBLE_CANDIDATE",
     "label_ja": "D0v4-033 適格イベントなし・No-Entry（注文0）",
-    "description_ja": "2026-08-19のD0v4-033自然実行は適格イベントなし・No-Entry（注文0）。保有3件・次の自然満期 2026-09-04。",
+    "description_ja": "2026-08-21のD0v4-033自然実行は適格イベントなし・No-Entry（注文0）。保有3件・次の自然満期 2026-09-04。",
     "reason_class": "STRATEGY_GATE",
     "realized_trade_loss_jpy": 0,
     "orders_sent": false,
@@ -1426,14 +1426,14 @@
       {
         "repository": "art-daytrader-public-runtime",
         "path": "living_artwork/site/d0v4_033_live_public.json",
-        "sha256": "b2a2619edc8d5f43ed323e7239fdb4f236adfa84308e4511d7b664e8a21ca318"
+        "sha256": "2c18dc34e0162967c0b8c9ad5ed7eb7c46c70257c45fcf9edce8bae9cc844a1d"
       }
     ],
     "current_status_ja": "本番前の検証門",
     "current_status_date_jst": "2026-08-21",
     "current_reason_class_ja": "検証・稼働門",
     "next_gate_ja": "新しいaccepted live captureで独立日10/10へ到達し、増額審査へ進む",
-    "state_data_date_jst": "2026-08-19",
+    "state_data_date_jst": "2026-08-21",
     "open_position_count": 3,
     "entries_accepted_total": 3,
     "latest_entry_trade_dates": [
@@ -1556,13 +1556,13 @@
   },
   "freshness": {
     "status": "PASS",
-    "checked_at_jst": "2026-08-21T09:18:09+09:00",
-    "state_data_at_jst": "2026-08-21T09:17:53+09:00",
-    "age_seconds": 16.865,
+    "checked_at_jst": "2026-08-21T09:33:34+09:00",
+    "state_data_at_jst": "2026-08-21T09:33:15+09:00",
+    "age_seconds": 19.507,
     "max_age_seconds": 1800,
     "canonical_source_count": 44,
-    "canonical_source_set_sha256": "5e87c44574f673c20a7810a46c2121149a95e3ec46ea9026ce18ec4f83e0a0a9",
-    "card_source_set_sha256": "c706615404c0a4c294319705cf7e62748d2db8d3d89073c51c7d717590e26a75",
+    "canonical_source_set_sha256": "08cc4b41a032b91524415425f4006885f8c363e650f814a32b0ed2696f1cafe9",
+    "card_source_set_sha256": "e8ba23d06e1f9d9a106fa76386c0da6199df8d265faefe681132b35cc64805ef",
     "orders_sent": false,
     "sendorder_count": 0,
     "live_aggregate_sources": {
@@ -1585,8 +1585,8 @@
       }
     }
   },
-  "public_surface_state_at_jst": "2026-08-21T09:18:09+09:00",
-  "progress_checked_at": "2026-08-21 09:18",
+  "public_surface_state_at_jst": "2026-08-21T09:33:34+09:00",
+  "progress_checked_at": "2026-08-21 09:33",
   "operational_readiness": {
     "schema": "public_operational_readiness_v1",
     "observed_at_jst": "2026-08-21T07:45:05+09:00",
@@ -1751,11 +1751,11 @@
     ],
     "orders_sent": false,
     "sendorder_count": 0,
-    "freshness_age_seconds": 5569,
+    "freshness_age_seconds": 6491,
     "freshness_status": "FRESH"
   },
   "ops_heartbeat": {
-    "generated_at_jst": "2026-08-21T09:17:54+0900",
+    "generated_at_jst": "2026-08-21T09:33:16+0900",
     "ledger_rulings_today": 2,
     "queues_delivered_today": 0,
     "receipts_today": 0,
